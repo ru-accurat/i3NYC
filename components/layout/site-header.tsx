@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { MobileNav } from "./mobile-nav";
+import { LogoutButton } from "./logout-button";
 
 const NAV_LINKS = [
   { label: "About", href: "/about-us" },
@@ -37,10 +38,12 @@ export function SiteHeader({ isAdmin }: SiteHeaderProps) {
               {l.label}
             </Link>
           ))}
-          {isAdmin && (
+          {isAdmin ? (
+            <LogoutButton />
+          ) : (
             <Link
               href="/admin/login"
-              className="text-xs text-primary/60 transition-colors hover:text-primary"
+              className="text-xs text-foreground/40 transition-colors hover:text-foreground/60"
             >
               Admin
             </Link>

@@ -1,7 +1,15 @@
+export const dynamic = "force-dynamic";
+
 import { HeroSection } from "@/components/sections/hero-section";
+import { EditableContent } from "@/components/editable-content";
+import { getPageContent } from "@/lib/content";
+import { isAdmin } from "@/lib/auth";
 import Link from "next/link";
 
-export default function ContactPage() {
+export default async function ContactPage() {
+  const content = await getPageContent("contact-us");
+  const admin = await isAdmin();
+
   return (
     <>
       <HeroSection
@@ -9,6 +17,13 @@ export default function ContactPage() {
         title="Let's build something"
         titleAccent="together."
         description="Whether you're a startup, an enterprise, or an individual innovator, we'd love to hear from you."
+      />
+
+      <EditableContent
+        slug="contact-us"
+        rawContent={content?.raw ?? ""}
+        body={content?.body ?? ""}
+        isAdmin={admin}
       />
 
       <section className="py-28">
@@ -39,36 +54,20 @@ export default function ContactPage() {
           </div>
           <div className="space-y-8">
             <div>
-              <p className="text-xs tracking-widest text-muted-foreground/50 uppercase">
-                Email
-              </p>
-              <a
-                href="mailto:info@i3nyc.org"
-                className="mt-2 block text-base text-foreground transition-colors hover:text-primary"
-              >
+              <p className="text-xs tracking-widest text-muted-foreground/50 uppercase">Email</p>
+              <a href="mailto:info@i3nyc.org" className="mt-2 block text-base text-foreground transition-colors hover:text-primary">
                 info@i3nyc.org
               </a>
             </div>
             <div>
-              <p className="text-xs tracking-widest text-muted-foreground/50 uppercase">
-                LinkedIn
-              </p>
-              <a
-                href="https://www.linkedin.com/company/i3-italian-innovators-initiative"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-2 block text-base text-foreground transition-colors hover:text-primary"
-              >
+              <p className="text-xs tracking-widest text-muted-foreground/50 uppercase">LinkedIn</p>
+              <a href="https://www.linkedin.com/company/i3-italian-innovators-initiative" target="_blank" rel="noopener noreferrer" className="mt-2 block text-base text-foreground transition-colors hover:text-primary">
                 I3 Italian Innovators Initiative
               </a>
             </div>
             <div>
-              <p className="text-xs tracking-widest text-muted-foreground/50 uppercase">
-                Location
-              </p>
-              <p className="mt-2 text-base text-muted-foreground">
-                New York City, NY
-              </p>
+              <p className="text-xs tracking-widest text-muted-foreground/50 uppercase">Location</p>
+              <p className="mt-2 text-base text-muted-foreground">New York City, NY</p>
             </div>
           </div>
         </div>

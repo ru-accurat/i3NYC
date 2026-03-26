@@ -1,8 +1,12 @@
+export const dynamic = "force-dynamic";
+
 import { HeroSection } from "@/components/sections/hero-section";
 import { TeamGrid } from "@/components/sections/team-grid";
 import { StatsSection } from "@/components/sections/stats-section";
 import { PartnersSection } from "@/components/sections/partners-section";
-import { ContentRenderer } from "@/components/content-renderer";
+import { EditableContent } from "@/components/editable-content";
+import { getPageContent } from "@/lib/content";
+import { isAdmin } from "@/lib/auth";
 
 const BOARD = [
   { name: "Gianluca Galletto", role: "Executive Chair", initials: "GG" },
@@ -33,7 +37,7 @@ const PARTNERS = [
   "Regione Lazio",
 ];
 
-const MISSION_TEXT = `
+const FALLBACK_BODY = `
 ## Our Mission & Vision
 
 **Mission:** To foster a thriving ecosystem that connects Italian innovators — startups, enterprises, and professionals — with the vast opportunities in the New York City metro area and the broader U.S. market.
@@ -45,7 +49,12 @@ const MISSION_TEXT = `
 New York City is the beating heart of global innovation. Home to over 25,000 startups, 300+ venture capital firms, and a metro economy exceeding $2 trillion, NYC offers unparalleled access to capital, talent, and markets. For Italian innovators, the city represents the most strategic entry point into the American ecosystem.
 `;
 
-export default function AboutPage() {
+export default async function AboutPage() {
+  const content = await getPageContent("about-us");
+  const admin = await isAdmin();
+  const body = content?.body ?? FALLBACK_BODY;
+  const raw = content?.raw ?? "";
+
   return (
     <>
       <HeroSection
@@ -55,16 +64,16 @@ export default function AboutPage() {
         description="I3/NYC is a non-profit initiative endorsed by the Italian Consulate in New York, dedicated to building bridges between Italian innovators and the vast U.S. market."
       />
 
-      <div className="py-20 px-8">
-        <ContentRenderer content={MISSION_TEXT} />
-      </div>
+      <EditableContent
+        slug="about-us"
+        rawContent={raw}
+        body={body}
+        isAdmin={admin}
+      />
 
       <StatsSection stats={STATS} />
-
       <TeamGrid label="Leadership" title="Board of Directors" members={BOARD} />
-
       <TeamGrid label="Team" title="Our Team" members={TEAM} />
-
       <PartnersSection partners={PARTNERS} />
     </>
   );

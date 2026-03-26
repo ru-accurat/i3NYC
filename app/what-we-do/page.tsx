@@ -1,7 +1,12 @@
+export const dynamic = "force-dynamic";
+
 import { HeroSection } from "@/components/sections/hero-section";
 import { InitiativeList } from "@/components/sections/initiative-list";
 import { PartnersSection } from "@/components/sections/partners-section";
 import { CTASection } from "@/components/sections/cta-section";
+import { EditableContent } from "@/components/editable-content";
+import { getPageContent } from "@/lib/content";
+import { isAdmin } from "@/lib/auth";
 
 const INITIATIVES = [
   {
@@ -39,7 +44,10 @@ const PARTNERS = [
   "Regione Lazio",
 ];
 
-export default function WhatWeDoPage() {
+export default async function WhatWeDoPage() {
+  const content = await getPageContent("what-we-do");
+  const admin = await isAdmin();
+
   return (
     <>
       <HeroSection
@@ -47,6 +55,13 @@ export default function WhatWeDoPage() {
         title="Five programs connecting Italian innovators with"
         titleAccent="U.S. opportunities."
         description="From acceleration to talent matching, we provide the tools, networks, and knowledge Italian innovators need to succeed in America."
+      />
+
+      <EditableContent
+        slug="what-we-do"
+        rawContent={content?.raw ?? ""}
+        body={content?.body ?? ""}
+        isAdmin={admin}
       />
 
       <InitiativeList

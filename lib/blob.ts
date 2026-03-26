@@ -16,9 +16,14 @@ export async function uploadToBlob(
 export async function readFromBlob(
   pathname: string
 ): Promise<string | null> {
-  const { blobs } = await list({ prefix: pathname, limit: 1 });
-  const match = blobs.find((b) => b.pathname === pathname);
-  if (!match) return null;
-  const res = await fetch(match.url, { next: { revalidate: 0 } });
-  return res.text();
+  try {
+    const { blobs } = await list({ prefix: pathname, limit: 1 });
+    const match = blobs.find((b) => b.pathname === pathname);
+    if (!match) return null;
+    const res = await fetch(match.url, { next: { revalidate: 0 } });
+    return res.text();
+  } catch {
+    // Token not available (e.g. during build) — return null gracefully
+    return null;
+  }
 }

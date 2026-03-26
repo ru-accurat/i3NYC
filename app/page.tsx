@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { StatsSection } from "@/components/sections/stats-section";
 import { InitiativeList } from "@/components/sections/initiative-list";
 import { TeamGrid } from "@/components/sections/team-grid";
@@ -5,6 +7,9 @@ import { EventList } from "@/components/sections/event-list";
 import { MembershipTiers } from "@/components/sections/membership-tiers";
 import { PartnersSection } from "@/components/sections/partners-section";
 import { CTASection } from "@/components/sections/cta-section";
+import { EditableContent } from "@/components/editable-content";
+import { getPageContent } from "@/lib/content";
+import { isAdmin } from "@/lib/auth";
 
 const STATS = [
   { value: "$2T+", label: "NYC Metro Economy" },
@@ -90,7 +95,10 @@ const PARTNERS = [
   "Regione Lazio",
 ];
 
-export default function HomePage() {
+export default async function HomePage() {
+  const content = await getPageContent("home");
+  const admin = await isAdmin();
+
   return (
     <>
       {/* Hero */}
@@ -113,6 +121,13 @@ export default function HomePage() {
           </p>
         </div>
       </section>
+
+      <EditableContent
+        slug="home"
+        rawContent={content?.raw ?? ""}
+        body={content?.body ?? ""}
+        isAdmin={admin}
+      />
 
       <StatsSection stats={STATS} />
 

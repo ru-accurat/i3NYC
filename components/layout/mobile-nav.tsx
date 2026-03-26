@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { logoutAction } from "@/app/admin/actions";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -61,13 +62,25 @@ export function MobileNav({ isAdmin }: MobileNavProps) {
               {l.label}
             </Link>
           ))}
-          {isAdmin && (
+          {isAdmin ? (
+            <>
+              <Separator className="my-2" />
+              <form action={logoutAction}>
+                <button
+                  type="submit"
+                  className="w-full rounded-md px-3 py-2.5 text-left text-sm text-primary/70 transition-colors hover:text-primary"
+                >
+                  Logout
+                </button>
+              </form>
+            </>
+          ) : (
             <>
               <Separator className="my-2" />
               <Link
                 href="/admin/login"
                 onClick={() => setOpen(false)}
-                className="rounded-md px-3 py-2.5 text-sm text-primary/70 transition-colors hover:text-primary"
+                className="rounded-md px-3 py-2.5 text-sm text-foreground/40 transition-colors hover:text-foreground/60"
               >
                 Admin
               </Link>

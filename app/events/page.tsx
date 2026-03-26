@@ -1,6 +1,11 @@
+export const dynamic = "force-dynamic";
+
 import { HeroSection } from "@/components/sections/hero-section";
 import { EventList } from "@/components/sections/event-list";
 import { CTASection } from "@/components/sections/cta-section";
+import { EditableContent } from "@/components/editable-content";
+import { getPageContent } from "@/lib/content";
+import { isAdmin } from "@/lib/auth";
 
 const UPCOMING_EVENTS = [
   {
@@ -44,7 +49,10 @@ const PAST_EVENTS = [
   },
 ];
 
-export default function EventsPage() {
+export default async function EventsPage() {
+  const content = await getPageContent("events");
+  const admin = await isAdmin();
+
   return (
     <>
       <HeroSection
@@ -52,6 +60,13 @@ export default function EventsPage() {
         title="Where Italian innovation meets"
         titleAccent="New York."
         description="From intimate roundtables to large-scale conferences, our events create meaningful connections between Italian innovators and the U.S. ecosystem."
+      />
+
+      <EditableContent
+        slug="events"
+        rawContent={content?.raw ?? ""}
+        body={content?.body ?? ""}
+        isAdmin={admin}
       />
 
       <EventList
