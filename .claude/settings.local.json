@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.i3nyc.org)",
+      "WebFetch(domain:github.com)",
+      "Bash(npx create-next-app@latest preview --ts --tailwind --eslint --app --src-dir=false --import-alias=\"@/*\" --turbopack)",
+      "Bash(kill %1)",
+      "Bash(yes \"\")",
+      "Bash(npx shadcn@latest init -d)",
+      "Bash(npx shadcn@latest add button card badge separator avatar -o)",
+      "Bash(curl -sLo public/i3nyc-logo.svg \"https://cdn.prod.website-files.com/671a70dd9361a2b56f6aca48/671a72ebea8e49fc798e89fa_i3nyc-logo-w.svg\")",
+      "Bash(curl -sLo public/i3nyc-expanded.svg \"https://cdn.prod.website-files.com/671a70dd9361a2b56f6aca48/67f93ea2401c84b297cfef1a_i3nyc-expanded.svg\")",
+      "mcp__Claude_Preview__preview_start",
+      "WebFetch(domain:oak.is)",
+      "Bash(node -e \":*)",
+      "Bash(npx create-next-app@latest i3nyc-scaffold --ts --tailwind --eslint --app --src-dir=false --import-alias=\"@/*\" --turbopack)",
+      "Bash(for f:*)",
+      "Bash(do cp:*)",
+      "Bash(done)",
+      "Bash(cp -R app /Users/gabrielerossi/Desktop/Claude/Claude_Projects/I3NYC/)",
+      "Bash(cp -R public /Users/gabrielerossi/Desktop/Claude/Claude_Projects/I3NYC/)",
+      "Bash(npm install:*)"
+    ]
+  }
+}
