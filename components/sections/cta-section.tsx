@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
 
 interface CTASectionProps {
   title: string;
@@ -31,13 +30,12 @@ export function CTASection({
           )}
         </h2>
         <div className="mt-10 flex items-center gap-6">
-          <Button
-            render={<Link href={primaryHref} />}
-            size="lg"
-            className="rounded-full px-10 text-sm font-medium tracking-wide"
+          <Link
+            href={primaryHref}
+            className="inline-flex h-9 items-center justify-center rounded-full bg-primary px-10 text-sm font-medium tracking-wide text-primary-foreground transition-colors hover:bg-primary/80"
           >
             {primaryLabel}
-          </Button>
+          </Link>
           {secondaryLabel && secondaryHref && (
             <Link
               href={secondaryHref}

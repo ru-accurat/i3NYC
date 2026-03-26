@@ -2,9 +2,9 @@
   "version": "0.0.1",
   "configurations": [
     {
-      "name": "i3nyc-preview",
+      "name": "i3nyc",
       "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev", "--prefix", "preview"],
+      "runtimeArgs": ["run", "dev"],
       "port": 3000
     }
   ]

@@ -1,5 +1,4 @@
 import { HeroSection } from "@/components/sections/hero-section";
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 export default function ContactPage() {
@@ -24,13 +23,12 @@ export default function ContactPage() {
               how I3/NYC can support your journey into the U.S. market.
             </p>
             <div className="mt-10 flex items-center gap-6">
-              <Button
-                render={<a href="mailto:info@i3nyc.org" />}
-                size="lg"
-                className="rounded-full px-10 text-sm font-medium tracking-wide"
+              <a
+                href="mailto:info@i3nyc.org"
+                className="inline-flex h-9 items-center justify-center rounded-full bg-primary px-10 text-sm font-medium tracking-wide text-primary-foreground transition-colors hover:bg-primary/80"
               >
                 Email Us
-              </Button>
+              </a>
               <Link
                 href="/membership"
                 className="text-sm text-muted-foreground underline underline-offset-4 transition-colors hover:text-foreground"
