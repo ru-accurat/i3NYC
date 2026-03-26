@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
+import { EditorProvider } from "@/components/editor/editor-provider";
 import { isAdmin } from "@/lib/auth";
 import "./globals.css";
 
@@ -33,9 +34,11 @@ export default async function RootLayout({
       className={`dark ${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
-        <SiteHeader isAdmin={admin} />
-        <main className="flex-1 pt-20">{children}</main>
-        <SiteFooter />
+        <EditorProvider>
+          <SiteHeader isAdmin={admin} />
+          <main className="flex-1 pt-20">{children}</main>
+          <SiteFooter />
+        </EditorProvider>
       </body>
     </html>
   );
