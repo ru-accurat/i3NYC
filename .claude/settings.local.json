@@ -19,7 +19,12 @@
       "Bash(done)",
       "Bash(cp -R app /Users/gabrielerossi/Desktop/Claude/Claude_Projects/I3NYC/)",
       "Bash(cp -R public /Users/gabrielerossi/Desktop/Claude/Claude_Projects/I3NYC/)",
-      "Bash(npm install:*)"
+      "Bash(npm install:*)",
+      "Bash(npx shadcn@latest add button card badge separator sheet navigation-menu avatar scroll-area skeleton tabs dialog alert-dialog input label tooltip dropdown-menu)",
+      "Bash(git init:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(npm run:*)"
     ]
   }
 }

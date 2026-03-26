@@ -25,11 +25,11 @@ export default function ContactPage() {
             </p>
             <div className="mt-10 flex items-center gap-6">
               <Button
-                asChild
+                render={<a href="mailto:info@i3nyc.org" />}
                 size="lg"
                 className="rounded-full px-10 text-sm font-medium tracking-wide"
               >
-                <a href="mailto:info@i3nyc.org">Email Us</a>
+                Email Us
               </Button>
               <Link
                 href="/membership"

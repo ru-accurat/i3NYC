@@ -32,11 +32,11 @@ export function CTASection({
         </h2>
         <div className="mt-10 flex items-center gap-6">
           <Button
-            asChild
+            render={<Link href={primaryHref} />}
             size="lg"
             className="rounded-full px-10 text-sm font-medium tracking-wide"
           >
-            <Link href={primaryHref}>{primaryLabel}</Link>
+            {primaryLabel}
           </Button>
           {secondaryLabel && secondaryHref && (
             <Link

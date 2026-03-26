@@ -59,7 +59,7 @@ const components: Components = {
   ),
   hr: () => <hr className="my-8 border-border" />,
   img: ({ src, alt }) =>
-    src ? (
+    typeof src === "string" ? (
       <Image
         src={src}
         alt={alt || ""}
