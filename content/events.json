@@ -1,0 +1,33 @@
+{
+  "hero": {
+    "label": "Events",
+    "title": "Where Italian innovation meets",
+    "titleAccent": "New York.",
+    "description": "From intimate roundtables to large-scale conferences, our events create meaningful connections between Italian innovators and the U.S. ecosystem."
+  },
+  "upcoming": {
+    "label": "Upcoming",
+    "title": "Next on the calendar",
+    "items": [
+      { "title": "European Tech Night 2025", "venue": "Spring Place, NYC", "date": "Jun 2025", "detail": "Flagship annual event · 400+ expected attendees" }
+    ]
+  },
+  "past": {
+    "label": "Past Events",
+    "title": "Recent highlights",
+    "items": [
+      { "title": "Lazio Region Program", "venue": "New York City", "date": "Feb 2025", "detail": "200+ participants · 3 roundtables · pitch sessions" },
+      { "title": "Space Economy Chat", "venue": "Italian Consulate", "date": "Dec 2024", "detail": "Col. Walter Villadei · Italian Air Force astronaut" },
+      { "title": "Federico Marchetti", "venue": "YOOX Net-a-Porter", "date": "Sep 2024", "detail": "\"The Geek of Chic\" · co-hosted with NIAF" },
+      { "title": "Innovation Night #3", "venue": "Spring Studios, NYC", "date": "Jun 2024", "detail": "32 startups · 70% VCs & C-level · 300+ attendees" },
+      { "title": "AI Observatory Launch", "venue": "Italian Consulate", "date": "Mar 2024", "detail": "Inaugural AI sector report · panel discussion" }
+    ]
+  },
+  "cta": {
+    "title": "Don't miss the next one.",
+    "primaryLabel": "Join I3/NYC",
+    "primaryHref": "/contact-us",
+    "secondaryLabel": "Become a member",
+    "secondaryHref": "/membership"
+  }
+}

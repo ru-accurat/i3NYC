@@ -1,34 +1,26 @@
-import matter from "gray-matter";
 import { readFromBlob, uploadToBlob } from "./blob";
-
-export interface PageContent {
-  slug: string;
-  frontmatter: Record<string, unknown>;
-  body: string;
-  raw: string;
-}
 
 const CONTENT_PREFIX = "content/";
 
-export async function getPageContent(
+export async function getPageData(
   slug: string
-): Promise<PageContent | null> {
-  const raw = await readFromBlob(`${CONTENT_PREFIX}${slug}.md`);
+): Promise<Record<string, unknown> | null> {
+  const raw = await readFromBlob(`${CONTENT_PREFIX}${slug}.json`);
   if (!raw) return null;
-  const { data, content } = matter(raw);
-  return { slug, frontmatter: data, body: content, raw };
+  try {
+    return JSON.parse(raw);
+  } catch {
+    return null;
+  }
 }
 
-export async function savePageContent(
+export async function savePageData(
   slug: string,
-  raw: string
+  data: Record<string, unknown>
 ): Promise<void> {
-  await uploadToBlob(`${CONTENT_PREFIX}${slug}.md`, raw, "text/markdown");
-}
-
-export function serializeContent(
-  frontmatter: Record<string, unknown>,
-  body: string
-): string {
-  return matter.stringify(body, frontmatter);
+  await uploadToBlob(
+    `${CONTENT_PREFIX}${slug}.json`,
+    JSON.stringify(data, null, 2),
+    "application/json"
+  );
 }

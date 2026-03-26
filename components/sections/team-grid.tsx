@@ -1,3 +1,7 @@
+"use client";
+
+import { EditableText } from "@/components/editor/editable-text";
+
 interface TeamMember {
   name: string;
   role: string;
@@ -8,26 +12,41 @@ interface TeamGridProps {
   label?: string;
   title: string;
   members: TeamMember[];
+  fieldPrefix?: string;
 }
 
-export function TeamGrid({ label, title, members }: TeamGridProps) {
+export function TeamGrid({ label, title, members, fieldPrefix }: TeamGridProps) {
   return (
     <section className="border-y border-border py-28">
       <div className="mx-auto max-w-6xl px-8">
         {label && (
-          <p className="text-sm tracking-wide text-primary">{label}</p>
+          fieldPrefix ? (
+            <EditableText fieldKey={`${fieldPrefix}.label`} value={label} as="p" className="text-sm tracking-wide text-primary" />
+          ) : (
+            <p className="text-sm tracking-wide text-primary">{label}</p>
+          )
         )}
-        <h2 className="mt-4 text-3xl font-light tracking-tight md:text-4xl">
-          {title}
-        </h2>
+        {fieldPrefix ? (
+          <EditableText fieldKey={`${fieldPrefix}.title`} value={title} as="h2" className="mt-4 text-3xl font-light tracking-tight md:text-4xl" />
+        ) : (
+          <h2 className="mt-4 text-3xl font-light tracking-tight md:text-4xl">{title}</h2>
+        )}
         <div className="mt-16 grid gap-x-12 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
-          {members.map((t) => (
-            <div key={t.name}>
+          {members.map((t, idx) => (
+            <div key={idx}>
               <div className="flex h-20 w-20 items-center justify-center rounded-full bg-primary/15 text-xl font-light text-primary">
                 {t.initials}
               </div>
-              <h3 className="mt-5 text-base font-medium">{t.name}</h3>
-              <p className="mt-1 text-sm text-muted-foreground">{t.role}</p>
+              {fieldPrefix ? (
+                <EditableText fieldKey={`${fieldPrefix}.members.${idx}.name`} value={t.name} as="h3" className="mt-5 text-base font-medium" />
+              ) : (
+                <h3 className="mt-5 text-base font-medium">{t.name}</h3>
+              )}
+              {fieldPrefix ? (
+                <EditableText fieldKey={`${fieldPrefix}.members.${idx}.role`} value={t.role} as="p" className="mt-1 text-sm text-muted-foreground" />
+              ) : (
+                <p className="mt-1 text-sm text-muted-foreground">{t.role}</p>
+              )}
             </div>
           ))}
         </div>

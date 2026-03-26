@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getPageContent, savePageContent } from "@/lib/content";
+import { getPageData, savePageData } from "@/lib/content";
 import { isAdmin } from "@/lib/auth";
 
 export async function GET(
@@ -7,14 +7,10 @@ export async function GET(
   { params }: { params: Promise<{ slug: string }> }
 ) {
   const { slug } = await params;
-  const content = await getPageContent(slug);
-  if (!content)
+  const data = await getPageData(slug);
+  if (!data)
     return NextResponse.json({ error: "Not found" }, { status: 404 });
-  return NextResponse.json({
-    raw: content.raw,
-    frontmatter: content.frontmatter,
-    body: content.body,
-  });
+  return NextResponse.json(data);
 }
 
 export async function PUT(
@@ -24,7 +20,9 @@ export async function PUT(
   if (!(await isAdmin()))
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   const { slug } = await params;
-  const { raw } = await req.json();
-  await savePageContent(slug, raw);
+  const data = await req.json();
+  if (!data || typeof data !== "object" || Array.isArray(data))
+    return NextResponse.json({ error: "Invalid data" }, { status: 400 });
+  await savePageData(slug, data);
   return NextResponse.json({ ok: true });
 }

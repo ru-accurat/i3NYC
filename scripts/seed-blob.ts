@@ -5,7 +5,7 @@ import { join } from "path";
 const CONTENT_DIR = join(process.cwd(), "content");
 
 async function seed() {
-  const files = readdirSync(CONTENT_DIR).filter((f) => f.endsWith(".md"));
+  const files = readdirSync(CONTENT_DIR).filter((f) => f.endsWith(".json"));
 
   console.log(`Seeding ${files.length} content files to Vercel Blob...`);
 
@@ -15,7 +15,7 @@ async function seed() {
 
     const blob = await put(pathname, content, {
       access: "public",
-      contentType: "text/markdown",
+      contentType: "application/json",
       addRandomSuffix: false,
     });
 

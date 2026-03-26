@@ -1,77 +1,44 @@
 export const dynamic = "force-dynamic";
 
 import { HeroSection } from "@/components/sections/hero-section";
-import { EditableContent } from "@/components/editable-content";
-import { getPageContent } from "@/lib/content";
+import { ContactInfo } from "@/components/sections/contact-info";
+import { PageShell } from "@/components/editor/page-shell";
+import { getPageData } from "@/lib/content";
 import { isAdmin } from "@/lib/auth";
-import Link from "next/link";
+
+const DEFAULT_DATA = {
+  hero: {
+    label: "Contact",
+    title: "Let's build something",
+    titleAccent: "together.",
+    description: "Whether you're a startup, an enterprise, or an individual innovator, we'd love to hear from you.",
+  },
+  contact: {
+    label: "Get in Touch",
+    title: "Ready to connect with the Italian innovation ecosystem in NYC?",
+    description: "Reach out to learn more about membership, partnerships, events, or how I3/NYC can support your journey into the U.S. market.",
+    email: "info@i3nyc.org",
+    linkedin: "https://www.linkedin.com/company/i3-italian-innovators-initiative",
+    linkedinLabel: "I3 Italian Innovators Initiative",
+    location: "New York City, NY",
+  },
+};
 
 export default async function ContactPage() {
-  const content = await getPageContent("contact-us");
+  const data = (await getPageData("contact-us")) ?? DEFAULT_DATA;
   const admin = await isAdmin();
+  const d = data as typeof DEFAULT_DATA;
 
   return (
-    <>
+    <PageShell slug="contact-us" data={data} isAdmin={admin}>
       <HeroSection
-        label="Contact"
-        title="Let's build something"
-        titleAccent="together."
-        description="Whether you're a startup, an enterprise, or an individual innovator, we'd love to hear from you."
+        label={d.hero.label}
+        title={d.hero.title}
+        titleAccent={d.hero.titleAccent}
+        description={d.hero.description}
+        fieldPrefix="hero"
       />
-
-      <EditableContent
-        slug="contact-us"
-        rawContent={content?.raw ?? ""}
-        body={content?.body ?? ""}
-        isAdmin={admin}
-      />
-
-      <section className="py-28">
-        <div className="mx-auto grid max-w-6xl gap-16 px-8 md:grid-cols-2">
-          <div>
-            <p className="text-sm tracking-wide text-primary">Get in Touch</p>
-            <h2 className="mt-4 text-3xl font-light tracking-tight md:text-4xl">
-              Ready to connect with the Italian innovation ecosystem in NYC?
-            </h2>
-            <p className="mt-6 text-base leading-relaxed text-muted-foreground">
-              Reach out to learn more about membership, partnerships, events, or
-              how I3/NYC can support your journey into the U.S. market.
-            </p>
-            <div className="mt-10 flex items-center gap-6">
-              <a
-                href="mailto:info@i3nyc.org"
-                className="inline-flex h-9 items-center justify-center rounded-full bg-primary px-10 text-sm font-medium tracking-wide text-primary-foreground transition-colors hover:bg-primary/80"
-              >
-                Email Us
-              </a>
-              <Link
-                href="/membership"
-                className="text-sm text-muted-foreground underline underline-offset-4 transition-colors hover:text-foreground"
-              >
-                View membership
-              </Link>
-            </div>
-          </div>
-          <div className="space-y-8">
-            <div>
-              <p className="text-xs tracking-widest text-muted-foreground/50 uppercase">Email</p>
-              <a href="mailto:info@i3nyc.org" className="mt-2 block text-base text-foreground transition-colors hover:text-primary">
-                info@i3nyc.org
-              </a>
-            </div>
-            <div>
-              <p className="text-xs tracking-widest text-muted-foreground/50 uppercase">LinkedIn</p>
-              <a href="https://www.linkedin.com/company/i3-italian-innovators-initiative" target="_blank" rel="noopener noreferrer" className="mt-2 block text-base text-foreground transition-colors hover:text-primary">
-                I3 Italian Innovators Initiative
-              </a>
-            </div>
-            <div>
-              <p className="text-xs tracking-widest text-muted-foreground/50 uppercase">Location</p>
-              <p className="mt-2 text-base text-muted-foreground">New York City, NY</p>
-            </div>
-          </div>
-        </div>
-      </section>
-    </>
+      <ContactInfo contact={d.contact} fieldPrefix="contact" />
+    </PageShell>
   );
 }
