@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { SiteHeader } from "@/components/layout/site-header";
+import { SiteFooter } from "@/components/layout/site-footer";
+import { isAdmin } from "@/lib/auth";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -17,18 +20,22 @@ export const metadata: Metadata = {
   description: "Your Strategic Bridge to the Heart of Innovation",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const admin = await isAdmin();
+
   return (
     <html
       lang="en"
       className={`dark ${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
-        {children}
+        <SiteHeader isAdmin={admin} />
+        <main className="flex-1 pt-20">{children}</main>
+        <SiteFooter />
       </body>
     </html>
   );
