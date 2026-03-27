@@ -1,4 +1,4 @@
-import { put, list } from "@vercel/blob";
+import { put, get } from "@vercel/blob";
 
 export async function uploadToBlob(
   pathname: string,
@@ -6,7 +6,7 @@ export async function uploadToBlob(
   contentType?: string
 ) {
   const blob = await put(pathname, body, {
-    access: "public",
+    access: "private",
     contentType: contentType ?? "text/plain",
     addRandomSuffix: false,
     allowOverwrite: true,
@@ -18,11 +18,10 @@ export async function readFromBlob(
   pathname: string
 ): Promise<string | null> {
   try {
-    const { blobs } = await list({ prefix: pathname, limit: 1 });
-    const match = blobs.find((b) => b.pathname === pathname);
-    if (!match) return null;
-    const res = await fetch(match.url, { next: { revalidate: 0 } });
-    return res.text();
+    const result = await get(pathname, { access: "private" });
+    if (!result) return null;
+    const text = await new Response(result.stream).text();
+    return text;
   } catch {
     // Token not available (e.g. during build) — return null gracefully
     return null;
