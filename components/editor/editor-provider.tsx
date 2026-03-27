@@ -67,12 +67,15 @@ export function EditorProvider({ children }: { children: React.ReactNode }) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
-      if (!res.ok) throw new Error("Save failed");
+      if (!res.ok) {
+        const body = await res.json().catch(() => ({}));
+        throw new Error(body.error || `Save failed (${res.status})`);
+      }
       setIsEditing(false);
       window.location.reload();
     } catch (err) {
       console.error("Save error:", err);
-      alert("Failed to save. Please try again.");
+      alert(`Failed to save: ${err instanceof Error ? err.message : "Unknown error"}`);
     } finally {
       setIsSaving(false);
     }

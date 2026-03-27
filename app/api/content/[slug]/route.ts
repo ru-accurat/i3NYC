@@ -23,6 +23,14 @@ export async function PUT(
   const data = await req.json();
   if (!data || typeof data !== "object" || Array.isArray(data))
     return NextResponse.json({ error: "Invalid data" }, { status: 400 });
-  await savePageData(slug, data);
+  try {
+    await savePageData(slug, data);
+  } catch (err) {
+    console.error("Save error:", err);
+    return NextResponse.json(
+      { error: err instanceof Error ? err.message : "Internal server error" },
+      { status: 500 }
+    );
+  }
   return NextResponse.json({ ok: true });
 }
