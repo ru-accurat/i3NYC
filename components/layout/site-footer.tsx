@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { NAV_LINKS } from "./site-header";
+import { NAV_LINKS } from "@/lib/nav-links";
 
 export function SiteFooter() {
   return (

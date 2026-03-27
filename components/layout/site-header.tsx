@@ -1,18 +1,73 @@
+"use client";
+
+import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { MobileNav } from "./mobile-nav";
 import { LogoutButton } from "./logout-button";
-
-const NAV_LINKS = [
-  { label: "About", href: "/about-us" },
-  { label: "What We Do", href: "/what-we-do" },
-  { label: "Membership", href: "/membership" },
-  { label: "Events", href: "/events" },
-  { label: "Contact", href: "/contact-us" },
-];
+import { NAV_LINKS } from "@/lib/nav-links";
+import type { NavItem } from "@/lib/nav-links";
 
 interface SiteHeaderProps {
   isAdmin?: boolean;
+}
+
+function NavDropdown({ item }: { item: NavItem }) {
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClick(e: MouseEvent) {
+      if (ref.current && !ref.current.contains(e.target as Node)) {
+        setOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
+  }, []);
+
+  return (
+    <div ref={ref} className="relative">
+      <button
+        onClick={() => setOpen(!open)}
+        className="flex items-center gap-1 text-sm text-foreground/60 transition-colors hover:text-foreground"
+      >
+        {item.label}
+        <svg
+          width="10"
+          height="10"
+          viewBox="0 0 10 10"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          className={`mt-px transition-transform ${open ? "rotate-180" : ""}`}
+        >
+          <path d="M2 4l3 3 3-3" />
+        </svg>
+      </button>
+      {open && (
+        <div className="absolute left-0 top-full mt-2 min-w-[280px] rounded-lg border border-border bg-background/95 p-1.5 shadow-xl backdrop-blur-sm">
+          <Link
+            href={item.href}
+            onClick={() => setOpen(false)}
+            className="block rounded-md px-3 py-2 text-xs tracking-wide text-foreground/50 transition-colors hover:bg-primary/10 hover:text-foreground"
+          >
+            All {item.label}
+          </Link>
+          {item.children?.map((child) => (
+            <Link
+              key={child.href}
+              href={child.href}
+              onClick={() => setOpen(false)}
+              className="block rounded-md px-3 py-2 text-sm text-foreground/70 transition-colors hover:bg-primary/10 hover:text-foreground"
+            >
+              {child.label}
+            </Link>
+          ))}
+        </div>
+      )}
+    </div>
+  );
 }
 
 export function SiteHeader({ isAdmin }: SiteHeaderProps) {
@@ -29,15 +84,19 @@ export function SiteHeader({ isAdmin }: SiteHeaderProps) {
           />
         </Link>
         <nav className="hidden items-center gap-10 md:flex">
-          {NAV_LINKS.map((l) => (
-            <Link
-              key={l.href}
-              href={l.href}
-              className="text-sm text-foreground/60 transition-colors hover:text-foreground"
-            >
-              {l.label}
-            </Link>
-          ))}
+          {NAV_LINKS.map((l) =>
+            l.children ? (
+              <NavDropdown key={l.href} item={l} />
+            ) : (
+              <Link
+                key={l.href}
+                href={l.href}
+                className="text-sm text-foreground/60 transition-colors hover:text-foreground"
+              >
+                {l.label}
+              </Link>
+            )
+          )}
           {isAdmin ? (
             <LogoutButton />
           ) : (
@@ -55,4 +114,4 @@ export function SiteHeader({ isAdmin }: SiteHeaderProps) {
   );
 }
 
-export { NAV_LINKS };
+export { NAV_LINKS } from "@/lib/nav-links";
