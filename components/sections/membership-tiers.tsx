@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { EditableText } from "@/components/editor/editable-text";
+import { ArrayItemRemove, ArrayAddButton } from "@/components/editor/array-controls";
 
 interface Tier {
   name: string;
@@ -34,7 +35,8 @@ export function MembershipTiers({ label, title, tiers, fieldPrefix }: Membership
         )}
         <div className="mt-16 grid gap-12 md:grid-cols-3">
           {tiers.map((t, idx) => (
-            <div key={idx}>
+            <div key={idx} className="group relative">
+              {fieldPrefix && <ArrayItemRemove sectionId={fieldPrefix} arrayPath="items" index={idx} />}
               {fieldPrefix ? (
                 <EditableText fieldKey={`${fieldPrefix}.items.${idx}.name`} value={t.name} as="h3" className="text-lg font-medium" />
               ) : (
@@ -52,6 +54,7 @@ export function MembershipTiers({ label, title, tiers, fieldPrefix }: Membership
               )}
             </div>
           ))}
+          {fieldPrefix && <ArrayAddButton sectionId={fieldPrefix} arrayPath="items" label="Add tier" />}
         </div>
         <div className="mt-14">
           <Button size="lg" className="rounded-full px-10 text-sm font-medium tracking-wide">

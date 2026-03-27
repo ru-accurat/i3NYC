@@ -1,12 +1,9 @@
 export const dynamic = "force-dynamic";
 
-import { HeroSection } from "@/components/sections/hero-section";
-import { BenefitsGrid } from "@/components/sections/benefits-grid";
-import { MembershipTiers } from "@/components/sections/membership-tiers";
-import { CTASection } from "@/components/sections/cta-section";
 import { PageShell } from "@/components/editor/page-shell";
 import { getPageData } from "@/lib/content";
 import { isAdmin } from "@/lib/auth";
+import { migratePageData } from "@/lib/migrate-page";
 
 const DEFAULT_DATA = {
   hero: {
@@ -49,40 +46,9 @@ const DEFAULT_DATA = {
 };
 
 export default async function MembershipPage() {
-  const data = (await getPageData("membership")) ?? DEFAULT_DATA;
+  const raw = (await getPageData("membership")) ?? DEFAULT_DATA;
+  const data = migratePageData("membership", raw);
   const admin = await isAdmin();
-  const d = data as typeof DEFAULT_DATA;
 
-  return (
-    <PageShell slug="membership" data={data} isAdmin={admin}>
-      <HeroSection
-        label={d.hero.label}
-        title={d.hero.title}
-        titleAccent={d.hero.titleAccent}
-        description={d.hero.description}
-        fieldPrefix="hero"
-      />
-      <BenefitsGrid
-        label={d.benefits.label}
-        title={d.benefits.title}
-        benefits={d.benefits.items}
-        fieldPrefix="benefits"
-      />
-      <MembershipTiers
-        label={d.tiers.label}
-        title={d.tiers.title}
-        tiers={d.tiers.items}
-        fieldPrefix="tiers"
-      />
-      <CTASection
-        title={d.cta.title}
-        titleAccent={d.cta.titleAccent}
-        primaryLabel={d.cta.primaryLabel}
-        primaryHref={d.cta.primaryHref}
-        secondaryLabel={d.cta.secondaryLabel}
-        secondaryHref={d.cta.secondaryHref}
-        fieldPrefix="cta"
-      />
-    </PageShell>
-  );
+  return <PageShell slug="membership" data={data} isAdmin={admin} />;
 }

@@ -1,12 +1,9 @@
 export const dynamic = "force-dynamic";
 
-import { HeroSection } from "@/components/sections/hero-section";
-import { TeamGrid } from "@/components/sections/team-grid";
-import { StatsSection } from "@/components/sections/stats-section";
-import { PartnersSection } from "@/components/sections/partners-section";
 import { PageShell } from "@/components/editor/page-shell";
 import { getPageData } from "@/lib/content";
 import { isAdmin } from "@/lib/auth";
+import { migratePageData } from "@/lib/migrate-page";
 
 const DEFAULT_DATA = {
   hero: {
@@ -45,23 +42,9 @@ const DEFAULT_DATA = {
 };
 
 export default async function AboutPage() {
-  const data = (await getPageData("about-us")) ?? DEFAULT_DATA;
+  const raw = (await getPageData("about-us")) ?? DEFAULT_DATA;
+  const data = migratePageData("about-us", raw);
   const admin = await isAdmin();
-  const d = data as typeof DEFAULT_DATA;
 
-  return (
-    <PageShell slug="about-us" data={data} isAdmin={admin}>
-      <HeroSection
-        label={d.hero.label}
-        title={d.hero.title}
-        titleAccent={d.hero.titleAccent}
-        description={d.hero.description}
-        fieldPrefix="hero"
-      />
-      <StatsSection stats={d.stats} fieldPrefix="stats" />
-      <TeamGrid label={d.board.label} title={d.board.title} members={d.board.members} fieldPrefix="board" />
-      <TeamGrid label={d.team.label} title={d.team.title} members={d.team.members} fieldPrefix="team" />
-      <PartnersSection partners={d.partners} fieldPrefix="partners" />
-    </PageShell>
-  );
+  return <PageShell slug="about-us" data={data} isAdmin={admin} />;
 }

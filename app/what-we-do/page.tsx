@@ -1,12 +1,9 @@
 export const dynamic = "force-dynamic";
 
-import { HeroSection } from "@/components/sections/hero-section";
-import { InitiativeList } from "@/components/sections/initiative-list";
-import { PartnersSection } from "@/components/sections/partners-section";
-import { CTASection } from "@/components/sections/cta-section";
 import { PageShell } from "@/components/editor/page-shell";
 import { getPageData } from "@/lib/content";
 import { isAdmin } from "@/lib/auth";
+import { migratePageData } from "@/lib/migrate-page";
 
 const DEFAULT_DATA = {
   hero: {
@@ -38,35 +35,9 @@ const DEFAULT_DATA = {
 };
 
 export default async function WhatWeDoPage() {
-  const data = (await getPageData("what-we-do")) ?? DEFAULT_DATA;
+  const raw = (await getPageData("what-we-do")) ?? DEFAULT_DATA;
+  const data = migratePageData("what-we-do", raw);
   const admin = await isAdmin();
-  const d = data as typeof DEFAULT_DATA;
 
-  return (
-    <PageShell slug="what-we-do" data={data} isAdmin={admin}>
-      <HeroSection
-        label={d.hero.label}
-        title={d.hero.title}
-        titleAccent={d.hero.titleAccent}
-        description={d.hero.description}
-        fieldPrefix="hero"
-      />
-      <InitiativeList
-        label={d.initiatives.label}
-        title={d.initiatives.title}
-        initiatives={d.initiatives.items}
-        fieldPrefix="initiatives"
-      />
-      <PartnersSection partners={d.partners} fieldPrefix="partners" />
-      <CTASection
-        title={d.cta.title}
-        titleAccent={d.cta.titleAccent}
-        primaryLabel={d.cta.primaryLabel}
-        primaryHref={d.cta.primaryHref}
-        secondaryLabel={d.cta.secondaryLabel}
-        secondaryHref={d.cta.secondaryHref}
-        fieldPrefix="cta"
-      />
-    </PageShell>
-  );
+  return <PageShell slug="what-we-do" data={data} isAdmin={admin} />;
 }

@@ -1,10 +1,11 @@
 "use client";
 
 import { useEditor } from "./editor-provider";
+import type { PageSections } from "@/lib/sections";
 
 interface EditButtonProps {
   slug: string;
-  pageData: Record<string, unknown>;
+  pageData: PageSections;
 }
 
 export function EditButton({ slug, pageData }: EditButtonProps) {

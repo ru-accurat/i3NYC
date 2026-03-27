@@ -2,6 +2,7 @@
 
 import { Separator } from "@/components/ui/separator";
 import { EditableText } from "@/components/editor/editable-text";
+import { ArrayItemRemove, ArrayAddButton } from "@/components/editor/array-controls";
 
 interface Benefit {
   title: string;
@@ -34,7 +35,8 @@ export function BenefitsGrid({ label, title, benefits, fieldPrefix }: BenefitsGr
         <Separator className="mt-12 opacity-40" />
         <div className="mt-12 grid gap-x-12 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
           {benefits.map((b, idx) => (
-            <div key={idx}>
+            <div key={idx} className="group relative">
+              {fieldPrefix && <ArrayItemRemove sectionId={fieldPrefix} arrayPath="items" index={idx} />}
               {fieldPrefix ? (
                 <EditableText fieldKey={`${fieldPrefix}.items.${idx}.title`} value={b.title} as="h3" className="text-base font-medium" />
               ) : (
@@ -47,6 +49,7 @@ export function BenefitsGrid({ label, title, benefits, fieldPrefix }: BenefitsGr
               )}
             </div>
           ))}
+          {fieldPrefix && <ArrayAddButton sectionId={fieldPrefix} arrayPath="items" label="Add benefit" />}
         </div>
       </div>
     </section>

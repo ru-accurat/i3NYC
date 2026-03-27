@@ -2,6 +2,7 @@
 
 import { Separator } from "@/components/ui/separator";
 import { EditableText } from "@/components/editor/editable-text";
+import { ArrayItemRemove, ArrayAddButton } from "@/components/editor/array-controls";
 
 interface Event {
   title: string;
@@ -35,7 +36,8 @@ export function EventList({ label, title, events, fieldPrefix }: EventListProps)
         )}
         <div className="mt-16 space-y-0">
           {events.map((e, idx) => (
-            <div key={idx}>
+            <div key={idx} className="group relative">
+              {fieldPrefix && <ArrayItemRemove sectionId={fieldPrefix} arrayPath="items" index={idx} />}
               {idx > 0 && <Separator className="opacity-40" />}
               <div className="grid gap-2 py-7 md:grid-cols-[200px_1fr_1fr]">
                 {fieldPrefix ? (
@@ -63,6 +65,7 @@ export function EventList({ label, title, events, fieldPrefix }: EventListProps)
               </div>
             </div>
           ))}
+          {fieldPrefix && <ArrayAddButton sectionId={fieldPrefix} arrayPath="items" label="Add event" />}
         </div>
       </div>
     </section>

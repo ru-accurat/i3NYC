@@ -1,6 +1,7 @@
 "use client";
 
 import { EditableText } from "@/components/editor/editable-text";
+import { ArrayItemRemove, ArrayAddButton } from "@/components/editor/array-controls";
 
 interface TeamMember {
   name: string;
@@ -33,7 +34,8 @@ export function TeamGrid({ label, title, members, fieldPrefix }: TeamGridProps) 
         )}
         <div className="mt-16 grid gap-x-12 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
           {members.map((t, idx) => (
-            <div key={idx}>
+            <div key={idx} className="group relative">
+              {fieldPrefix && <ArrayItemRemove sectionId={fieldPrefix} arrayPath="members" index={idx} />}
               <div className="flex h-20 w-20 items-center justify-center rounded-full bg-primary/15 text-xl font-light text-primary">
                 {t.initials}
               </div>
@@ -49,6 +51,7 @@ export function TeamGrid({ label, title, members, fieldPrefix }: TeamGridProps) 
               )}
             </div>
           ))}
+          {fieldPrefix && <ArrayAddButton sectionId={fieldPrefix} arrayPath="members" label="Add member" />}
         </div>
       </div>
     </section>

@@ -1,10 +1,9 @@
 export const dynamic = "force-dynamic";
 
-import { HeroSection } from "@/components/sections/hero-section";
-import { ContactInfo } from "@/components/sections/contact-info";
 import { PageShell } from "@/components/editor/page-shell";
 import { getPageData } from "@/lib/content";
 import { isAdmin } from "@/lib/auth";
+import { migratePageData } from "@/lib/migrate-page";
 
 const DEFAULT_DATA = {
   hero: {
@@ -25,20 +24,9 @@ const DEFAULT_DATA = {
 };
 
 export default async function ContactPage() {
-  const data = (await getPageData("contact-us")) ?? DEFAULT_DATA;
+  const raw = (await getPageData("contact-us")) ?? DEFAULT_DATA;
+  const data = migratePageData("contact-us", raw);
   const admin = await isAdmin();
-  const d = data as typeof DEFAULT_DATA;
 
-  return (
-    <PageShell slug="contact-us" data={data} isAdmin={admin}>
-      <HeroSection
-        label={d.hero.label}
-        title={d.hero.title}
-        titleAccent={d.hero.titleAccent}
-        description={d.hero.description}
-        fieldPrefix="hero"
-      />
-      <ContactInfo contact={d.contact} fieldPrefix="contact" />
-    </PageShell>
-  );
+  return <PageShell slug="contact-us" data={data} isAdmin={admin} />;
 }

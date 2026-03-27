@@ -2,6 +2,7 @@
 
 import { Separator } from "@/components/ui/separator";
 import { EditableText } from "@/components/editor/editable-text";
+import { ArrayItemRemove, ArrayAddButton } from "@/components/editor/array-controls";
 
 interface Initiative {
   title: string;
@@ -33,7 +34,8 @@ export function InitiativeList({ label, title, initiatives, fieldPrefix }: Initi
         )}
         <div className="mt-16 space-y-0">
           {initiatives.map((item, idx) => (
-            <div key={idx}>
+            <div key={idx} className="group relative">
+              {fieldPrefix && <ArrayItemRemove sectionId={fieldPrefix} arrayPath="items" index={idx} />}
               {idx > 0 && <Separator className="opacity-40" />}
               <div className="grid gap-4 py-8 md:grid-cols-[1fr_2fr] md:gap-12">
                 {fieldPrefix ? (
@@ -49,6 +51,7 @@ export function InitiativeList({ label, title, initiatives, fieldPrefix }: Initi
               </div>
             </div>
           ))}
+          {fieldPrefix && <ArrayAddButton sectionId={fieldPrefix} arrayPath="items" label="Add initiative" />}
         </div>
       </div>
     </section>

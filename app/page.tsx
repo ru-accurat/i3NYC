@@ -1,16 +1,9 @@
 export const dynamic = "force-dynamic";
 
-import { StatsSection } from "@/components/sections/stats-section";
-import { InitiativeList } from "@/components/sections/initiative-list";
-
-import { EventList } from "@/components/sections/event-list";
-import { MembershipTiers } from "@/components/sections/membership-tiers";
-import { PartnersSection } from "@/components/sections/partners-section";
-import { CTASection } from "@/components/sections/cta-section";
 import { PageShell } from "@/components/editor/page-shell";
-import { HomeHero } from "@/components/sections/home-hero";
 import { getPageData } from "@/lib/content";
 import { isAdmin } from "@/lib/auth";
+import { migratePageData } from "@/lib/migrate-page";
 
 const DEFAULT_DATA = {
   hero: {
@@ -42,10 +35,10 @@ const DEFAULT_DATA = {
     label: "Events",
     title: "Recent highlights",
     items: [
-      { title: "European Tech Night", venue: "Spring Place, NYC", date: "Jun 2025", detail: "400+ attendees \u00b7 32 startups \u00b7 70% VCs & C-level" },
-      { title: "Lazio Region Program", venue: "New York City", date: "Feb 2025", detail: "200+ participants \u00b7 3 roundtables \u00b7 pitch sessions" },
-      { title: "Space Economy Chat", venue: "Italian Consulate", date: "Dec 2025", detail: "Col. Walter Villadei \u00b7 Italian Air Force astronaut" },
-      { title: "Federico Marchetti", venue: "YOOX Net-a-Porter", date: "Sep 2025", detail: "\"The Geek of Chic\" \u00b7 co-hosted with NIAF" },
+      { title: "European Tech Night", venue: "Spring Place, NYC", date: "Jun 2025", detail: "400+ attendees · 32 startups · 70% VCs & C-level" },
+      { title: "Lazio Region Program", venue: "New York City", date: "Feb 2025", detail: "200+ participants · 3 roundtables · pitch sessions" },
+      { title: "Space Economy Chat", venue: "Italian Consulate", date: "Dec 2025", detail: "Col. Walter Villadei · Italian Air Force astronaut" },
+      { title: "Federico Marchetti", venue: "YOOX Net-a-Porter", date: "Sep 2025", detail: "\"The Geek of Chic\" · co-hosted with NIAF" },
     ],
   },
   tiers: {
@@ -69,48 +62,9 @@ const DEFAULT_DATA = {
 };
 
 export default async function HomePage() {
-  const data = (await getPageData("home")) ?? DEFAULT_DATA;
+  const raw = (await getPageData("home")) ?? DEFAULT_DATA;
+  const data = migratePageData("home", raw);
   const admin = await isAdmin();
-  const d = data as typeof DEFAULT_DATA;
 
-  return (
-    <PageShell slug="home" data={data} isAdmin={admin}>
-      <HomeHero hero={d.hero} fieldPrefix="hero" />
-
-      <StatsSection stats={d.stats} fieldPrefix="stats" />
-
-      <InitiativeList
-        label={d.initiatives.label}
-        title={d.initiatives.title}
-        initiatives={d.initiatives.items}
-        fieldPrefix="initiatives"
-      />
-
-      <EventList
-        label={d.events.label}
-        title={d.events.title}
-        events={d.events.items}
-        fieldPrefix="events"
-      />
-
-      <MembershipTiers
-        label={d.tiers.label}
-        title={d.tiers.title}
-        tiers={d.tiers.items}
-        fieldPrefix="tiers"
-      />
-
-      <PartnersSection partners={d.partners} fieldPrefix="partners" />
-
-      <CTASection
-        title={d.cta.title}
-        titleAccent={d.cta.titleAccent}
-        primaryLabel={d.cta.primaryLabel}
-        primaryHref={d.cta.primaryHref}
-        secondaryLabel={d.cta.secondaryLabel}
-        secondaryHref={d.cta.secondaryHref}
-        fieldPrefix="cta"
-      />
-    </PageShell>
-  );
+  return <PageShell slug="home" data={data} isAdmin={admin} />;
 }
