@@ -1,39 +1,66 @@
 {
-  "hero": {
-    "label": "Membership",
-    "title": "Join the community shaping",
-    "titleAccent": "Italian innovation globally.",
-    "description": "Whether you're a startup, an individual professional, or a corporation, I3/NYC offers a membership tier designed for your goals."
-  },
-  "benefits": {
-    "label": "Benefits",
-    "title": "Everything you need to succeed in the U.S. innovation market.",
-    "items": [
-      { "title": "Investor Access", "description": "Direct introductions to VCs, angels, and corporate investors active in the NYC ecosystem." },
-      { "title": "Mentorship", "description": "One-on-one guidance from experienced founders and industry leaders who have navigated the U.S. market." },
-      { "title": "Events & Networking", "description": "Priority access to I3/NYC events, pitch sessions, roundtables, and flagship conferences." },
-      { "title": "Market Intelligence", "description": "Sector-specific reports and analysis from our AI & Thematic Observatories." },
-      { "title": "Community", "description": "Join a network of 6,000+ Italian innovators, entrepreneurs, and professionals in NYC." },
-      { "title": "Visibility", "description": "Showcase your company at I3/NYC events and through our communication channels." },
-      { "title": "Talent Pipeline", "description": "Access our Talent Dashboard to find bilingual professionals for your U.S. operations." },
-      { "title": "Strategic Partnerships", "description": "Facilitated connections with corporations, government agencies, and academic institutions." }
-    ]
-  },
-  "tiers": {
-    "label": "Tiers",
-    "title": "Choose the membership that fits your ambitions.",
-    "items": [
-      { "name": "Startup", "price": "$500/yr", "note": "Mentorship, investor access, community, event priority, talent dashboard" },
-      { "name": "Individual", "price": "$100/yr", "note": "Events, networking, knowledge sharing, community access" },
-      { "name": "Corporate", "price": "By invite", "note": "Priority access, strategic partnerships, branding, dedicated support" }
-    ]
-  },
-  "cta": {
-    "title": "Start your journey",
-    "titleAccent": "today.",
-    "primaryLabel": "Become a Member",
-    "primaryHref": "/contact-us",
-    "secondaryLabel": "Questions? Get in touch",
-    "secondaryHref": "/contact-us"
-  }
+  "sections": [
+    {
+      "id": "membership-hero",
+      "type": "hero",
+      "data": {
+        "label": "Membership",
+        "title": "A contribution to a",
+        "titleAccent": "public-interest mission.",
+        "description": "Join a rapidly growing community of innovators. We offer a tiered membership model designed to deliver substantial value and actionable insights — not a transactional purchase of services, but a contribution to advancing public understanding of innovation."
+      }
+    },
+    {
+      "id": "membership-tiers",
+      "type": "membership-tiers",
+      "data": {
+        "label": "Tiers",
+        "title": "Choose the membership that fits your role.",
+        "items": [
+          {
+            "name": "Student / Young Professional",
+            "price": "$50/yr",
+            "note": "Public convenings, new-graduate mentoring, access to research, recognition as a Student Supporter."
+          },
+          {
+            "name": "Individual Member",
+            "price": "$100/yr",
+            "note": "Invitations to educational programs, 1 complimentary public event per year, priority registration."
+          },
+          {
+            "name": "Charter Member",
+            "price": "Invite Only",
+            "note": "Enhanced recognition, leadership briefing invitations, 5 complimentary public events, annual gala access."
+          },
+          {
+            "name": "Institutional Partner",
+            "price": "Contact Us",
+            "note": "For startups, corporations, universities, and financial institutions. From Emerging to Premier tiers."
+          }
+        ]
+      }
+    },
+    {
+      "id": "membership-spotlights",
+      "type": "member-spotlight",
+      "data": {
+        "label": "Member Spotlights",
+        "title": "The faces of I3/NYC.",
+        "description": "A growing roster of Italian and Italian-American innovators shaping NYC's ecosystem.",
+        "items": []
+      }
+    },
+    {
+      "id": "membership-cta",
+      "type": "cta",
+      "data": {
+        "title": "Apply for membership",
+        "titleAccent": "today.",
+        "primaryLabel": "Become Member",
+        "primaryHref": "/contact-us",
+        "secondaryLabel": "Join the Community",
+        "secondaryHref": "/events-programs"
+      }
+    }
+  ]
 }

@@ -1,33 +1,78 @@
 {
-  "hero": {
-    "label": "Events",
-    "title": "Where Italian innovation meets",
-    "titleAccent": "New York.",
-    "description": "From intimate roundtables to large-scale conferences, our events create meaningful connections between Italian innovators and the U.S. ecosystem."
-  },
-  "upcoming": {
-    "label": "Upcoming",
-    "title": "Next on the calendar",
-    "items": [
-      { "title": "European Tech Night 2025", "venue": "Spring Place, NYC", "date": "Jun 2025", "detail": "Flagship annual event · 400+ expected attendees" }
-    ]
-  },
-  "past": {
-    "label": "Past Events",
-    "title": "Recent highlights",
-    "items": [
-      { "title": "Lazio Region Program", "venue": "New York City", "date": "Feb 2025", "detail": "200+ participants · 3 roundtables · pitch sessions" },
-      { "title": "Space Economy Chat", "venue": "Italian Consulate", "date": "Dec 2024", "detail": "Col. Walter Villadei · Italian Air Force astronaut" },
-      { "title": "Federico Marchetti", "venue": "YOOX Net-a-Porter", "date": "Sep 2024", "detail": "\"The Geek of Chic\" · co-hosted with NIAF" },
-      { "title": "Innovation Night #3", "venue": "Spring Studios, NYC", "date": "Jun 2024", "detail": "32 startups · 70% VCs & C-level · 300+ attendees" },
-      { "title": "AI Observatory Launch", "venue": "Italian Consulate", "date": "Mar 2024", "detail": "Inaugural AI sector report · panel discussion" }
-    ]
-  },
-  "cta": {
-    "title": "Don't miss the next one.",
-    "primaryLabel": "Join I3/NYC",
-    "primaryHref": "/contact-us",
-    "secondaryLabel": "Become a member",
-    "secondaryHref": "/membership"
-  }
+  "sections": [
+    {
+      "id": "events-hero",
+      "type": "hero",
+      "data": {
+        "label": "Events & Programs",
+        "title": "Dual-track programming for",
+        "titleAccent": "knowledge and community.",
+        "description": "Showcasing high-value content alongside community-driven social touchpoints. From flagship summits to monthly aperitivi, we build the bridge in person."
+      }
+    },
+    {
+      "id": "events-track-a",
+      "type": "event-track",
+      "data": {
+        "label": "Track A",
+        "title": "The Knowledge Series",
+        "description": "High-profile anchors — carefully curated events featuring educational panelists and executive networking.",
+        "items": [
+          {
+            "title": "Spring Member Summit",
+            "venue": "Featuring Consul General Giuseppe Pastorelli",
+            "date": "May 11, 2026",
+            "detail": "\"Dominating the New York Market: The 2026 Roadmap.\""
+          },
+          {
+            "title": "European Tech Event",
+            "venue": "#NYTechWeek",
+            "date": "Jun 5, 2026",
+            "detail": "Collaborative spotlight on Europe's edge."
+          },
+          {
+            "title": "The New Codes of Luxury",
+            "venue": "NYC",
+            "date": "Oct 7, 2026",
+            "detail": "Digital acceleration and heritage featuring global CDOs."
+          },
+          {
+            "title": "Applied Intelligence & Governance",
+            "venue": "NYC",
+            "date": "Dec 3, 2026",
+            "detail": "Flagship AI event on ethics and enterprise-grade deployment."
+          }
+        ]
+      }
+    },
+    {
+      "id": "events-track-b",
+      "type": "event-track",
+      "data": {
+        "label": "Track B",
+        "title": "The Aperitivo Culture",
+        "description": "Regular monthly events designed for informal relationship building. Last Wednesday/Thursday of every month, 6:00 PM – 8:30 PM.",
+        "items": [
+          {
+            "title": "April Happy Hour",
+            "venue": "Authentic NYC enotecas",
+            "date": "Apr 16, 2026",
+            "detail": "Immersing members in genuine Italian lifestyle."
+          }
+        ]
+      }
+    },
+    {
+      "id": "events-cta",
+      "type": "cta",
+      "data": {
+        "title": "Join us at the next",
+        "titleAccent": "convening.",
+        "primaryLabel": "Become Member",
+        "primaryHref": "/membership",
+        "secondaryLabel": "Join the Community",
+        "secondaryHref": "/membership"
+      }
+    }
+  ]
 }
