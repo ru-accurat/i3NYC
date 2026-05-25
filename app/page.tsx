@@ -6,59 +6,90 @@ import { isAdmin } from "@/lib/auth";
 import { migratePageData } from "@/lib/migrate-page";
 
 const DEFAULT_DATA = {
-  hero: {
-    label: "Italian Innovators Initiative",
-    title: "Building bridges between",
-    titleAccent: "Italian innovation",
-    titleSuffix: "and New York City.",
-    description: "A non-profit endorsed by the Italian Consulate in New York, connecting startups, enterprises, and talent with the $2T+ NYC innovation market.",
-  },
-  stats: [
-    { value: "$2T+", label: "NYC Metro Economy" },
-    { value: "25K+", label: "Startups" },
-    { value: "6K+", label: "Italian Innovators" },
-    { value: "300+", label: "VC Firms" },
-    { value: "$177B", label: "VC Invested" },
+  sections: [
+    {
+      id: "home-hero",
+      type: "home-hero",
+      data: {
+        label: "Italian Innovators Initiative",
+        title: "Scaling the Bridge:",
+        titleAccent: "The Premier Hub for Italian Innovation",
+        titleSuffix: "in the NYC Metro Area.",
+        description:
+          "Bridging Italian excellence with the global tech, finance, and academic powerhouses of New York City.",
+      },
+    },
+    {
+      id: "home-stats",
+      type: "stats",
+      data: {
+        items: [
+          { value: "$2T+", label: "NY Metro economy" },
+          { value: "25K+", label: "Startups valued at $700B" },
+          { value: "6K+", label: "Italian innovators in NY" },
+          { value: "300+", label: "Venture capital firms" },
+          { value: "$177B", label: "VC invested 2019–Q1 2025" },
+        ],
+      },
+    },
+    {
+      id: "home-pillars",
+      type: "strategic-pillars",
+      data: {
+        label: "Value Proposition",
+        title: "The 4 Strategic Pillars",
+        items: [
+          {
+            title: "Knowledge-First Exchange",
+            description:
+              "Shifting from passive networking to providing actionable market intelligence.",
+          },
+          {
+            title: "Institutional Integration",
+            description:
+              "Deep structural partnership with the Italian Consulate General in New York, serving as the operational engine for innovation mandates.",
+          },
+          {
+            title: "Community Consolidation",
+            description:
+              "Fostering the local ecosystem through sustained engagement and networking.",
+          },
+          {
+            title: "Charter Member Foundation",
+            description:
+              "An invitation-only circle of senior leaders and mentors shaping the vision and character of our initiatives.",
+          },
+        ],
+      },
+    },
+    {
+      id: "home-spotlight",
+      type: "event-spotlight",
+      data: {
+        label: "Active Event",
+        title: "Don't miss what's next.",
+        eventTitle: "Spring Member Summit: Dominating the New York Market — The 2026 Roadmap.",
+        date: "May 11, 2026",
+        venue: "Featuring the official welcome of Consul General Giuseppe Pastorelli",
+        description:
+          "Our flagship spring convening on positioning Italian innovation across NYC's tech, finance, and academic ecosystems.",
+        ctaLabel: "RSVP",
+        ctaHref: "https://luma.com/as9d6tor",
+      },
+    },
+    {
+      id: "home-cta",
+      type: "cta",
+      data: {
+        title: "Become part of the operational engine for",
+        titleAccent: "Italian innovation in NYC.",
+        primaryLabel: "Become Member",
+        primaryHref: "/membership",
+        secondaryLabel: "Explore upcoming events",
+        secondaryHref: "/events-programs",
+      },
+    },
   ],
-  initiatives: {
-    label: "What We Do",
-    title: "Five programs connecting Italian innovators with U.S. opportunities.",
-    items: [
-      { title: "Acceleration Programs", description: "Intensive training, mentorship, and investor access tailored to Italian startups and SMEs entering the U.S. market." },
-      { title: "AI & Thematic Observatories", description: "Deep sector analysis covering AI, fintech, fashion tech, life sciences, climate tech, and more." },
-      { title: "Corporate Orientation", description: "Market-entry strategies and investor introductions for established companies exploring NYC markets." },
-      { title: "Networking & Matchmaking", description: "Flagship events, pitch sessions, and curated networking across the Italian and American innovation ecosystem." },
-      { title: "Talent Dashboard", description: "A curated pool of bilingual Italian professionals eager to work in the U.S. innovation economy." },
-    ],
-  },
-  events: {
-    label: "Events",
-    title: "Recent highlights",
-    items: [
-      { title: "European Tech Night", venue: "Spring Place, NYC", date: "Jun 2025", detail: "400+ attendees · 32 startups · 70% VCs & C-level" },
-      { title: "Lazio Region Program", venue: "New York City", date: "Feb 2025", detail: "200+ participants · 3 roundtables · pitch sessions" },
-      { title: "Space Economy Chat", venue: "Italian Consulate", date: "Dec 2025", detail: "Col. Walter Villadei · Italian Air Force astronaut" },
-      { title: "Federico Marchetti", venue: "YOOX Net-a-Porter", date: "Sep 2025", detail: "\"The Geek of Chic\" · co-hosted with NIAF" },
-    ],
-  },
-  tiers: {
-    label: "Membership",
-    title: "Join the community shaping Italian innovation globally.",
-    items: [
-      { name: "Startup", price: "$500/yr", note: "Mentorship, investor access, community" },
-      { name: "Individual", price: "$100/yr", note: "Events, networking, knowledge sharing" },
-      { name: "Corporate", price: "By invite", note: "Priority access, strategic partnerships" },
-    ],
-  },
-  partners: ["Italian Consulate in NY", "Fondazione Brodolini", "AIFI", "Lazio Innova", "Regione Lazio"],
-  cta: {
-    title: "Propel Italian innovation,",
-    titleAccent: "globally.",
-    primaryLabel: "Join I3/NYC",
-    primaryHref: "/contact-us",
-    secondaryLabel: "Get in touch",
-    secondaryHref: "/contact-us",
-  },
 };
 
 export default async function HomePage() {

@@ -1,0 +1,100 @@
+export const dynamic = "force-dynamic";
+
+import { PageShell } from "@/components/editor/page-shell";
+import { getPageData } from "@/lib/content";
+import { isAdmin } from "@/lib/auth";
+import { migratePageData } from "@/lib/migrate-page";
+
+const DEFAULT_DATA = {
+  sections: [
+    {
+      id: "reports-hero",
+      type: "hero",
+      data: {
+        label: "Knowledge Hub",
+        title: "Reports, Insights &",
+        titleAccent: "Media.",
+        description:
+          "I3/NYC as a trusted source for innovation intelligence — converting NYC ecosystem trends into practical insights for Italian founders and professionals.",
+      },
+    },
+    {
+      id: "reports-hub",
+      type: "knowledge-hub",
+      data: {
+        label: "Insights & Media",
+        title: "Explore the knowledge hub.",
+        items: [
+          {
+            type: "white-paper",
+            title: "Innovation & Tech Report · March 2026",
+            description:
+              "A data-driven analysis of 1,473 Italian and Italian-American innovation and technology professionals across the TriState area.",
+            href: "/reports-insights-media/innovation-tech-march-2026",
+          },
+          {
+            type: "dashboard",
+            title: "Ecosystem Spotlight Dashboard",
+            description:
+              "Insights about the Italian innovation community in NYC — companies, founders, and capital flows.",
+            href: "",
+          },
+          {
+            type: "intelligence",
+            title: "Innovation Intelligence",
+            description:
+              "Converting NYC ecosystem trends into practical insights for Italian founders and professionals.",
+            href: "",
+          },
+          {
+            type: "newsletter",
+            title: "Innovation Intelligence in Your Inbox",
+            description:
+              "Monthly deep-dives feeding our weekly LinkedIn posts. Subscribe for the latest from the bridge.",
+            href: "",
+          },
+          {
+            type: "social",
+            title: "Follow us on LinkedIn",
+            description:
+              "Real-time engagement and professional network growth across the Italian innovation community.",
+            href: "https://www.linkedin.com/company/i3-italian-innovators-initiative",
+          },
+        ],
+      },
+    },
+    {
+      id: "reports-spotlights",
+      type: "member-spotlight",
+      data: {
+        label: "Member Spotlight",
+        title: "Italian founders and academics shaping NYC.",
+        description:
+          "Structured exposure for the members contributing to the city's innovation excellence.",
+        items: [],
+      },
+    },
+    {
+      id: "reports-cta",
+      type: "cta",
+      data: {
+        title: "Stay close to the",
+        titleAccent: "knowledge flow.",
+        primaryLabel: "Become Member",
+        primaryHref: "/membership",
+        secondaryLabel: "Join the Community",
+        secondaryHref: "/events-programs",
+      },
+    },
+  ],
+};
+
+export default async function ReportsPage() {
+  const raw = (await getPageData("reports-insights-media")) ?? DEFAULT_DATA;
+  const data = migratePageData("reports-insights-media", raw);
+  const admin = await isAdmin();
+
+  return (
+    <PageShell slug="reports-insights-media" data={data} isAdmin={admin} />
+  );
+}

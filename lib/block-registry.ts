@@ -51,11 +51,11 @@ export const BLOCK_REGISTRY: Record<string, BlockDef> = {
     defaults: {
       label: "Team",
       title: "Team Title",
-      members: [{ name: "Name", role: "Role", initials: "XX" }],
+      members: [{ name: "Name", role: "Role", initials: "XX", portfolio: "" }],
     },
     arrayFields: ["members"],
     itemDefaults: {
-      members: { name: "New Member", role: "Role", initials: "NM" },
+      members: { name: "New Member", role: "Role", initials: "NM", portfolio: "" },
     },
   },
   "initiative-list": {
@@ -137,6 +137,89 @@ export const BLOCK_REGISTRY: Record<string, BlockDef> = {
       primaryHref: "/contact-us",
       secondaryLabel: "Secondary",
       secondaryHref: "/contact-us",
+    },
+  },
+  "strategic-pillars": {
+    label: "Strategic Pillars",
+    defaults: {
+      label: "Value Proposition",
+      title: "The 4 Strategic Pillars",
+      items: [
+        { title: "Pillar", description: "Description." },
+      ],
+    },
+    arrayFields: ["items"],
+    itemDefaults: {
+      items: { title: "New Pillar", description: "Description." },
+    },
+  },
+  "event-spotlight": {
+    label: "Event Spotlight",
+    defaults: {
+      label: "Featured",
+      title: "Active Event",
+      eventTitle: "Event Title",
+      date: "Date",
+      venue: "Venue",
+      description: "Short description of the spotlight event.",
+      ctaLabel: "RSVP",
+      ctaHref: "https://luma.com/",
+    },
+  },
+  "event-track": {
+    label: "Event Track",
+    defaults: {
+      label: "Track",
+      title: "Track Title",
+      description: "Description of this track.",
+      items: [
+        { title: "Event Name", venue: "Venue", date: "Jan 2026", detail: "Details" },
+      ],
+    },
+    arrayFields: ["items"],
+    itemDefaults: {
+      items: { title: "New Event", venue: "Venue", date: "Jan 2026", detail: "Details" },
+    },
+  },
+  "cooperation-list": {
+    label: "Cooperation List",
+    defaults: {
+      label: "Projects",
+      title: "Cooperation & Projects",
+      items: [
+        { name: "Partner Name", description: "Description.", contact: "" },
+      ],
+    },
+    arrayFields: ["items"],
+    itemDefaults: {
+      items: { name: "New Partner", description: "Description.", contact: "" },
+    },
+  },
+  "knowledge-hub": {
+    label: "Knowledge Hub",
+    defaults: {
+      label: "Knowledge Hub",
+      title: "Insights & Media",
+      items: [
+        { type: "white-paper", title: "Tile Title", description: "Description.", href: "" },
+      ],
+    },
+    arrayFields: ["items"],
+    itemDefaults: {
+      items: { type: "white-paper", title: "New Tile", description: "Description.", href: "" },
+    },
+  },
+  "member-spotlight": {
+    label: "Member Spotlight",
+    defaults: {
+      label: "Members",
+      title: "Member Spotlights",
+      description: "Featured members from the I3/NYC community.",
+      items: [],
+    },
+    arrayFields: ["items"],
+    itemDefaults: {
+      items: { name: "Member Name", role: "Role · Company", initials: "MN", quote: "" },
     },
   },
 };

@@ -1,0 +1,58 @@
+{
+  "sections": [
+    {
+      "id": "projects-hero",
+      "type": "hero",
+      "data": {
+        "label": "Projects & Cooperation",
+        "title": "Global innovation flows and",
+        "titleAccent": "institutional advisory.",
+        "description": "Highlighting the partnerships and missions that connect Italian institutions, regions, and organizations with the NYC innovation ecosystem."
+      }
+    },
+    {
+      "id": "projects-list",
+      "type": "cooperation-list",
+      "data": {
+        "label": "Strategic Cooperation",
+        "title": "Active projects and institutional missions.",
+        "items": [
+          {
+            "name": "Fondazione Brodolini",
+            "description": "Strategic joint activities focusing on HR & Tech and human capital development.",
+            "contact": "Description and contact"
+          },
+          {
+            "name": "Regione Lazio Mission",
+            "description": "Leading and advising institutional missions on ecosystem discovery, market access, and custom innovation reports.",
+            "contact": "Description and contact"
+          }
+        ]
+      }
+    },
+    {
+      "id": "projects-partners",
+      "type": "partners",
+      "data": {
+        "items": [
+          "Italian Tech Alliance",
+          "Italian United Italian Societies",
+          "Italian Tech Club",
+          "NIAF Young Professional Network"
+        ]
+      }
+    },
+    {
+      "id": "projects-cta",
+      "type": "cta",
+      "data": {
+        "title": "Partner with us as a",
+        "titleAccent": "convener of Italian innovation.",
+        "primaryLabel": "Become Member",
+        "primaryHref": "/membership",
+        "secondaryLabel": "Get in touch",
+        "secondaryHref": "/contact-us"
+      }
+    }
+  ]
+}

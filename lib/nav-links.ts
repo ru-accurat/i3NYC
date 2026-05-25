@@ -6,15 +6,14 @@ export interface NavItem {
 
 export const NAV_LINKS: NavItem[] = [
   { label: "About", href: "/about-us" },
-  { label: "What We Do", href: "/what-we-do" },
   { label: "Membership", href: "/membership" },
-  { label: "Events", href: "/events" },
+  { label: "Events & Programs", href: "/events-programs" },
+  { label: "Projects & Cooperation", href: "/projects-cooperation" },
   {
-    label: "Reports",
-    href: "/reports",
+    label: "Reports, Insights & Media",
+    href: "/reports-insights-media",
     children: [
-      { label: "Innovation & Tech Report · Mar 2026", href: "/reports/innovation-tech-march-2026" },
+      { label: "Innovation & Tech Report · Mar 2026", href: "/reports-insights-media/innovation-tech-march-2026" },
     ],
   },
-  { label: "Contact", href: "/contact-us" },
 ];

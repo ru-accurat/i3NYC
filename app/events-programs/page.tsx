@@ -1,0 +1,96 @@
+export const dynamic = "force-dynamic";
+
+import { PageShell } from "@/components/editor/page-shell";
+import { getPageData } from "@/lib/content";
+import { isAdmin } from "@/lib/auth";
+import { migratePageData } from "@/lib/migrate-page";
+
+const DEFAULT_DATA = {
+  sections: [
+    {
+      id: "events-hero",
+      type: "hero",
+      data: {
+        label: "Events & Programs",
+        title: "Dual-track programming for",
+        titleAccent: "knowledge and community.",
+        description:
+          "Showcasing high-value content alongside community-driven social touchpoints. From flagship summits to monthly aperitivi, we build the bridge in person.",
+      },
+    },
+    {
+      id: "events-track-a",
+      type: "event-track",
+      data: {
+        label: "Track A",
+        title: "The Knowledge Series",
+        description:
+          "High-profile anchors — carefully curated events featuring educational panelists and executive networking.",
+        items: [
+          {
+            title: "Spring Member Summit",
+            venue: "Featuring Consul General Giuseppe Pastorelli",
+            date: "May 11, 2026",
+            detail: "\"Dominating the New York Market: The 2026 Roadmap.\"",
+          },
+          {
+            title: "European Tech Event",
+            venue: "#NYTechWeek",
+            date: "Jun 5, 2026",
+            detail: "Collaborative spotlight on Europe's edge.",
+          },
+          {
+            title: "The New Codes of Luxury",
+            venue: "NYC",
+            date: "Oct 7, 2026",
+            detail: "Digital acceleration and heritage featuring global CDOs.",
+          },
+          {
+            title: "Applied Intelligence & Governance",
+            venue: "NYC",
+            date: "Dec 3, 2026",
+            detail: "Flagship AI event on ethics and enterprise-grade deployment.",
+          },
+        ],
+      },
+    },
+    {
+      id: "events-track-b",
+      type: "event-track",
+      data: {
+        label: "Track B",
+        title: "The Aperitivo Culture",
+        description:
+          "Regular monthly events designed for informal relationship building. Last Wednesday/Thursday of every month, 6:00 PM – 8:30 PM.",
+        items: [
+          {
+            title: "April Happy Hour",
+            venue: "Authentic NYC enotecas",
+            date: "Apr 16, 2026",
+            detail: "Immersing members in genuine Italian lifestyle.",
+          },
+        ],
+      },
+    },
+    {
+      id: "events-cta",
+      type: "cta",
+      data: {
+        title: "Join us at the next",
+        titleAccent: "convening.",
+        primaryLabel: "Become Member",
+        primaryHref: "/membership",
+        secondaryLabel: "Join the Community",
+        secondaryHref: "/membership",
+      },
+    },
+  ],
+};
+
+export default async function EventsPage() {
+  const raw = (await getPageData("events-programs")) ?? DEFAULT_DATA;
+  const data = migratePageData("events-programs", raw);
+  const admin = await isAdmin();
+
+  return <PageShell slug="events-programs" data={data} isAdmin={admin} />;
+}

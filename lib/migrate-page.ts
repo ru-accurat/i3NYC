@@ -28,11 +28,9 @@ export function migratePageData(
       return migrateHome(d);
     case "about-us":
       return migrateAbout(d);
-    case "what-we-do":
-      return migrateWhatWeDo(d);
     case "membership":
       return migrateMembership(d);
-    case "events":
+    case "events-programs":
       return migrateEvents(d);
     case "contact-us":
       return migrateContact(d);
@@ -63,15 +61,6 @@ function migrateAbout(d: Record<string, unknown>): PageSections {
   if (d.board) sections.push(sec("team-grid", d.board as Record<string, unknown>));
   if (d.team) sections.push(sec("team-grid", d.team as Record<string, unknown>));
   if (d.partners) sections.push(sec("partners", { items: d.partners }));
-  return { sections };
-}
-
-function migrateWhatWeDo(d: Record<string, unknown>): PageSections {
-  const sections: Section[] = [];
-  if (d.hero) sections.push(sec("hero", d.hero as Record<string, unknown>));
-  if (d.initiatives) sections.push(sec("initiative-list", d.initiatives as Record<string, unknown>));
-  if (d.partners) sections.push(sec("partners", { items: d.partners }));
-  if (d.cta) sections.push(sec("cta", d.cta as Record<string, unknown>));
   return { sections };
 }
 

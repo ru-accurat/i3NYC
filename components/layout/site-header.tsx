@@ -73,7 +73,7 @@ function NavDropdown({ item }: { item: NavItem }) {
 export function SiteHeader({ isAdmin }: SiteHeaderProps) {
   return (
     <header className="fixed top-0 z-50 w-full bg-background/80 backdrop-blur-sm">
-      <div className="mx-auto flex h-20 max-w-6xl items-center justify-between px-8">
+      <div className="mx-auto flex h-20 max-w-6xl items-center justify-between gap-6 px-8">
         <Link href="/" className="flex items-center gap-2">
           <Image
             src="/i3nyc-logo.svg"
@@ -83,7 +83,7 @@ export function SiteHeader({ isAdmin }: SiteHeaderProps) {
             className="h-9 w-auto"
           />
         </Link>
-        <nav className="hidden items-center gap-10 md:flex">
+        <nav className="hidden flex-1 items-center justify-center gap-8 md:flex">
           {NAV_LINKS.map((l) =>
             l.children ? (
               <NavDropdown key={l.href} item={l} />
@@ -97,6 +97,20 @@ export function SiteHeader({ isAdmin }: SiteHeaderProps) {
               </Link>
             )
           )}
+        </nav>
+        <div className="hidden items-center gap-3 md:flex">
+          <Link
+            href="/membership"
+            className="inline-flex h-8 items-center justify-center rounded-full bg-primary px-4 text-xs font-medium tracking-wide text-primary-foreground transition-colors hover:bg-primary/80"
+          >
+            Become Member
+          </Link>
+          <Link
+            href="/events-programs"
+            className="text-xs text-foreground/60 transition-colors hover:text-foreground"
+          >
+            Events
+          </Link>
           {isAdmin ? (
             <LogoutButton />
           ) : (
@@ -107,7 +121,7 @@ export function SiteHeader({ isAdmin }: SiteHeaderProps) {
               Admin
             </Link>
           )}
-        </nav>
+        </div>
         <MobileNav isAdmin={isAdmin} />
       </div>
     </header>

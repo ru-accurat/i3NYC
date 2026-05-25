@@ -12,6 +12,12 @@ import { BenefitsGrid } from "@/components/sections/benefits-grid";
 import { PartnersSection } from "@/components/sections/partners-section";
 import { CTASection } from "@/components/sections/cta-section";
 import { ContactInfo } from "@/components/sections/contact-info";
+import { StrategicPillars } from "@/components/sections/strategic-pillars";
+import { EventSpotlight } from "@/components/sections/event-spotlight";
+import { EventTrack } from "@/components/sections/event-track";
+import { CooperationList } from "@/components/sections/cooperation-list";
+import { KnowledgeHub } from "@/components/sections/knowledge-hub";
+import { MemberSpotlight } from "@/components/sections/member-spotlight";
 
 /**
  * Renders a single Section by mapping its `type` to the appropriate component.
@@ -64,7 +70,7 @@ export function BlockRenderer({ section }: { section: Section }) {
         <TeamGrid
           label={d.label as string}
           title={d.title as string}
-          members={d.members as { name: string; role: string; initials: string }[]}
+          members={d.members as { name: string; role: string; initials: string; portfolio?: string }[]}
           fieldPrefix={id}
         />
       );
@@ -134,6 +140,73 @@ export function BlockRenderer({ section }: { section: Section }) {
           primaryHref={d.primaryHref as string | undefined}
           secondaryLabel={d.secondaryLabel as string | undefined}
           secondaryHref={d.secondaryHref as string | undefined}
+          fieldPrefix={id}
+        />
+      );
+
+    case "strategic-pillars":
+      return (
+        <StrategicPillars
+          label={d.label as string}
+          title={d.title as string}
+          pillars={d.items as { title: string; description: string }[]}
+          fieldPrefix={id}
+        />
+      );
+
+    case "event-spotlight":
+      return (
+        <EventSpotlight
+          label={d.label as string | undefined}
+          title={d.title as string}
+          eventTitle={d.eventTitle as string}
+          date={d.date as string}
+          venue={d.venue as string}
+          description={d.description as string}
+          ctaLabel={d.ctaLabel as string}
+          ctaHref={d.ctaHref as string}
+          fieldPrefix={id}
+        />
+      );
+
+    case "event-track":
+      return (
+        <EventTrack
+          label={d.label as string | undefined}
+          title={d.title as string}
+          description={d.description as string | undefined}
+          events={d.items as { title: string; venue: string; date: string; detail: string }[]}
+          fieldPrefix={id}
+        />
+      );
+
+    case "cooperation-list":
+      return (
+        <CooperationList
+          label={d.label as string | undefined}
+          title={d.title as string}
+          items={d.items as { name: string; description: string; contact?: string }[]}
+          fieldPrefix={id}
+        />
+      );
+
+    case "knowledge-hub":
+      return (
+        <KnowledgeHub
+          label={d.label as string | undefined}
+          title={d.title as string}
+          items={d.items as { type: string; title: string; description: string; href?: string }[]}
+          fieldPrefix={id}
+        />
+      );
+
+    case "member-spotlight":
+      return (
+        <MemberSpotlight
+          label={d.label as string | undefined}
+          title={d.title as string}
+          description={d.description as string | undefined}
+          items={(d.items as { name: string; role: string; initials: string; quote?: string }[]) ?? []}
           fieldPrefix={id}
         />
       );

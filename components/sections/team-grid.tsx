@@ -7,6 +7,7 @@ interface TeamMember {
   name: string;
   role: string;
   initials: string;
+  portfolio?: string;
 }
 
 interface TeamGridProps {
@@ -48,6 +49,13 @@ export function TeamGrid({ label, title, members, fieldPrefix }: TeamGridProps) 
                 <EditableText fieldKey={`${fieldPrefix}.members.${idx}.role`} value={t.role} as="p" className="mt-1 text-sm text-muted-foreground" />
               ) : (
                 <p className="mt-1 text-sm text-muted-foreground">{t.role}</p>
+              )}
+              {t.portfolio !== undefined && (
+                fieldPrefix ? (
+                  <EditableText fieldKey={`${fieldPrefix}.members.${idx}.portfolio`} value={t.portfolio || ""} as="p" className="mt-2 text-xs leading-relaxed tracking-wide text-muted-foreground/70" />
+                ) : (
+                  t.portfolio && <p className="mt-2 text-xs leading-relaxed tracking-wide text-muted-foreground/70">{t.portfolio}</p>
+                )
               )}
             </div>
           ))}
