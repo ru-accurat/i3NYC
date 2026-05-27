@@ -25,10 +25,10 @@
             "detail": "\"Dominating the New York Market: The 2026 Roadmap.\""
           },
           {
-            "title": "European Tech Event",
-            "venue": "#NYTechWeek",
-            "date": "Jun 5, 2026",
-            "detail": "Collaborative spotlight on Europe's edge."
+            "title": "European Innovation Summit",
+            "venue": "5th Avenue flagship (TBA) · TECH WEEK by a16z",
+            "date": "Jun 4, 2026",
+            "detail": "Co-hosted with the Italian Ministry of Foreign Affairs, produced by How2Scale. 13 countries on AI and global scaling. First confirmed speaker: Adrian Hernandez-Liebo (ElevenLabs)."
           },
           {
             "title": "The New Codes of Luxury",
@@ -60,16 +60,10 @@
             "detail": "Immersing members in genuine Italian lifestyle."
           },
           {
-            "title": "May Aperitivo",
-            "venue": "TBA · West Village",
+            "title": "Salotto Aperitivo",
+            "venue": "Salotto.nyc · 84 Withers St, Brooklyn · 6:30–8:30 PM",
             "date": "May 28, 2026",
-            "detail": "Post-Summit informal mixer for new and returning members."
-          },
-          {
-            "title": "June Tech-Week Aperitivo",
-            "venue": "Tribeca · TBA",
-            "date": "Jun 4, 2026",
-            "detail": "Casual gathering during NY Tech Week."
+            "detail": "Authentic Italian aperitivo at a hub for cultural research and production founded by NYC-based Italian creatives. Drinks + Italian bites. 80 guest cap."
           },
           {
             "title": "July Summer Edition",
@@ -88,6 +82,18 @@
         "title": "Past convenings",
         "description": "A snapshot of recent gatherings that shaped the community.",
         "items": [
+          {
+            "title": "Italian Innovators & Alumni Gathering",
+            "venue": "TIH NY · Transatlantic Innovation Hub",
+            "date": "Apr 23, 2026",
+            "detail": "With the Regione Lombardia delegation led by On. Raffaele Cattaneo and Guido Bertolaso. Co-hosted with MAECI and the Transatlantic Harmonic Foundation."
+          },
+          {
+            "title": "April Happy Hour",
+            "venue": "Midtown Manhattan",
+            "date": "Apr 16, 2026",
+            "detail": "First aperitivo of 2026 — private room, full house."
+          },
           {
             "title": "European Tech Night",
             "venue": "Spring Place, NYC",
