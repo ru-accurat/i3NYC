@@ -12,8 +12,8 @@ const DEFAULT_DATA = {
       type: "hero",
       data: {
         label: "Events & Programs",
-        title: "Dual-track programming for",
-        titleAccent: "knowledge and community.",
+        title: "Dual-track programming for knowledge and",
+        titleAccent: "community.",
         description:
           "Showcasing high-value content alongside community-driven social touchpoints. From flagship summits to monthly aperitivi, we build the bridge in person.",
       },

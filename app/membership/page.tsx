@@ -12,8 +12,8 @@ const DEFAULT_DATA = {
       type: "hero",
       data: {
         label: "Membership",
-        title: "A contribution to a",
-        titleAccent: "public-interest mission.",
+        title: "A contribution to a public-interest",
+        titleAccent: "mission.",
         description:
           "Join a rapidly growing community of innovators. We offer a tiered membership model designed to deliver substantial value and actionable insights — not a transactional purchase of services, but a contribution to advancing public understanding of innovation.",
       },

@@ -24,9 +24,9 @@ export function StatsSection({ stats, fieldPrefix }: StatsSectionProps) {
           <div key={idx} className="group relative min-w-[120px]">
             {sectionId && <ArrayItemRemove sectionId={sectionId} arrayPath="items" index={idx} />}
             {fieldPrefix ? (
-              <EditableText fieldKey={`${fieldPrefix}.${idx}.value`} value={s.value} as="p" className="font-mono text-4xl font-light tracking-tight text-primary md:text-5xl" />
+              <EditableText fieldKey={`${fieldPrefix}.${idx}.value`} value={s.value} as="p" className="text-4xl font-light tracking-tight text-foreground tabular-nums md:text-5xl" />
             ) : (
-              <p className="font-mono text-4xl font-light tracking-tight text-primary md:text-5xl">{s.value}</p>
+              <p className="text-4xl font-light tracking-tight text-foreground tabular-nums md:text-5xl">{s.value}</p>
             )}
             {fieldPrefix ? (
               <EditableText fieldKey={`${fieldPrefix}.${idx}.label`} value={s.label} as="p" className="mt-2 text-xs tracking-wide text-muted-foreground" />

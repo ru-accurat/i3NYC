@@ -12,8 +12,8 @@ const DEFAULT_DATA = {
       type: "hero",
       data: {
         label: "Projects & Cooperation",
-        title: "Global innovation flows and",
-        titleAccent: "institutional advisory.",
+        title: "Global innovation flows and institutional",
+        titleAccent: "advisory.",
         description:
           "Highlighting the partnerships and missions that connect Italian institutions, regions, and organizations with the NYC innovation ecosystem.",
       },
@@ -29,13 +29,13 @@ const DEFAULT_DATA = {
             name: "Fondazione Brodolini",
             description:
               "Strategic joint activities focusing on HR & Tech and human capital development.",
-            contact: "Description and contact",
+            contact: "fondazionebrodolini.it",
           },
           {
             name: "Regione Lazio Mission",
             description:
               "Leading and advising institutional missions on ecosystem discovery, market access, and custom innovation reports.",
-            contact: "Description and contact",
+            contact: "regione.lazio.it",
           },
         ],
       },

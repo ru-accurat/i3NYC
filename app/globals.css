@@ -127,4 +127,26 @@
   html {
     @apply font-sans;
   }
+  /* Stronger, more visible focus indicators (WCAG 2.1 AA) ---------------- */
+  /* Default: nothing on plain :focus to avoid mouse-click rings.            */
+  /* :focus-visible only fires for keyboard/programmatic focus.             */
+  *:focus {
+    outline: none;
+  }
+  *:focus-visible {
+    outline: 3px solid rgb(245, 245, 245);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+  /* Reduced motion: kill all animations and transitions globally.          */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
 }

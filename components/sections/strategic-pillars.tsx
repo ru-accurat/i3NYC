@@ -22,9 +22,9 @@ export function StrategicPillars({ label, title, pillars, fieldPrefix }: Strateg
       <div className="mx-auto max-w-6xl px-8">
         {label && (
           fieldPrefix ? (
-            <EditableText fieldKey={`${fieldPrefix}.label`} value={label} as="p" className="text-sm tracking-wide text-primary" />
+            <EditableText fieldKey={`${fieldPrefix}.label`} value={label} as="p" className="text-xs font-medium uppercase tracking-[0.2em] text-primary" />
           ) : (
-            <p className="text-sm tracking-wide text-primary">{label}</p>
+            <p className="text-xs font-medium uppercase tracking-[0.2em] text-primary">{label}</p>
           )
         )}
         {fieldPrefix ? (

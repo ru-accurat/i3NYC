@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { MobileNav } from "./mobile-nav";
 import { LogoutButton } from "./logout-button";
 import { NAV_LINKS } from "@/lib/nav-links";
@@ -12,9 +13,17 @@ interface SiteHeaderProps {
   isAdmin?: boolean;
 }
 
-function NavDropdown({ item }: { item: NavItem }) {
+/** Does the given href correspond to the current path (including child routes)? */
+function isActive(href: string, pathname: string | null): boolean {
+  if (!pathname) return false;
+  if (href === "/") return pathname === "/";
+  return pathname === href || pathname.startsWith(href + "/");
+}
+
+function NavDropdown({ item, pathname }: { item: NavItem; pathname: string | null }) {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
+  const active = isActive(item.href, pathname);
 
   useEffect(() => {
     function handleClick(e: MouseEvent) {
@@ -30,7 +39,11 @@ function NavDropdown({ item }: { item: NavItem }) {
     <div ref={ref} className="relative">
       <button
         onClick={() => setOpen(!open)}
-        className="flex items-center gap-1 text-sm text-foreground/60 transition-colors hover:text-foreground"
+        aria-current={active ? "page" : undefined}
+        className={
+          "flex items-center gap-1 text-sm transition-colors hover:text-foreground " +
+          (active ? "text-foreground" : "text-foreground/60")
+        }
       >
         {item.label}
         <svg
@@ -71,6 +84,7 @@ function NavDropdown({ item }: { item: NavItem }) {
 }
 
 export function SiteHeader({ isAdmin }: SiteHeaderProps) {
+  const pathname = usePathname();
   return (
     <header className="fixed top-0 z-50 w-full bg-background/80 backdrop-blur-sm">
       <div className="mx-auto flex h-20 max-w-6xl items-center justify-between gap-6 px-8">
@@ -86,12 +100,16 @@ export function SiteHeader({ isAdmin }: SiteHeaderProps) {
         <nav className="hidden flex-1 items-center justify-center gap-8 md:flex">
           {NAV_LINKS.map((l) =>
             l.children ? (
-              <NavDropdown key={l.href} item={l} />
+              <NavDropdown key={l.href} item={l} pathname={pathname} />
             ) : (
               <Link
                 key={l.href}
                 href={l.href}
-                className="text-sm text-foreground/60 transition-colors hover:text-foreground"
+                aria-current={isActive(l.href, pathname) ? "page" : undefined}
+                className={
+                  "text-sm transition-colors hover:text-foreground " +
+                  (isActive(l.href, pathname) ? "text-foreground" : "text-foreground/60")
+                }
               >
                 {l.label}
               </Link>
@@ -111,16 +129,7 @@ export function SiteHeader({ isAdmin }: SiteHeaderProps) {
           >
             Events
           </Link>
-          {isAdmin ? (
-            <LogoutButton />
-          ) : (
-            <Link
-              href="/admin/login"
-              className="text-xs text-foreground/40 transition-colors hover:text-foreground/60"
-            >
-              Admin
-            </Link>
-          )}
+          {isAdmin && <LogoutButton />}
         </div>
         <MobileNav isAdmin={isAdmin} />
       </div>

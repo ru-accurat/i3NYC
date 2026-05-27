@@ -22,9 +22,9 @@ export function ContactInfo({ contact, fieldPrefix }: ContactInfoProps) {
       <div className="mx-auto grid max-w-6xl gap-16 px-8 md:grid-cols-2">
         <div>
           {fieldPrefix ? (
-            <EditableText fieldKey={`${fieldPrefix}.label`} value={contact.label} as="p" className="text-sm tracking-wide text-primary" />
+            <EditableText fieldKey={`${fieldPrefix}.label`} value={contact.label} as="p" className="text-xs font-medium uppercase tracking-[0.2em] text-primary" />
           ) : (
-            <p className="text-sm tracking-wide text-primary">{contact.label}</p>
+            <p className="text-xs font-medium uppercase tracking-[0.2em] text-primary">{contact.label}</p>
           )}
           {fieldPrefix ? (
             <EditableText fieldKey={`${fieldPrefix}.title`} value={contact.title} as="h2" className="mt-4 text-3xl font-light tracking-tight md:text-4xl" multiline />

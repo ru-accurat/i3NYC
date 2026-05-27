@@ -12,11 +12,11 @@ const DEFAULT_DATA = {
       type: "home-hero",
       data: {
         label: "Italian Innovators Initiative",
-        title: "Scaling the Bridge:",
-        titleAccent: "The Premier Hub for Italian Innovation",
-        titleSuffix: "in the NYC Metro Area.",
+        title: "Scaling the",
+        titleAccent: "Bridge.",
+        titleSuffix: "",
         description:
-          "Bridging Italian excellence with the global tech, finance, and academic powerhouses of New York City.",
+          "The premier hub for Italian innovation in the NYC Metro Area — bridging Italian excellence with the global tech, finance, and academic powerhouses of New York City.",
       },
     },
     {
@@ -24,9 +24,9 @@ const DEFAULT_DATA = {
       type: "stats",
       data: {
         items: [
-          { value: "$2T+", label: "NY Metro economy" },
+          { value: "$2T+", label: "NYC metro economy" },
           { value: "25K+", label: "Startups valued at $700B" },
-          { value: "6K+", label: "Italian innovators in NY" },
+          { value: "6K+", label: "Italian innovators in NYC" },
           { value: "300+", label: "Venture capital firms" },
           { value: "$177B", label: "VC invested 2019–Q1 2025" },
         ],
@@ -81,8 +81,8 @@ const DEFAULT_DATA = {
       id: "home-cta",
       type: "cta",
       data: {
-        title: "Become part of the operational engine for",
-        titleAccent: "Italian innovation in NYC.",
+        title: "Become part of the operational engine for Italian innovation in",
+        titleAccent: "NYC.",
         primaryLabel: "Become Member",
         primaryHref: "/membership",
         secondaryLabel: "Explore upcoming events",

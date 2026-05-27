@@ -30,9 +30,9 @@ export function EventSpotlight({
       <div className="mx-auto max-w-6xl px-8">
         {label && (
           fieldPrefix ? (
-            <EditableText fieldKey={`${fieldPrefix}.label`} value={label} as="p" className="text-sm tracking-wide text-primary" />
+            <EditableText fieldKey={`${fieldPrefix}.label`} value={label} as="p" className="text-xs font-medium uppercase tracking-[0.2em] text-primary" />
           ) : (
-            <p className="text-sm tracking-wide text-primary">{label}</p>
+            <p className="text-xs font-medium uppercase tracking-[0.2em] text-primary">{label}</p>
           )
         )}
         {fieldPrefix ? (
@@ -44,9 +44,9 @@ export function EventSpotlight({
           <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between md:gap-12">
             <div className="flex-1">
               {fieldPrefix ? (
-                <EditableText fieldKey={`${fieldPrefix}.date`} value={date} as="p" className="text-sm tracking-wide text-primary" />
+                <EditableText fieldKey={`${fieldPrefix}.date`} value={date} as="p" className="text-xs font-medium uppercase tracking-[0.2em] text-primary" />
               ) : (
-                <p className="text-sm tracking-wide text-primary">{date}</p>
+                <p className="text-xs font-medium uppercase tracking-[0.2em] text-primary">{date}</p>
               )}
               {fieldPrefix ? (
                 <EditableText fieldKey={`${fieldPrefix}.eventTitle`} value={eventTitle} as="h3" className="mt-3 text-2xl font-light leading-tight tracking-tight md:text-3xl" />

@@ -23,9 +23,9 @@ export function MembershipTiers({ label, title, tiers, fieldPrefix }: Membership
       <div className="mx-auto max-w-6xl px-8">
         {label && (
           fieldPrefix ? (
-            <EditableText fieldKey={`${fieldPrefix}.label`} value={label} as="p" className="text-sm tracking-wide text-primary" />
+            <EditableText fieldKey={`${fieldPrefix}.label`} value={label} as="p" className="text-xs font-medium uppercase tracking-[0.2em] text-primary" />
           ) : (
-            <p className="text-sm tracking-wide text-primary">{label}</p>
+            <p className="text-xs font-medium uppercase tracking-[0.2em] text-primary">{label}</p>
           )
         )}
         {fieldPrefix ? (
@@ -33,7 +33,7 @@ export function MembershipTiers({ label, title, tiers, fieldPrefix }: Membership
         ) : (
           <h2 className="mt-4 max-w-xl text-3xl font-light tracking-tight md:text-4xl">{title}</h2>
         )}
-        <div className="mt-16 grid gap-12 md:grid-cols-3">
+        <div className="mt-16 grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
           {tiers.map((t, idx) => (
             <div key={idx} className="group relative">
               {fieldPrefix && <ArrayItemRemove sectionId={fieldPrefix} arrayPath="items" index={idx} />}
@@ -43,9 +43,9 @@ export function MembershipTiers({ label, title, tiers, fieldPrefix }: Membership
                 <h3 className="text-lg font-medium">{t.name}</h3>
               )}
               {fieldPrefix ? (
-                <EditableText fieldKey={`${fieldPrefix}.items.${idx}.price`} value={t.price} as="p" className="mt-2 font-mono text-3xl font-light text-primary" />
+                <EditableText fieldKey={`${fieldPrefix}.items.${idx}.price`} value={t.price} as="p" className="mt-2 text-3xl font-light tracking-tight text-foreground tabular-nums" />
               ) : (
-                <p className="mt-2 font-mono text-3xl font-light text-primary">{t.price}</p>
+                <p className="mt-2 text-3xl font-light tracking-tight text-foreground tabular-nums">{t.price}</p>
               )}
               {fieldPrefix ? (
                 <EditableText fieldKey={`${fieldPrefix}.items.${idx}.note`} value={t.note} as="p" className="mt-3 text-sm leading-relaxed text-muted-foreground" multiline />
@@ -58,7 +58,7 @@ export function MembershipTiers({ label, title, tiers, fieldPrefix }: Membership
         </div>
         <div className="mt-14">
           <Button size="lg" className="rounded-full px-10 text-sm font-medium tracking-wide">
-            Become a Member
+            Become Member
           </Button>
         </div>
       </div>

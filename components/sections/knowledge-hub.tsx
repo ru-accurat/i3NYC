@@ -1,6 +1,7 @@
 "use client";
 
 import { EditableText } from "@/components/editor/editable-text";
+import { useEditor } from "@/components/editor/editor-provider";
 import { ArrayItemRemove, ArrayAddButton } from "@/components/editor/array-controls";
 
 interface KnowledgeTile {
@@ -31,14 +32,15 @@ function typeLabel(t: string) {
 }
 
 export function KnowledgeHub({ label, title, items, fieldPrefix }: KnowledgeHubProps) {
+  const { isEditing } = useEditor();
   return (
     <section className="py-28">
       <div className="mx-auto max-w-6xl px-8">
         {label && (
           fieldPrefix ? (
-            <EditableText fieldKey={`${fieldPrefix}.label`} value={label} as="p" className="text-sm tracking-wide text-primary" />
+            <EditableText fieldKey={`${fieldPrefix}.label`} value={label} as="p" className="text-xs font-medium uppercase tracking-[0.2em] text-primary" />
           ) : (
-            <p className="text-sm tracking-wide text-primary">{label}</p>
+            <p className="text-xs font-medium uppercase tracking-[0.2em] text-primary">{label}</p>
           )
         )}
         {fieldPrefix ? (
@@ -74,8 +76,14 @@ export function KnowledgeHub({ label, title, items, fieldPrefix }: KnowledgeHubP
                 ) : (
                   <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{tile.description}</p>
                 )}
-                {fieldPrefix && (
-                  <EditableText fieldKey={`${fieldPrefix}.items.${idx}.href`} value={tile.href || ""} as="p" className="mt-3 text-xs tracking-wide text-muted-foreground/70" />
+                {/* Show href row only while actively editing — not on the public site. */}
+                {fieldPrefix && isEditing && (
+                  <EditableText
+                    fieldKey={`${fieldPrefix}.items.${idx}.href`}
+                    value={tile.href || ""}
+                    as="p"
+                    className="mt-3 text-xs tracking-wide text-muted-foreground/70"
+                  />
                 )}
               </TileWrapper>
             );

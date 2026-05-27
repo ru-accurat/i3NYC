@@ -16,9 +16,9 @@ export function HeroSection({ label, title, titleAccent, description, fieldPrefi
       <div className="mx-auto w-full max-w-6xl">
         {label && (
           fieldPrefix ? (
-            <EditableText fieldKey={`${fieldPrefix}.label`} value={label} as="p" className="text-sm tracking-wide text-primary" />
+            <EditableText fieldKey={`${fieldPrefix}.label`} value={label} as="p" className="text-xs font-medium uppercase tracking-[0.2em] text-primary" />
           ) : (
-            <p className="text-sm tracking-wide text-primary">{label}</p>
+            <p className="text-xs font-medium uppercase tracking-[0.2em] text-primary">{label}</p>
           )
         )}
         <h1 className="mt-6 max-w-3xl text-4xl font-light leading-[1.1] tracking-tight md:text-6xl lg:text-7xl">
