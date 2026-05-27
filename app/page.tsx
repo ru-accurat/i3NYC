@@ -66,9 +66,9 @@ const DEFAULT_DATA = {
       id: "home-spotlight",
       type: "event-spotlight",
       data: {
-        label: "Active Event",
-        title: "Don't miss what's next.",
-        eventTitle: "Spring Member Summit: Dominating the New York Market — The 2026 Roadmap.",
+        label: "Next Convening",
+        title: "The Spring Member Summit.",
+        eventTitle: "Dominating the New York Market — The 2026 Roadmap.",
         date: "May 11, 2026",
         venue: "Featuring the official welcome of Consul General Giuseppe Pastorelli",
         description:

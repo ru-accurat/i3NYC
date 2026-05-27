@@ -25,6 +25,7 @@ export const BLOCK_REGISTRY: Record<string, BlockDef> = {
       titleAccent: "accent text",
       titleSuffix: "suffix text.",
       description: "Description paragraph.",
+      bg: { enabled: true, opacity: 0.28 },
     },
   },
   hero: {
@@ -34,6 +35,7 @@ export const BLOCK_REGISTRY: Record<string, BlockDef> = {
       title: "Section Title",
       titleAccent: "accent.",
       description: "Section description text.",
+      bg: { enabled: false, opacity: 0.20 },
     },
   },
   stats: {
@@ -51,11 +53,11 @@ export const BLOCK_REGISTRY: Record<string, BlockDef> = {
     defaults: {
       label: "Team",
       title: "Team Title",
-      members: [{ name: "Name", role: "Role", initials: "XX", portfolio: "" }],
+      members: [{ name: "Name", role: "Role", initials: "XX", portfolio: "", imageUrl: "" }],
     },
     arrayFields: ["members"],
     itemDefaults: {
-      members: { name: "New Member", role: "Role", initials: "NM", portfolio: "" },
+      members: { name: "New Member", role: "Role", initials: "NM", portfolio: "", imageUrl: "" },
     },
   },
   "initiative-list": {

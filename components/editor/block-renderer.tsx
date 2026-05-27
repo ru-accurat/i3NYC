@@ -41,7 +41,14 @@ export function BlockRenderer({ section }: { section: Section }) {
     case "home-hero":
       return (
         <HomeHero
-          hero={d as { label: string; title: string; titleAccent: string; titleSuffix: string; description: string }}
+          hero={d as {
+            label: string;
+            title: string;
+            titleAccent: string;
+            titleSuffix: string;
+            description: string;
+            bg?: import("@/components/sections/network-background").NetworkBackgroundConfig;
+          }}
           fieldPrefix={id}
         />
       );
@@ -53,6 +60,7 @@ export function BlockRenderer({ section }: { section: Section }) {
           title={d.title as string}
           titleAccent={d.titleAccent as string | undefined}
           description={d.description as string | undefined}
+          bg={d.bg as import("@/components/sections/network-background").NetworkBackgroundConfig | undefined}
           fieldPrefix={id}
         />
       );
@@ -70,7 +78,7 @@ export function BlockRenderer({ section }: { section: Section }) {
         <TeamGrid
           label={d.label as string}
           title={d.title as string}
-          members={d.members as { name: string; role: string; initials: string; portfolio?: string }[]}
+          members={d.members as { name: string; role: string; initials: string; portfolio?: string; imageUrl?: string }[]}
           fieldPrefix={id}
         />
       );

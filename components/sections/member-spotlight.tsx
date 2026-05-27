@@ -74,8 +74,13 @@ export function MemberSpotlight({ label, title, description, items, fieldPrefix 
           </div>
         ) : (
           <div className="mt-16 rounded-2xl border border-dashed border-border px-8 py-16 text-center">
-            <p className="text-sm tracking-wide text-muted-foreground">
-              Member spotlights coming soon.
+            <p className="text-sm leading-relaxed text-muted-foreground">
+              Member spotlights launching with our first cohort.
+              <br />
+              <a href="/membership" className="text-primary underline-offset-4 transition-colors hover:underline">
+                Join the community
+              </a>{" "}
+              to be featured.
             </p>
           </div>
         )}

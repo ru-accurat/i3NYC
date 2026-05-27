@@ -8,6 +8,8 @@ interface TeamMember {
   role: string;
   initials: string;
   portfolio?: string;
+  /** Optional portrait image URL. Falls back to monogram circle when missing. */
+  imageUrl?: string;
 }
 
 interface TeamGridProps {
@@ -45,9 +47,24 @@ export function TeamGrid({ label, title, members, fieldPrefix }: TeamGridProps) 
           {members.map((t, idx) => (
             <div key={idx} className="group relative">
               {fieldPrefix && <ArrayItemRemove sectionId={fieldPrefix} arrayPath="members" index={idx} />}
-              <div className="flex h-20 w-20 items-center justify-center rounded-full bg-primary/15 text-xl font-light text-primary">
-                {t.initials}
-              </div>
+              {t.imageUrl ? (
+                <div className="relative h-20 w-20 overflow-hidden rounded-full bg-primary/10">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={t.imageUrl}
+                    alt={`Portrait of ${t.name}`}
+                    className="h-full w-full object-cover grayscale-[0.15]"
+                    loading="lazy"
+                  />
+                </div>
+              ) : (
+                <div
+                  className="flex h-20 w-20 items-center justify-center rounded-full bg-primary/15 text-xl font-light text-primary"
+                  aria-hidden="true"
+                >
+                  {t.initials}
+                </div>
+              )}
               {fieldPrefix ? (
                 <EditableText fieldKey={`${fieldPrefix}.members.${idx}.name`} value={t.name} as="h3" className="mt-5 text-base font-medium" />
               ) : (

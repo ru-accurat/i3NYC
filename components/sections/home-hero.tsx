@@ -1,7 +1,10 @@
 "use client";
 
 import { EditableText } from "@/components/editor/editable-text";
-import { NetworkBackground } from "@/components/sections/network-background";
+import {
+  NetworkBackground,
+  type NetworkBackgroundConfig,
+} from "@/components/sections/network-background";
 
 interface HomeHeroProps {
   hero: {
@@ -10,14 +13,25 @@ interface HomeHeroProps {
     titleAccent: string;
     titleSuffix: string;
     description: string;
+    /** Optional animated network background config. Omit / set enabled=false to disable. */
+    bg?: NetworkBackgroundConfig;
   };
   fieldPrefix?: string;
 }
 
 export function HomeHero({ hero, fieldPrefix }: HomeHeroProps) {
+  const bgEnabled = hero.bg?.enabled ?? true;
   return (
     <section className="relative flex min-h-[calc(100svh-5rem)] flex-col items-start justify-center overflow-hidden px-8">
-      <NetworkBackground opacity={0.28} />
+      {bgEnabled && (
+        <NetworkBackground
+          opacity={hero.bg?.opacity ?? 0.28}
+          nodeCount={hero.bg?.nodeCount}
+          edgeProximity={hero.bg?.edgeProximity}
+          cursorInfluenceRadius={hero.bg?.cursorInfluenceRadius}
+          seed={hero.bg?.seed}
+        />
+      )}
       <div className="relative z-10 mx-auto w-full max-w-6xl">
         {fieldPrefix ? (
           <EditableText fieldKey={`${fieldPrefix}.label`} value={hero.label} as="p" className="text-xs font-medium uppercase tracking-[0.2em] text-primary" />

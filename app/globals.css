@@ -149,4 +149,19 @@
       scroll-behavior: auto !important;
     }
   }
+
+  /* Scroll-fade reveal — used via <RevealOnScroll>.                        */
+  /* Initial state: hidden + nudged down. Revealed state: visible + in place. */
+  .reveal-on-scroll {
+    transition: opacity 500ms cubic-bezier(0.25, 1, 0.5, 1),
+                transform 500ms cubic-bezier(0.25, 1, 0.5, 1);
+  }
+  .reveal-on-scroll[data-reveal="off"] {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  .reveal-on-scroll[data-reveal="on"] {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

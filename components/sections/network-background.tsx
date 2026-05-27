@@ -23,6 +23,20 @@ import { useEffect, useRef } from "react";
  * non-static ancestor (intended use: place inside `relative overflow-hidden`).
  */
 
+/**
+ * CMS-editable config — a JSON shape that can be stored alongside a
+ * hero block's data and passed straight to NetworkBackground props.
+ */
+export interface NetworkBackgroundConfig {
+  /** Render the background? Default true when the field exists. */
+  enabled?: boolean;
+  nodeCount?: number;
+  edgeProximity?: number;
+  cursorInfluenceRadius?: number;
+  opacity?: number;
+  seed?: number;
+}
+
 interface NetworkBackgroundProps {
   /** Number of nodes to render. Default 50. */
   nodeCount?: number;
