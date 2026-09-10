@@ -49,6 +49,7 @@ const DEFAULT_DATA = {
           { name: "Andrea Calcagno", role: "Vice Chair", initials: "AC", portfolio: "", imageUrl: "/board/andrea-calcagno.jpg" },
           { name: "Alessandro Piol", role: "Secretary", initials: "AP", portfolio: "", imageUrl: "/board/alessandro-piol.jpg" },
           { name: "Giovanni Iammarrone", role: "Treasurer", initials: "GI", portfolio: "", imageUrl: "/board/giovanni-iammarrone.jpg" },
+          { name: "Giovanni Scaravilli", role: "Corporate Secretary", initials: "GS", portfolio: "", imageUrl: "" },
           { name: "Dario Calogero", role: "Board Member", initials: "DC", portfolio: "", imageUrl: "/board/dario-calogero.jpg" },
           { name: "Gabriele Rossi", role: "Board Member", initials: "GR", portfolio: "", imageUrl: "/board/gabriele-rossi.jpg" },
           { name: "Alice Biagini", role: "Board Member", initials: "AB", portfolio: "", imageUrl: "/board/alice-biagini.jpg" },
