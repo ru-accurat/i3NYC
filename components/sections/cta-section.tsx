@@ -13,6 +13,9 @@ interface CTASectionProps {
   fieldPrefix?: string;
 }
 
+const externalProps = (href: string) =>
+  href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {};
+
 export function CTASection({ title, titleAccent, primaryLabel = "Join I3/NYC", primaryHref = "/contact-us", secondaryLabel, secondaryHref, fieldPrefix }: CTASectionProps) {
   return (
     <section className="py-28">
@@ -37,7 +40,7 @@ export function CTASection({ title, titleAccent, primaryLabel = "Join I3/NYC", p
           )}
         </h2>
         <div className="mt-10 flex items-center gap-6">
-          <Link href={primaryHref} className="inline-flex h-9 items-center justify-center rounded-full bg-primary px-10 text-sm font-medium tracking-wide text-primary-foreground transition-colors hover:bg-primary/80">
+          <Link href={primaryHref} {...externalProps(primaryHref)} className="inline-flex h-9 items-center justify-center rounded-full bg-primary px-10 text-sm font-medium tracking-wide text-primary-foreground transition-colors hover:bg-primary/80">
             {fieldPrefix ? (
               <EditableText fieldKey={`${fieldPrefix}.primaryLabel`} value={primaryLabel} as="span" />
             ) : (
@@ -45,7 +48,7 @@ export function CTASection({ title, titleAccent, primaryLabel = "Join I3/NYC", p
             )}
           </Link>
           {secondaryLabel && secondaryHref && (
-            <Link href={secondaryHref} className="text-sm text-muted-foreground underline underline-offset-4 transition-colors hover:text-foreground">
+            <Link href={secondaryHref} {...externalProps(secondaryHref)} className="text-sm text-muted-foreground underline underline-offset-4 transition-colors hover:text-foreground">
               {fieldPrefix ? (
                 <EditableText fieldKey={`${fieldPrefix}.secondaryLabel`} value={secondaryLabel} as="span" />
               ) : (

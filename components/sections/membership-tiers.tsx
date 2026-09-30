@@ -1,7 +1,7 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import { EditableText } from "@/components/editor/editable-text";
+import { MEMBERSHIP_SIGNUP_URL } from "@/lib/nav-links";
 import { ArrayItemRemove, ArrayAddButton } from "@/components/editor/array-controls";
 
 interface Tier {
@@ -57,9 +57,14 @@ export function MembershipTiers({ label, title, tiers, fieldPrefix }: Membership
           {fieldPrefix && <ArrayAddButton sectionId={fieldPrefix} arrayPath="items" label="Add tier" />}
         </div>
         <div className="mt-14">
-          <Button size="lg" className="rounded-full px-10 text-sm font-medium tracking-wide">
+          <a
+            href={MEMBERSHIP_SIGNUP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex h-9 items-center justify-center rounded-full bg-primary px-10 text-sm font-medium tracking-wide text-primary-foreground transition-colors hover:bg-primary/80"
+          >
             Become Member
-          </Button>
+          </a>
         </div>
       </div>
     </section>

@@ -16,11 +16,26 @@
       "type": "stats",
       "data": {
         "items": [
-          { "value": "$2T+", "label": "NYC metro economy" },
-          { "value": "25K+", "label": "Startups valued at $700B" },
-          { "value": "6K+", "label": "Italian innovators in NYC" },
-          { "value": "300+", "label": "Venture capital firms" },
-          { "value": "$177B", "label": "VC invested 2019–Q1 2025" }
+          {
+            "value": "$2T+",
+            "label": "NYC metro economy"
+          },
+          {
+            "value": "25K+",
+            "label": "Startups valued at $700B"
+          },
+          {
+            "value": "6K+",
+            "label": "Italian innovators in NYC"
+          },
+          {
+            "value": "300+",
+            "label": "Venture capital firms"
+          },
+          {
+            "value": "$177B",
+            "label": "VC invested 2019–Q1 2025"
+          }
         ]
       }
     },
@@ -71,7 +86,7 @@
         "title": "Become part of the operational engine for Italian innovation in",
         "titleAccent": "NYC.",
         "primaryLabel": "Become Member",
-        "primaryHref": "/membership",
+        "primaryHref": "https://www.zeffy.com/en-US/ticketing/i-cubednyc-italian-innovators-initiative-inc-memberships--2026",
         "secondaryLabel": "Explore upcoming events",
         "secondaryHref": "/events-programs"
       }

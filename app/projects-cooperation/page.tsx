@@ -59,7 +59,7 @@ const DEFAULT_DATA = {
         title: "Partner with us as a",
         titleAccent: "convener of Italian innovation.",
         primaryLabel: "Become Member",
-        primaryHref: "/membership",
+        primaryHref: "https://www.zeffy.com/en-US/ticketing/i-cubednyc-italian-innovators-initiative-inc-memberships--2026",
         secondaryLabel: "Get in touch",
         secondaryHref: "/contact-us",
       },

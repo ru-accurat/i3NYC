@@ -81,7 +81,7 @@ const DEFAULT_DATA = {
         title: "Stay close to the",
         titleAccent: "knowledge flow.",
         primaryLabel: "Become Member",
-        primaryHref: "/membership",
+        primaryHref: "https://www.zeffy.com/en-US/ticketing/i-cubednyc-italian-innovators-initiative-inc-memberships--2026",
         secondaryLabel: "Join the Community",
         secondaryHref: "/events-programs",
       },

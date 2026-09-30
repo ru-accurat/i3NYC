@@ -6,7 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { MobileNav } from "./mobile-nav";
 import { LogoutButton } from "./logout-button";
-import { NAV_LINKS } from "@/lib/nav-links";
+import { MEMBERSHIP_SIGNUP_URL, NAV_LINKS } from "@/lib/nav-links";
 import type { NavItem } from "@/lib/nav-links";
 
 interface SiteHeaderProps {
@@ -117,12 +117,14 @@ export function SiteHeader({ isAdmin }: SiteHeaderProps) {
           )}
         </nav>
         <div className="hidden items-center gap-3 md:flex">
-          <Link
-            href="/membership"
+          <a
+            href={MEMBERSHIP_SIGNUP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex h-8 items-center justify-center rounded-full bg-primary px-4 text-xs font-medium tracking-wide text-primary-foreground transition-colors hover:bg-primary/80"
           >
             Become Member
-          </Link>
+          </a>
           <Link
             href="/events-programs"
             className="text-xs text-foreground/60 transition-colors hover:text-foreground"
