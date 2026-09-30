@@ -72,6 +72,7 @@ const DEFAULT_DATA = {
           { name: "Matilde Iasi", role: "Events & Community Lead", initials: "MI", portfolio: "", imageUrl: "" },
           { name: "Andrea De Castiglioni", role: "Events & Sponsor Lead", initials: "AD", portfolio: "", imageUrl: "" },
           { name: "Giuseppe Scaravilli", role: "Corporate Secretary", initials: "GS", portfolio: "", imageUrl: "" },
+          { name: "Emily Ham", role: "Program Manager", initials: "EH", portfolio: "", imageUrl: "" },
         ],
       },
     },
