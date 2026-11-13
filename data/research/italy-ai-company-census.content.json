@@ -1,0 +1,496 @@
+{
+  "eyebrow": "I³/NYC Research · Company census · Data as of October 16, 2026",
+  "title": "Italy's AI and physical AI companies",
+  "lede": [
+    {
+      "t": "A census of 74 AI and physical AI companies headquartered in Italy that have closed at least a seed round. Each profile records what the company sells and to whom, whose models it runs on, its funding, scale, its base in Italy and one main use case with impact indicators. A companion to the I³/NYC census of New York City."
+    }
+  ],
+  "lenses": [
+    {
+      "key": "all",
+      "label": "All companies"
+    },
+    {
+      "key": "native",
+      "label": "AI-native only"
+    },
+    {
+      "key": "phys",
+      "label": "Physical AI only"
+    },
+    {
+      "key": "priv",
+      "label": "Private only"
+    }
+  ],
+  "sections": [
+    {
+      "id": "",
+      "title": "What the census shows",
+      "sub": [
+        {
+          "t": "Eight findings computed from the profiles below. The census is a curated sample of Italy's funded AI companies, not a complete register; see the method notes for what is missing."
+        }
+      ],
+      "findings": [
+        {
+          "title": "Two companies hold most of the capital",
+          "body": [
+            {
+              "b": "€750M"
+            },
+            {
+              "t": " of the €1.39B disclosed went to Exein (€420M) and Domyn (€330M of equity), about 54%. The median company has raised "
+            },
+            {
+              "b": "€5.6M"
+            },
+            {
+              "t": "."
+            }
+          ]
+        },
+        {
+          "title": "A seed-stage market",
+          "body": [
+            {
+              "b": "39 of 74"
+            },
+            {
+              "t": " companies are at seed and 20 at Series A. Only six private companies have reached Series B or later, and two (Exein, Domyn) are valued at €1B or more."
+            }
+          ]
+        },
+        {
+          "title": "Milan is the hub, Turin the second pole",
+          "body": [
+            {
+              "b": "36"
+            },
+            {
+              "t": " companies are based in Milan, with €654M raised. Turin has 8, most of them out of the Politecnico's I3P incubator. Rome's €432M is almost all Exein."
+            }
+          ]
+        },
+        {
+          "title": "Physical AI is Italy's distinctive bet",
+          "body": [
+            {
+              "b": "11"
+            },
+            {
+              "t": " physical AI companies have raised "
+            },
+            {
+              "b": "€188M"
+            },
+            {
+              "t": ". Generative Bionics' €70M seed for humanoids was described as the largest academic spin-off round in Europe; Niulinx raised €38M for autonomous driving."
+            }
+          ]
+        },
+        {
+          "title": "The state is the anchor investor",
+          "body": [
+            {
+              "t": "CDP Venture Capital sits on "
+            },
+            {
+              "b": "20 of 74"
+            },
+            {
+              "t": " cap tables and is among the lead investors in 14. Private and foreign leads appear mainly in the larger rounds: Headline in Exein, Left Lane in Lexroom, United Ventures in Smartness."
+            }
+          ]
+        },
+        {
+          "title": "2026 is the biggest year so far",
+          "body": [
+            {
+              "b": "28"
+            },
+            {
+              "t": " companies raised their latest round in 2026: about "
+            },
+            {
+              "b": "€481M"
+            },
+            {
+              "t": " of equity, plus Domyn's package of about €950M, mostly debt. In 2025 it was 21 companies and €197M. Nationally, 77% of software rounds in 2026 were AI-linked."
+            }
+          ]
+        },
+        {
+          "title": "Italian companies build their own models",
+          "body": [
+            {
+              "t": "Of the 42 companies that disclose a model strategy, "
+            },
+            {
+              "b": "28"
+            },
+            {
+              "t": " train in-house, often vision, forecasting or robotics models rather than LLMs. Only 7 build mainly on external models. Domyn and Expert.ai develop their own language technology."
+            }
+          ]
+        },
+        {
+          "title": "Exits are small and mostly strategic",
+          "body": [
+            {
+              "t": "Qualcomm bought "
+            },
+            {
+              "b": "Arduino"
+            },
+            {
+              "t": ", TeamSystem bought Normo.ai, Stirling Square bought iConsulting for over €200M. Italy's largest listing of the period, Bending Spoons, went to Nasdaq."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "",
+      "title": "The country behind the companies",
+      "sub": [
+        {
+          "t": "National figures from public sources, for scale. The census covers a small, funded slice of the nearly 15,000 AI-focused firms the country counts."
+        }
+      ],
+      "tiles": [
+        {
+          "value": "14,840",
+          "body": [
+            {
+              "t": "AI-focused firms in Italy at end-2025, from the first national map presented in the Senate. "
+            },
+            {
+              "a": "University of Padua and InfoCamere, Oct 2026",
+              "href": "https://www.shmag.it/italia-mondo/09_10_2026/ia-presentata-in-senato-la-prima-mappa-delle-imprese-in-italia/"
+            }
+          ]
+        },
+        {
+          "value": "77%",
+          "body": [
+            {
+              "t": "of Italian software rounds in Jan–Sep 2026 were AI-linked, €512M in all. "
+            },
+            {
+              "a": "Growth Capital and Italian Tech Alliance",
+              "href": "https://financecommunity.it/venture-capital-italiano-a-quota-1465-miliardi-di-euro-investiti-lo-rileva-uno-studio-di-growth-capital-e-ita/"
+            }
+          ]
+        },
+        {
+          "value": "$8.2B",
+          "body": [
+            {
+              "t": "combined value of Italian AI companies, in a tech ecosystem worth about $140B. "
+            },
+            {
+              "a": "Dealroom, H1 2026",
+              "href": "https://www.intelligentcio.com/eu/2026/08/04/italys-tech-ecosystem-nears-us140-billion-as-venture-capital-investment-climbs-29-in-h1-2026/"
+            }
+          ]
+        },
+        {
+          "value": "€290M",
+          "body": [
+            {
+              "t": "system contract for the IT4LIA AI Factory in Bologna, opened first to start-ups and SMEs. "
+            },
+            {
+              "a": "EuroHPC, Apr 2026",
+              "href": "https://www.eurohpc-ju.europa.eu/eurohpc-ju-signs-contract-boost-ai-capabilities-it4lia-ai-factory-2026-04-22_en"
+            }
+          ]
+        }
+      ],
+      "blocks": [
+        {
+          "title": "Venture capital invested in Italy, all sectors",
+          "sub": [
+            {
+              "t": "€ billions and number of rounds. Source: "
+            },
+            {
+              "a": "Growth Capital and Italian Tech Alliance",
+              "href": "https://financecommunity.it/venture-capital-italiano-a-quota-1465-miliardi-di-euro-investiti-lo-rileva-uno-studio-di-growth-capital-e-ita/"
+            },
+            {
+              "t": " (2026 covers January to September)."
+            }
+          ],
+          "target": "fy"
+        },
+        {
+          "title": "AI share of venture capital, Italy and Europe",
+          "sub": [
+            {
+              "t": "Dealroom and Growth Capital use different definitions, so read the direction, not the exact gap. Italy trails the European share."
+            }
+          ],
+          "target": "ais"
+        }
+      ]
+    },
+    {
+      "id": "",
+      "title": "Cohort explorer",
+      "sub": [
+        {
+          "t": "Choose how to group the companies and what to measure. Click any bar to list that cohort in the database. The lens at the top of the page applies here too."
+        }
+      ]
+    },
+    {
+      "id": "",
+      "title": "Where the companies are in the funding cycle",
+      "sub": [
+        {
+          "t": "Companies by cluster and latest funding stage. Darker cells hold more companies. Click a cell to list them."
+        }
+      ],
+      "notes": [
+        [
+          {
+            "t": "\"Growth / other\" collects unlabelled growth rounds, strategic investments and debt. Two pre-seed rounds of €2M or more (Bynario, Computis) are counted as seed. \"Public\" covers companies listed on Euronext Milan or Euronext Growth Milan."
+          }
+        ]
+      ]
+    },
+    {
+      "id": "",
+      "title": "Age against scale",
+      "sub": [
+        {
+          "t": "Each point is a company, placed by founding year and by the figure you choose. Purple is software; teal is physical AI."
+        }
+      ]
+    },
+    {
+      "id": "",
+      "title": "Whose models they run on",
+      "sub": [
+        {
+          "t": "Model strategy by founding cohort. 42 of 74 companies disclose enough to classify; the other 32 are shown as undisclosed, not guessed."
+        }
+      ],
+      "notes": [
+        [
+          {
+            "t": "In-house: the company trains its own models, including vision, forecasting, robotics and other non-language models. External: it builds on third-party models. Hybrid: both. No LLM at core: infrastructure, hardware or classical machine learning."
+          }
+        ]
+      ],
+      "blocks": [
+        {
+          "title": "External providers named",
+          "sub": [
+            {
+              "t": "Companies that name a provider of models or compute in their product. Few Italian companies name one. Hover for the names."
+            }
+          ],
+          "target": "prov"
+        },
+        {
+          "title": "Universities and research centres in company histories",
+          "sub": [
+            {
+              "t": "Spin-off, incubator, founder or licensing links found in sources; 16 companies show one."
+            }
+          ],
+          "target": "uni"
+        }
+      ]
+    },
+    {
+      "id": "",
+      "title": "Capital and consolidation, 2025–26",
+      "sub": [
+        {
+          "t": "The fifteen largest latest rounds in the census closed since January 2025, then the exits, delistings and acquisitions that changed the map."
+        }
+      ],
+      "notes": [
+        [
+          {
+            "t": "Only each company's most recent round is recorded, so earlier 2025 rounds by companies that raised again are not shown (Exein's €70M Series C and €100M round of 2025, for example). Domyn's package of about €950M is reported and is mostly debt for its Colosseum supercomputer."
+          }
+        ]
+      ],
+      "blocks": [
+        {
+          "title": "Exits, mergers and acquisitions",
+          "target": "exits"
+        }
+      ]
+    },
+    {
+      "id": "",
+      "title": "Trends",
+      "sub": [
+        {
+          "t": "Nine patterns in the national data, each with its evidence and source."
+        }
+      ]
+    },
+    {
+      "id": "database",
+      "title": "Company database",
+      "sub": [
+        {
+          "t": "Open a row for the full profile: problem solved, ideal customer, model strategy, funding, base in Italy, academic ties, main use case, impact indicators and sources."
+        }
+      ]
+    },
+    {
+      "id": "",
+      "title": "Global players in Italy",
+      "sub": [
+        {
+          "t": "Not counted in the census because their headquarters are abroad, but they invest, hire and acquire in Italy."
+        }
+      ],
+      "blocks": [
+        {
+          "title": "Italian founders, headquarters abroad",
+          "target": "near"
+        }
+      ]
+    },
+    {
+      "id": "",
+      "title": "Academia and public policy",
+      "sub": [
+        {
+          "t": "The research base and the rules that shape the market."
+        }
+      ],
+      "blocks": [
+        {
+          "title": "Academic and compute base",
+          "target": "acad"
+        },
+        {
+          "title": "Policy and regulation",
+          "target": "policy"
+        },
+        {
+          "title": "Risks to watch",
+          "target": "risks"
+        }
+      ]
+    },
+    {
+      "id": "",
+      "title": "Method and limits",
+      "caveats": [
+        [
+          {
+            "b": "Scope."
+          },
+          {
+            "t": " Companies whose product is AI or depends on it, with headquarters in Italy, and at least one disclosed seed or later round (about €500K or more) or €2M or more raised in total. Older platforms that added AI are included and labelled AI-enabled."
+          }
+        ],
+        [
+          {
+            "b": "Headquarters test."
+          },
+          {
+            "t": " A company counts when its legal and operating headquarters are in Italy. Italian-founded companies headquartered in London, the US, Switzerland or the Netherlands are listed separately, not counted."
+          }
+        ],
+        [
+          {
+            "b": "Not exhaustive."
+          },
+          {
+            "t": " Italy counts nearly 15,000 AI-focused firms. This census profiles 74 of the funded ones that could be verified within a fixed research budget. Names that were reviewed and left out are listed below with the reason."
+          }
+        ],
+        [
+          {
+            "b": "Currency."
+          },
+          {
+            "t": " Amounts are in euros. Rounds announced in dollars are converted at about $1 = €0.86, so figures can differ slightly from press headlines."
+          }
+        ],
+        [
+          {
+            "b": "Sources."
+          },
+          {
+            "t": " Company announcements, CDP Venture Capital, Growth Capital and Italian Tech Alliance, Dealroom, tech.eu, EU-Startups, StartupItalia, Startupbusiness, Milano Finanza, Teleborsa and trade press. Each profile links its sources."
+          }
+        ],
+        [
+          {
+            "b": "Confidence."
+          },
+          {
+            "t": " 18 profiles are rated high and 17 low. Low means the location, the founding year or the funding rests on a single aggregator. Low-confidence rows carry a label."
+          }
+        ],
+        [
+          {
+            "b": "Funding gaps."
+          },
+          {
+            "t": " 10 companies have no total-raised figure, so sums understate. Domyn's total is equity only; its reported 2026 package is mostly debt. Valuations are rarely disclosed in Italy: only Exein and Domyn have a reported one."
+          }
+        ],
+        [
+          {
+            "b": "Revenue and staff are thin."
+          },
+          {
+            "t": " Only 5 companies publish a revenue figure and 16 a headcount; these are mostly company statements or LinkedIn counts."
+          }
+        ],
+        [
+          {
+            "b": "Model strategy."
+          },
+          {
+            "t": " Coded from what companies and press say. 32 companies disclose nothing usable and are left as undisclosed."
+          }
+        ],
+        [
+          {
+            "b": "Websites."
+          },
+          {
+            "t": " Company site links are shown only where the domain was confirmed; others are left out rather than guessed."
+          }
+        ],
+        [
+          {
+            "b": "Dates."
+          },
+          {
+            "t": " Research closed October 16, 2026. Founding year is missing for 22 companies."
+          }
+        ]
+      ],
+      "summary": "Companies reviewed and left out ()"
+    }
+  ],
+  "footer": [
+    {
+      "t": "Designed by "
+    },
+    {
+      "a": "Andrea Calcagno",
+      "href": "https://www.linkedin.com/in/andreacalcagno/"
+    },
+    {
+      "t": ", Vice Chair, Board Member & Co-Founder, I³/NYC. Prepared for I³/NYC, the non-profit connecting Italian innovators with New York City. Companion to the NYC AI Company Census. Figures are compiled from public sources and are not investment advice."
+    }
+  ]
+}

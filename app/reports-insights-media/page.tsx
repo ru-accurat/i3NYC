@@ -22,9 +22,58 @@ const DEFAULT_DATA = {
       id: "reports-hub",
       type: "knowledge-hub",
       data: {
-        label: "Insights & Media",
+        label: "Research",
         title: "Explore the knowledge hub.",
         items: [
+          {
+            type: "navigator",
+            title: "Tri-State Innovation Navigator",
+            description:
+              "Programs, funding and soft-landing routes across New York, New Jersey and Connecticut. Answer three questions to see where to start.",
+            href: "/reports-insights-media/tri-state-innovation-navigator",
+          },
+          {
+            type: "map",
+            title: "NYC University Startup Map",
+            description:
+              "38 incubators, accelerators and funds run by New York City's universities: who they serve, at what stage, with how much money and on what terms.",
+            href: "/reports-insights-media/nyc-university-startup-map",
+          },
+          {
+            type: "map",
+            title: "NYC Private Accelerator Map",
+            description:
+              "31 private accelerators, incubators and venture studios in New York City: what each invests and takes, and who can get in.",
+            href: "/reports-insights-media/nyc-private-accelerator-map",
+          },
+          {
+            type: "census",
+            title: "NYC AI Company Census",
+            description:
+              "150 AI and physical AI companies based in the five boroughs: what they sell, whose models they run on, funding, scale and footprint.",
+            href: "/reports-insights-media/nyc-ai-company-census",
+          },
+          {
+            type: "census",
+            title: "Italy AI Company Census",
+            description:
+              "74 AI and physical AI companies headquartered in Italy. The companion to the New York census.",
+            href: "/reports-insights-media/italy-ai-company-census",
+          },
+          {
+            type: "brief",
+            title: "NY Metro Life Sciences",
+            description:
+              "141 companies, 42 incubators and programs, and 22 research institutions across the New York metro area.",
+            href: "/reports-insights-media/ny-metro-life-sciences",
+          },
+          {
+            type: "brief",
+            title: "NY Fashion & Luxury Innovation",
+            description:
+              "69 innovation companies, 34 programs and investors, and 10 schools reinventing fashion, luxury, beauty and jewelry in New York.",
+            href: "/reports-insights-media/ny-fashion-luxury-innovation",
+          },
           {
             type: "white-paper",
             title: "Innovation & Tech Report · March 2026",
@@ -32,20 +81,16 @@ const DEFAULT_DATA = {
               "A data-driven analysis of 1,473 Italian and Italian-American innovation and technology professionals across the TriState area.",
             href: "/reports-insights-media/innovation-tech-march-2026",
           },
-          {
-            type: "dashboard",
-            title: "Ecosystem Spotlight Dashboard",
-            description:
-              "Insights about the Italian innovation community in NYC — companies, founders, and capital flows.",
-            href: "",
-          },
-          {
-            type: "intelligence",
-            title: "Innovation Intelligence",
-            description:
-              "Converting NYC ecosystem trends into practical insights for Italian founders and professionals.",
-            href: "",
-          },
+        ],
+      },
+    },
+    {
+      id: "reports-follow",
+      type: "knowledge-hub",
+      data: {
+        label: "Stay connected",
+        title: "Follow the work.",
+        items: [
           {
             type: "newsletter",
             title: "Innovation Intelligence in Your Inbox",

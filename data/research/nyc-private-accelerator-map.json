@@ -1,0 +1,1262 @@
+{
+  "STAGES": [
+    "Idea",
+    "Pre-seed",
+    "Seed",
+    "Growth"
+  ],
+  "GROUPS": [
+    "Generalist accelerators",
+    "Sector accelerators",
+    "Venture studios",
+    "Labs and hard-tech space",
+    "International landing programs"
+  ],
+  "TOPICS": [
+    "Digital & AI",
+    "Life sciences & health",
+    "Climate & urban",
+    "Fintech",
+    "Retail & consumer",
+    "Real estate",
+    "Sector-agnostic"
+  ],
+  "P": [
+    {
+      "n": "Techstars NYC",
+      "i": "Techstars",
+      "g": "Generalist accelerators",
+      "t": "Accelerator",
+      "s": [
+        1,
+        2
+      ],
+      "k": [
+        "Sector-agnostic",
+        "Digital & AI",
+        "Fintech",
+        "Climate & urban",
+        "Life sciences & health"
+      ],
+      "a": "Open",
+      "f": "$220K",
+      "e": "$20K for 5% in common stock, plus a $200K uncapped MFN SAFE",
+      "w": "Founders based anywhere in the world. Accepted founders commit full-time.",
+      "b": "Mentor-driven program with a 4-to-1 ratio of staff to startups and more than $2M in partner perks. Many founders raise $1M–$5M before the program starts.",
+      "du": "Three months, hybrid: in person for the first two weeks, a mid-point week and Demo Day",
+      "ap": "Opens August 24, 2026; final deadline November 18, 2026; program starts March 8, 2027",
+      "co": "Not published",
+      "pl": "New York City",
+      "intl": "Yes. Founders can be based anywhere; visas not addressed",
+      "m": "Techstars worldwide: 11,171 founders since 2007, $56B raised by portfolio companies, 29 companies valued at $1B+.",
+      "ss": "New York alumni cited by the program: Healthie, Sporttrade, Aunt Flow ($1.5M seed led by Harlem Capital), LendAPI and Nimblemind.",
+      "st": "Active",
+      "sv": "2026–27 cycle dated on the program page, with Demo Day on June 3, 2027.",
+      "lo": 220000,
+      "hi": 220000,
+      "links": [
+        [
+          "Program page",
+          "https://www.techstars.com/accelerators/nyc"
+        ],
+        [
+          "Portfolio",
+          "https://www.techstars.com/portfolio"
+        ]
+      ]
+    },
+    {
+      "n": "Entrepreneurs Roundtable Accelerator (ERA)",
+      "i": "ERA",
+      "g": "Generalist accelerators",
+      "t": "Accelerator",
+      "s": [
+        1,
+        2
+      ],
+      "k": [
+        "Sector-agnostic",
+        "Digital & AI"
+      ],
+      "a": "Open",
+      "f": "$150K",
+      "e": "6% on a post-money SAFE, with potential follow-on funding",
+      "w": "Early-stage technology startups. Rules for international founders are not stated on the site.",
+      "b": "New York's longest-running generalist accelerator, with 500+ mentors.",
+      "du": "Four months, two programs a year",
+      "ap": "Winter 2027 and Summer 2027 cohorts open",
+      "co": "Not published",
+      "pl": "Manhattan",
+      "intl": "Not stated on the site",
+      "m": "400+ startups, $2.5B+ raised, $10B+ in combined market cap.",
+      "ss": "TripleLift, Glia, Scentbird, Bespoke Post, Chicory, Goalsetter, Triplemint, SeamlessDocs and Trendalytics.",
+      "st": "Active",
+      "sv": "Applications open for the Winter 2027 and Summer 2027 cohorts.",
+      "lo": 150000,
+      "hi": 150000,
+      "links": [
+        [
+          "Program site",
+          "https://www.eranyc.com/"
+        ]
+      ]
+    },
+    {
+      "n": "Antler New York residency",
+      "i": "Antler",
+      "g": "Generalist accelerators",
+      "t": "Accelerator",
+      "s": [
+        0,
+        1
+      ],
+      "k": [
+        "Sector-agnostic",
+        "Digital & AI"
+      ],
+      "a": "Mixed",
+      "f": "$500K–$1M initial commitment",
+      "e": "Pre-seed investment; percentage not published. No fee to join.",
+      "w": "Operators and builders who intend to start a company; no incorporated startup needed. At least one co-founder must already hold US work authorization.",
+      "b": "In-person building sprint, co-founder matching and $650K in partner credits.",
+      "du": "Up to three months in residency",
+      "ap": "Year-round; residents invited monthly",
+      "co": "Not published",
+      "pl": "New York City; also San Francisco and Austin",
+      "intl": "Only with existing US work authorization. Antler does not sponsor visas",
+      "m": "Antler worldwide: 12,000+ founders supported and 1,600+ companies invested in. 85% of a recent batch raised more within six months.",
+      "ss": "Portfolio names cited: Airalo, Lovable, Peec AI, Tactiq, Fanfix, Harper, Agentio and Frich (global, not New York only).",
+      "st": "Listed",
+      "sv": "US residency page live with rolling applications; no dated New York cohort on the page read.",
+      "lo": 500000,
+      "hi": 1000000,
+      "links": [
+        [
+          "US residency",
+          "https://www.antler.co/residency/us"
+        ]
+      ]
+    },
+    {
+      "n": "Founder Institute New York",
+      "i": "Founder Institute",
+      "g": "Generalist accelerators",
+      "t": "Accelerator",
+      "s": [
+        0
+      ],
+      "k": [
+        "Sector-agnostic"
+      ],
+      "a": "Open",
+      "f": "No funding. $1,599 entrance fee",
+      "e": "Pledge of 2.5% of future equity, activated only by an outside financing of $100K or more",
+      "w": "Aspiring, first-time and solo founders with an idea. No co-founder or technical background required.",
+      "b": "Structured curriculum with weekly mentor feedback, taking founders from idea toward a fundable company.",
+      "du": "Ten sessions plus Demo Day",
+      "ap": "Fall 2026 cohort open",
+      "co": "Not published",
+      "pl": "New York City chapter",
+      "intl": "Yes. No affiliation or residency rule stated",
+      "m": "Founder Institute worldwide: 9,000+ startups built, $2B+ alumni funding, 200+ exits.",
+      "ss": "Global alumni cited: Udemy and Esusu.",
+      "st": "Active",
+      "sv": "New York Fall 2026 cohort open for applications.",
+      "links": [
+        [
+          "New York chapter",
+          "https://fi.co/s/new_york"
+        ]
+      ]
+    },
+    {
+      "n": "Grand Central Tech Residency",
+      "i": "Company Ventures",
+      "g": "Generalist accelerators",
+      "t": "Incubator / space",
+      "s": [
+        1,
+        2
+      ],
+      "k": [
+        "Sector-agnostic",
+        "Digital & AI"
+      ],
+      "a": "Open",
+      "f": "No cash. A year of free workspace",
+      "e": "Zero rent, zero equity. Admission does not guarantee investment from Company Ventures' fund",
+      "w": "Founders building a scalable technology company full-time who value community.",
+      "b": "Dedicated workspace next to Grand Central, a 2,500+ member network and access to the Company Ventures fund. The firm has also launched the Terrarium venture studio and runs the Boost cohort of NYCEDC's Founder Fellowship.",
+      "du": "12 months",
+      "ap": "Rolling; spring and fall cohorts",
+      "co": "Not published",
+      "pl": "335 Madison Avenue, Midtown",
+      "intl": "No restriction published",
+      "m": "213 program companies have raised $4.4B+ (residency page, as reported in 2026).",
+      "ss": "Maven Clinic, Timescale and Eden Health.",
+      "st": "Listed",
+      "sv": "Operator site could not be read; a 2026 guide reports Spring 2026 applications open and a Fall 2025 cohort announcement.",
+      "ne": 1,
+      "links": [
+        [
+          "2026 application guide",
+          "https://hub.causo.ai/guides/how-to-apply-to-company-ventures-2026"
+        ],
+        [
+          "Operator newsletter (2023)",
+          "https://companyventures.beehiiv.com/p/whats-new-company-ventures-apply-grand-central-tech"
+        ]
+      ]
+    },
+    {
+      "n": "Visible Hands VHNYC Founder Fellowship",
+      "i": "Visible Hands",
+      "g": "Generalist accelerators",
+      "t": "Fellowship",
+      "s": [
+        0,
+        1
+      ],
+      "k": [
+        "Sector-agnostic",
+        "Digital & AI"
+      ],
+      "a": "Mixed",
+      "f": "Investments of $100K+",
+      "e": "Pre-seed investment; terms not published",
+      "w": "Early-stage, underrepresented founders building high-growth tech or tech-enabled businesses.",
+      "b": "Hybrid fellowship in New York with pre-seed investment. A partner in NYCEDC's Founder Fellowship.",
+      "du": "10 weeks",
+      "ap": "By cohort",
+      "co": "15 founders",
+      "pl": "New York City, hybrid",
+      "intl": "Not stated",
+      "m": "57+ investments of $100K+, $8.3M invested, 36 portfolio companies closed pre-seed or seed rounds, $50M+ raised.",
+      "ss": "Not published by company.",
+      "st": "Listed",
+      "sv": "Site current (2026 footer) with the New York fellowship described; no cohort date shown.",
+      "lo": 100000,
+      "hi": 100000,
+      "links": [
+        [
+          "Operator site",
+          "https://www.visiblehands.vc/"
+        ]
+      ]
+    },
+    {
+      "n": "South Park Commons Founder Fellowship",
+      "i": "South Park Commons",
+      "g": "Generalist accelerators",
+      "t": "Fellowship",
+      "s": [
+        0,
+        1
+      ],
+      "k": [
+        "Digital & AI",
+        "Sector-agnostic"
+      ],
+      "a": "Open",
+      "f": "$400K, plus $600K guaranteed in the next round",
+      "e": "7% on a standard SAFE",
+      "w": "Anyone with the ambition to build at the frontier. Solo applicants welcome; an idea is not required.",
+      "b": "In-person bootcamp, then a residency until the seed round. Up to $1M in credits from partners such as Anthropic, OpenAI and AWS.",
+      "du": "Eight-week bootcamp, then open-ended residency",
+      "ap": "Fall 2026 applications closed August 2, 2026",
+      "co": "Not published",
+      "pl": "New York City office; also San Francisco and Bangalore",
+      "intl": "Not addressed beyond the three offices",
+      "m": "Not published.",
+      "ss": "Alumni companies cited: Baseten, Luma AI, Gamma, Render, Goodfire and Profound (all sites).",
+      "st": "Active",
+      "sv": "Fall 2026 fellowship running late September to late November 2026.",
+      "lo": 400000,
+      "hi": 1000000,
+      "links": [
+        [
+          "Fall 2026 fellowship",
+          "https://www.southparkcommons.com/news/f26-founder-fellowship"
+        ]
+      ]
+    },
+    {
+      "n": "Betaworks Camp",
+      "i": "Betaworks",
+      "g": "Sector accelerators",
+      "t": "Accelerator",
+      "s": [
+        1,
+        2
+      ],
+      "k": [
+        "Digital & AI"
+      ],
+      "a": "Open",
+      "f": "Investment; amount not published",
+      "e": "No program fees; terms not published",
+      "w": "Early-stage startups in frontier technology, from anywhere, able to spend time in New York. A product is not required.",
+      "b": "Thematic in-residence program ending in a Demo Day. Recent themes: AI agents, the application layer, interfaces, the agent economy.",
+      "du": "12 weeks, twice a year (March–May and August–November)",
+      "ap": "Spring: December–January. Fall: June–July",
+      "co": "8–12 companies",
+      "pl": "Meatpacking District, Manhattan",
+      "intl": "Yes. In person for the first and last two weeks",
+      "m": "Follow-on investors named: Sequoia, Kleiner Perkins and Coatue.",
+      "ss": "Hugging Face (BotCamp), Graze Social, Twin, Opponent and Trampoline.",
+      "st": "Active",
+      "sv": "Spring 2026 Agent Systems camp and an open call for the next AI Camp on the program page.",
+      "links": [
+        [
+          "Program page",
+          "https://www.betaworks.com/camp"
+        ]
+      ]
+    },
+    {
+      "n": "FinTech Innovation Lab New York",
+      "i": "Partnership Fund for New York City and Accenture",
+      "g": "Sector accelerators",
+      "t": "Accelerator",
+      "s": [
+        1,
+        2,
+        3
+      ],
+      "k": [
+        "Fintech",
+        "Digital & AI"
+      ],
+      "a": "Mixed",
+      "f": "No funding; no fee",
+      "e": "Non-dilutive. No equity or investment required",
+      "w": "Companies from pre-seed to Series B with at least a beta product and a record of integrating with customers. Core team must work in New York and be able to work in the US.",
+      "b": "Structured access to 40+ financial institutions. Typically 20–40 proofs of concept start during or soon after the program.",
+      "du": "12 weeks, March to June, hybrid",
+      "ap": "2027 program: apply by November 25, 2026; cohort announced late February",
+      "co": "About 10 companies",
+      "pl": "New York City",
+      "intl": "Not required to be New York-based, but no visa sponsorship",
+      "m": "40+ participating financial institutions.",
+      "ss": "Not published on the program page.",
+      "st": "Active",
+      "sv": "Applications open for the 2027 program.",
+      "ne": 1,
+      "links": [
+        [
+          "Program page",
+          "https://www.fintechinnovationlab.com/new-york/"
+        ]
+      ]
+    },
+    {
+      "n": "XRC Ventures (XRC Labs accelerator)",
+      "i": "XRC Ventures",
+      "g": "Sector accelerators",
+      "t": "Accelerator",
+      "s": [
+        1,
+        2
+      ],
+      "k": [
+        "Retail & consumer"
+      ],
+      "a": "Open",
+      "f": "About $135K per startup (2022)",
+      "e": "Not published",
+      "w": "Pre-seed to Series A startups in digital commerce, store operations, supply chain, payments and consumer brands.",
+      "b": "Retailer introductions and a network of 330+ mentors.",
+      "du": "Three months",
+      "ap": "Apply through the site",
+      "co": "Seven startups in the March 2022 cohort",
+      "pl": "New York City",
+      "intl": "Not stated",
+      "m": "140+ investments since 2015.",
+      "ss": "Gather AI's founder credits XRC with investing before the company had a product.",
+      "st": "Listed",
+      "sv": "Firm site current (2026 footer) with an Apply link; the accelerator itself was last described in a March 2022 release.",
+      "lo": 135000,
+      "hi": 135000,
+      "links": [
+        [
+          "Firm site",
+          "https://www.xrcventures.com/"
+        ],
+        [
+          "Cohort 13 release",
+          "https://www.retaildive.com/press-release/20220321-xrc-labs-announces-cohort-13"
+        ]
+      ]
+    },
+    {
+      "n": "MetaProp Accelerator at Columbia University",
+      "i": "MetaProp",
+      "g": "Sector accelerators",
+      "t": "Accelerator",
+      "s": [
+        1,
+        2
+      ],
+      "k": [
+        "Real estate",
+        "Climate & urban"
+      ],
+      "a": "Open",
+      "f": "Up to $250K",
+      "e": "Percentage not published",
+      "w": "Startups building technology for the built world.",
+      "b": "Hosted at Columbia University, with real-estate industry mentors and consortium partners.",
+      "du": "22 weeks",
+      "ap": "Not published for 2026",
+      "co": "Not published",
+      "pl": "Columbia University, Manhattan",
+      "intl": "Not stated",
+      "m": "MetaProp overall: 150+ investments; $1.9B+ raised across the portfolio.",
+      "ss": "Graduates shown: Bowery, OnSite, Faura, Skillit, Actuate, Verfico and LightRFP.",
+      "st": "Active",
+      "sv": "Cohort 10 listed as the 2025 flagship cohort.",
+      "lo": 250000,
+      "hi": 250000,
+      "links": [
+        [
+          "Accelerator page",
+          "https://www.metaprop.com/accelerator"
+        ]
+      ]
+    },
+    {
+      "n": "New York Fashion Tech Lab",
+      "i": "Springboard Enterprises",
+      "g": "Sector accelerators",
+      "t": "Accelerator",
+      "s": [
+        2,
+        3
+      ],
+      "k": [
+        "Retail & consumer"
+      ],
+      "a": "Mixed",
+      "f": "No funding stated",
+      "e": "Not published",
+      "w": "Early- to growth-stage, women-led, B2B retail technology companies.",
+      "b": "Introductions and feedback from retail and brand partners, investors and an expert network, with an annual showcase. Co-founded in 2014 with the Partnership Fund for New York City.",
+      "du": "Yearly program",
+      "ap": "Not published",
+      "co": "Not published",
+      "pl": "New York City",
+      "intl": "Not stated",
+      "m": "Not published.",
+      "ss": "Not published.",
+      "st": "Listed",
+      "sv": "Site live and describes yearly programs; no 2026 dates.",
+      "links": [
+        [
+          "Program site",
+          "https://nyftlab.com/"
+        ]
+      ]
+    },
+    {
+      "n": "The Clean Fight",
+      "i": "The Clean Fight (nonprofit)",
+      "g": "Sector accelerators",
+      "t": "Accelerator",
+      "s": [
+        2,
+        3
+      ],
+      "k": [
+        "Climate & urban"
+      ],
+      "a": "Open",
+      "f": "Deployment grants; $5.4M administered",
+      "e": "Not published",
+      "w": "Growth-stage climate companies with a proven solution. An International Landing Pad cohort serves foreign companies.",
+      "b": "Cohorts on energy storage and affordable housing, a deployment grant fund and the Empire Technology Prize. Backed by NYSERDA, NYCEDC and the US Department of Commerce.",
+      "du": "Cohort-based; landing pad runs about a year",
+      "ap": "By cohort",
+      "co": "10 companies per cohort",
+      "pl": "New York; landing pad coworking at The Yard, Lincoln Square",
+      "intl": "Yes, through the International Landing Pad",
+      "m": "2020–2025: 70 companies, 22 deployment grants, 10,000+ deployments in New York State, $784M in follow-on capital, 945 jobs.",
+      "ss": "Current landing-pad cohort includes Carbon Cap, Smart Joules, Birdsview and Exante.",
+      "st": "Active",
+      "sv": "Current Energy Storage and International Landing Pad cohorts named on the site.",
+      "links": [
+        [
+          "Operator site",
+          "https://www.thecleanfight.com/"
+        ]
+      ]
+    },
+    {
+      "n": "Blueprint Health",
+      "i": "Blueprint Health",
+      "g": "Sector accelerators",
+      "t": "Accelerator",
+      "s": [
+        1,
+        2
+      ],
+      "k": [
+        "Life sciences & health"
+      ],
+      "a": "Open",
+      "f": "Not published",
+      "e": "The site links to a page titled \"Is it worth 6%\"",
+      "w": "Digital health startups.",
+      "b": "Mentor-led program with a healthcare buyer and investor network.",
+      "du": "Three months",
+      "ap": "Not confirmed",
+      "co": "Not published",
+      "pl": "New York City",
+      "intl": "Not stated",
+      "m": "Says it vets nearly 1,000 companies a year.",
+      "ss": "Testimonials from AdhereTech, Touch Surgery, Health Recovery Solutions, CredSimple and Board Vitals.",
+      "st": "Unconfirmed",
+      "sv": "Site live with a 2026 footer, but no cohort date and testimonials from about 2015.",
+      "links": [
+        [
+          "Program site",
+          "https://www.blueprinthealth.org/"
+        ]
+      ]
+    },
+    {
+      "n": "URBAN-X",
+      "i": "MINI and Urban Us",
+      "g": "Sector accelerators",
+      "t": "Accelerator",
+      "s": [
+        1,
+        2
+      ],
+      "k": [
+        "Climate & urban"
+      ],
+      "a": "Open",
+      "f": "Program closed",
+      "e": "Not applicable",
+      "w": "Urban-tech and climate startups.",
+      "b": "Founded 2016 and later based at the Brooklyn Navy Yard. Opened to startups from Mexico, Italy and Japan in 2022.",
+      "du": "Two cohorts a year until 2024",
+      "ap": "Closed",
+      "co": "15 cohorts in total",
+      "pl": "Brooklyn Navy Yard",
+      "intl": "Not applicable",
+      "m": "85% of teams raised a next round; worked with more than 100 cities.",
+      "ss": "Not named in the closure report.",
+      "st": "Paused",
+      "sv": "Reported on January 20, 2025 as concluding operations at the end of that year. The site could not be read.",
+      "links": [
+        [
+          "Closure report",
+          "https://cities-today.com/?p=70732"
+        ]
+      ]
+    },
+    {
+      "n": "Lair East Labs",
+      "i": "Lair East Labs",
+      "g": "Sector accelerators",
+      "t": "Accelerator",
+      "s": [
+        1,
+        2
+      ],
+      "k": [
+        "Sector-agnostic"
+      ],
+      "a": "Open",
+      "f": "$50K (as last published)",
+      "e": "Not published",
+      "w": "Founders launching in the US with access to Asian markets.",
+      "b": "Accelerator with demo days in New York and Beijing.",
+      "du": "10 weeks",
+      "ap": "Not confirmed",
+      "co": "10–12 startups a year",
+      "pl": "New York City",
+      "intl": "Past cohorts included teams from Malaysia and Hong Kong",
+      "m": "First-year companies raised $27M after the program.",
+      "ss": "Not published.",
+      "st": "Unconfirmed",
+      "sv": "Site footer reads 2018 and the newest event is a Spring 2020 program.",
+      "links": [
+        [
+          "Program site",
+          "https://www.laireastlabs.com/"
+        ]
+      ]
+    },
+    {
+      "n": "AlleyCorp",
+      "i": "AlleyCorp",
+      "g": "Venture studios",
+      "t": "Venture studio",
+      "s": [
+        0,
+        1,
+        2
+      ],
+      "k": [
+        "Life sciences & health",
+        "Digital & AI",
+        "Sector-agnostic"
+      ],
+      "a": "Affiliates",
+      "f": "Builds and funds companies in-house",
+      "e": "Not published",
+      "w": "No open application. Founders and executives are recruited into companies the firm starts.",
+      "b": "Builds and invests in companies across healthcare, robotics and deep tech, enterprise and fintech.",
+      "du": "Not a cohort program",
+      "ap": "None",
+      "co": "13 incubated companies listed",
+      "pl": "New York City",
+      "intl": "By recruitment",
+      "m": "13 companies listed as incubated; three acquired and one public.",
+      "ss": "Incubated: MongoDB (NASDAQ: MDB), Business Insider (acquired), Gilt Groupe (acquired), Zola, Pearl Health, Nomad Health and Transcend Therapeutics (acquired).",
+      "st": "Listed",
+      "sv": "Site and portfolio live with a 2025 footer; no 2026 date.",
+      "links": [
+        [
+          "Firm site",
+          "https://www.alleycorp.com/"
+        ],
+        [
+          "Portfolio",
+          "https://www.alleycorp.com/portfolio"
+        ]
+      ]
+    },
+    {
+      "n": "Redesign Health",
+      "i": "Redesign Health",
+      "g": "Venture studios",
+      "t": "Venture studio",
+      "s": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "k": [
+        "Life sciences & health",
+        "Digital & AI"
+      ],
+      "a": "Affiliates",
+      "f": "Builds and funds healthcare companies",
+      "e": "Not published",
+      "w": "Founders building in healthcare contact the firm directly.",
+      "b": "A venture and applied-technology platform that builds healthcare companies with founders and existing businesses. Launched a digital health venture platform with Cedars-Sinai.",
+      "du": "Not a cohort program",
+      "ap": "Direct contact",
+      "co": "Not published",
+      "pl": "New York; also Los Angeles, Riyadh and Bengaluru",
+      "intl": "Operates internationally",
+      "m": "Redesign and its portfolio companies have raised over $1.5B since 2018.",
+      "ss": "DUOS raised $130M (reported October 2025).",
+      "st": "Active",
+      "sv": "Site carries October 2025 portfolio news and a 2026 footer.",
+      "links": [
+        [
+          "Firm site",
+          "https://www.redesignhealth.com/"
+        ]
+      ]
+    },
+    {
+      "n": "Human Ventures",
+      "i": "Human Ventures",
+      "g": "Venture studios",
+      "t": "Venture studio",
+      "s": [
+        0,
+        1,
+        2
+      ],
+      "k": [
+        "Life sciences & health",
+        "Retail & consumer",
+        "Fintech"
+      ],
+      "a": "Affiliates",
+      "f": "Earliest-stage investment and company building",
+      "e": "Not published",
+      "w": "Founders at the earliest stage; the firm says it is always building new companies.",
+      "b": "Focus on health and wellness, the future of work and money, experience and connection, and media.",
+      "du": "Not a cohort program",
+      "ap": "Direct contact",
+      "co": "About 68 portfolio companies",
+      "pl": "225 Liberty Street, Manhattan",
+      "intl": "Not stated",
+      "m": "About 68 portfolio companies, 12 marked acquired.",
+      "ss": "Portfolio names: Current, Tia, Evvy, Paloma Health, Tiny Organics and Capsule.",
+      "st": "Listed",
+      "sv": "Site current (2026 footer); no dated program.",
+      "links": [
+        [
+          "Firm site",
+          "https://human.vc/"
+        ]
+      ]
+    },
+    {
+      "n": "C10 Labs: NYC AI Nexus accelerator",
+      "i": "C10 Labs with NYCEDC",
+      "g": "Venture studios",
+      "t": "Accelerator",
+      "s": [
+        0,
+        1,
+        2
+      ],
+      "k": [
+        "Digital & AI",
+        "Life sciences & health",
+        "Climate & urban"
+      ],
+      "a": "Mixed",
+      "f": "Not published",
+      "e": "Not published",
+      "w": "Early-stage applied-AI companies in healthcare and biotech, climate and energy, robotics and advanced manufacturing. Must be in New York or able to relocate.",
+      "b": "AI venture fund and studio. The Nexus program gives coworking, technical and go-to-market support, industry pilots, mentorship and fundraising support.",
+      "du": "Cohort-based",
+      "ap": "Open through NYCEDC's program page",
+      "co": "With Plug and Play: up to 165 startups and 96 pilots through 2029",
+      "pl": "New York City",
+      "intl": "Must relocate; New York-based startups preferred",
+      "m": "NYCEDC invests up to $3M per operator, matched by the operators.",
+      "ss": "Not published yet.",
+      "st": "Active",
+      "sv": "NYCEDC program page live with applications; operators named October 7, 2025.",
+      "links": [
+        [
+          "NYCEDC program",
+          "https://edc.nyc/program/ai-nexus"
+        ],
+        [
+          "Operators announced",
+          "https://edc.nyc/press-release/nycedc-announces-operators-nyc-ai-nexus-advance-applied-ai-venture-creation-and"
+        ],
+        [
+          "C10 Labs",
+          "https://www.c10labs.com/"
+        ]
+      ]
+    },
+    {
+      "n": "Newlab Brooklyn",
+      "i": "Newlab",
+      "g": "Labs and hard-tech space",
+      "t": "Incubator / space",
+      "s": [
+        1,
+        2,
+        3
+      ],
+      "k": [
+        "Climate & urban",
+        "Digital & AI"
+      ],
+      "a": "Open",
+      "f": "Membership; price not published",
+      "e": "Not published",
+      "w": "Startups in critical technologies: energy, mobility, materials, robotics. Apply with a deck.",
+      "b": "84,000 sq ft in the Brooklyn Navy Yard with prototyping shops, pilot sites for air, land and water, and commercialization projects with Amazon, Verizon, Con Edison and New York City agencies. Runs a Founder Fellowship with NYCEDC.",
+      "du": "Ongoing membership; fellowship gives a 12-month membership",
+      "ap": "Rolling",
+      "co": "400+ member companies across all sites",
+      "pl": "Building 128, Brooklyn Navy Yard",
+      "intl": "No restriction published",
+      "m": "400+ member companies worldwide; 60+ industry and government partners.",
+      "ss": "Not published by company on the pages read.",
+      "st": "Active",
+      "sv": "2026 events and the fifth Founder Fellowship on the site. The site says it cannot take tour requests.",
+      "links": [
+        [
+          "Brooklyn",
+          "https://www.newlab.com/locations/brooklyn"
+        ],
+        [
+          "Apply",
+          "https://www.newlab.com/apply"
+        ]
+      ]
+    },
+    {
+      "n": "SOSV NY (formerly IndieBio NY)",
+      "i": "SOSV",
+      "g": "Labs and hard-tech space",
+      "t": "Accelerator",
+      "s": [
+        1,
+        2
+      ],
+      "k": [
+        "Life sciences & health",
+        "Climate & urban"
+      ],
+      "a": "Open",
+      "f": "Investment; amount not published",
+      "e": "Not published",
+      "w": "Founders with a scientific breakthrough in biology or deep tech.",
+      "b": "Shared office and labs, an event space, and a team focused on therapeutics and deep tech.",
+      "du": "Cohort-based",
+      "ap": "Rolling; reviewed for the next cohort",
+      "co": "Ninth New York cohort listed",
+      "pl": "New York City",
+      "intl": "Not stated",
+      "m": "IndieBio overall, 2015–2025: 310 graduates raised $3.6B. New York: three companies in the clinic within five years.",
+      "ss": "Not named on the pages read.",
+      "st": "Active",
+      "sv": "Renamed SOSV NY at the start of 2026, with team and facilities unchanged.",
+      "links": [
+        [
+          "SOSV NY",
+          "https://sosv.com/locations/sosv-ny/"
+        ],
+        [
+          "IndieBio",
+          "https://indiebio.co/"
+        ]
+      ]
+    },
+    {
+      "n": "JLABS @ NYC",
+      "i": "Johnson & Johnson Innovation",
+      "g": "Labs and hard-tech space",
+      "t": "Incubator / space",
+      "s": [
+        1,
+        2
+      ],
+      "k": [
+        "Life sciences & health"
+      ],
+      "a": "Open",
+      "f": "No funding; paid residency",
+      "e": "Not published",
+      "w": "Early-stage companies in biotech, pharmaceuticals, medical devices and consumer health.",
+      "b": "30,000 sq ft of lab space, equipment and J&J mentors at the New York Genome Center. Opened with $17M from New York State.",
+      "du": "Residency of about two years",
+      "ap": "Through J&J Innovation",
+      "co": "Up to 30 startups",
+      "pl": "New York Genome Center, SoHo",
+      "intl": "Not stated",
+      "m": "JLABS worldwide (2019 figure): 480+ companies with $11.6B in financing.",
+      "ss": "Not published.",
+      "st": "Unconfirmed",
+      "sv": "Sources date from 2018–19; the official page could not be read.",
+      "links": [
+        [
+          "2018 opening",
+          "https://www.nygenome.org/news-events/news/governor-cuomo-announces-grand-opening-of-new-life-sciences-incubator-jlabs-nyc/"
+        ],
+        [
+          "J&J profile",
+          "https://www.careers.jnj.com/en/employee-stories/innovation/where-mentorship-and-innovation-meet-jlabs-nyc/"
+        ]
+      ]
+    },
+    {
+      "n": "Alexandria LaunchLabs NYC",
+      "i": "Alexandria Real Estate Equities",
+      "g": "Labs and hard-tech space",
+      "t": "Incubator / space",
+      "s": [
+        1,
+        2
+      ],
+      "k": [
+        "Life sciences & health"
+      ],
+      "a": "Open",
+      "f": "Access to Alexandria's seed capital platform",
+      "e": "Not published",
+      "w": "Early-stage life science companies.",
+      "b": "Lab and office space, core equipment, operations services and introductions. The first LaunchLabs site; a second is at Columbia University.",
+      "du": "Membership",
+      "ap": "Online application",
+      "co": "Not published",
+      "pl": "Alexandria Center for Life Science, Manhattan",
+      "intl": "Not stated",
+      "m": "Not published.",
+      "ss": "Not published.",
+      "st": "Listed",
+      "sv": "Site live with a 2025 footer and an application portal.",
+      "links": [
+        [
+          "LaunchLabs",
+          "https://www.alexandrialaunchlabs.com/"
+        ]
+      ]
+    },
+    {
+      "n": "Harlem Biospace",
+      "i": "Harlem Biospace",
+      "g": "Labs and hard-tech space",
+      "t": "Incubator / space",
+      "s": [
+        1,
+        2
+      ],
+      "k": [
+        "Life sciences & health"
+      ],
+      "a": "Open",
+      "f": "No funding. $1,195 per desk per month",
+      "e": "No equity",
+      "w": "Early-stage life science startups; a second site takes mid- to late-stage companies.",
+      "b": "Shared wet-lab space for teams of one to three, and private lab modules from $5,000 a month.",
+      "du": "Six-month minimum",
+      "ap": "Rolling; limited spots listed as available",
+      "co": "Not published",
+      "pl": "423 West 127th Street and 1361 Amsterdam Avenue, Harlem",
+      "intl": "No restriction published",
+      "m": "Shared lab open since 2013; private-lab site since August 2024.",
+      "ss": "Not published on the page read.",
+      "st": "Active",
+      "sv": "Current openings advertised; page assets dated May 2026.",
+      "ne": 1,
+      "links": [
+        [
+          "Operator site",
+          "https://www.harlembiospace.com/"
+        ]
+      ]
+    },
+    {
+      "n": "Cure.",
+      "i": "Cure",
+      "g": "Labs and hard-tech space",
+      "t": "Incubator / space",
+      "s": [
+        1,
+        2,
+        3
+      ],
+      "k": [
+        "Life sciences & health"
+      ],
+      "a": "Open",
+      "f": "No funding; residency and membership",
+      "e": "Not published",
+      "w": "Growing healthcare and life science companies; membership by application.",
+      "b": "Offices with wet and dry labs, hot desks, conference and event space, mentorship and investor access.",
+      "du": "Residency or membership",
+      "ap": "Online application",
+      "co": "Not published",
+      "pl": "345 Park Avenue South, Manhattan",
+      "intl": "Not stated",
+      "m": "Not published.",
+      "ss": "Member profiles include Protara and Claryx.",
+      "st": "Active",
+      "sv": "News dated through October 2026 and upcoming events on the site.",
+      "links": [
+        [
+          "Operator site",
+          "https://wewillcure.com/"
+        ]
+      ]
+    },
+    {
+      "n": "NYC AI Landing Pad",
+      "i": "Supermomos and Lightspeed, with NYCEDC",
+      "g": "International landing programs",
+      "t": "Landing program",
+      "s": [
+        3
+      ],
+      "k": [
+        "Digital & AI"
+      ],
+      "a": "Mixed",
+      "f": "No cash. Fully funded program",
+      "e": "No equity, revenue share or other ownership",
+      "w": "AI companies operating outside the US with at least $5M in annualized revenue or funds raised, planning a New York team of five or more within 24 months.",
+      "b": "Mentorship, introductions to customers, investors and talent, US go-to-market workshops, fast-track meetings with Lightspeed, and coworking in Manhattan for two people.",
+      "du": "12 months, with two expansion summits in New York",
+      "ap": "First deadline was January 16, 2026; rolling afterward",
+      "co": "10–20 companies per operator",
+      "pl": "Manhattan",
+      "intl": "Yes. Built for foreign companies; they pay their own travel and living costs",
+      "m": "Part of NYCEDC's International Landing Pad Network: about 50 companies across four operators.",
+      "ss": "First cohort started March 2, 2026.",
+      "st": "Active",
+      "sv": "Program started March 2, 2026 and accepts rolling applications.",
+      "ne": 1,
+      "links": [
+        [
+          "Program page",
+          "https://www.supermomos.com/nyc-ai-landing-pad"
+        ],
+        [
+          "NYCEDC network",
+          "https://edc.nyc/press-release/nycedc-selects-four-operators-international-landing-pad-network-attract-growth-stage-companies"
+        ]
+      ]
+    },
+    {
+      "n": "Plug and Play New York",
+      "i": "Plug and Play, with NYCEDC and Cornell Tech",
+      "g": "International landing programs",
+      "t": "Landing program",
+      "s": [
+        2,
+        3
+      ],
+      "k": [
+        "Digital & AI",
+        "Life sciences & health",
+        "Retail & consumer",
+        "Real estate",
+        "Climate & urban"
+      ],
+      "a": "Mixed",
+      "f": "Not published",
+      "e": "Not published",
+      "w": "Landing pad: growth-stage foreign companies in medtech, health, sustainability and deep tech. AI Nexus: early- and growth-stage AI ventures in retail, food, professional services, media, real estate and travel.",
+      "b": "Coworking at Cornell Tech, corporate matchmaking through a network of 550+ partners, and industry pilots.",
+      "du": "Cohort-based over 12 months",
+      "ap": "Through NYCEDC",
+      "co": "10–20 companies per cohort",
+      "pl": "Cornell Tech, Roosevelt Island",
+      "intl": "Yes for the landing pad: $5M revenue or capital for a team of five in New York",
+      "m": "First landing-pad companies: CTHINGS (Poland), Quikbot (Singapore), TangiO and Voltshare (UK).",
+      "ss": "Not published yet.",
+      "st": "Active",
+      "sv": "2026 landing-pad participants published by NYCEDC.",
+      "links": [
+        [
+          "2026 participants",
+          "https://edc.nyc/international-landing-pad-network-2026-participants"
+        ],
+        [
+          "AI Nexus",
+          "https://edc.nyc/program/ai-nexus"
+        ]
+      ]
+    },
+    {
+      "n": "SOSA New York",
+      "i": "SOSA",
+      "g": "International landing programs",
+      "t": "Landing program",
+      "s": [
+        2,
+        3
+      ],
+      "k": [
+        "Digital & AI",
+        "Climate & urban"
+      ],
+      "a": "Mixed",
+      "f": "Up to $175K from SOSA Ventures",
+      "e": "Not published",
+      "w": "Foreign advanced-technology and green-economy companies expanding to the US.",
+      "b": "Soft landing, go-to-market support, mentorship and corporate matchmaking from SOSA's New York hub.",
+      "du": "Cohort-based",
+      "ap": "Through NYCEDC's landing pad application",
+      "co": "10–20 companies",
+      "pl": "West 26th Street, Manhattan",
+      "intl": "Yes. Built for foreign companies",
+      "m": "SOSA overall: 1,000+ projects and clients in 25+ countries.",
+      "ss": "Landing-pad participant: Decidr.",
+      "st": "Listed",
+      "sv": "Site current (2026 footer) and names New York as its US landing pad; no cohort date.",
+      "lo": 175000,
+      "hi": 175000,
+      "links": [
+        [
+          "Operator site",
+          "https://www.sosa.co/"
+        ],
+        [
+          "Operator summary",
+          "https://edc.nyc/sites/default/files/2025-10/ILPN%20Program%20Operators%2010.24.25.pdf"
+        ]
+      ]
+    },
+    {
+      "n": "VentureOut",
+      "i": "VentureOut",
+      "g": "International landing programs",
+      "t": "Landing program",
+      "s": [
+        2,
+        3
+      ],
+      "k": [
+        "Sector-agnostic",
+        "Digital & AI",
+        "Fintech"
+      ],
+      "a": "Open",
+      "f": "No funding; cost not published",
+      "e": "None stated",
+      "w": "Technology companies from the US and abroad; government-sponsored programs serve startups from one country.",
+      "b": "One-week sector programs, three-month US launch programs and advisory, with investor and customer meetings in New York.",
+      "du": "One week or three months",
+      "ap": "About 25 programs a year",
+      "co": "Not published",
+      "pl": "New York City",
+      "intl": "Yes. Core audience",
+      "m": "1,000 companies accelerated, $2B raised, 300+ companies launched in the US since 2012.",
+      "ss": "FameBit, later acquired by Google.",
+      "st": "Listed",
+      "sv": "Site current (2012–2026 footer); no program dates shown.",
+      "links": [
+        [
+          "Operator site",
+          "https://ventureoutny.com/"
+        ]
+      ]
+    },
+    {
+      "n": "ITA Global Start Up Program, New York",
+      "i": "Italian Trade Agency with gener8tor",
+      "g": "International landing programs",
+      "t": "Landing program",
+      "s": [
+        1,
+        2
+      ],
+      "k": [
+        "Sector-agnostic"
+      ],
+      "a": "Mixed",
+      "f": "Free for selected startups",
+      "e": "None",
+      "w": "Italian innovative startups listed in the special section of the Chamber of Commerce register.",
+      "b": "Sessions on international readiness, business development and investor relations, then mentorship, pitch work and investor access in New York.",
+      "du": "Six weeks: two virtual, four in New York",
+      "ap": "2026 edition opened May 7, 2026; program September to November 2026",
+      "co": "10 startups in 2025",
+      "pl": "New York City",
+      "intl": "Italian startups only",
+      "m": "Program launched in 2019 by ITA and Italy's foreign ministry.",
+      "ss": "2025 cohort: 4Habits, BM Diagnostics, HexErgy, Kaigos, Keplera, Meddle, Mountain Maps, Penguin Engineering, Ruralis and SPS Fulfillment.",
+      "st": "Active",
+      "sv": "2025 New York cohort ran October to mid-November 2025; seventh edition scheduled for autumn 2026.",
+      "ne": 1,
+      "links": [
+        [
+          "2025 New York cohort",
+          "https://www.gener8tor.com/news/italian-trade-agencys-global-startup-program-and-gener8tor-host-10-italian-startups-in-new-york-city-for-accelerator"
+        ],
+        [
+          "2026 call",
+          "https://www.esteri.it/en/sala_stampa/archivionotizie/diplomazia-economica/2026/05/startup-innovative-aperte-le-candidature-al-global-start-up-program-2026/"
+        ]
+      ]
+    }
+  ],
+  "CASES": [
+    [
+      "MongoDB",
+      "AlleyCorp (incubated)",
+      "Public on NASDAQ (MDB)",
+      "Per portfolio page",
+      "https://www.alleycorp.com/portfolio"
+    ],
+    [
+      "Business Insider, Gilt Groupe",
+      "AlleyCorp (incubated)",
+      "Both acquired",
+      "Per portfolio page",
+      "https://www.alleycorp.com/portfolio"
+    ],
+    [
+      "DUOS",
+      "Redesign Health",
+      "$130M raised",
+      "Oct 2025",
+      "https://www.redesignhealth.com/"
+    ],
+    [
+      "Hugging Face",
+      "Betaworks Camp (BotCamp)",
+      "Named alumnus; Camp companies later raised from Sequoia, Kleiner Perkins and Coatue",
+      "Per program page",
+      "https://www.betaworks.com/camp"
+    ],
+    [
+      "TripleLift, Glia, Scentbird",
+      "ERA",
+      "Named alumni; ERA companies hold $10B+ in combined market cap",
+      "Per program site",
+      "https://www.eranyc.com/"
+    ],
+    [
+      "Maven Clinic, Timescale, Eden Health",
+      "Grand Central Tech Residency",
+      "Named alumni; program companies raised $4.4B+",
+      "2023–2026",
+      "https://hub.causo.ai/guides/how-to-apply-to-company-ventures-2026"
+    ],
+    [
+      "Baseten, Luma AI, Gamma",
+      "South Park Commons",
+      "Named alumni (all sites)",
+      "Per program page",
+      "https://www.southparkcommons.com/news/f26-founder-fellowship"
+    ],
+    [
+      "Healthie, Sporttrade, Aunt Flow",
+      "Techstars NYC",
+      "Named alumni; Aunt Flow raised a $1.5M seed",
+      "Per program page",
+      "https://www.techstars.com/accelerators/nyc"
+    ],
+    [
+      "Uber, Twilio, Remitly, DigitalOcean",
+      "Techstars (global)",
+      "Public companies in Techstars' $1B+ registry",
+      "Per portfolio page",
+      "https://www.techstars.com/portfolio"
+    ],
+    [
+      "Airalo, Lovable",
+      "Antler (global)",
+      "Named portfolio companies",
+      "Per program page",
+      "https://www.antler.co/residency/us"
+    ],
+    [
+      "Bowery, Actuate, Skillit",
+      "MetaProp Accelerator",
+      "Named graduates",
+      "Per program page",
+      "https://www.metaprop.com/accelerator"
+    ],
+    [
+      "FameBit",
+      "VentureOut",
+      "Later acquired by Google",
+      "Per operator site",
+      "https://ventureoutny.com/"
+    ],
+    [
+      "The Clean Fight portfolio",
+      "The Clean Fight",
+      "$784M follow-on capital across 70 companies",
+      "2020–2025",
+      "https://www.thecleanfight.com/"
+    ],
+    [
+      "IndieBio graduates",
+      "SOSV (all sites)",
+      "310 graduates raised $3.6B",
+      "2015–2025",
+      "https://indiebio.co/"
+    ],
+    [
+      "Udemy, Esusu",
+      "Founder Institute (global)",
+      "Named as unicorn alumni",
+      "Per program page",
+      "https://fi.co/s/new_york"
+    ]
+  ]
+}

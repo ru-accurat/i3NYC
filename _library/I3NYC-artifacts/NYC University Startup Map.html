@@ -1,0 +1,662 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>NYC University Startup Map</title>
+<style>
+/* Layout: one reading column for findings, full-width bands for the matrix, the funding ladder, success cases and the program database. */
+:root{
+  --bg:#F7F6F2; --surface:#FFFFFF; --ink:#1A1A2E; --muted:#5A5A70; --line:#DFDCD3;
+  --accent:#7000FF; --accent-soft:#F3EEFF; --link:#5A00D1;
+  --grant:#7000FF; --equity:#0B8A78;
+  --open:#0B6B4F; --open-bg:#E2F3EC; --mixed:#7A5200; --mixed-bg:#F8ECCF; --closed:#5A5A70; --closed-bg:#ECEAE4; --bad:#A3262E; --bad-bg:#F9E1E1;
+  --display:Georgia,"Times New Roman",serif; --body:Arial,Helvetica,sans-serif;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#12121F; --surface:#1C1C30; --ink:#ECEAF6; --muted:#A9A7C0; --line:#30304C;
+  --accent:#8F5CFF; --accent-soft:#2A2150; --link:#BBA2FF;
+  --grant:#8F5CFF; --equity:#1FA58F;
+  --open:#7FE0BC; --open-bg:#143A2E; --mixed:#F0CB7A; --mixed-bg:#40320F; --closed:#B9B7CC; --closed-bg:#2A2A40; --bad:#FFA9A9; --bad-bg:#4A1D22;
+  color-scheme:dark } }
+:root[data-theme="dark"]{
+  --bg:#12121F; --surface:#1C1C30; --ink:#ECEAF6; --muted:#A9A7C0; --line:#30304C;
+  --accent:#8F5CFF; --accent-soft:#2A2150; --link:#BBA2FF;
+  --grant:#8F5CFF; --equity:#1FA58F;
+  --open:#7FE0BC; --open-bg:#143A2E; --mixed:#F0CB7A; --mixed-bg:#40320F; --closed:#B9B7CC; --closed-bg:#2A2A40; --bad:#FFA9A9; --bad-bg:#4A1D22;
+  color-scheme:dark }
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.55}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:20px;padding-block:0 64px}
+a{color:var(--link)}
+a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.flag{display:flex;height:4px;margin-inline:-20px}
+.flag i{flex:1}.flag i:nth-child(1){background:#1F8A4C}.flag i:nth-child(2){background:#FFFFFF}.flag i:nth-child(3){background:#C8323C}
+header{padding-block:36px 28px;border-bottom:1px solid var(--line)}
+.eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 10px}
+h1{font-family:var(--display);font-weight:400;font-size:clamp(30px,5vw,46px);line-height:1.1;margin:0 0 14px;text-wrap:balance}
+.lede{max-width:66ch;font-size:17px;margin:0}
+.byline{margin:16px 0 0;font-size:14px;color:var(--muted)}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));margin-top:28px;border-top:1px solid var(--line)}
+.kpi{padding:16px 16px 4px 0}
+.kpi b{display:block;font-family:var(--display);font-weight:400;font-size:34px;line-height:1.1;font-variant-numeric:tabular-nums}
+.kpi span{color:var(--muted);font-size:13px}
+section{padding-block:36px 8px}
+h2{font-family:var(--display);font-weight:400;font-size:26px;margin:0 0 6px;text-wrap:balance}
+.sub{color:var(--muted);margin:0 0 20px;max-width:72ch}
+.findings{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px 36px;margin:0;padding:0;list-style:none}
+.findings li{border-top:2px solid var(--ink);padding-top:12px}
+.findings h3{font-size:16px;margin:0 0 6px}
+.findings p{margin:0;color:var(--muted)}
+.findings p b{color:var(--ink)}
+.scroll{overflow-x:auto}
+table.matrix{border-collapse:separate;border-spacing:3px;width:100%;min-width:620px;font-variant-numeric:tabular-nums}
+.matrix th{font-weight:400;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:6px 8px;text-align:center}
+.matrix th.row{text-align:left;text-transform:none;letter-spacing:0;font-size:14px;color:var(--ink);white-space:nowrap}
+.matrix td{height:44px;text-align:center;border-radius:4px;background:var(--surface);position:relative;font-weight:700}
+.matrix td .fill{position:absolute;inset:0;border-radius:4px;background:var(--accent)}
+.matrix td span{position:relative}
+.matrix td.zero{color:var(--muted);font-weight:400}
+.note{font-size:13px;color:var(--muted);margin:10px 0 0;max-width:80ch}
+.legend{display:flex;flex-wrap:wrap;gap:18px;font-size:13px;color:var(--muted);margin:0 0 12px}
+.legend i{display:inline-block;width:22px;height:8px;border-radius:4px;vertical-align:middle;margin-right:6px}
+.ladder{display:grid;gap:6px}
+.lrow{display:grid;grid-template-columns:minmax(150px,260px) 1fr;gap:12px;align-items:center}
+.lrow .lab{font-size:13px;min-width:0}
+.lrow .lab small{display:block;color:var(--muted)}
+.track{position:relative;height:26px;border-left:1px solid var(--line);background:
+  linear-gradient(to right,transparent calc(33.333% - 1px),var(--line) calc(33.333% - 1px),var(--line) 33.333%,transparent 33.333%,transparent calc(66.666% - 1px),var(--line) calc(66.666% - 1px),var(--line) 66.666%,transparent 66.666%)}
+.bar{position:absolute;top:8px;height:10px;border-radius:5px;min-width:10px}
+.bar.grant{background:var(--grant)}.bar.equity{background:var(--equity)}
+.val{position:absolute;top:4px;font-size:12px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.axis{display:grid;grid-template-columns:minmax(150px,260px) 1fr;gap:12px;font-size:12px;color:var(--muted);margin-top:4px}
+.axis div:last-child{display:flex;justify-content:space-between}
+.tip{position:fixed;z-index:10;pointer-events:none;background:var(--ink);color:var(--bg);font-size:12px;padding:6px 9px;border-radius:4px;max-width:260px}
+table.cases{width:100%;min-width:720px;border-collapse:collapse;font-size:14px}
+.cases th{text-align:left;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:400;padding:8px 10px;border-bottom:2px solid var(--ink)}
+.cases td{padding:10px;border-bottom:1px solid var(--line);vertical-align:top}
+.cases td:first-child{font-weight:700;white-space:nowrap}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 12px}
+.tabs button{font:inherit;font-size:14px;padding:8px 14px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:99px;cursor:pointer}
+.tabs button small{color:var(--muted);margin-left:4px;font-variant-numeric:tabular-nums}
+.tabs button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.tabs button[aria-pressed="true"] small{color:var(--bg)}
+.filters{display:flex;flex-wrap:wrap;gap:10px;align-items:end;padding:14px;background:var(--surface);border:1px solid var(--line);border-radius:6px}
+.filters label{display:grid;gap:4px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);flex:1 1 140px;min-width:0}
+.filters select,.filters input{font:inherit;font-size:14px;padding:7px 8px;border:1px solid var(--line);border-radius:4px;background:var(--bg);color:var(--ink);width:100%;text-transform:none;letter-spacing:0}
+.filters button{font:inherit;font-size:14px;padding:8px 14px;border:1px solid var(--ink);background:transparent;color:var(--ink);border-radius:4px;cursor:pointer}
+.count{font-size:13px;color:var(--muted);margin:14px 0 6px}
+.prog{border-top:1px solid var(--line)}
+.prog summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:minmax(0,2.2fr) minmax(0,1.1fr) minmax(0,1.5fr) auto;gap:14px;align-items:center;padding:14px 4px}
+.prog summary::-webkit-details-marker{display:none}
+.prog summary:hover{background:var(--accent-soft)}
+.pname{font-weight:700;min-width:0}
+.pname small{display:block;font-weight:400;color:var(--muted)}
+.pfund{font-size:14px;min-width:0}
+.ptype{font-size:13px;color:var(--muted);min-width:0}
+.pills{display:flex;flex-direction:column;gap:4px;align-items:flex-end}
+.pill{display:inline-block;font-size:12px;padding:3px 9px;border-radius:99px;white-space:nowrap}
+.pill.Open,.pill.Active{background:var(--open-bg);color:var(--open)}
+.pill.Mixed,.pill.Listed{background:var(--mixed-bg);color:var(--mixed)}
+.pill.Affiliates,.pill.Unconfirmed{background:var(--closed-bg);color:var(--closed)}
+.pill.Paused{background:var(--bad-bg);color:var(--bad)}
+.detail{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px 28px;padding:4px 4px 20px}
+.detail dt{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
+.detail dd{margin:0;min-width:0;overflow-wrap:anywhere}
+.detail .wide{grid-column:1/-1}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-size:12px;border:1px solid var(--line);border-radius:3px;padding:1px 7px;color:var(--muted)}
+.doors{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.door{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:16px}
+.door h3{font-size:15px;margin:0 0 4px}
+.door p{margin:0;color:var(--muted);font-size:14px}
+.statuskey{display:flex;flex-wrap:wrap;gap:10px 18px;font-size:13px;color:var(--muted);margin:0 0 14px}
+.caveats{columns:2 320px;column-gap:36px;padding-left:18px;color:var(--muted);font-size:14px}
+.caveats li{break-inside:avoid;margin-bottom:8px}
+footer{margin-top:36px;padding-top:16px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+@media (max-width:720px){
+  .prog summary{grid-template-columns:1fr auto;row-gap:4px}
+  .ptype{display:none}.pfund{grid-column:1/-1;order:3}
+  .lrow,.axis{grid-template-columns:1fr}.axis div:first-child{display:none}
+}
+</style>
+<style id="i3nyc-ds">
+/* I³/NYC Design System alignment layer (Oct 2026 deck): paper/ink grounds, Georgia + Arial, violet #7000FF / #6B21D4, 5px tricolor rule, 10px cards, square bars */
+:root{--bg:#F7F6F2;--surface:#FFFFFF;--ink:#1A1A2E;--muted:#5A5A70;--line:#DFDCD3;--accent:#7000FF;--accent-soft:#F3EEFF;--link:#6B21D4;--grant:#7000FF;--equity:#1A1A2E;--fig:#7000FF;--tri-mid:#E4E1D8}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#1A1A2E;--surface:#24243D;--ink:#F7F6F2;--muted:#C9C7DA;--line:#3A3A58;--accent:#7000FF;--accent-soft:#2E2650;--link:#B79BFF;--grant:#8F5CFF;--equity:#D6D4E6;--fig:#B79BFF;--tri-mid:#F7F6F2}}
+:root[data-theme="dark"]{--bg:#1A1A2E;--surface:#24243D;--ink:#F7F6F2;--muted:#C9C7DA;--line:#3A3A58;--accent:#7000FF;--accent-soft:#2E2650;--link:#B79BFF;--grant:#8F5CFF;--equity:#D6D4E6;--fig:#B79BFF;--tri-mid:#F7F6F2}
+body{font-family:Arial,Helvetica,sans-serif}
+h1,h2,.kpi b,.tile b{font-family:Georgia,"Times New Roman",serif;font-weight:400;font-style:normal}
+h1{line-height:1.15}
+a{color:var(--link);transition:color .2s cubic-bezier(.2,.7,.2,1)}
+a:hover{color:var(--accent);text-decoration:underline}
+.flag{height:5px!important;margin-left:calc(50% - 50vw)!important;margin-right:calc(50% - 50vw)!important}
+.flag i:nth-child(1){background:#1F8A4C!important}.flag i:nth-child(2){background:var(--tri-mid)!important}.flag i:nth-child(3){background:#C8323C!important}
+.i3-brand{display:inline-flex;margin:0 0 22px;line-height:0}
+.i3-brand img{height:34px;width:auto}
+.i3-brand .d{display:none}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .i3-brand .l{display:none}:root:not([data-theme="light"]) .i3-brand .d{display:block}}
+:root[data-theme="dark"] .i3-brand .l{display:none}:root[data-theme="dark"] .i3-brand .d{display:block}
+.eyebrow{font-weight:700;color:var(--link);letter-spacing:.12em;text-transform:uppercase}
+.kpi b,.tile b{color:var(--fig)}
+.matrix th:not(.row),.cases th{font-weight:700;color:var(--link)}
+.cases th{border-bottom:1px solid var(--ink)}
+.detail dt,.dlg dt,.filters label,.controls label,.lens span{font-weight:700}
+.door,.tile,.filters,#scatter{border-radius:10px}
+.door h3{font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:18px}
+.findings li{border-top-color:var(--accent)}
+.bar{border-radius:0!important}
+.btrack{border:0!important;border-radius:0!important;background:var(--accent-soft)!important}
+.btrack i{border-radius:0!important}
+.legend i{border-radius:0}
+.lens button,.tabs button,.morebtn,.filters button{transition:background-color .2s cubic-bezier(.2,.7,.2,1),color .2s cubic-bezier(.2,.7,.2,1),border-color .2s cubic-bezier(.2,.7,.2,1)}
+.lens button:hover,.tabs button:hover{border-color:var(--accent)}
+.morebtn:hover,.filters button:hover{background:var(--ink);color:var(--bg)}
+.tip{border-radius:4px}
+footer{color:var(--muted)}
+</style>
+
+<div class="wrap">
+<div class="flag" aria-hidden="true"><i></i><i></i><i></i></div>
+<header>
+  <a class="i3-brand" href="https://www.i3nyc.org" target="_blank" rel="noopener"><img class="l" src="assets/logo-black.png" alt="I³/NYC"><img class="d" src="assets/logo-white.png" alt=""></a>
+  <p class="eyebrow">I³/NYC Research · Ecosystem brief · Status checked October 10, 2026</p>
+  <h1>How New York City universities back startups and researchers</h1>
+  <p class="lede">A map of the incubators, accelerators, venture-building programs, proof-of-concept funds and seed funds run by New York City's universities and academic medical centers: who they serve, at what stage, with how much money, on what terms, whether they are running today, and what their alumni went on to do.</p>
+  <p class="byline">Designed by <a href="https://www.linkedin.com/in/andreacalcagno/" target="_blank" rel="noopener">Andrea Calcagno</a>, Vice Chair, Board Member &amp; Co-Founder, I³/NYC</p>
+  <div class="kpis" id="kpis"></div>
+</header>
+
+<section>
+  <h2>What the map shows</h2>
+  <p class="sub">Seven findings from the programs below. Every figure comes from the program's own page or a university release, linked in the database.</p>
+  <ul class="findings">
+    <li><h3>The serious money sits in life sciences proof-of-concept</h3><p>Columbia's Lab-to-Market network has made <b>437 cash awards worth $62.5M</b>, and its Deerfield partnership commits <b>up to $130M over ten years</b>. Rockefeller started its therapeutic fund with $25M and Mount Sinai seeded its i3 Accelerator with $10M. Nothing comparable exists for software.</p></li>
+    <li><h3>Most doors require a university badge</h3><p>Programs fund their own students, faculty and alumni. A minority accept founders with no affiliation: <b>Endless Frontier Labs, Runway, Tandon Future Labs, Elementa Labs, MSK's iHub</b> and the lab-space incubators.</p></li>
+    <li><h3>Non-dilutive is the default</h3><p>Grants and prizes dominate. Published equity terms appear in four places: Cornell Tech's Runway (a <b>$175K SAFE at a $3M cap</b>), Columbia's Lang Fund (a convertible note), the NYU Innovation Venture Fund and the NYU Langone Health Venture Fund.</p></li>
+    <li><h3>Researchers follow one standard path: NSF I-Corps</h3><p>CUNY leads the regional hub with Columbia and NYU, on a <b>$15M award that ends December 31, 2026</b>. NYU packages the path into a ladder worth up to <b>$102K</b> per team.</p></li>
+    <li><h3>The track record is real, and concentrated</h3><p>Endless Frontier Labs graduates have raised <b>$3.20B</b>. Cornell Tech startups have raised <b>over $500M</b> and are valued above $1.3B. Tandon Future Labs counts <b>40 acquisitions worth $940M+</b>.</p></li>
+    <li><h3>Programs get renamed more often than they close</h3><p>Weill Cornell's Daedalus Fund became the <b>Enterprise Innovation Catalyst Fund</b> in spring 2025. Rockefeller's Robertson fund is now carried by the <b>Black family</b> gift of 2024. Mount Sinai's i3 Genesis track is unavailable.</p></li>
+    <li><h3>Two public levers are shut for now</h3><p><b>START-UP NY</b> closed to new applicants on January 1, 2026. <b>IN2NYC</b>, the CUNY visa route for international entrepreneurs, lists applications as closed with no reopening date.</p></li>
+  </ul>
+</section>
+
+<section>
+  <h2>Coverage by institution and stage</h2>
+  <p class="sub">Number of mapped programs active at each stage. A program that spans stages is counted in each. Darker cells mean more programs.</p>
+  <div class="scroll"><table class="matrix" id="matrix"></table></div>
+  <p class="note">Reading: support is dense from research through pre-seed and thins out at seed. Only Endless Frontier Labs, which admits startups up to Series A, and BioBAT's space for more mature biotech companies reach the growth stage.</p>
+</section>
+
+<section>
+  <h2>The funding ladder</h2>
+  <p class="sub">Money available to a single team, per program, on a log scale from $500 to $500,000. A bar spans the published minimum to maximum; a short bar is a fixed amount.</p>
+  <div class="legend"><span><i style="background:var(--grant)"></i>Grant or prize (non-dilutive)</span><span><i style="background:var(--equity)"></i>Investment (equity or note), tagged "equity"</span></div>
+  <div class="ladder" id="ladder"></div>
+  <div class="axis"><div></div><div><span>$500</span><span>$5K</span><span>$50K</span><span>$500K</span></div></div>
+  <p class="note">Fund-level commitments (Hudson Heights $130M, Rockefeller $25M, i3 Accelerator $10M) are pools, not per-team checks, and are left off. Funds with no published check size, and prizes last evidenced before 2020, are also omitted.</p>
+</section>
+
+<section>
+  <h2>Success cases</h2>
+  <p class="sub">Alumni outcomes reported by the programs themselves or by university releases. Amounts are as published at the date shown.</p>
+  <div class="scroll"><table class="cases" id="cases"></table></div>
+</section>
+
+<section>
+  <h2>Program database</h2>
+  <p class="sub">Pick a topic, narrow with the filters, and open a row for eligibility, terms, timing, track record, status evidence and reference links.</p>
+  <div class="statuskey">
+    <span><span class="pill Active">Active</span> dated evidence from 2025–26</span>
+    <span><span class="pill Listed">Listed</span> official page live, no recent date</span>
+    <span><span class="pill Paused">Paused</span> closed or unavailable now</span>
+    <span><span class="pill Unconfirmed">Unconfirmed</span> only older sources found</span>
+  </div>
+  <div class="tabs" id="tabs" role="group" aria-label="Topic"></div>
+  <div class="filters">
+    <label for="f-q">Search<input id="f-q" type="search" placeholder="Name, alumni, keyword"></label>
+    <label for="f-inst">Institution<select id="f-inst"></select></label>
+    <label for="f-type">Program type<select id="f-type"></select></label>
+    <label for="f-stage">Stage<select id="f-stage"></select></label>
+    <label for="f-acc">Access<select id="f-acc"></select></label>
+    <label for="f-st">Status<select id="f-st"></select></label>
+    <button id="f-reset" type="button">Reset</button>
+  </div>
+  <p class="count" id="count"></p>
+  <div id="list"></div>
+</section>
+
+<section>
+  <h2>Entry points for international founders and researchers</h2>
+  <p class="sub">The programs that do not require a New York university affiliation, by what they are good for.</p>
+  <div class="doors">
+    <div class="door"><h3>Science and deep-tech startups, already incorporated</h3><p><b>Endless Frontier Labs</b> (NYU Stern) admits startups from anywhere, takes no equity and charges no fees. The CEO attends five meeting days over nine months, two of them in person in New York. Applications run mid-May to end of July.</p></div>
+    <div class="door"><h3>Recent PhDs who want to found in New York</h3><p><b>Runway</b> (Cornell Tech) recruits PhD founders from universities worldwide and gives salary, research budget, housing allowance and space for 12 to 24 months, against a SAFE.</p></div>
+    <div class="door"><h3>Digital health startups seeking a US hospital partner</h3><p><b>Elementa Labs</b> (Mount Sinai) runs 12-week cohorts for pre-seed and seed companies; over a third of applicants are international. <b>MSK's iHub Challenge</b> runs three-month cohorts with Memorial Sloan Kettering teams. Neither provides cash.</p></div>
+    <div class="door"><h3>AI, data, climate and urban-tech startups</h3><p><b>NYU Tandon Future Labs</b> in Downtown Brooklyn runs sector incubators and hosts programs with foreign partners, including Innovate UK's global incubator programme.</p></div>
+    <div class="door"><h3>Biotech teams that need a bench</h3><p><b>BioLabs@NYULangone</b> in Manhattan, the <b>Einstein</b> incubator in the Bronx and <b>SUNY Downstate</b>'s incubator and BioBAT in Brooklyn rent wet-lab space to early-stage companies.</p></div>
+    <div class="door"><h3>A visa route that is closed for now</h3><p><b>IN2NYC</b> pairs an international entrepreneur with a partner school so the founder can qualify for a cap-exempt H-1B visa. NYCEDC lists applications as closed and says future rounds will be advertised.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>Method and caveats</h2>
+  <ul class="caveats">
+    <li>Scope: programs run by, or housed at, universities and academic medical centers in the five boroughs. City-run programs and private accelerators are excluded.</li>
+    <li>Status was checked on October 10, 2026 against each program's own page or a dated university release. The evidence is quoted in each row.</li>
+    <li>"Listed" means the official page is live but shows no 2025–26 date. "Unconfirmed" means I found only older sources: BioLabs@NYULangone (2019), Tri-I TDI (2020), Pace (2018) and the Weill business plan challenge (2019).</li>
+    <li>Three official sites could not be opened during the check: the NY I-Corps Hub site, the IN2NYC site and the BioLabs site. Their rows rely on NSF, NYCEDC and NYU Langone pages instead.</li>
+    <li>Access labels are my reading of published eligibility. "Mixed" means affiliates lead but outsiders can join a team, or the page states no rule.</li>
+    <li>Success cases are self-reported by programs. Attribution to a program does not mean the program caused the outcome.</li>
+    <li>Check sizes are not published for the NYU Innovation Venture Fund, the NYU Langone funds, the Weill Catalyst Fund, MSK's fund and i3 Accelerator projects.</li>
+    <li>BiomedX's average award (about $74K) is my division of $6M by 81 awards, not a published figure.</li>
+    <li>Not covered for lack of a verifiable source: Yeshiva, Pratt, FIT and St. John's programs.</li>
+  </ul>
+</section>
+<footer>Designed by <a href="https://www.linkedin.com/in/andreacalcagno/" target="_blank" rel="noopener">Andrea Calcagno</a>, Vice Chair, Board Member &amp; Co-Founder, I³/NYC. Figures are as published by each institution; confirm terms with the program before relying on them.</footer>
+</div>
+<div class="tip" id="tip" hidden></div>
+
+<script>
+const STAGES=["Idea","Research / PoC","Pre-seed","Seed","Growth"];
+const GROUPS=["Columbia","NYU","Cornell (Tech + Weill)","CUNY","Medical & research institutes","Other universities"];
+const TOPICS=["Life sciences","Deep tech","Digital & AI","Climate & urban","Social impact","Design & media","Sector-agnostic"];
+const P=[
+// ---------- Columbia
+{n:"Lab-to-Market Accelerator Network",i:"Columbia Technology Ventures",g:"Columbia",t:"Proof-of-concept fund",s:[1],k:["Life sciences","Deep tech","Climate & urban"],a:"Affiliates",
+ f:"437 cash awards, $62.5M total",e:"Non-dilutive awards",w:"Faculty-led research teams at Columbia; some accelerators are run with partner institutions.",
+ b:"Bootcamps on product development and entrepreneurship, mentors, pilot funding. Ten active accelerators, including the Carbontech Development Initiative (rounds above $2.3M and $2.6M) and the New York State Biodefense Commercialization Fund, part of a $40M state fund.",
+ du:"Varies by accelerator; bootcamps of 2 days to 4 months",ap:"Set by each accelerator",co:"2,126 applications to date; 831 alumni teams",pl:"Morningside and Medical Center campuses",intl:"No. Columbia research teams",
+ m:"120+ startups launched and $297M+ in external follow-on funding since 2008.",ss:"In 2023–24, 12 life-science finalist teams shared $755K in pilot funding. KeeVeeve and FLOODSENSE each won a $10,000 Ignition Award in the smart-streetscapes accelerator.",
+ st:"Active",sv:"Network page lists 10 active and 12 dormant accelerators (read October 2026).",
+ links:[["Program page","https://labtomarket.columbia.edu/"],["2024 annual report","https://labtomarket.columbia.edu/news/columbia-lab-market-l2m-accelerator-network-publishes-2024-annual-report"]]},
+{n:"BiomedX",i:"Columbia Engineering / CTV",g:"Columbia",t:"Accelerator",s:[1],k:["Life sciences"],a:"Affiliates",
+ f:"$6M+ across 81 awards (avg ≈ $74K)",e:"Non-dilutive awards",w:"Interdisciplinary teams of clinicians, engineers, scientists and students.",
+ b:"Funding, education, resources and mentorship to test a commercial hypothesis for an unmet clinical need.",
+ du:"Bootcamp January to April; pitch day in May",ap:"Opens mid-October; due late November",co:"185 teams admitted from 251 applications over 13 cycles",pl:"Columbia campus",intl:"No. Columbia teams",
+ m:"$86.3M in follow-on external funding from $6M awarded.",ss:"Aggregate only: about $14 of outside funding for every dollar awarded.",
+ st:"Active",sv:"2025–26 cycle dated on the program page, with pitch day May 5, 2026.",
+ links:[["Program page","https://labtomarket.columbia.edu/biomedx"]]},
+{n:"Hudson Heights Innovations",i:"Columbia + Deerfield Management",g:"Columbia",t:"Venture builder",s:[1,2],k:["Life sciences"],a:"Affiliates",
+ f:"Up to $130M over 10 years",e:"Funded by Deerfield and partners; terms not published",w:"Columbia faculty.",
+ b:"Funding plus Deerfield's drug-development expertise to turn biomedical discoveries into treatments, with a focus on high-need and rare diseases.",
+ du:"Ten-year collaboration; project length varies",ap:"Rolling",co:"Not published",pl:"Columbia University Irving Medical Center",intl:"No. Columbia faculty",
+ m:"Not published.",ss:"No outcomes published yet.",
+ st:"Active",sv:"Listed among Columbia's active accelerators; proposals accepted on a rolling basis.",
+ links:[["Program page","https://labtomarket.columbia.edu/content/hudson-heights-innovations-columbia-deerfield"]]},
+{n:"Columbia Startup Lab (SoHo)",i:"Columbia Entrepreneurship",g:"Columbia",t:"Incubator / space",s:[2,3],k:["Sector-agnostic"],a:"Mixed",
+ f:"No funding. Seats $325–$695 per month",e:"No equity",w:"Teams with at least one Columbia graduate working full-time on the venture. Non-Columbia teammates pay the higher seat rate.",
+ b:"Subsidized 5,100 sq ft co-working space, workshops on accounting, legal, HR and marketing, mentors in residence, pitch practice.",
+ du:"Up to one year; four-month minimum",ap:"Opens March 2027; cohort starts each June",co:"70+ alumni founders a year",pl:"SoHo, Manhattan",intl:"Only as a teammate of a Columbia graduate",
+ m:"Columbia founder companies have raised $5.8B (university figure).",ss:"No alumni named on the program page.",
+ st:"Active",sv:"2026–27 cohort filled; waitlist open; next applications March 2027.",
+ links:[["Program page","https://entrepreneurship.columbia.edu/startup-lab/"]]},
+{n:"StartupColumbia venture competition",i:"Columbia Entrepreneurship",g:"Columbia",t:"Competition",s:[0,2],k:["Sector-agnostic","Digital & AI","Design & media","Social impact"],a:"Affiliates",
+ f:"$10K–$25K per prize; $200K+ a year",e:"Non-dilutive prizes",w:"Current students and alumni within five years of their degree. Ventures that have raised $250K or more are ineligible.",
+ b:"Open, Technology, Media and Global Policy tracks, plus the Helen Gurley Brown prize (up to $25K) and the Data Science Institute AI Prize (up to $15K).",
+ du:"January to April",ap:"Opens January 2027",co:"Three prizes per track",pl:"Columbia campus; pitches mostly online",intl:"No. Columbia students and recent alumni",
+ m:"$200K+ awarded each year.",ss:"2026 winners: PollenPal (Open, $25K, plus the $15K AI Prize), Routerr Health (Technology, $25K), Perpetua (Global Policy, $25K, plus $25K HGB prize), Hey Kahani (Media, $15K).",
+ st:"Active",sv:"2026 winners announced April 29, 2026.",lo:10000,hi:25000,
+ links:[["Program page","https://entrepreneurship.columbia.edu/startupcolumbia/"],["2026 winners","https://entrepreneurship.columbia.edu/?p=83339"]]},
+{n:"Eugene Lang Entrepreneurial Initiative Fund",i:"Columbia Business School",g:"Columbia",t:"Seed fund",s:[2,3],k:["Sector-agnostic"],a:"Affiliates",
+ f:"$25K–$50K",e:"Convertible demand note; the school shares in upside",w:"Graduating Columbia Business School students and alumni whose ventures meet the fund's criteria.",
+ b:"Early investment alongside the Lang Center's summer accelerator, Build Lab (matching engineers with business founders) and the two-year Venture Capital Fellows program.",
+ du:"One-time investment",ap:"Two cycles a year (spring and fall)",co:"Two to four ventures per cycle",pl:"Manhattanville campus",intl:"No. CBS students and alumni",
+ m:"CBS alumni startups raised $23B in institutional funding, 2011–2021 (school figure, Crunchbase).",ss:"Recent recipients: Light RFP, Verteel, Sumly and Bivicare (spring 2025); Guilde AI and Pelican Invests (fall 2024); Epibone (fall 2023).",
+ st:"Active",sv:"Latest listed award cycle is spring 2025.",lo:25000,hi:50000,eq:1,
+ links:[["Lang Center","https://business.columbia.edu/lang"],["Recipients","https://business.columbia.edu/lang/student-and-alumni-programming/launch/lang-fund/lang-fund-recipients"],["Fund terms","https://innovationresources.columbia.edu/content/eugene-lang-entrepreneurial-initiative-fund-cbs"]]},
+{n:"Tamer Fund for Social Ventures",i:"Columbia Business School",g:"Columbia",t:"Seed fund",s:[2],k:["Social impact","Climate & urban"],a:"Mixed",
+ f:"$25K seed grant",e:"Seed funding; terms vary by venture type",w:"Nonprofit, for-profit or hybrid ventures led by Columbia students, alumni, faculty or researchers, or advised by Columbia faculty.",
+ b:"Seed funding and advisory support for early-stage social and environmental ventures.",
+ du:"One-time grant",ap:"Deadlines August 15 and March 1",co:"Two to three ventures per cycle",pl:"Columbia Business School",intl:"Possible if a Columbia faculty member advises the venture",
+ m:"Almost 80 ventures funded across 22 cycles.",ss:"Spring 2026 awardees: Every Electric and HeyBodhi.",
+ st:"Active",sv:"Spring 2026 awards published.",lo:25000,hi:25000,
+ links:[["Program page","https://business.columbia.edu/socialenterprise/columbia-business/tfsv/spring-2026"]]},
+{n:"Ignition Grants",i:"Columbia Engineering",g:"Columbia",t:"Proof-of-concept fund",s:[0],k:["Deep tech","Sector-agnostic"],a:"Affiliates",
+ f:"$3K–$6K",e:"Non-dilutive grant",w:"Teams with a current Columbia Engineering student. One grant per team.",
+ b:"Covers formation, IP protection, prototypes and proofs of concept.",
+ du:"One-time grant",ap:"2026 request for proposals published",co:"Not published",pl:"Columbia Engineering",intl:"No. Columbia Engineering students",
+ m:"Not published.",ss:"No grantees named.",
+ st:"Active",sv:"2026 application instructions linked from the program page.",lo:3000,hi:6000,
+ links:[["Program page","https://entrepreneurship.engineering.columbia.edu/?p=1369"]]},
+// ---------- NYU
+{n:"Startup Accelerator Program and Summer Launchpad",i:"NYU Entrepreneurial Institute",g:"NYU",t:"Accelerator",s:[0,2],k:["Sector-agnostic","Digital & AI"],a:"Affiliates",
+ f:"$15K grant + $25K cloud credits",e:"No equity",w:"Teams led by NYU students, faculty, staff or recent alumni, with two members working full-time.",
+ b:"Three steps: Startup Bootcamp, Startup Sprint, then Summer Launchpad with mentorship, pro-bono legal and accounting, 24/7 space at the Leslie eLab and a demo day.",
+ du:"Nine weeks in summer",ap:"Summer 2027 applications open February 2027",co:"8–10 teams; about 10% of applicants",pl:"Leslie eLab, Greenwich Village",intl:"No. NYU-led teams",
+ m:"About 10% acceptance rate.",ss:"Alumni include Brooklinen, Medivis, Rilla, Sunthetics and GigFinesse (which raised a $3.6M seed round).",
+ st:"Active",sv:"Summer 2026 cohort closed; 2027 dates published.",lo:15000,hi:15000,
+ links:[["Program page","https://entrepreneur.nyu.edu/programs/summer-launchpad/"]]},
+{n:"Tech Venture Program",i:"NYU Entrepreneurial Institute",g:"NYU",t:"Accelerator",s:[1,2],k:["Deep tech","Life sciences","Digital & AI"],a:"Mixed",
+ f:"Up to $102K in three steps",e:"Non-dilutive",w:"Teams of two or more NYU faculty, postdocs, PhD students or researchers with a proof of concept. Non-NYU cofounders may join NYU-led teams.",
+ b:"Tech Venture Workshop ($2K), NSF I-Corps ($50K), Tech Venture Accelerator ($50K plus legal help, cloud credits and banking).",
+ du:"Workshop three half-days; I-Corps seven weeks; accelerator six months",ap:"Workshop runs fall, winter and summer; fall deadline October 7",co:"Not published",pl:"NYU, Manhattan and Brooklyn",intl:"As a co-founder on an NYU-led team",
+ m:"Not published.",ss:"No alumni named on the program page.",
+ st:"Active",sv:"Fall workshop deadline of October 7 shown on the NYU Entrepreneurship site.",lo:2000,hi:102000,
+ links:[["Program page","https://entrepreneur.nyu.edu/programs/tech-venture-program/"]]},
+{n:"NYU Innovation Venture Fund",i:"NYU Entrepreneurial Institute",g:"NYU",t:"Seed fund",s:[2,3],k:["Sector-agnostic"],a:"Affiliates",
+ f:"Check size not published",e:"Equity investment",w:"Startups founded by current NYU students, faculty or researchers, or built on NYU technology, past proof of concept. Target market of $50M a year in revenue within five years.",
+ b:"Pre-seed and seed investment alongside angels and VCs. An evergreen philanthropic fund that recycles returns into the university.",
+ du:"One-time investment, with follow-ons",ap:"Rolling; submit a venture profile",co:"Three to four investments a year",pl:"NYU",intl:"No. NYU founders or NYU technology",
+ m:"30 investments by October 2022.",ss:"Exits: Fondu, acquired by Airbnb (the fund's Airbnb shares rose nearly 30x by the 2020 IPO); numberFire, acquired by FanDuel; Kinvolved, acquired by PowerSchool.",
+ st:"Listed",sv:"Fund page live and taking venture profiles; latest dated update is October 2022.",
+ links:[["Program page","https://entrepreneur.nyu.edu/resource/innovation-venture-fund/"],["30th investment","https://entrepreneur.nyu.edu/blog/2022/10/23/nyu-innovation-venture-fund-30th-investment/"]]},
+{n:"Leslie eLab and Prototyping Fund",i:"NYU Entrepreneurial Institute",g:"NYU",t:"Incubator / space",s:[0],k:["Sector-agnostic"],a:"Affiliates",
+ f:"Up to $500 per team",e:"Non-dilutive",w:"NYU students; teams need at least one NYU student and may include outsiders.",
+ b:"Workspace, coaching, workshops and events. The Prototyping Fund reimburses tools and materials.",
+ du:"Ongoing access",ap:"Fall and spring semesters",co:"About 5–7 teams funded each semester",pl:"Greenwich Village",intl:"Only as a teammate of an NYU student",
+ m:"Not published.",ss:"Not applicable.",
+ st:"Active",sv:"Opening hours and fund terms current on the NYU Entrepreneurship site.",lo:500,hi:500,
+ links:[["Prototyping Fund","https://entrepreneur.nyu.edu/resource/prototyping-fund/"],["NYU Entrepreneurship","https://entrepreneur.nyu.edu/"]]},
+{n:"Endless Frontier Labs",i:"NYU Stern",g:"NYU",t:"Accelerator",s:[2,3,4],k:["Deep tech","Life sciences","Digital & AI"],a:"Open",
+ f:"No funding; no fees",e:"No equity",w:"Incorporated science and technology startups from anywhere in the world, pre-seed to Series A, with one full-time member. No NYU affiliation required.",
+ b:"Milestone-based mentorship from 170+ mentors and investors, NYU scientific experts, a Stern MBA team per startup, and partners Cooley, HSBC and Google Cloud. Tracks: Deep Tech, Digital Health, Digital Tech, Life Sciences.",
+ du:"Nine months; five meeting days, two in person in New York",ap:"Mid-May to end of July; interviews first week of September",co:"74 startups in 2025–26; about the top 5% of applicants",pl:"NYU Stern, Manhattan, plus virtual",intl:"Yes. Most admitted founders have no NYU link",
+ m:"$3.20B raised by 243 graduates and $9.14B combined value across 186 graduates since 2019.",ss:"Strand Therapeutics ($153M Series B, August 2025), Justpoint ($95M raised), GALY ($33M Series B), Databento ($30M Series A), Gastrograph AI (acquisition by NIQ agreed April 2025), iRocket ($400M SPAC merger announced).",
+ st:"Active",sv:"2025–26 cohort graduated May 7, 2026.",
+ links:[["Program page","https://endlessfrontierlabs.com/"],["FAQ","https://endlessfrontierlabs.com/faq"],["Alumni news","https://endlessfrontierlabs.com/news"],["2026 cohort","https://www.stern.nyu.edu/experience-stern/news/school-news/invent-change-endless-frontier-labs-nyu-stern-graduated-its-2025-2026-cohort-and-elizabeth-elting"]]},
+{n:"NYU Entrepreneurs Challenge",i:"NYU Stern Berkley Center",g:"NYU",t:"Competition",s:[0,2],k:["Digital & AI","Life sciences","Sector-agnostic"],a:"Affiliates",
+ f:"$300K+ in prizes and services",e:"Non-dilutive prizes",w:"NYU students, faculty and alumni.",
+ b:"Three tracks: Digital Tech, New Venture and Healthcare, with coaching and pro-bono services.",
+ du:"About eight months, fall to May",ap:"Fall kickoff",co:"11 finalist ventures in 2025",pl:"NYU Stern",intl:"No. NYU community",
+ m:"Per-track prize amounts not published.",ss:"2025: Vitalis Regenerative Materials won the $100,000 founder award; grand prizes went to Happenings, Athlitix and Definitive Diagnostics.",
+ st:"Active",sv:"2025 finals reported May 5, 2025.",
+ links:[["2025 winners","https://nyusternberkleycenter.com/2025/05/introducing-the-winners-of-the-2025-nyu-entrepreneurs-challenge/"]]},
+{n:"NYU Tandon Future Labs",i:"NYU Tandon School of Engineering",g:"NYU",t:"Incubator / space",s:[2,3],k:["Digital & AI","Climate & urban","Deep tech"],a:"Open",
+ f:"Program-dependent",e:"Terms not published",w:"Early-stage startups in AI, data, clean energy and urban tech, plus veteran founders. The Catalyst NYC program was announced as open to any New York City startup.",
+ b:"Data Future Lab, Urban Future Lab (with the ACRE cleantech incubator), Veterans Future Lab, AI NexusLab and Catalyst NYC. Also runs the Carbon to Value Initiative and hosts Innovate UK's global incubator programme.",
+ du:"Residency-based; varies by lab",ap:"By lab",co:"Not published",pl:"370 Jay Street, Downtown Brooklyn; Sunset Park for veterans",intl:"Yes for incubation; has hosted foreign cohorts",
+ m:"428 startups supported, $4.6B raised, 9,500+ jobs, 93% alive after five years (NYU, January 2026). 40 acquisitions worth $940M+.",ss:"TapCommerce (acquired by Twitter, reported $100M), Geometric Intelligence (acquired by Uber, became Uber AI Labs), Honest Buildings (acquired by Procore), Vettery (acquired, reported $100M+), EVBox (went public by SPAC at $1.4B+), CB Insights (first cohort, 2009), Clarifai.",
+ st:"Active",sv:"NYU published current statistics and was hiring for the labs in January 2026.",
+ links:[["Program page","https://futurelabs.nyc/"],["NYU overview","https://engineering.nyu.edu/research-innovation/nyu-tandon-future-labs"],["10-year review","https://engineering.nyu.edu/news/nyu-tandon-future-labs-celebrates-10-years-tech-and-innovation"]]},
+{n:"Therapeutics Alliances",i:"NYU Langone Health",g:"NYU",t:"Venture builder",s:[1],k:["Life sciences"],a:"Affiliates",
+ f:"Up to 15 projects funded a year",e:"Award size not published",w:"NYU faculty, postdocs and graduate students with intramural preclinical research.",
+ b:"A drug accelerator: target validation, assay development, hit finding, project managers, external chemists and CROs, plus business development and IP work.",
+ du:"One-year awards (September to August)",ap:"2027 awards: proposals were due April 15, 2026",co:"50+ of 100+ reviewed projects funded",pl:"NYU Langone, Manhattan",intl:"No. NYU researchers",
+ m:"10+ startups spun out and $15M+ in complementary external funding.",ss:"NYU Langone research behind Remicade and Sutent is cited as the licensing precedent.",
+ st:"Active",sv:"2027 Translational Awards request for proposals published.",
+ links:[["Program page","https://tov.med.nyu.edu/for-innovators/funding-programs/therapeutics-alliances-innovators/"]]},
+{n:"TOV funds: MedTech Prototyping, TAC Awards, Health Venture Fund",i:"NYU Langone Health",g:"NYU",t:"Proof-of-concept fund",s:[1,2,3],k:["Life sciences"],a:"Affiliates",
+ f:"Amounts not published",e:"Grants; the Venture Fund makes seed investments",w:"NYU innovators; the venture fund backs biomedical startups using NYU technology and IP.",
+ b:"MedTech Venture Prototyping Fund for devices and digital health, Technology Acceleration & Commercialization Awards for startup creation or licensing, and the NYU Langone Health Venture Fund for seed-stage investments.",
+ du:"Not published",ap:"Not published",co:"Not published",pl:"NYU Langone",intl:"No. NYU technology",
+ m:"Not published.",ss:"Not published.",
+ st:"Listed",sv:"All three listed on the Technology Opportunities & Ventures funding page; no dates shown.",
+ links:[["Program page","https://tov.med.nyu.edu/for-innovators/funding-programs/"]]},
+{n:"BioLabs@NYULangone",i:"NYU Langone Health + BioLabs",g:"NYU",t:"Incubator / space",s:[2,3],k:["Life sciences"],a:"Open",
+ f:"No funding; membership space",e:"No equity stated",w:"Early-stage life sciences companies. The announcement sets no NYU affiliation requirement.",
+ b:"50,000 sq ft of equipped lab and office space, with equipment, programming and operations support. Backed by NYCEDC and Empire State Development; sponsors at opening included Bristol-Myers Squibb, Sanofi and Boehringer Ingelheim.",
+ du:"Membership",ap:"Rolling",co:"Designed for 35+ companies and 160 staff",pl:"180 Varick Street, Manhattan",intl:"Yes, if the company operates in New York",
+ m:"22 companies at opening in December 2019.",ss:"Early residents included Black Diamond Therapeutics, Sparian Biosciences and Fitbiomics.",
+ st:"Unconfirmed",sv:"Sources date from December 2019; the BioLabs site could not be opened during this check.",
+ links:[["NYU Langone release","https://www.nyulangone.org/news/nyu-langone-creates-cutting-edge-biotech-incubator-manhattan"],["Fierce Healthcare","https://www.fiercehealthcare.com/tech/nyu-langone-biolabs-open-up-new-york-city-s-largest-biotech-startup-incubator"]]},
+// ---------- Cornell
+{n:"Runway Startup Postdoc Program",i:"Jacobs Technion-Cornell Institute, Cornell Tech",g:"Cornell (Tech + Weill)",t:"Venture builder",s:[1,2],k:["Digital & AI","Deep tech"],a:"Open",
+ f:"$175K year one, $150K year two",e:"SAFE: $175K at a $3M cap; year two $150K at a $4.7M cap. The company gets an exclusive, perpetual, royalty-free license.",w:"Recent PhDs in digital technology fields from universities worldwide who want to found a company in New York.",
+ b:"Salary, research budget, housing allowance, workspace, classes, IP registration and academic and business mentorship.",
+ du:"12 to 24 months",ap:"Annual; cohort starts in September",co:"About 6 postdoc ventures a year",pl:"Cornell Tech, Roosevelt Island",intl:"Yes. Recruits PhD founders worldwide",
+ m:"128 startups created at Cornell Tech; 120+ from Runway with a combined valuation above $1B and 700+ New York City jobs.",ss:"Nanit raised a $14M Series B. The 2025 cohort includes L2 Labs, Enhansys, Budbreak Innovations, Néa Fertility, RemNeuro and Moon Wave.",
+ st:"Active",sv:"11 new startups joined in September 2025; 2026 award runners-up were placed in Runway.",lo:175000,hi:325000,eq:1,
+ links:[["Program page","https://tech.cornell.edu/programs/phd/startup-postdocs/"],["IP model","https://tech.cornell.edu/programs/phd/startup-postdocs/intellectual-property-model/"],["2025 cohort","https://www.news.cornell.edu/stories/2025/09/cornell-tech-welcomes-11-new-startups-through-runway-and-spinout-programs"]]},
+{n:"Cornell Tech Startup Awards and Spinouts",i:"Cornell Tech",g:"Cornell (Tech + Weill)",t:"Competition",s:[2],k:["Digital & AI"],a:"Affiliates",
+ f:"$100K package per team",e:"Post-academic investment; in 2024 the package was $80K cash plus $20K of space and mentorship",w:"Startup teams from the graduating master's class, formed in the Studio curriculum.",
+ b:"Investment, studio space on campus and mentorship. Runners-up get office space and Runway mentorship.",
+ du:"Award in May, then a year in the Spinouts program",ap:"Internal; ten finalists pitch in May",co:"Four winners in 2026; up to five a year",pl:"Cornell Tech, Roosevelt Island",intl:"No. Cornell Tech graduates",
+ m:"Cornell Tech startups are valued above $1.3B and have raised over $500M. 11 Studio alumni companies had been acquired by May 2024.",ss:"Acquirers include Hopper, Peloton, Nike, Adobe (Uru, 2018), Circle (Trigger Finance), Infor and MINDBODY. 2026 winners: Aiseptor, Custos, Kindred and Lola.",
+ st:"Active",sv:"2026 awards held May 14, 2026.",lo:100000,hi:100000,
+ links:[["2026 winners","https://news.cornell.edu/index.php/node/333038"],["2026 event","https://tech.cornell.edu/events/2026-startup-awards-open-studio"],["2024 awards","https://news.cornell.edu/index.php/node/328776"]]},
+{n:"BioVenture eLab",i:"Weill Cornell Medicine",g:"Cornell (Tech + Weill)",t:"Accelerator",s:[0,1,2],k:["Life sciences"],a:"Affiliates",
+ f:"Challenge prize historically $100K",e:"Non-dilutive prize",w:"Weill Cornell students and faculty.",
+ b:"Bench-to-Bedside Initiative course, Accelerating BioVenture Innovation program, Biomedical Innovation Challenge, makerspace and a yearly Startup Symposium.",
+ du:"Course 12 weeks; accelerator starts each September",ap:"Accelerating BioVenture Innovation kicked off September 8, 2026",co:"Seven faculty-led teams in the 2019 challenge",pl:"1157 York Avenue, Manhattan",intl:"No. Weill Cornell community",
+ m:"At least five companies launched in the lab's first two years.",ss:"OneThree Biotech and iDu Optics launched through the business plan challenge.",
+ st:"Active",sv:"2026 Accelerating BioVenture Innovation kickoff listed for September 8, 2026. The $100K challenge was last evidenced in 2019.",
+ links:[["Enterprise Innovation","https://innovation.weill.cornell.edu/"],["eLab background","https://news.weill.cornell.edu/news/2018/02/bioventure-elab-opens-new-space-representing-weill-cornell-medicine%E2%80%99s-increased"]]},
+{n:"Enterprise Innovation Catalyst Fund (successor to the Daedalus Fund)",i:"Weill Cornell Medicine",g:"Cornell (Tech + Weill)",t:"Proof-of-concept fund",s:[1],k:["Life sciences"],a:"Affiliates",
+ f:"Three tiers; amounts not published",e:"Non-dilutive",w:"Weill Cornell Medicine innovations.",
+ b:"Proto Stage awards for prototypes, Validation Stage awards for projects with proof of concept, and larger Breakout Stage awards for commercial de-risking. The Daedalus Fund it replaces paid $100K, or $300K on milestones.",
+ du:"Not published",ap:"Proto Stage rolling; Validation Stage by pre-proposal",co:"Not published",pl:"Weill Cornell Medicine",intl:"No. Weill Cornell projects",
+ m:"Weill Cornell, FY21–FY25: 761 disclosures, 131 licenses and options, 18 new companies.",ss:"Not published for the new fund.",
+ st:"Active",sv:"Fund launched spring 2025; applications shown as open.",
+ links:[["Program page","https://innovation.weill.cornell.edu/node/415"],["Daedalus history","https://news.weill.cornell.edu/node/3621"]]},
+{n:"Tri-Institutional Therapeutics Discovery Institute",i:"Weill Cornell, MSK and Rockefeller, with Takeda",g:"Cornell (Tech + Weill)",t:"Venture builder",s:[1],k:["Life sciences"],a:"Affiliates",
+ f:"Funded by Takeda; amounts not published",e:"Not published",w:"Investigators at the three member institutions.",
+ b:"Industry-grade early drug discovery for small molecules and biologics. Bridge Medicines, launched in 2016 with Takeda, Deerfield and Bay City Capital, takes programs from concept to drug candidate.",
+ du:"Project-based",ap:"Through each institution",co:"Not published",pl:"Upper East Side, Manhattan",intl:"No. Member-institution labs",
+ m:"As of 2020: two New York companies launched and six discovery programs licensed.",ss:"Bridge Medicines.",
+ st:"Unconfirmed",sv:"Established 2013; partnerships renewed February 2020. No later dated source found.",
+ links:[["2020 renewal","https://www.rockefeller.edu/news/27642-tri-institutional-therapeutics-discovery-institute-renews-partnerships-takeda-bridge-medicines"]]},
+// ---------- CUNY
+{n:"NSF I-Corps Hub: New York Region",i:"CUNY (lead), with Columbia and NYU",g:"CUNY",t:"Training",s:[1],k:["Life sciences","Climate & urban","Digital & AI","Deep tech"],a:"Mixed",
+ f:"$15M NSF award to the hub",e:"Non-dilutive",w:"Academic researchers at the lead and partner schools: Columbia, NYU, Mount Sinai, Rockefeller, Stevens, Stony Brook, RPI, Clarkson, Albany and UMass Medical School.",
+ b:"Entrepreneurial training on the NSF I-Corps model. Each team pairs a technical lead, an entrepreneurial lead and an industry mentor. A 7,100 sq ft workspace in Harlem.",
+ du:"Regional courses of a few weeks; national program seven weeks",ap:"Rolling regional cohorts",co:"About 30 teams planned at launch",pl:"Harlem, plus partner campuses",intl:"Only through a partner university",
+ m:"CUNY's largest NSF award.",ss:"Not published.",
+ st:"Active",sv:"NSF lists the award as active from January 1, 2022 to December 31, 2026. Renewal not verified.",
+ links:[["NSF award","https://nsf.elsevierpure.com/en/projects/nsf-i-corps-hub-new-york-region-2/"],["Launch coverage","https://www.theeduledger.com/institutions/article/15279672/cunys-historic-nsf-grant-will-help-fuel-diversity-in-innovation"]]},
+{n:"Zahn Innovation Center",i:"City College of New York",g:"CUNY",t:"Incubator / space",s:[0,2],k:["Digital & AI","Deep tech","Social impact"],a:"Mixed",
+ f:"$5K–$15K prizes; $80K a year",e:"Non-dilutive prizes",w:"CCNY and CUNY students; the 2024 program also served community members.",
+ b:"Spring Venture Incubator and Competition, Fall Startup Minicamp, Standard Chartered Women in Tech incubator, co-working, mentorship, pro-bono services and the CCNY Makerspace.",
+ du:"Semester-long incubator",ap:"Spring incubator; information session October 21",co:"55+ participants in 2024",pl:"City College, Harlem",intl:"Students enrolled at CUNY",
+ m:"2024: four $15,000 grand prizes and four $5,000 second prizes.",ss:"2024 grand-prize winners: CarbonCLAIR, Easy Meets, Inclusify and ArenaUnity.",
+ st:"Active",sv:"Fall 2026 minicamp sessions and Demo Week 2026 shown on the center's page.",lo:5000,hi:15000,
+ links:[["Program page","https://ccny.cuny.edu/zahn"],["2024 results","https://ccny.cuny.edu/news/innovative-student-ventures-sweep-80k-prizes-during-ccnys-zahn-center-demo-week"]]},
+{n:"IN2NYC (International Innovators Initiative)",i:"NYCEDC with CUNY colleges and NYU",g:"CUNY",t:"Visa pathway",s:[2,3],k:["Sector-agnostic"],a:"Open",
+ f:"No funding",e:"None",w:"International entrepreneurs, matched with a partner school.",
+ b:"The founder contributes to the school through research, mentoring or programs, leases incubator space there, and becomes eligible for a cap-exempt H-1B visa. Partner schools: City College, Staten Island, LaGuardia, Lehman, Medgar Evers, Queens College and NYU.",
+ du:"Tied to the visa term",ap:"Closed. Future rounds will be advertised by NYCEDC",co:"Not published",pl:"Partner campuses across the boroughs",intl:"Yes. Built for international founders",
+ m:"Launched May 23, 2016.",ss:"Not published.",
+ st:"Paused",sv:"NYCEDC's program page says applications are closed and future periods will be advertised.",
+ links:[["NYCEDC program page","https://edc.nyc/node/6295"],["2016 launch","https://ccny.cuny.edu/news/mayors-office-launches-in2nyc-program-ccny"]]},
+{n:"Lawrence N. Field Center for Entrepreneurship",i:"Baruch College",g:"CUNY",t:"Training",s:[0],k:["Sector-agnostic"],a:"Mixed",
+ f:"Small competition prizes",e:"None",w:"Baruch students, staff and faculty; the Small Business Development Center serves the public.",
+ b:"Co-curricular programs, Blackstone LaunchPad and the Midtown Manhattan branch of the New York State SBDC. Hosts CUNY Startups.",
+ du:"Ongoing",ap:"Ongoing",co:"Not published",pl:"55 Lexington Avenue, Manhattan",intl:"SBDC advising is open to any New York business",
+ m:"One of 24 campus-based SBDC regional centers.",ss:"A Baruch student was one of four national winners of the first Blackstone LaunchPad Ideas Competition.",
+ st:"Listed",sv:"Center site live with current programs; no 2026 date on the page read.",
+ links:[["Center site","https://blogs.baruch.cuny.edu/fieldcenter/"]]},
+{n:"CUNY Startups",i:"City University of New York",g:"CUNY",t:"Accelerator",s:[0,2],k:["Sector-agnostic"],a:"Affiliates",
+ f:"Not published",e:"Not published",w:"CUNY students. New Venture Accelerator 2 requires a team and a prototype.",
+ b:"New Venture Accelerator 1 for students without a team, New Venture Accelerator 2 for teams with a prototype, the CUNY Clash ideas competition, mentoring and a startup toolkit.",
+ du:"Semester cohorts",ap:"Each semester",co:"Not published",pl:"Field Center, 55 Lexington Avenue",intl:"Students enrolled at CUNY",
+ m:"Running since 2014 across about 25 CUNY colleges and units.",ss:"Alumni founders cited: CuddlyTails and Next Generation Quantum.",
+ st:"Active",sv:"Spring 2026 demo day and fifth CUNY Clash (February 2026) on the program site.",
+ links:[["Program site","https://cunystartups.com/"]]},
+{n:"Tech Incubator at Queens College",i:"Queens College",g:"CUNY",t:"Incubator / space",s:[0,2],k:["Digital & AI","Sector-agnostic"],a:"Open",
+ f:"No funding",e:"None",w:"Founders, students and professionals; most events are free and open to the community.",
+ b:"Co-working, a free AI course, the 16-week WIBO Grow business-plan cohort, micro-internships with CUNY students, an AI strategy and tech clinic. Backed by the New York City Council.",
+ du:"WIBO Grow runs 16 weeks",ap:"Fall 2026 cohort open for registration",co:"Not published",pl:"Queens College, Flushing",intl:"Yes for community programs; no visa support",
+ m:"10,000+ participants reached, 700+ student interns, 100+ ventures supported.",ss:"No alumni companies named.",
+ st:"Active",sv:"Fall 2026 cohort registration open on the incubator's site.",
+ links:[["Incubator site","https://techincubatorqc.com/"],["Queens College page","https://www.qc.cuny.edu/ti"]]},
+// ---------- Medical & research
+{n:"i3 Funding (Prism, Genesis, Accelerator)",i:"Mount Sinai Innovation Partners",g:"Medical & research institutes",t:"Proof-of-concept fund",s:[1],k:["Life sciences"],a:"Affiliates",
+ f:"Prism up to $33K; Accelerator seeded with $10M",e:"Milestone-driven funding",w:"Mount Sinai faculty, staff and postdocs. Accelerator projects are nominated by MSIP business development.",
+ b:"Prism backs first-time innovators with milestone payments. Accelerator funds more established technologies. Genesis is currently unavailable.",
+ du:"Milestone-based",ap:"Prism by call; Accelerator by nomination",co:"Not published",pl:"Mount Sinai, Manhattan",intl:"No. Mount Sinai affiliates",
+ m:"2023: 904 inventors engaged, 140 disclosures, 268 patent filings.",ss:"Not published.",
+ st:"Active",sv:"Prism and Accelerator described as available; Genesis marked not available.",lo:33000,hi:33000,
+ links:[["Program page","https://ip.mountsinai.org/i3-funding/"]]},
+{n:"Elementa Labs",i:"Mount Sinai Innovation Partners",g:"Medical & research institutes",t:"Incubator / space",s:[2,3],k:["Life sciences","Digital & AI"],a:"Open",
+ f:"No funding",e:"Not published",w:"Pre-seed and seed startups solving patient needs or hospital operations. Series A and later companies have not been admitted.",
+ b:"Access to Mount Sinai's clinicians, network and expertise, exposure to the US market and its regulation, help refining go-to-market, and a route to pilots or partnerships.",
+ du:"12 weeks",ap:"By cohort; fifth cohort announced in early 2025",co:"15 companies admitted in the first four cohorts",pl:"Mount Sinai; launched as a virtual incubator",intl:"Yes. Over 33% of applicants are international",
+ m:"15 companies admitted since 2021.",ss:"Not published by company.",
+ st:"Active",sv:"Four-year retrospective published January 9, 2025, announcing a fifth cohort.",
+ links:[["2025 retrospective","https://ip.mountsinai.org/blog/elementa-labs-startup-incubator-retrospective-and-trends-for-2025/"]]},
+{n:"Therapeutic Development Fund (Robertson, now Black Family)",i:"The Rockefeller University",g:"Medical & research institutes",t:"Proof-of-concept fund",s:[1],k:["Life sciences"],a:"Affiliates",
+ f:"Started with $25M in 2014",e:"Non-dilutive",w:"Rockefeller laboratories.",
+ b:"Supports projects from target validation to first-in-human trials of drugs and antibodies at the university hospital.",
+ du:"Project-based",ap:"Calls through the university",co:"86 proof-of-concept awards by May 2016",pl:"Rockefeller University, Manhattan",intl:"No. Rockefeller labs",
+ m:"Funded by the Robertson Foundation for its first decade.",ss:"CeleCor Therapeutics, whose founder credits early support from the fund.",
+ st:"Active",sv:"A 2024 gift from trustee Debra Black and family carries the fund through its second decade.",
+ links:[["Program page","https://www.rockefeller.edu/translational-research/tdf/"],["2016 review","https://www.rockefeller.edu/news/18430-35-labs-and-counting-how-the-robertson-therapeutic-development-fund-speeds-translational-research-at-rockefeller"]]},
+{n:"MSK Innovation Hub, iHub Challenge and Therapeutics Accelerator",i:"Memorial Sloan Kettering",g:"Medical & research institutes",t:"Accelerator",s:[2,3],k:["Life sciences","Digital & AI"],a:"Open",
+ f:"No cash",e:"None; the company leads commercialization",w:"Digital health startups and larger companies whose project fits MSK's priorities and does not compete with it. The Technology Development Investment Fund is for MSK projects only.",
+ b:"Access to MSK's oncology research and clinical setting and its physical, intellectual and digital resources. The Therapeutics Accelerator opens MSK infrastructure across drug development.",
+ du:"iHub Challenge: three months, once a year",ap:"Innovation Hub rolling by email; iHub Challenge yearly",co:"Not published",pl:"Memorial Sloan Kettering, Manhattan",intl:"Yes. Open to outside companies",
+ m:"MSK's gap fund record: two FDA-approved drugs and 30+ industry partnerships and startups.",ss:"Not published by company.",
+ st:"Listed",sv:"Program pages live with an apply link; no cohort date shown.",
+ links:[["Programs","https://www.mskcc.org/commercialization/programs-accelerators"],["Innovation Hub","https://www.mskcc.org/commercialization/programs-accelerators/msk-innovation-hub"]]},
+{n:"Einstein early-stage incubator space",i:"Albert Einstein College of Medicine",g:"Medical & research institutes",t:"Incubator / space",s:[2,3],k:["Life sciences"],a:"Open",
+ f:"No funding; rented space",e:"None",w:"Early-stage biotech and life science startups.",
+ b:"Over 4,000 sq ft: shared benches, private suites for 2–15 scientists, office space, discounted access to 40+ core facilities and an accredited vivarium. Einstein also runs an internal Acceleration Fund.",
+ du:"Lease",ap:"Rolling; request availability",co:"Not published",pl:"1300 Morris Park Avenue, Bronx",intl:"Yes, as a tenant",
+ m:"Not published.",ss:"Startups at the November 2025 showcase: Cue Biopharma, NextPoint Therapeutics, BaxGen Therapeutics, Matter Bio, Vascarta, MicroCures and Roshon Therapeutics.",
+ st:"Active",sv:"First Einstein Start-Up Showcase held November 13, 2025; space page live.",
+ links:[["Incubator space","https://einsteinmed.edu/research/early-stage-incubator-space"],["2025 showcase","https://montefioreeinstein.org/news/2025/11/21/einstein-holds-inaugural-start-showcase"]]},
+{n:"Downstate Biotechnology Incubator and BioBAT",i:"SUNY Downstate Health Sciences University",g:"Medical & research institutes",t:"Incubator / space",s:[2,3,4],k:["Life sciences"],a:"Open",
+ f:"No funding; rented space",e:"None",w:"Start-up and early-stage biotech companies; BioBAT takes more mature companies.",
+ b:"Wet lab and office space, a synthetic chemistry facility, and BioBAT for larger research and manufacturing. Access to Downstate cores, interns and clinical trials.",
+ du:"Lease",ap:"Rolling application",co:"Not published",pl:"Central Brooklyn and the Brooklyn Army Terminal",intl:"Yes, as a tenant",
+ m:"Not published.",ss:"Not published.",
+ st:"Listed",sv:"Incubator pages and application live; no recent date shown.",
+ links:[["Program page","https://www.downstate.edu/research/biotech-incubators/about-us.html"]]},
+// ---------- Other
+{n:"Fordham Foundry",i:"Fordham University",g:"Other universities",t:"Competition",s:[0,2],k:["Sector-agnostic","Social impact"],a:"Affiliates",
+ f:"$22.5K pool; top prize $8K",e:"Non-dilutive seed money",w:"Fordham students, faculty, staff and alumni.",
+ b:"Annual Pitch Challenge with General and Social Impact tracks, with months of coaching from Foundry staff.",
+ du:"Academic year; finals in April",ap:"Annual",co:"48 teams presented; 10 in the 2026 finals",pl:"Fordham, Bronx and Manhattan",intl:"No. Fordham community",
+ m:"$200,000 distributed to 40 winners to date.",ss:"Not published by company.",
+ st:"Active",sv:"Tenth annual finals held April 9, 2026.",lo:8000,hi:8000,
+ links:[["2026 Pitch Challenge","https://now.fordham.edu/business-and-entrepreneurship/a-decade-of-big-ideas-fordham-foundry-pitch-challenge-marks-10th-anniversary/"]]},
+{n:"Parsons Entrepreneurial Lab (ELab)",i:"The New School",g:"Other universities",t:"Incubator / space",s:[0,2],k:["Design & media"],a:"Affiliates",
+ f:"Not published",e:"Not published",w:"Students and recent alumni of New School graduate programs.",
+ b:"Design-led workshops, design challenges, incubators and accelerators run with outside partners and mentors.",
+ du:"Not published",ap:"Not published",co:"Not published",pl:"Parsons, Greenwich Village",intl:"No. New School students and alumni",
+ m:"Founded 2014.",ss:"Not published.",
+ st:"Listed",sv:"Lab site live; no dated 2025–26 program found.",
+ links:[["Lab site","https://parsons.edu/elab/"]]},
+{n:"Pace Entrepreneurship Lab and Pitch Contest",i:"Pace University",g:"Other universities",t:"Competition",s:[0],k:["Sector-agnostic"],a:"Affiliates",
+ f:"$250–$1,000 prizes (2018)",e:"Non-dilutive prizes",w:"Pace students.",
+ b:"Annual three-minute pitch contest and an entrepreneurship lab.",
+ du:"One-day contest",ap:"Not confirmed",co:"Nine finalist teams in 2018",pl:"Pace, Lower Manhattan",intl:"No. Pace students",
+ m:"Fourteenth contest held April 19, 2018.",ss:"Not published.",
+ st:"Unconfirmed",sv:"Latest dated source is the April 2018 contest; the lab's current page could not be opened.",
+ links:[["2018 contest","https://seidenbergnews.blogs.pace.edu/?p=4512"]]}
+];
+
+// Success cases: [company, program, outcome, date/source label, url]
+const CASES=[
+["Strand Therapeutics","Endless Frontier Labs, 2018–19","$153M Series B led by Regeneron, Eli Lilly and Amgen","Aug 2025","https://endlessfrontierlabs.com/news"],
+["Justpoint","Endless Frontier Labs, 2019–20","$95M raised","Feb 2025","https://endlessfrontierlabs.com/news"],
+["iRocket","Endless Frontier Labs, 2020–21","$400M SPAC merger announced","Jun 2025","https://endlessfrontierlabs.com/news"],
+["Gastrograph AI","Endless Frontier Labs, 2018–19","Acquisition by NIQ agreed","Apr 2025","https://endlessfrontierlabs.com/news"],
+["GALY","Endless Frontier Labs, 2020–21","$33M Series B","Sep 2024","https://endlessfrontierlabs.com/news"],
+["TapCommerce","NYU Tandon Future Labs","Acquired by Twitter, reported $100M","Reported 2019","https://engineering.nyu.edu/news/nyu-tandon-future-labs-celebrates-10-years-tech-and-innovation"],
+["Geometric Intelligence","NYU Tandon Future Labs","Acquired by Uber; became Uber AI Labs","Reported 2019","https://engineering.nyu.edu/news/nyu-tandon-future-labs-celebrates-10-years-tech-and-innovation"],
+["Vettery","NYU Tandon Future Labs","Acquired, reported $100M+","Reported 2019","https://engineering.nyu.edu/news/nyu-tandon-future-labs-celebrates-10-years-tech-and-innovation"],
+["EVBox","Urban Future Lab (ACRE incubator)","Went public through a SPAC valued above $1.4B","Per Future Labs site","https://futurelabs.nyc/"],
+["CB Insights","NYU Tandon Future Labs, first cohort 2009","Joined with four employees; now a data intelligence platform","Reported 2019","https://engineering.nyu.edu/news/nyu-tandon-future-labs-celebrates-10-years-tech-and-innovation"],
+["Fondu","NYU Innovation Venture Fund","Acquired by Airbnb; the fund's shares rose nearly 30x by the 2020 IPO","Reported 2022","https://entrepreneur.nyu.edu/blog/2022/10/23/nyu-innovation-venture-fund-30th-investment/"],
+["numberFire","NYU Innovation Venture Fund","Acquired by FanDuel","Reported 2022","https://entrepreneur.nyu.edu/blog/2022/10/23/nyu-innovation-venture-fund-30th-investment/"],
+["Brooklinen, Medivis, Rilla","NYU Summer Launchpad","Named alumni of the nine-week accelerator","Per program page","https://entrepreneur.nyu.edu/programs/summer-launchpad/"],
+["Nanit","Runway, Cornell Tech","$14M Series B","Per program page","https://tech.cornell.edu/programs/phd/startup-postdocs/"],
+["Uru","Cornell Tech alumni startup","Acquired by Adobe","May 2018","https://tech.cornell.edu/news/uru-video-acquired-by-adobe/"],
+["Cornell Tech Studio alumni","Cornell Tech Startup Awards","11 companies acquired, by Hopper, Peloton, Nike, Adobe, Circle, Infor and MINDBODY","May 2024","https://news.cornell.edu/index.php/node/328776"],
+["Bridge Medicines","Tri-Institutional Therapeutics Discovery Institute","Launched 2016 with Takeda, Deerfield and Bay City Capital","Reported 2020","https://www.rockefeller.edu/news/27642-tri-institutional-therapeutics-discovery-institute-renews-partnerships-takeda-bridge-medicines"],
+["CeleCor Therapeutics","Rockefeller Therapeutic Development Fund","Founded on early fund support, per its founder","Per program page","https://www.rockefeller.edu/translational-research/tdf/"],
+["OneThree Biotech, iDu Optics","Weill Cornell BioVenture eLab","Launched through the business plan challenge","Reported 2018","https://news.weill.cornell.edu/news/2018/02/bioventure-elab-opens-new-space-representing-weill-cornell-medicine%E2%80%99s-increased"],
+["BiomedX portfolio","Columbia BiomedX","$86.3M follow-on funding from $6M in awards","Per program page","https://labtomarket.columbia.edu/biomedx"]
+];
+
+const $=s=>document.querySelector(s);
+const el=(t,c,h)=>{const e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+(function(){
+  const open=P.filter(p=>p.a==="Open").length,act=P.filter(p=>p.st==="Active").length;
+  const k=[[P.length,"programs mapped"],[12,"universities and academic medical centers"],[act,"confirmed active with 2025–26 evidence"],[open,"open to founders with no affiliation"],["$130M","largest single commitment (Columbia + Deerfield)"]];
+  $("#kpis").innerHTML=k.map(x=>`<div class="kpi"><b>${x[0]}</b><span>${x[1]}</span></div>`).join("");
+})();
+
+(function(){
+  const max=Math.max(...GROUPS.flatMap(g=>STAGES.map((_,si)=>P.filter(p=>p.g===g&&p.s.includes(si)).length)));
+  let h="<thead><tr><th></th>"+STAGES.map(s=>`<th scope="col">${s}</th>`).join("")+"</tr></thead><tbody>";
+  GROUPS.forEach(g=>{
+    h+=`<tr><th class="row" scope="row">${g}</th>`;
+    STAGES.forEach((s,si)=>{
+      const list=P.filter(p=>p.g===g&&p.s.includes(si)),c=list.length;
+      h+=c?`<td data-tip="${esc(g+" · "+s+": "+list.map(p=>p.n).join("; "))}" tabindex="0"><i class="fill" style="opacity:${(0.12+0.5*c/max).toFixed(2)}"></i><span>${c}</span></td>`:`<td class="zero"><span>–</span></td>`;
+    });
+    h+="</tr>";
+  });
+  $("#matrix").innerHTML=h+"</tbody>";
+})();
+
+(function(){
+  const lo=Math.log10(500),hi=Math.log10(500000);
+  const x=v=>(Math.log10(v)-lo)/(hi-lo)*100;
+  const fmt=v=>v>=1000?"$"+(v/1000)+"K":"$"+v;
+  const rows=P.filter(p=>p.lo).sort((a,b)=>a.hi-b.hi||a.lo-b.lo);
+  const box=$("#ladder");
+  rows.forEach(p=>{
+    const r=el("div","lrow");
+    r.appendChild(el("div","lab",`${esc(p.n)}<small>${esc(p.i)}</small>`));
+    const t=el("div","track");
+    const l=x(p.lo),w=Math.max(x(p.hi)-l,0);
+    const b=el("div","bar "+(p.eq?"equity":"grant"));
+    b.style.left=l+"%";b.style.width=w+"%";b.tabIndex=0;
+    const label=(p.lo===p.hi?fmt(p.lo):fmt(p.lo)+"–"+fmt(p.hi))+(p.eq?" · equity":"");
+    b.dataset.tip=p.n+": "+label+". "+p.e;
+    t.appendChild(b);
+    const v=el("span","val",label);
+    if(l+w>72){v.style.right=(100-l+1.5)+"%"}else{v.style.left="calc("+(l+w)+"% + 14px)"}
+    t.appendChild(v);r.appendChild(t);box.appendChild(r);
+  });
+})();
+
+(function(){
+  $("#cases").innerHTML="<thead><tr><th>Company</th><th>Program</th><th>Outcome</th><th>As of</th><th>Source</th></tr></thead><tbody>"+
+    CASES.map(c=>`<tr><td>${esc(c[0])}</td><td>${esc(c[1])}</td><td>${esc(c[2])}</td><td>${esc(c[3])}</td><td><a href="${c[4]}" target="_blank" rel="noopener">${esc(new URL(c[4]).hostname.replace(/^www\./,""))}</a></td></tr>`).join("")+"</tbody>";
+})();
+
+(function(){
+  const tip=$("#tip");
+  const show=t=>{tip.textContent=t.dataset.tip;tip.hidden=false;
+    const r=t.getBoundingClientRect();let lx=Math.min(r.left,window.innerWidth-280),ty=r.bottom+8;
+    if(ty+60>window.innerHeight)ty=r.top-44;tip.style.left=Math.max(8,lx)+"px";tip.style.top=ty+"px"};
+  ["mouseover","focusin"].forEach(ev=>document.addEventListener(ev,e=>{const t=e.target.closest("[data-tip]");if(t)show(t)}));
+  ["mouseout","focusout"].forEach(ev=>document.addEventListener(ev,e=>{if(e.target.closest("[data-tip]"))tip.hidden=true}));
+  window.addEventListener("scroll",()=>{tip.hidden=true},{passive:true});
+})();
+
+(function(){
+  const uniq=a=>[...new Set(a)];
+  const opts=(id,label,vals)=>{$(id).innerHTML=`<option value="">${label}</option>`+vals.map(v=>`<option>${esc(v)}</option>`).join("")};
+  opts("#f-inst","All institutions",GROUPS);
+  opts("#f-type","All types",uniq(P.map(p=>p.t)).sort());
+  opts("#f-stage","All stages",STAGES);
+  opts("#f-acc","Any access",["Open","Mixed","Affiliates"]);
+  opts("#f-st","Any status",["Active","Listed","Paused","Unconfirmed"]);
+  const accLabel={Open:"Open to outsiders",Mixed:"Mixed / unclear",Affiliates:"Affiliates only"};
+  let topic="";
+  const tabs=$("#tabs");
+  tabs.innerHTML=[["","All topics",P.length]].concat(TOPICS.map(t=>[t,t,P.filter(p=>p.k.includes(t)).length]))
+    .map(t=>`<button type="button" data-topic="${esc(t[0])}" aria-pressed="${t[0]===""}">${esc(t[1])}<small>${t[2]}</small></button>`).join("");
+  tabs.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;topic=b.dataset.topic;
+    tabs.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b));render()});
+  const list=$("#list");
+  const row=(l,v,w)=>`<div${w?' class="wide"':''}><dt>${l}</dt><dd>${esc(v)}</dd></div>`;
+  function render(){
+    const q=$("#f-q").value.trim().toLowerCase(),fi=$("#f-inst").value,ft=$("#f-type").value,fs=$("#f-stage").value,fa=$("#f-acc").value,fst=$("#f-st").value;
+    const rows=P.filter(p=>(!topic||p.k.includes(topic))&&(!fi||p.g===fi)&&(!ft||p.t===ft)&&(!fs||p.s.includes(STAGES.indexOf(fs)))&&(!fa||p.a===fa)&&(!fst||p.st===fst)&&(!q||JSON.stringify(p).toLowerCase().includes(q)));
+    $("#count").textContent=rows.length+" of "+P.length+" programs"+(topic?" in "+topic:"");
+    list.innerHTML=rows.length?rows.map(p=>`<details class="prog"><summary>
+      <span class="pname">${esc(p.n)}<small>${esc(p.i)}</small></span>
+      <span class="ptype">${esc(p.t)}<br>${p.s.map(i=>STAGES[i]).join(" · ")}</span>
+      <span class="pfund">${esc(p.f)}</span>
+      <span class="pills"><span class="pill ${p.st}">${p.st}</span><span class="pill ${p.a}">${accLabel[p.a]}</span></span></summary>
+      <dl class="detail">
+        ${row("Who can apply",p.w)}${row("International founders",p.intl)}${row("Funding",p.f)}
+        ${row("Equity, IP and terms",p.e)}${row("Duration",p.du)}${row("Application window",p.ap)}
+        ${row("Cohort and selectivity",p.co)}${row("Location",p.pl)}${row("Track record",p.m)}
+        ${row("Program and benefits",p.b,1)}${row("Success cases",p.ss,1)}${row("Status evidence (checked October 10, 2026)",p.sv,1)}
+        <div><dt>Topics</dt><dd class="chips">${p.k.map(k=>`<span class="chip">${esc(k)}</span>`).join("")}</dd></div>
+        <div class="wide"><dt>Reference links</dt><dd>${p.links.map(l=>`<a href="${l[1]}" target="_blank" rel="noopener">${esc(l[0])}</a>`).join(" · ")}</dd></div>
+      </dl></details>`).join(""):`<p class="note">No program matches these filters. Reset to see all ${P.length}.</p>`;
+  }
+  ["#f-q","#f-inst","#f-type","#f-stage","#f-acc","#f-st"].forEach(id=>$(id).addEventListener("input",render));
+  $("#f-reset").addEventListener("click",()=>{["#f-q","#f-inst","#f-type","#f-stage","#f-acc","#f-st"].forEach(id=>$(id).value="");topic="";
+    tabs.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x.dataset.topic===""));render()});
+  render();
+})();
+</script>
+
+</body></html>

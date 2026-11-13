@@ -19,6 +19,10 @@ interface KnowledgeHubProps {
 }
 
 const TYPE_LABELS: Record<string, string> = {
+  "navigator": "Interactive Guide",
+  "map": "Ecosystem Map",
+  "census": "Company Census",
+  "brief": "Ecosystem Brief",
   "white-paper": "White Paper",
   "dashboard": "Dashboard",
   "intelligence": "Intelligence",

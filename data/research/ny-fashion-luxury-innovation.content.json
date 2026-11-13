@@ -1,0 +1,471 @@
+{
+  "eyebrow": "I³/NYC Research · Ecosystem brief · Data as of October 2026",
+  "title": "Fashion and luxury innovation in the New York metro area",
+  "lede": [
+    {
+      "t": "A map of the people and companies reinventing fashion, luxury, beauty and jewelry in and around New York City: 69 innovation companies profiled, 34 incubators, programs, investors and maker spaces, 10 schools, and the fashion and luxury groups headquartered here. Built for founders, brands and institutions that want to understand where the city's fashion innovation happens and who backs it."
+    }
+  ],
+  "lenses": [
+    {
+      "key": "all",
+      "label": "All companies"
+    },
+    {
+      "key": "tech",
+      "label": "Technology companies"
+    },
+    {
+      "key": "ai",
+      "label": "AI-driven"
+    },
+    {
+      "key": "sus",
+      "label": "Circular and sustainable"
+    }
+  ],
+  "sections": [
+    {
+      "id": "",
+      "title": "What the data shows",
+      "sub": [
+        {
+          "t": "Eight findings from the profiles and indicators below. Every figure is linked to its source in the sections that follow."
+        }
+      ],
+      "findings": [
+        {
+          "title": "Where fashion is sold, not made",
+          "body": [
+            {
+              "t": "New York City has more than "
+            },
+            {
+              "b": "130,000"
+            },
+            {
+              "t": " fashion jobs and over "
+            },
+            {
+              "b": "$50B"
+            },
+            {
+              "t": " in direct sales, but only about "
+            },
+            {
+              "b": "5,700"
+            },
+            {
+              "t": " apparel manufacturing jobs, down 76% since 2007. The city's strengths are headquarters, buyers, media and schools."
+            }
+          ]
+        },
+        {
+          "title": "Innovation is software sold to brands",
+          "body": [
+            {
+              "t": "Of 48 technology companies profiled, "
+            },
+            {
+              "b": "22"
+            },
+            {
+              "t": " sell software or services to brands and retailers and "
+            },
+            {
+              "b": "11"
+            },
+            {
+              "t": " run marketplaces. New York's fashion customers are its incumbents, so most startups build for them rather than compete with them."
+            }
+          ]
+        },
+        {
+          "title": "AI is where the new money goes",
+          "body": [
+            {
+              "b": "7 of the 12"
+            },
+            {
+              "t": " companies that raised in 2025–26 build on AI, including Vivrelle, Phia, Raspberry AI, SuperCircle and Doji. Rounds stay small: "
+            },
+            {
+              "b": "$339M"
+            },
+            {
+              "t": " in total, led by ShopMy's $70M at a $1.5B valuation."
+            }
+          ]
+        },
+        {
+          "title": "Circularity is a real cohort",
+          "body": [
+            {
+              "b": "22"
+            },
+            {
+              "t": " companies have a sustainability or circular model, from rental (Vivrelle, $62M Series C) and resale (Pickle, Rebag) to textile sorting (SuperCircle) and biomaterials (Modern Meadow, Werewool, Kintra). US resale grew about four times faster than apparel retail in 2025."
+            }
+          ]
+        },
+        {
+          "title": "Luxury is buying Fifth Avenue",
+          "body": [
+            {
+              "t": "Kering ($963M), Prada ($835M for 720 and 724 Fifth) and Rolex ($250M headquarters) have committed about "
+            },
+            {
+              "b": "$2B"
+            },
+            {
+              "t": " to Fifth Avenue buildings. Upper Fifth rents are "
+            },
+            {
+              "b": "$2,000"
+            },
+            {
+              "t": " per sq ft, third in the world after New Bond Street and Via Montenapoleone."
+            }
+          ]
+        },
+        {
+          "title": "Italian luxury runs its US business from here",
+          "body": [
+            {
+              "b": "11"
+            },
+            {
+              "t": " Italian luxury groups and brands in this map run their American business from New York, including Prada, Armani, Zegna, Moncler, Brunello Cucinelli and Ferragamo. The Italian Trade Agency brought 77 brands to the Coterie trade show in September 2026."
+            }
+          ]
+        },
+        {
+          "title": "Retail distress is reshaping the customer base",
+          "body": [
+            {
+              "t": "Saks Global, owner of Saks, Neiman Marcus and Bergdorf Goodman, filed for Chapter 11 in January 2026. CaaStle went into Chapter 7 and Showfields closed, while Bluecore and Syrup Tech were sold. Startups selling to department stores face concentrated risk."
+            }
+          ]
+        },
+        {
+          "title": "World-class schools, shrinking pipeline",
+          "body": [
+            {
+              "t": "FIT and Parsons rank first and second in CEOWORLD's 2025 world fashion school ranking, and FIT opened a $188.5M academic building in October 2025. But city fashion completions fell about 30% from 2016 to 2022. No dedicated fashion accelerator in this map shows recent activity since the CFDA Fashion Incubator ended in 2017 and Pratt's closed in 2019."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "glance",
+      "title": "The city at a glance",
+      "sub": [
+        {
+          "t": "New York is the commercial capital of American fashion: headquarters, showrooms, buyers, media and schools. Its manufacturing base has largely gone."
+        }
+      ],
+      "notes": [
+        [
+          {
+            "t": "Down 76% since 2007. Design, merchandising and corporate jobs have stayed; production has moved out."
+          }
+        ]
+      ],
+      "tiles": [
+        {
+          "value": "130,000+",
+          "body": [
+            {
+              "t": "fashion jobs in New York City across retail, wholesale and manufacturing, with more than $50B in direct sales. "
+            },
+            {
+              "a": "McKinsey, 2022 data",
+              "href": "https://www.mckinsey.com.br/industries/retail/our-insights/at-a-crossroads-new-yorks-status-as-a-global-fashion-capital"
+            }
+          ]
+        },
+        {
+          "value": "$2,000",
+          "body": [
+            {
+              "t": "per sq ft a year on Upper Fifth Avenue, now third in the world behind New Bond Street and Via Montenapoleone. "
+            },
+            {
+              "a": "Cushman & Wakefield, Nov 2025",
+              "href": "https://www.cushmanwakefield.com/en/united-kingdom/news/2025/11/new-bond-street-in-london-named-worlds-most-expensive-retail-destination-for-first-time"
+            }
+          ]
+        },
+        {
+          "value": "#1 and #2",
+          "body": [
+            {
+              "t": "FIT and Parsons in CEOWORLD's 2025 ranking of the world's best fashion schools. "
+            },
+            {
+              "a": "FashionUnited",
+              "href": "https://fashionunited.com/education/news/fit-tops-2025-ranking-of-the-worlds-best-fashion-schools/2025120969561"
+            }
+          ]
+        },
+        {
+          "value": "$120M+",
+          "body": [
+            {
+              "t": "committed to the Garment District in the 2025 Midtown South rezoning, including a $50M fund for below-market space. "
+            },
+            {
+              "a": "6sqft, Aug 2025",
+              "href": "https://www.6sqft.com/midtown-south-rezoning-moves-forward-34th-street-busway-and-protection-for-garment-district-workers-included/?p=219455"
+            }
+          ]
+        }
+      ],
+      "blocks": [
+        {
+          "title": "Apparel manufacturing jobs in New York City",
+          "sub": [
+            {
+              "t": "Thousands of jobs, June of each year. Bureau of Labor Statistics via "
+            },
+            {
+              "a": "FRED",
+              "href": "https://fred.stlouisfed.org/data/SMU36935613231500001"
+            },
+            {
+              "t": "."
+            }
+          ],
+          "target": "mfg"
+        },
+        {
+          "title": "What the numbers say"
+        },
+        {
+          "title": "Key indicators",
+          "target": "ctx"
+        }
+      ]
+    },
+    {
+      "id": "companies",
+      "title": "Where the innovation is",
+      "sub": [
+        {
+          "t": "Profiled companies by segment and funding stage. Darker cells hold more companies. Click a cell to list them. The lens at the top applies to every company view."
+        }
+      ],
+      "blocks": [
+        {
+          "title": "Segment and business model",
+          "sub": [
+            {
+              "t": "Which segments sell software to brands, and which are brands or marketplaces themselves."
+            }
+          ],
+          "target": "mx2"
+        },
+        {
+          "title": "Cohort explorer",
+          "sub": [
+            {
+              "t": "Choose how to group the companies and what to measure."
+            }
+          ],
+          "target": "bars"
+        }
+      ]
+    },
+    {
+      "id": "capital",
+      "title": "Capital and exits",
+      "sub": [
+        {
+          "t": "The largest latest rounds closed by profiled companies since January 2025, followed by acquisitions, failures and other events that reshaped the market."
+        }
+      ],
+      "notes": [
+        [
+          {
+            "t": "Only each company's most recent round is recorded. No public series of New York fashion-tech venture funding exists; the totals here are sums of company disclosures."
+          }
+        ]
+      ],
+      "blocks": [
+        {
+          "title": "Exits, failures and major deals since 2023",
+          "target": "exits"
+        }
+      ]
+    },
+    {
+      "id": "incumbents",
+      "title": "Fashion, luxury and beauty groups",
+      "sub": [
+        {
+          "t": "The groups headquartered in New York, or running their Americas business from here. They are the startups' main customers, partners and acquirers, and the owners of Fifth Avenue."
+        }
+      ],
+      "notes": [
+        [
+          {
+            "t": "Group revenue for the latest fiscal year. Foreign groups are shown at group level although only their US or Americas headquarters is in New York."
+          }
+        ]
+      ],
+      "blocks": [
+        {
+          "title": "Latest annual revenue",
+          "target": "anrev"
+        }
+      ]
+    },
+    {
+      "id": "academia",
+      "title": "Schools and talent",
+      "sub": [
+        {
+          "t": "New York trains more fashion talent than any city in the US, but completions have fallen about 30% since their 2016 peak."
+        }
+      ],
+      "blocks": [
+        {
+          "title": "Students at the dedicated schools",
+          "sub": [
+            {
+              "t": "Total enrollment, latest available year."
+            }
+          ],
+          "target": "nih"
+        },
+        {
+          "title": "What the schools offer innovators"
+        },
+        {
+          "title": "Institutions and their indicators",
+          "target": "inst"
+        }
+      ]
+    },
+    {
+      "id": "programs",
+      "title": "Programs, investors and spaces",
+      "sub": [
+        {
+          "t": "Where a fashion or luxury founder can find funding, a program, a showroom or a production floor in New York, and whether each one is running."
+        }
+      ]
+    },
+    {
+      "id": "policy-s",
+      "title": "Policy, trends and risks",
+      "blocks": [
+        {
+          "title": "Policy",
+          "target": "policy"
+        },
+        {
+          "title": "Trends",
+          "target": "trends"
+        },
+        {
+          "title": "Risks to watch",
+          "target": "risks"
+        }
+      ]
+    },
+    {
+      "id": "database",
+      "title": "Company database",
+      "sub": [
+        {
+          "t": "Open a row for the full profile: what it does, business model, customers, use of AI, sustainability angle, clients, founders, funding, milestones, impact indicators and sources."
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "title": "Method and limits",
+      "caveats": [
+        [
+          {
+            "b": "Scope."
+          },
+          {
+            "t": " Companies innovating in fashion, luxury, beauty and jewelry, with headquarters or their primary US office in the New York metro area, that are public or have raised at least $1M or earned at least $1M in revenue. Digital-native brands are included when their model, not just their product, is new."
+          }
+        ],
+        [
+          {
+            "b": "Not a full register."
+          },
+          {
+            "t": " The census profiles 69 companies chosen for funding, visibility and recent activity. Research ran against a fixed search budget and was interrupted once by a service limit; 92 names reviewed and left out are listed below with the reason."
+          }
+        ],
+        [
+          {
+            "b": "Method."
+          },
+          {
+            "t": " Seven research desks (commerce and AI; circularity, materials and supply chain; beauty, jewelry and brands; programs and investors; schools; incumbents; city indicators) plus a gap-filling pass built lists from investor portfolios, funding trackers and trade press, and checked each record against primary or dated sources."
+          }
+        ],
+        [
+          {
+            "b": "Verification."
+          },
+          {
+            "t": " Before publication, independent reviewers re-checked 279 figures and statements against primary sources: 177 confirmed, 48 corrected and 54 could not be verified. Corrections are applied throughout, and checked companies are marked."
+          }
+        ],
+        [
+          {
+            "b": "Confidence."
+          },
+          {
+            "t": " 5 company profiles are rated high and 12 low. Low means the headquarters or the funding rests on one aggregator or on prior knowledge. Low-confidence rows are labelled."
+          }
+        ],
+        [
+          {
+            "b": "Gaps."
+          },
+          {
+            "t": " Founding year is missing for 17 companies and total raised for 36. Revenue is disclosed by only 7. Private brands rarely publish figures."
+          }
+        ],
+        [
+          {
+            "b": "Conflicting figures."
+          },
+          {
+            "t": " City fashion employment ranges from 110,000 to 180,000 depending on definition and year; state figures (312,000 jobs) cover a wider industry. The page names the source next to each figure."
+          }
+        ],
+        [
+          {
+            "b": "Dates."
+          },
+          {
+            "t": " Research closed October 19, 2026. Check the linked sources before acting on a record."
+          }
+        ]
+      ],
+      "summary": "Companies reviewed and left out ()"
+    }
+  ],
+  "footer": [
+    {
+      "t": "Designed by "
+    },
+    {
+      "a": "Andrea Calcagno",
+      "href": "https://www.linkedin.com/in/andreacalcagno/"
+    },
+    {
+      "t": ", Vice Chair, Board Member & Co-Founder, I³/NYC. Prepared for I³/NYC, the non-profit connecting Italian innovators with New York City. Figures are compiled from public sources and are not investment advice."
+    }
+  ]
+}

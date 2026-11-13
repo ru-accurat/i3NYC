@@ -1,0 +1,533 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Tri-State Innovation Navigator</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+/* Layout: navy masthead band with Italian tricolor rule, then a finder → explorer → calendar → path, one 1120px column */
+:root{
+  --ink:#1A1A2E; --paper:#F7F6F2; --surface:#FFFFFF; --line:#E3E0EA; --muted:#5D5A6E;
+  --accent:#6B21D4; --accent-strong:#7000FF; --accent-soft:#F3EEFF; --on-accent:#FFFFFF;
+  --band:#1A1A2E; --on-band:#F4F2FA; --band-muted:#B9B4CC;
+  --open:#0B7A43; --open-soft:#E3F4EA; --soon:#8A5A00; --soon-soft:#FBF0D9; --closed:#8A2A33; --closed-soft:#F8E4E6;
+  --it-green:#009246; --it-white:#F4F5F0; --it-red:#CE2B37;
+  --display:Georgia,"Times New Roman",Times,serif;
+  --body:Arial,"Helvetica Neue",Helvetica,sans-serif;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --ink:#EEEBF6; --paper:#11111C; --surface:#1A1A2B; --line:#2E2C44; --muted:#A9A5BE;
+  --accent:#B597FF; --accent-strong:#9B6BFF; --accent-soft:#251C40; --on-accent:#11111C;
+  --band:#0B0B14; --on-band:#F4F2FA; --band-muted:#A9A5BE;
+  --open:#5FD39A; --open-soft:#12301F; --soon:#F2C062; --soon-soft:#33280F; --closed:#F08B95; --closed-soft:#3A1A1F;
+  color-scheme:dark}}
+:root[data-theme="dark"]{
+  --ink:#EEEBF6; --paper:#11111C; --surface:#1A1A2B; --line:#2E2C44; --muted:#A9A5BE;
+  --accent:#B597FF; --accent-strong:#9B6BFF; --accent-soft:#251C40; --on-accent:#11111C;
+  --band:#0B0B14; --on-band:#F4F2FA; --band-muted:#A9A5BE;
+  --open:#5FD39A; --open-soft:#12301F; --soon:#F2C062; --soon-soft:#33280F; --closed:#F08B95; --closed-soft:#3A1A1F;
+  color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.55}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--accent-strong);outline-offset:2px}
+h1,h2,h3{font-family:var(--display);font-weight:normal;text-wrap:balance;margin:0}
+.eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:bold}
+
+/* masthead */
+.mast{background:var(--band);color:var(--on-band)}
+.mast .wrap{padding-block:28px 34px;display:grid;gap:22px}
+.brand{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.logo{font-family:var(--display);font-size:22px;letter-spacing:.02em}
+.logo sup{font-size:.6em}
+.logo small{display:block;font-family:var(--body);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--band-muted)}
+.asof{font-size:12px;color:var(--band-muted)}
+.mast h1{font-size:clamp(30px,5vw,52px);line-height:1.08;max-width:18ch}
+.mast h1 em{font-style:italic;color:#C8B2FF}
+.lede{max-width:62ch;color:var(--band-muted);font-size:16px;margin:0}
+.lede strong{color:var(--on-band);font-weight:normal}
+.tri{height:5px;display:grid;grid-template-columns:1fr 1fr 1fr}
+.tri i:nth-child(1){background:var(--it-green)}.tri i:nth-child(2){background:var(--it-white)}.tri i:nth-child(3){background:var(--it-red)}
+.region-row{display:flex;flex-wrap:wrap;gap:10px}
+.region{border:1px solid #3B3956;border-radius:999px;padding:6px 12px;font-size:13px;color:var(--on-band);font-variant-numeric:tabular-nums}
+.region b{font-weight:bold;margin-right:4px}
+
+nav.jump{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--surface);border-bottom:1px solid var(--line)}
+nav.jump .wrap{display:flex;gap:4px;overflow-x:auto;padding-block:8px}
+nav.jump a{white-space:nowrap;text-decoration:none;color:var(--ink);font-size:14px;padding:6px 10px;border-radius:6px}
+nav.jump a:hover{background:var(--accent-soft)}
+
+section{padding-block:44px 8px}
+.sec-head{display:grid;gap:6px;margin-bottom:20px}
+.sec-head h2{font-size:clamp(24px,3.2vw,32px)}
+.sec-head p{margin:0;color:var(--muted);max-width:66ch}
+
+/* finder */
+.finder{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:20px;display:grid;gap:18px}
+.q{display:grid;gap:8px}
+.q-label{font-weight:bold;font-size:14px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{appearance:none;border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:999px;padding:8px 14px;font:inherit;font-size:14px;cursor:pointer}
+.chip:hover{border-color:var(--accent)}
+.chip[aria-pressed="true"]{background:var(--accent-strong);border-color:var(--accent-strong);color:#fff}
+.results{display:grid;gap:10px}
+.res-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.res-head h3{font-size:20px}
+.res-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.res{border:1px solid var(--line);border-radius:8px;padding:14px;display:grid;gap:6px;background:var(--paper);min-width:0}
+.res .why{font-size:13px;color:var(--muted)}
+.res button.link{justify-self:start}
+
+/* explorer */
+.toolbar{display:grid;grid-template-columns:2fr repeat(4,1fr);gap:10px;margin-bottom:14px}
+.toolbar label{display:grid;gap:4px;font-size:12px;color:var(--muted);font-weight:bold;letter-spacing:.04em;text-transform:uppercase;min-width:0}
+.toolbar input,.toolbar select{font:inherit;font-size:14px;padding:9px 10px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--ink);width:100%}
+.count{font-size:14px;color:var(--muted);margin-bottom:12px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-variant-numeric:tabular-nums}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px;display:grid;gap:10px;align-content:start;min-width:0}
+.card-top{display:flex;justify-content:space-between;gap:8px;align-items:flex-start}
+.card h3{font-size:19px;line-height:1.25}
+.org{font-size:13px;color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:12px;border:1px solid var(--line);border-radius:4px;padding:2px 7px;color:var(--muted)}
+.tag.money{border-color:transparent;background:var(--accent-soft);color:var(--accent)}
+.status{font-size:12px;font-weight:bold;border-radius:999px;padding:3px 9px;white-space:nowrap}
+.st-open{background:var(--open-soft);color:var(--open)}
+.st-soon{background:var(--soon-soft);color:var(--soon)}
+.st-closed{background:var(--closed-soft);color:var(--closed)}
+.card p{margin:0}
+.benefit{font-size:14px}
+details{border-top:1px solid var(--line);padding-top:8px}
+summary{cursor:pointer;font-size:14px;color:var(--accent);font-weight:bold}
+dl{display:grid;grid-template-columns:110px 1fr;gap:6px 12px;margin:10px 0 0;font-size:14px}
+dt{color:var(--muted)} dd{margin:0;min-width:0}
+.card-actions{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.btn{appearance:none;font:inherit;font-size:14px;border-radius:6px;padding:8px 12px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:6px;border:1px solid var(--accent-strong)}
+.btn.primary{background:var(--accent-strong);color:#fff}
+.btn.ghost{background:transparent;color:var(--accent)}
+.btn.ghost[aria-pressed="true"]{background:var(--accent-soft)}
+button.link{appearance:none;background:none;border:0;padding:0;color:var(--accent);font:inherit;font-size:14px;cursor:pointer;text-decoration:underline}
+.empty{padding:30px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:var(--r)}
+
+/* shortlist tray */
+.tray{background:var(--surface);border:1px solid var(--accent-strong);border-radius:var(--r);padding:14px 16px;display:grid;gap:8px;margin-top:18px}
+.tray ul{margin:0;padding-left:18px;font-size:14px}
+.tray-actions{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.toast{font-size:13px;color:var(--open)}
+
+/* alerts */
+.alert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.alert{border-left:4px solid var(--closed);background:var(--surface);border-radius:0 8px 8px 0;padding:14px 16px;display:grid;gap:4px}
+.alert.good{border-left-color:var(--open)}
+.alert b{font-family:var(--display);font-weight:normal;font-size:17px}
+.alert span{font-size:14px;color:var(--muted)}
+
+/* calendar */
+.timeline{display:grid;gap:0;border-left:2px solid var(--line);margin-left:6px}
+.ev{display:grid;grid-template-columns:120px 1fr;gap:14px;padding:10px 0 14px 18px;position:relative}
+.ev::before{content:"";position:absolute;left:-7px;top:15px;width:12px;height:12px;border-radius:50%;background:var(--surface);border:2px solid var(--accent-strong)}
+.ev.past::before{border-color:var(--line)}
+.ev-date{font-variant-numeric:tabular-nums;font-weight:bold;font-size:14px}
+.ev-body{min-width:0}
+.ev-body b{display:block;font-weight:bold}
+.ev-body span{font-size:14px;color:var(--muted)}
+.ev-place{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);font-weight:bold}
+
+/* path */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;counter-reset:s;padding:0;margin:0;list-style:none}
+.steps li{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px;counter-increment:s;display:grid;gap:6px;align-content:start}
+.steps li::before{content:counter(s);font-family:var(--display);font-size:28px;color:var(--accent-strong);line-height:1}
+.steps .when{font-size:12px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;font-weight:bold}
+.steps p{margin:0;font-size:14px}
+
+/* cta */
+.cta{background:var(--band);color:var(--on-band);margin-top:52px}
+.cta .wrap{padding-block:40px;display:grid;grid-template-columns:1.3fr 1fr;gap:28px;align-items:center}
+.cta h2{font-size:clamp(24px,3vw,34px)}
+.cta p{color:var(--band-muted);margin:8px 0 0;max-width:56ch}
+.contact{border:1px solid #3B3956;border-radius:var(--r);padding:16px;display:grid;gap:10px}
+.mail{font-family:var(--display);font-size:22px;user-select:all;color:var(--on-band)}
+.cta .btn.ghost{color:#D9CCFF;border-color:#6B5FA0}
+.cta a{color:#D9CCFF}
+footer{padding-block:22px 40px;font-size:13px;color:var(--muted)}
+footer p{max-width:90ch;margin:0 0 8px}
+
+@media (max-width:860px){.toolbar{grid-template-columns:1fr 1fr}.toolbar label:first-child{grid-column:1/-1}.cta .wrap{grid-template-columns:1fr}}
+@media (max-width:480px){.grid,.res-list{grid-template-columns:1fr}.ev{grid-template-columns:1fr;gap:2px}dl{grid-template-columns:1fr}dt{margin-top:4px}}
+@media (prefers-reduced-motion:no-preference){.card,.res{transition:border-color .15s}.card:hover{border-color:var(--accent)}}
+</style>
+<style id="i3nyc-ds">
+/* I³/NYC Design System alignment layer (Oct 2026 deck) */
+:root{--line:#DFDCD3;--muted:#5A5A70;--on-band:#F7F6F2;--band-muted:#C9C7DA;--it-green:#1F8A4C;--it-white:#F7F6F2;--it-red:#C8323C}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--ink:#F7F6F2;--paper:#1A1A2E;--surface:#24243D;--line:#3A3A58;--muted:#C9C7DA;--accent:#B79BFF;--accent-strong:#7000FF;--accent-soft:#2E2650;--on-accent:#FFFFFF;--band:#12121F;--band-muted:#C9C7DA}}
+:root[data-theme="dark"]{--ink:#F7F6F2;--paper:#1A1A2E;--surface:#24243D;--line:#3A3A58;--muted:#C9C7DA;--accent:#B79BFF;--accent-strong:#7000FF;--accent-soft:#2E2650;--on-accent:#FFFFFF;--band:#12121F;--band-muted:#C9C7DA}
+.tri{height:5px}
+.logo img{height:34px;width:auto;display:block}
+.mast h1 em{font-style:normal;color:#B79BFF}
+.mast h1{line-height:1.15}
+.eyebrow{color:var(--accent)}
+a{transition:color .2s cubic-bezier(.2,.7,.2,1)}
+a:hover{color:var(--accent-strong)}
+nav.jump{background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+nav.jump a{border-radius:4px}
+.btn,.toolbar input,.toolbar select{border-radius:4px}
+.btn{transition:background-color .2s cubic-bezier(.2,.7,.2,1),color .2s cubic-bezier(.2,.7,.2,1)}
+.btn.primary:hover{background:#6B21D4;border-color:#6B21D4}
+.btn.ghost:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.res{border-radius:10px;background:var(--surface)}
+.finder .res{background:var(--paper)}
+.alert{border:1px solid var(--line);border-top:4px solid var(--closed);border-radius:10px}
+.alert.good{border-top-color:var(--open)}
+.steps li{border-top:4px solid var(--accent-strong)}
+.cta .btn.ghost{color:#B79BFF;border-color:#B79BFF}
+.cta .btn.ghost:hover{background:#F7F6F2;color:#1A1A2E;border-color:#F7F6F2}
+.cta a{color:#B79BFF}
+</style>
+
+<header class="mast">
+  <div class="tri" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="wrap">
+    <div class="brand">
+      <div class="logo"><img src="assets/logo-white.png" alt="I³/NYC"><small>Italian Innovators Initiative</small></div>
+      <div class="asof">Updated October 15, 2026 · Free public resource</div>
+    </div>
+    <h1>The Tri-State <em>Innovation Navigator</em></h1>
+    <p class="lede">Programs, funding and soft-landing routes across <strong>New York, New Jersey and Connecticut</strong> for Italian founders, scale-ups, corporates and investors. Answer three questions to see where to start, then explore every program with its eligibility and application link.</p>
+    <div class="region-row" id="regionRow" aria-label="Programs by region"></div>
+  </div>
+</header>
+
+<nav class="jump" aria-label="Sections">
+  <div class="wrap">
+    <a href="#finder">Find your path</a>
+    <a href="#explorer">All programs</a>
+    <a href="#rules">2026 rule changes</a>
+    <a href="#calendar">Calendar</a>
+    <a href="#path">Landing in 7 steps</a>
+    <a href="#contact">Talk to I³/NYC</a>
+  </div>
+</nav>
+
+<main class="wrap">
+  <section id="finder">
+    <div class="sec-head">
+      <span class="eyebrow">Pathway finder</span>
+      <h2>Where should your company start?</h2>
+      <p>Pick one answer per question. The best-matching programs update instantly; open programs rank ahead of upcoming ones.</p>
+    </div>
+    <div class="finder">
+      <div class="q"><span class="q-label" id="q1">1 · Who are you?</span><div class="chips" role="group" aria-labelledby="q1" data-q="profile"></div></div>
+      <div class="q"><span class="q-label" id="q2">2 · Your sector</span><div class="chips" role="group" aria-labelledby="q2" data-q="sector"></div></div>
+      <div class="q"><span class="q-label" id="q3">3 · Where would you land?</span><div class="chips" role="group" aria-labelledby="q3" data-q="place"></div></div>
+      <div class="results">
+        <div class="res-head"><h3 id="resTitle">Your best starting points</h3><button class="link" type="button" id="showAll">Show these filters in the full list</button></div>
+        <div class="res-list" id="resList"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="explorer">
+    <div class="sec-head">
+      <span class="eyebrow">Program explorer</span>
+      <h2>Every program, one place</h2>
+      <p>Filter by region, type of support and status. Save programs to a shortlist you can copy into an email or a board memo.</p>
+    </div>
+    <div class="toolbar">
+      <label for="fSearch">Search<input id="fSearch" type="search" placeholder="e.g. AI, climate, loan, Jersey City"></label>
+      <label for="fRegion">Region<select id="fRegion"></select></label>
+      <label for="fType">Type of support<select id="fType"></select></label>
+      <label for="fMoney">Funding form<select id="fMoney"></select></label>
+      <label for="fStatus">Status<select id="fStatus"></select></label>
+    </div>
+    <div class="count"><span id="countTxt"></span><button class="link" type="button" id="resetF">Reset filters</button></div>
+    <div class="grid" id="grid"></div>
+    <div class="tray" id="tray" hidden>
+      <div class="res-head"><h3 style="font-size:18px">Your shortlist</h3><span class="toast" id="toast" role="status"></span></div>
+      <ul id="trayList"></ul>
+      <div class="tray-actions">
+        <button class="btn primary" type="button" id="copyList">Copy shortlist</button>
+        <button class="btn ghost" type="button" id="clearList">Clear</button>
+      </div>
+      <textarea id="copyFallback" readonly hidden style="width:100%;min-height:120px;font:inherit;font-size:13px;background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:8px"></textarea>
+    </div>
+  </section>
+
+  <section id="rules">
+    <div class="sec-head">
+      <span class="eyebrow">What changed in 2026</span>
+      <h2>Four rules every Italian company should know</h2>
+      <p>Federal changes in 2025–26 closed some doors to foreign-owned firms and opened others. Plan the entity and the cap table before you apply.</p>
+    </div>
+    <div class="alert-grid">
+      <div class="alert"><b>SBA loans: closed to foreign owners</b><span>Since March 1, 2026, SBA 7(a) and 504 loans require 100% ownership by US citizens living in the US. Italian-owned companies are not eligible.</span></div>
+      <div class="alert"><b>SBIR/STTR: stricter screening</b><span>Reauthorized on April 13, 2026 through September 30, 2031, with new foreign-ownership and foreign-ties review. Only majority-US-owned companies qualify.</span></div>
+      <div class="alert"><b>H-1B: $100,000 fee</b><span>New petitions for workers outside the US carry a $100,000 fee since September 21, 2025 (under litigation). Early-stage hiring from Italy becomes costly.</span></div>
+      <div class="alert good"><b>E-2 and O-1: the founder routes</b><span>Italy is an E-2 treaty country (applications through the US Embassy in Rome, allow about 3 months). O-1A has no cap and suits founders with awards, press or funding.</span></div>
+    </div>
+  </section>
+
+  <section id="calendar">
+    <div class="sec-head">
+      <span class="eyebrow">Calendar · Oct 2026 – Jul 2027</span>
+      <h2>Dates to plan around</h2>
+      <p>Cohort programs open for a few weeks a year. Missing a window usually costs six to twelve months.</p>
+    </div>
+    <div class="timeline" id="timeline"></div>
+  </section>
+
+  <section id="path">
+    <div class="sec-head">
+      <span class="eyebrow">Landing in 7 steps</span>
+      <h2>From Italy to an operating Tri-State presence</h2>
+      <p>A prepared company typically needs six to nine months. Run Italian financing and US program applications in parallel.</p>
+    </div>
+    <ol class="steps">
+      <li><span class="when">Month 0–1</span><b>Readiness check</b><p>Test the US thesis, confirm revenue or capital, and choose the executive who will relocate. Landing pads ask for about $5M revenue or capital to hire 5+ locally.</p></li>
+      <li><span class="when">Month 1–2</span><b>Italian financing</b><p>Apply to SIMEST Misura Stati Uniti. Startups add the ICE Global Start Up Program in its May call.</p></li>
+      <li><span class="when">Month 1–2</span><b>Pick the state</b><p>Meet NYCEDC, NJEDA or Connecticut Innovations. Compare incentives, talent and where your first customers sit.</p></li>
+      <li><span class="when">Month 2–4</span><b>Apply to a program</b><p>Landing pad, accelerator or pilot. Bring a local hiring plan, pilot targets and proof of capital.</p></li>
+      <li><span class="when">Month 2–5</span><b>Entity and visas</b><p>Incorporate the US subsidiary, open banking, and file E-2 in Rome or O-1. Register for state taxes.</p></li>
+      <li><span class="when">Month 5–9</span><b>Land</b><p>Start the cohort, sign a lease, and file relocation tax credits inside their deadlines. Hire first local staff.</p></li>
+      <li><span class="when">Month 9+</span><b>Scale</b><p>Raise a US round with state co-investment, use job-creation credits and turn pilots into contracts.</p></li>
+    </ol>
+  </section>
+</main>
+
+<section class="cta" id="contact">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow" style="color:var(--band-muted)">Talk to I³/NYC</span>
+      <h2>Not sure which door is yours?</h2>
+      <p>I³/NYC is a New York nonprofit endorsed by the Consulate General of Italy in New York. We connect Italian founders, companies and institutions with the Tri-State innovation ecosystem and can point you to the right program and people.</p>
+    </div>
+    <div class="contact">
+      <span class="eyebrow" style="color:var(--band-muted)">Write to us</span>
+      <span class="mail" id="mail">info@i3nyc.org</span>
+      <div class="tray-actions">
+        <button class="btn ghost" type="button" id="copyMail">Copy email address</button>
+        <a href="https://www.i3nyc.org" target="_blank" rel="noopener">i3nyc.org</a>
+      </div>
+      <span class="toast" id="mailToast" role="status" style="color:#8EE3B5"></span>
+    </div>
+  </div>
+</section>
+
+<footer class="wrap">
+  <p>Information compiled by I³/NYC from official program pages as of October 15, 2026, for educational purposes. Programs change often: always confirm eligibility, amounts and deadlines with the program operator before applying. This page is not legal, tax or immigration advice.</p>
+  <p>I-CUBED:NYC Italian Innovators Initiative Inc. · New York City · i3nyc.org</p>
+</footer>
+
+<script>
+const PROGRAMS = [
+ // NYC
+ {n:"International Landing Pad Network (ILPN)",o:"NYCEDC · operators Plug and Play × Cornell Tech, SOSA, Supermomos × Lightspeed, The Clean Fight",r:"nyc",t:"landing",m:["inkind"],s:"soon",sl:"Next cycle expected 2027",
+  b:"12 months of free coworking, business development, customer and investor introductions for growth-stage international companies.",
+  w:"Growth-stage firms outside the US in AI, advanced tech, green economy, life sciences.",
+  e:"$5M+ revenue, or capital to hire 5+ in NYC within ~2 years. In-person presence for the year. Apply to up to 2 operators.",
+  p:["growth","corporate"],x:["ai","climate","life","fintech","deep"],u:"https://edc.nyc/international-landing-pad-network",ul:"Program page",k:"No Italian company in the 2026 cohort"},
+ {n:"NYC AI Nexus",o:"NYCEDC · run by Plug and Play and C10 Labs",r:"nyc",t:"accelerator",m:["inkind"],s:"open",sl:"Rolling through 2029",
+  b:"Coworking, technical and go-to-market support, curated pilots with NYC companies, mentorship and fundraising help.",
+  w:"Applied-AI startups. Plug and Play: retail, food, legal/HR, media, real estate, hospitality. C10 Labs: health, climate, robotics.",
+  e:"Based in NYC or willing to relocate; NYC-based startups preferred.",
+  p:["early","growth"],x:["ai","life","climate","deep","consumer"],u:"https://edc.nyc/program/nyc-ai-nexus",ul:"Choose a track"},
+ {n:"Pilots at BAT",o:"NYCEDC · operated by LACI at BATWorks",r:"nyc",t:"pilot",m:["inkind"],s:"open",sl:"Rolling, quarterly cohorts",
+  b:"Free use of pilot zones on the 60-acre Brooklyn Army Terminal for about 6 months, with an on-site pilots associate.",
+  w:"Climate tech in energy, mobility and buildings at growth or commercialization stage.",
+  e:"Working product ready to install; the startup covers installation and removal.",
+  p:["growth","early"],x:["climate","deep"],u:"https://edc.nyc/node/5997",ul:"Program page"},
+ {n:"NYCEDC Business Development & International Team",o:"NYCEDC",r:"nyc",t:"advisory",m:["inkind"],s:"open",sl:"Always open",
+  b:"Free site selection, incentives analysis, ecosystem introductions and meetings for visiting delegations.",
+  w:"Any company relocating or expanding to NYC, VCs and institutional investors.",e:"None.",
+  p:["growth","corporate","investor","early"],x:["all"],u:"https://edc.nyc/our-services",ul:"Contact the team"},
+ {n:"NYC Game Design Future Lab",o:"NYU Tandon × NYCEDC",r:"nyc",t:"accelerator",m:["inkind"],s:"soon",sl:"Next call ~July 2027",
+  b:"One-year incubator: desks for two founders in Downtown Brooklyn, mentors, investor access, help with the NYS game tax credit.",
+  w:"Game studios and creative-tech platforms.",e:"An operating company with a shipped title.",
+  p:["early"],x:["consumer"],u:"https://engineering.nyu.edu/research-innovation/entrepreneurship/future-labs/game-design",ul:"Program page"},
+ {n:"LifeSci NYC Expansion Fund",o:"NYCEDC",r:"nyc",t:"funding",m:["loan"],s:"closed",sl:"Paused",
+  b:"$250K–$500K concessionary loans, potentially forgivable when NYC growth milestones are met.",
+  w:"Life sciences companies raising Seed or Series A.",e:"Long-term commitment to NYC space and headcount.",
+  p:["early","growth"],x:["life"],u:"https://lifesci.nyc/lifesci-nyc-expansion-fund-application",ul:"Program page"},
+ {n:"RACE relocation tax credit",o:"NYC Department of Finance",r:"nyc",t:"tax",m:["tax"],s:"open",sl:"Pre-application open",
+  b:"$5,000 per relocated employee per year for 10 years, for up to 500 employees.",
+  w:"Companies moving into NYC from outside New York State.",e:"24+ months of operations outside NY State; 10,000+ sq ft office or manufacturing space.",
+  p:["growth","corporate"],x:["all"],u:"https://www.nyc.gov/site/finance/business/raceforspace.page",ul:"Pre-apply"},
+ {n:"REAP employment credit",o:"NYC Department of Finance",r:"nyc",t:"tax",m:["tax"],s:"open",sl:"Open",
+  b:"$3,000 per eligible employee per year for 12 years.",w:"Firms relocating to the outer boroughs or eligible Manhattan areas.",
+  e:"24+ months of operations outside NYC or below 96th Street before the move.",
+  p:["growth","corporate"],x:["all"],u:"https://www.nyc.gov/site/finance/benefits/business-reap.page",ul:"Program page"},
+ {n:"Customized Training Grant",o:"NYC Small Business Services",r:"nyc",t:"funding",m:["grant"],s:"open",sl:"Open",
+  b:"Reimburses up to 60% of training costs, $30K–$400K.",w:"NYC for-profit companies training their teams.",e:"Operating 1+ year in NYC; 10+ trainees (smaller firms can join a consortium).",
+  p:["growth","corporate"],x:["all"],u:"https://nyc-business.nyc.gov/nycbusiness/article/train-your-teamcustomized-training",ul:"Pre-apply"},
+ {n:"NYC Startup Internship Program",o:"NYCEDC with Company Ventures and CUNY",r:"nyc",t:"talent",m:["inkind"],s:"soon",sl:"Summer 2027 cohort",
+  b:"Pre-trained, paid CUNY interns for 9 weeks in engineering, data, design and operations.",w:"NYC tech-enabled startups.",e:"NYC-based startup able to host and mentor.",
+  p:["early"],x:["all"],u:"https://edc.nyc/node/6515",ul:"Program page"},
+ {n:"ERA — Entrepreneurs Roundtable Accelerator",o:"Private · Flatiron, Manhattan",r:"nyc",t:"accelerator",m:["equity"],s:"open",sl:"Apply by Nov 2, 2026",
+  b:"$150K on a post-money SAFE for 6%, four months, office space and 1,000+ mentors.",w:"Early-stage software and tech startups of any sector.",e:"US C-corp before investment; team ready to work from NYC.",
+  p:["early"],x:["all"],u:"https://www.eranyc.com",ul:"Apply"},
+ {n:"Techstars New York City",o:"Private",r:"nyc",t:"accelerator",m:["equity"],s:"soon",sl:"Next call early 2027",
+  b:"Up to $220K ($20K for equity plus an optional $200K convertible note), 13-week program.",w:"Early-stage software startups across verticals.",e:"Full-time founding team; US entity.",
+  p:["early"],x:["all"],u:"https://techstars.com/accelerators/new-york",ul:"Program page"},
+ {n:"FinTech Innovation Lab New York",o:"Accenture × Partnership Fund for NYC",r:"nyc",t:"accelerator",m:["inkind"],s:"soon",sl:"Annual call each autumn",
+  b:"12 weeks with executives from 40+ banks, insurers and asset managers. No equity taken.",w:"Enterprise fintech and insurtech, early to growth stage.",e:"Product ready for enterprise pilots.",
+  p:["early","growth"],x:["fintech"],u:"https://www.fintechinnovationlab.com",ul:"Program page"},
+ {n:"Newlab Brooklyn",o:"Private · Brooklyn Navy Yard",r:"nyc",t:"incubator",m:["inkind"],s:"open",sl:"Rolling membership",
+  b:"84,000 sq ft of labs and prototyping, plus pilots with corporate and city partners.",w:"Deep tech: energy, mobility, robotics, AI hardware.",e:"Paid membership; selective admission.",
+  p:["early","growth","corporate"],x:["deep","climate","ai"],u:"https://www.newlab.com/locations/brooklyn",ul:"Join"},
+ {n:"ACRE @ Urban Future Lab",o:"NYU Tandon",r:"nyc",t:"incubator",m:["inkind","grant"],s:"soon",sl:"Next prize call 2027",
+  b:"New York's longest-running climate-tech incubator; the Urban Future Prize awards up to $50K non-dilutive.",w:"Early-stage climate tech.",e:"Selected through the annual prize or direct admission.",
+  p:["early"],x:["climate"],u:"https://www.urbanfuturelab.com/about",ul:"Program page"},
+ // NY State
+ {n:"NY Ventures Pre-Seed & Seed Matching Fund",o:"Empire State Development",r:"nys",t:"funding",m:["equity"],s:"open",sl:"Rolling",
+  b:"$50K–$250K equity, matched 1:1 with private investors; SAFE, note or equity.",w:"Pre-seed and seed tech companies in New York State.",e:"NY-based; $2M or less raised before the round.",
+  p:["early"],x:["all"],u:"https://esd.ny.gov/pre-seed-and-seed-matching-fund-program",ul:"Program page"},
+ {n:"NYS Innovation Venture Capital Fund",o:"Empire State Development · NY Ventures",r:"nys",t:"funding",m:["equity"],s:"open",sl:"Rolling via lead investor",
+  b:"$135M+ fund co-investing Seed to Series B; does not lead rounds.",w:"Climate, health, ag-tech, advanced manufacturing, data and AI.",e:"NY-based or willing to relocate to New York State.",
+  p:["early","growth"],x:["ai","climate","life","deep"],u:"https://esd.ny.gov/new-york-state-innovation-venture-capital-fund",ul:"Program page"},
+ {n:"NYSERDA Commercialization Cohort",o:"NYSERDA",r:"nys",t:"accelerator",m:["grant","inkind"],s:"soon",sl:"Startups apply early 2027",
+  b:"$37M+ to launch four stage-specific clean-energy accelerators with training, mentoring and funding.",w:"Clean-energy startups from pre-seed to Series C.",e:"Operating in New York State.",
+  p:["early","growth"],x:["climate"],u:"https://www.nyserda.ny.gov/All-Programs/Innovation-at-NYSERDA/Commercialization-Program",ul:"Program page"},
+ {n:"Excelsior Jobs Program",o:"Empire State Development",r:"nys",t:"tax",m:["tax"],s:"open",sl:"Open",
+  b:"Ten years of fully refundable tax credits tied to job creation and investment.",w:"Tech, biotech, cleantech, fintech and manufacturing companies.",e:"Commitment to create jobs and invest in New York State.",
+  p:["growth","corporate"],x:["all"],u:"https://esd.ny.gov/excelsior-jobs-program",ul:"Program page"},
+ {n:"START-UP NY",o:"Empire State Development",r:"nys",t:"tax",m:["tax"],s:"open",sl:"Through host campus",
+  b:"Operate tax-free for 10 years on or near a partner college campus, including Long Island and Westchester.",w:"New or relocating businesses.",e:"Partnership with a New York college or university; create new jobs.",
+  p:["early","growth","researcher"],x:["all"],u:"https://esd.ny.gov/startup-ny-program",ul:"Find a campus"},
+ {n:"Life Sciences R&D Tax Credit",o:"Empire State Development",r:"nys",t:"tax",m:["tax"],s:"open",sl:"Annual",
+  b:"Refundable credit of 15–20% of R&D, up to $500K a year and $1.5M lifetime.",w:"New life-sciences companies.",e:"Most activity devoted to life-sciences R&D in NY.",
+  p:["early","researcher"],x:["life"],u:"https://esd.ny.gov/life-sciences-tax-credit-program",ul:"Program page"},
+ {n:"Stony Brook incubators (LIHTI, BioTech Center)",o:"Stony Brook University · Long Island",r:"li",t:"incubator",m:["inkind"],s:"open",sl:"Rolling admission",
+  b:"Mixed-technology incubator plus wet labs from 250 sq ft and energy and wireless R&D centers.",w:"Biotech, energy, IT and hardware startups.",e:"Admission review by the university.",
+  p:["early","researcher"],x:["life","deep","climate"],u:"https://www.stonybrook.edu/commcms/innovation/incubators/facilities",ul:"Incubator page"},
+ // NJ
+ {n:"NJ BASE soft-landing program",o:"NJEDA · operated by SOSA · Jersey City",r:"nj",t:"landing",m:["inkind"],s:"closed",sl:"First cohort underway",
+  b:"Free coworking in Jersey City, targeted support and a business immersion program in New Jersey's ecosystem.",
+  w:"Revenue-generating international companies headquartered outside the US.",e:"Priority sectors: clean energy, advanced manufacturing, life sciences, fintech, logistics, AI and tech.",
+  p:["growth","corporate"],x:["ai","climate","life","fintech","deep"],u:"https://www.njeda.gov/nj-base/",ul:"Program page"},
+ {n:"NJ Accelerate",o:"NJEDA",r:"nj",t:"funding",m:["loan","grant"],s:"soon",sl:"Check current status",
+  b:"Matches accelerator investment 1:1 up to $250K (convertible note, 3%) plus up to $25K rent support.",
+  w:"Graduates of NJEDA-approved accelerators.",e:"Base in NJ; 50%+ of staff in NJ; 2 founders or executives working in NJ; apply within 6 months of graduation.",
+  p:["early"],x:["all"],u:"https://www.njeda.gov/njaccelerate/",ul:"Program page"},
+ {n:"NJ Angel Investor Tax Credit",o:"NJEDA",r:"nj",t:"tax",m:["tax"],s:"open",sl:"Apply within 6 months of investing",
+  b:"Investors get a 35% tax credit (up to 40% in some cases), up to $500K per investor.",w:"Angels and VCs backing NJ tech companies; makes the round easier to raise.",
+  e:"Company with fewer than 150 staff, 75%+ in NJ, technology as its primary business.",
+  p:["early","investor"],x:["all"],u:"https://www.njeda.gov/angeltaxcredit",ul:"Program page"},
+ {n:"NJ Technology Business Tax Certificate (NOL) Program",o:"NJEDA",r:"nj",t:"tax",m:["tax"],s:"soon",sl:"2027 cycle opens May",
+  b:"Sell unused net operating losses and R&D credits for at least 80% of their value, up to $20M lifetime.",
+  w:"Unprofitable tech and biotech companies with patents or registered copyrights.",e:"NJ employees (1–10 by company age), max 224 employees, CPA-reviewed financials.",
+  p:["early","growth"],x:["all"],u:"https://www.njeda.gov/nol/",ul:"Program page"},
+ {n:"NJ Innovation Evergreen Fund",o:"NJEDA",r:"nj",t:"funding",m:["equity"],s:"open",sl:"Through qualified VC funds",
+  b:"State equity alongside approved venture funds, with up to $600M to deploy over time.",w:"High-growth startups based in New Jersey.",e:"Raise from one of the qualified venture funds (29 approved).",
+  p:["early","growth","investor"],x:["all"],u:"https://www.njeda.gov/3-new-jersey-businesses-secure-investments-through-njedas-evergreen-fund/",ul:"Program news"},
+ // CT
+ {n:"Connecticut Innovations Pre-Seed",o:"Connecticut Innovations",r:"ct",t:"funding",m:["equity"],s:"open",sl:"Rolling",
+  b:"Up to $150K, with at least a 50% private match.",w:"Bioscience, IT, clean tech, photonics, advanced materials.",e:"Under 7 years old, under $2M revenue, 50%+ staff in CT; must relocate or expand to Connecticut.",
+  p:["early"],x:["life","climate","deep","ai"],u:"https://ctinnovations.com/program/pre-seed-investment/",ul:"Submit a pitch"},
+ {n:"Connecticut Innovations sector funds",o:"Connecticut Innovations",r:"ct",t:"funding",m:["equity"],s:"open",sl:"Rolling",
+  b:"AI/Quantum Fund ($50M), ClimateTech Fund ($100M), Bioscience Innovation Fund ($200M), Future Fund ($50M).",w:"Early and growth-stage companies in Connecticut.",e:"Located in Connecticut or willing to relocate.",
+  p:["early","growth"],x:["ai","climate","life","deep"],u:"https://ctinnovations.com/",ul:"Find a fund"},
+ {n:"Connecticut Angel Investor Tax Credit",o:"Connecticut Innovations",r:"ct",t:"tax",m:["tax"],s:"open",sl:"Open",
+  b:"Investors get a 25% credit on $25K–$400K invested per company (up to $100K credit).",w:"Angels backing young CT companies.",
+  e:"Under $1M revenue, under 25 staff, under 7 years in CT, 50%+ staff CT residents.",
+  p:["early","investor"],x:["all"],u:"https://ctinnovations.com/angel-investor-tax-credit-program/",ul:"Program page"},
+ // Federal
+ {n:"SBIR / STTR",o:"US federal agencies",r:"us",t:"funding",m:["grant"],s:"open",sl:"Agency solicitations",
+  b:"About $4B a year in R&D awards; new Strategic Breakthrough awards up to $30M.",w:"US small businesses doing R&D.",e:"Majority US-owned and controlled; foreign ties screened since 2026.",
+  p:["early","researcher"],x:["all"],u:"https://www.sbir.gov/",ul:"sbir.gov"},
+ // Italy
+ {n:"SIMEST Misura Stati Uniti",o:"SIMEST (CDP Group) · Fondo 394 with MAECI",r:"it",t:"funding",m:["loan","grant","equity"],s:"open",sl:"Open in 2026",
+  b:"€300M package: subsidized loans with up to 10% as a grant, 50% paid in advance, up to €1M to capitalize a US subsidiary, plus equity.",
+  w:"Italian companies and innovative startups investing or selling in the US.",e:"Italian company; project with a US focus.",
+  p:["early","growth","corporate"],x:["all"],u:"https://www.simest.it/app/uploads/2026/01/Comunicato-Stampa-SIMEST-lancio-Misura-USA-22-gennaio-2026.pdf",ul:"Announcement"},
+ {n:"ICE Global Start Up Program",o:"ICE Agenzia · MAECI",r:"it",t:"accelerator",m:["inkind"],s:"soon",sl:"Call expected May 2027",
+  b:"Free four-week acceleration at a foreign hub with mentoring, investors and corporate meetings.",w:"Italian innovative startups.",e:"Listed in the Italian startup innovative register.",
+  p:["early"],x:["all"],u:"https://www.ice.it/it/settori/startup-innovazione/partecipa-ai-programmi-di-accelerazione",ul:"Program page"}
+];
+const EVENTS=[
+ {d:"2026-10-22",dl:"Oct 22, 2026",n:"Urban Future Summit & Prize",pl:"Brooklyn",x:"Climate-tech finalists pitch for ACRE admission and non-dilutive prizes."},
+ {d:"2026-11-02",dl:"Nov 2, 2026",n:"ERA Winter 2027 deadline",pl:"Manhattan",x:"$150K for 6% · program starts January 11, 2027."},
+ {d:"2026-12-09",dl:"Dec 9–10, 2026",n:"The AI Summit New York",pl:"Javits Center",x:"Enterprise AI buyers, startup and investor village."},
+ {d:"2027-01-15",dl:"Early 2027",n:"New cohorts open",pl:"NY State · NYC",x:"NYSERDA clean-energy accelerators; Techstars NYC; next ILPN cycle expected."},
+ {d:"2027-04-15",dl:"Apr 15, 2027",n:"NJ NOL 2026 sales must close",pl:"New Jersey",x:"2027 application cycle opens in early May."},
+ {d:"2027-05-02",dl:"May 2–5, 2027",n:"SelectUSA Investment Summit",pl:"National Harbor, MD",x:"The US federal FDI event; state and city agencies attend."},
+ {d:"2027-05-10",dl:"May 2027",n:"ICE Global Start Up Program call",pl:"Italy",x:"For Italian innovative startups."},
+ {d:"2027-06-10",dl:"June 2027",n:"NY Tech Week · Choose NYC Summit",pl:"New York City",x:"Ecosystem week; NYCEDC's business-attraction summit (date TBA)."},
+ {d:"2027-07-15",dl:"July 2027",n:"Game Design Future Lab call",pl:"Brooklyn",x:"Expected window for the 2027–28 cohort."}
+];
+const REGIONS={nyc:"New York City",nys:"New York State",li:"Long Island",nj:"New Jersey",ct:"Connecticut",us:"Federal (US)",it:"Italy"};
+const TYPES={landing:"Soft landing",accelerator:"Accelerator",incubator:"Incubator / lab",pilot:"Pilot site",funding:"Funding",tax:"Tax incentive",advisory:"Advisory",talent:"Talent"};
+const MONEY={grant:"Grant",loan:"Loan",equity:"Equity",tax:"Tax credit",inkind:"In-kind support"};
+const STAT={open:["Open","st-open"],soon:["Upcoming","st-soon"],closed:["Closed now","st-closed"]};
+const Q={
+ profile:[["early","Early-stage startup"],["growth","Scale-up ($5M+ revenue)"],["corporate","Corporate / SME"],["investor","Investor / VC"],["researcher","Researcher / spin-off"]],
+ sector:[["all","Any sector"],["ai","AI & software"],["climate","Climate & energy"],["life","Life sciences"],["fintech","Fintech"],["deep","Deep tech & hardware"],["consumer","Consumer, retail & media"]],
+ place:[["any","Anywhere in the Tri-State"],["ny","New York (City and State)"],["nj","New Jersey"],["ct","Connecticut"]]
+};
+const ans={profile:"growth",sector:"ai",place:"any"};
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+let saved=[];try{saved=JSON.parse(localStorage.getItem("i3nyc-shortlist")||"[]")}catch(e){saved=[]}
+function persist(){try{localStorage.setItem("i3nyc-shortlist",JSON.stringify(saved))}catch(e){}}
+
+// region chips in masthead
+(function(){const c={};PROGRAMS.forEach(p=>c[p.r]=(c[p.r]||0)+1);
+ $("#regionRow").innerHTML=["nyc","nys","li","nj","ct","us","it"].filter(k=>c[k]).map(k=>`<span class="region"><b>${c[k]}</b>${REGIONS[k]}</span>`).join("");})();
+
+// finder
+document.querySelectorAll(".chips").forEach(g=>{const q=g.dataset.q;
+ g.innerHTML=Q[q].map(([v,l])=>`<button type="button" class="chip" data-v="${v}" aria-pressed="${ans[q]===v}">${l}</button>`).join("");
+ g.addEventListener("click",e=>{const b=e.target.closest(".chip");if(!b)return;ans[q]=b.dataset.v;
+  g.querySelectorAll(".chip").forEach(x=>x.setAttribute("aria-pressed",x===b));renderFinder();});});
+function placeOk(p){const pl=ans.place;if(pl==="any"||p.r==="us"||p.r==="it")return true;
+ if(pl==="ny")return["nyc","nys","li"].includes(p.r);return p.r===pl;}
+function score(p){let s=0;if(p.p.includes(ans.profile))s+=4;else return -1;
+ if(ans.sector==="all"||p.x.includes("all"))s+=1;else if(p.x.includes(ans.sector))s+=3;else return -1;
+ if(!placeOk(p))return -1;if(p.r==="it")s+=0.5;
+ s+= p.s==="open"?2:p.s==="soon"?1:-2;if(p.t==="landing"&&ans.profile==="growth")s+=2;return s;}
+function renderFinder(){const list=PROGRAMS.map(p=>[score(p),p]).filter(x=>x[0]>0).sort((a,b)=>b[0]-a[0]).slice(0,6);
+ $("#resList").innerHTML=list.length?list.map(([,p])=>`<div class="res"><div class="card-top"><b>${esc(p.n)}</b><span class="status ${STAT[p.s][1]}">${STAT[p.s][0]}</span></div>
+ <span class="org">${REGIONS[p.r]} · ${TYPES[p.t]}</span><span class="why">${esc(p.b)}</span>
+ <button class="link" type="button" data-goto="${PROGRAMS.indexOf(p)}">See details</button></div>`).join(""):`<div class="empty">No direct match for this combination. Try "Any sector" or another region, or write to I³/NYC.</div>`;}
+$("#resList").addEventListener("click",e=>{const b=e.target.closest("[data-goto]");if(!b)return;
+ clearFilters();renderGrid();const el=document.getElementById("p"+b.dataset.goto);
+ if(el){el.querySelector("details").open=true;el.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"center"});}});
+$("#showAll").addEventListener("click",()=>{clearFilters();
+ if(ans.place==="nj"||ans.place==="ct")$("#fRegion").value=ans.place;
+ if(ans.sector!=="all")$("#fSearch").value="";renderGrid();$("#explorer").scrollIntoView();});
+
+// explorer
+function fillSel(id,obj,all){$(id).innerHTML=`<option value="">${all}</option>`+Object.entries(obj).map(([k,v])=>`<option value="${k}">${Array.isArray(v)?v[0]:v}</option>`).join("");}
+fillSel("#fRegion",REGIONS,"All regions");fillSel("#fType",TYPES,"All types");fillSel("#fMoney",MONEY,"Any form");fillSel("#fStatus",STAT,"Any status");
+function clearFilters(){["#fSearch","#fRegion","#fType","#fMoney","#fStatus"].forEach(s=>$(s).value="");}
+function renderGrid(){const q=$("#fSearch").value.trim().toLowerCase(),r=$("#fRegion").value,t=$("#fType").value,m=$("#fMoney").value,st=$("#fStatus").value;
+ const rows=PROGRAMS.map((p,i)=>[p,i]).filter(([p])=>(!r||p.r===r)&&(!t||p.t===t)&&(!m||p.m.includes(m))&&(!st||p.s===st)&&
+  (!q||[p.n,p.o,p.b,p.w,p.e,REGIONS[p.r],TYPES[p.t]].join(" ").toLowerCase().includes(q)));
+ $("#countTxt").textContent=`${rows.length} of ${PROGRAMS.length} programs`;
+ $("#grid").innerHTML=rows.length?rows.map(([p,i])=>{const on=saved.includes(i);return `<article class="card" id="p${i}">
+  <div class="card-top"><div><h3>${esc(p.n)}</h3><div class="org">${esc(p.o)}</div></div><span class="status ${STAT[p.s][1]}">${STAT[p.s][0]}</span></div>
+  <div class="tags"><span class="tag">${REGIONS[p.r]}</span><span class="tag">${TYPES[p.t]}</span>${p.m.map(x=>`<span class="tag money">${MONEY[x]}</span>`).join("")}</div>
+  <p class="benefit">${esc(p.b)}</p>
+  <details><summary>Who it's for, eligibility, timing</summary><dl>
+   <dt>Who it's for</dt><dd>${esc(p.w)}</dd><dt>Eligibility</dt><dd>${esc(p.e)}</dd><dt>Timing</dt><dd>${esc(p.sl)}</dd>${p.k?`<dt>I³/NYC note</dt><dd>${esc(p.k)}</dd>`:""}</dl></details>
+  <div class="card-actions"><a class="btn primary" href="${p.u}" target="_blank" rel="noopener">${esc(p.ul)} ↗</a>
+  <button class="btn ghost" type="button" data-save="${i}" aria-pressed="${on}">${on?"Saved":"Save to shortlist"}</button></div></article>`}).join("")
+  :`<div class="empty">No programs match these filters. <button class="link" type="button" onclick="clearFilters();renderGrid()">Reset filters</button></div>`;
+ renderTray();}
+["#fSearch","#fRegion","#fType","#fMoney","#fStatus"].forEach(s=>$(s).addEventListener("input",renderGrid));
+$("#resetF").addEventListener("click",()=>{clearFilters();renderGrid();});
+$("#grid").addEventListener("click",e=>{const b=e.target.closest("[data-save]");if(!b)return;const i=+b.dataset.save;
+ saved=saved.includes(i)?saved.filter(x=>x!==i):[...saved,i];persist();renderGrid();});
+function renderTray(){$("#tray").hidden=!saved.length;$("#trayList").innerHTML=saved.map(i=>`<li>${esc(PROGRAMS[i].n)} — ${STAT[PROGRAMS[i].s][0]} (${esc(PROGRAMS[i].sl)})</li>`).join("");}
+function shortlistText(){return "My Tri-State program shortlist (I³/NYC Innovation Navigator, Oct 2026)\n\n"+saved.map(i=>{const p=PROGRAMS[i];return `• ${p.n} — ${REGIONS[p.r]}\n  ${p.b}\n  Status: ${p.sl}\n  ${p.u}`}).join("\n\n")+"\n\nQuestions: info@i3nyc.org";}
+function copy(text,toastEl,fallbackEl){const done=()=>{toastEl.textContent="Copied";setTimeout(()=>toastEl.textContent="",2500)};
+ const fb=()=>{if(fallbackEl){fallbackEl.hidden=false;fallbackEl.value=text;fallbackEl.select();toastEl.textContent="Select and copy the text below";}else{const r=document.createRange();r.selectNodeContents($("#mail"));const s=getSelection();s.removeAllRanges();s.addRange(r);toastEl.textContent="Address selected — copy it";}};
+ try{navigator.clipboard.writeText(text).then(done,fb)}catch(e){fb()}}
+$("#copyList").addEventListener("click",()=>copy(shortlistText(),$("#toast"),$("#copyFallback")));
+$("#clearList").addEventListener("click",()=>{saved=[];persist();$("#copyFallback").hidden=true;renderGrid();});
+$("#copyMail").addEventListener("click",()=>copy("info@i3nyc.org",$("#mailToast"),null));
+
+// calendar
+(function(){const today="2026-10-15";$("#timeline").innerHTML=EVENTS.map(e=>`<div class="ev${e.d<today?" past":""}"><span class="ev-date">${e.dl}</span><div class="ev-body"><span class="ev-place">${e.pl}</span><b>${e.n}</b><span>${e.x}</span></div></div>`).join("");})();
+
+renderFinder();renderGrid();
+</script>
+
+</body></html>

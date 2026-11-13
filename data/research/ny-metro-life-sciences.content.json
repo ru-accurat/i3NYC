@@ -1,0 +1,601 @@
+{
+  "eyebrow": "I³/NYC Research · Ecosystem brief · Data as of October 19, 2026",
+  "title": "Life sciences in the New York metro area",
+  "lede": [
+    {
+      "t": "A map of the region's life sciences ecosystem across New York City, Long Island, Westchester, New Jersey and southwestern Connecticut: 141 companies profiled, 42 incubators, accelerators, lab sites and public programs, 22 research institutions, and the pharma anchors around them. Built for anyone who needs to understand where the science, the money and the space are."
+    }
+  ],
+  "lenses": [
+    {
+      "key": "all",
+      "label": "Whole metro"
+    },
+    {
+      "key": "nyc",
+      "label": "New York City only"
+    },
+    {
+      "key": "priv",
+      "label": "Private startups"
+    },
+    {
+      "key": "ther",
+      "label": "Drug developers"
+    }
+  ],
+  "sections": [
+    {
+      "id": "",
+      "title": "What the data shows",
+      "sub": [
+        {
+          "t": "Eight findings from the profiles and indicators below. Every figure is linked to its source in the sections that follow."
+        }
+      ],
+      "findings": [
+        {
+          "title": "Strong in research, weak in venture capital",
+          "body": [
+            {
+              "t": "The NY/NJ cluster leads the US in NIH funding, with "
+            },
+            {
+              "b": "$4.4B"
+            },
+            {
+              "t": " against $3.13B in the Bay Area, and has "
+            },
+            {
+              "b": "147,900 jobs"
+            },
+            {
+              "t": ", close to the Bay Area's 150,491. Its 2025 venture capital was "
+            },
+            {
+              "b": "$1.0B"
+            },
+            {
+              "t": ", about a seventh of Boston's $6.85B."
+            }
+          ]
+        },
+        {
+          "title": "New York City starts companies, New Jersey commercializes them",
+          "body": [
+            {
+              "b": "48 of 75"
+            },
+            {
+              "t": " New York City profiles are private startups. "
+            },
+            {
+              "b": "20 of 37"
+            },
+            {
+              "t": " New Jersey profiles are public companies, most of them selling approved drugs or devices."
+            }
+          ]
+        },
+        {
+          "title": "2026 money is going to new companies",
+          "body": [
+            {
+              "b": "36"
+            },
+            {
+              "t": " profiled companies closed their latest round in 2025 or 2026, for "
+            },
+            {
+              "b": "$3.3B"
+            },
+            {
+              "t": ". 33 of them are in New York City. The largest private rounds went to medtech: Precision Neuroscience ($250M), Synchron ($200M) and Fortell ($163M)."
+            }
+          ]
+        },
+        {
+          "title": "Oncology and neuroscience lead the pipeline",
+          "body": [
+            {
+              "t": "Of 91 drug developers, "
+            },
+            {
+              "b": "26"
+            },
+            {
+              "t": " work mainly in oncology and "
+            },
+            {
+              "b": "19"
+            },
+            {
+              "t": " in neuroscience and psychiatry. "
+            },
+            {
+              "b": "40"
+            },
+            {
+              "t": " companies have a lead program in clinical trials, 16 of them in Phase 3."
+            }
+          ]
+        },
+        {
+          "title": "Big pharma is buying, and cutting",
+          "body": [
+            {
+              "t": "Johnson & Johnson bought Intra-Cellular for "
+            },
+            {
+              "b": "$14.6B"
+            },
+            {
+              "t": ", Pfizer bought Metsera for about "
+            },
+            {
+              "b": "$7.0B"
+            },
+            {
+              "t": " and BioMarin bought Amicus for "
+            },
+            {
+              "b": "$4.8B"
+            },
+            {
+              "t": ". At the same time Novartis and Bristol Myers Squibb alone filed New Jersey layoff notices covering more than "
+            },
+            {
+              "b": "1,500 jobs"
+            },
+            {
+              "t": " in 2025–26."
+            }
+          ]
+        },
+        {
+          "title": "Academic medicine is the deepest asset",
+          "body": [
+            {
+              "t": "Columbia, NYU Langone, Mount Sinai and Weill Cornell each received "
+            },
+            {
+              "b": "$317M–$503M"
+            },
+            {
+              "t": " in NIH funding in FY2025. Federal shocks hit hard: Columbia had about $400M in grants cancelled before a $221M settlement."
+            }
+          ]
+        },
+        {
+          "title": "Lab space is plentiful but expensive",
+          "body": [
+            {
+              "t": "New York City asks "
+            },
+            {
+              "b": "$95.80"
+            },
+            {
+              "t": " per sq ft for lab space, three times New Jersey's $31.91, yet 27.8% of its lab space is available. Harlem's Taystee building has been empty since 2022, and the first phase of the city's SPARC Kips Bay campus is not due until 2031."
+            }
+          ]
+        },
+        {
+          "title": "The incubator map is being redrawn",
+          "body": [
+            {
+              "b": "19"
+            },
+            {
+              "t": " programs are confirmed active. In March 2026 J&J said it would hand "
+            },
+            {
+              "b": "JLABS @ NYC"
+            },
+            {
+              "t": " to the New York Genome Center, BioLabs moved to Long Island City, and New Jersey opened a new hub in HELIX New Brunswick in July 2026."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "glance",
+      "title": "The metro at a glance",
+      "sub": [
+        {
+          "t": "New York and New Jersey are ranked together as one cluster by most industry surveys. It ranks fourth in the US, behind Boston, the Bay Area and the Washington–Baltimore BioHealth Capital region."
+        }
+      ],
+      "notes": [
+        [
+          {
+            "t": "The 2024 figure ranges from $1.76B (PitchBook, NY/NJ) to $2.4B (Partnership for New York City, New York). For 2025, Empire State Development reports $1.3B for New York State against PitchBook's $1.0B for NY/NJ."
+          }
+        ]
+      ],
+      "tiles": [
+        {
+          "value": "#4",
+          "body": [
+            {
+              "t": "US biopharma cluster, NY/NJ combined, in GEN's 2025 and 2026 rankings. "
+            },
+            {
+              "a": "GEN, June 2026",
+              "href": "https://www.genengnews.com/topics/drug-discovery/top-10-u-s-biopharma-clusters-2026/"
+            }
+          ]
+        },
+        {
+          "value": "$4.4B",
+          "body": [
+            {
+              "t": "NIH funding across 7,033 awards to NY/NJ organizations, FY2025. "
+            },
+            {
+              "a": "GEN",
+              "href": "https://www.genengnews.com/topics/drug-discovery/top-10-u-s-biopharma-clusters-2026/"
+            }
+          ]
+        },
+        {
+          "value": "147,900",
+          "body": [
+            {
+              "t": "life sciences jobs in the NY/NJ cluster, second only to the Bay Area. "
+            },
+            {
+              "a": "GEN",
+              "href": "https://www.genengnews.com/topics/drug-discovery/top-10-u-s-biopharma-clusters-2026/"
+            }
+          ]
+        },
+        {
+          "value": "$182,103",
+          "body": [
+            {
+              "t": "average life sciences wage in New Jersey, more than twice the state average. "
+            },
+            {
+              "a": "NJ Dept. of Labor, 2023 data",
+              "href": "https://www.nj.gov/labor/labormarketinformation/assets/PDFs/pub/empecon/short/Life%20Sciences%20Report_9-30-2025.pdf"
+            }
+          ]
+        }
+      ],
+      "blocks": [
+        {
+          "title": "Against the two leading clusters",
+          "sub": [
+            {
+              "t": "GEN 2026, using PitchBook for venture capital and Colliers for lab space. Venture capital is where the metro trails most."
+            }
+          ],
+          "target": "cmp"
+        },
+        {
+          "title": "Life sciences venture capital raised",
+          "sub": [
+            {
+              "t": "Annual figures from different publishers and geographies, so read them as a direction, not a series. Hover for the scope of each."
+            }
+          ],
+          "target": "vc"
+        }
+      ]
+    },
+    {
+      "id": "companies",
+      "title": "Where the companies are",
+      "sub": [
+        {
+          "t": "Profiled companies by sub-region and segment. Darker cells hold more companies. Click a cell to list them. The lens at the top of the page applies to every company view."
+        }
+      ],
+      "notes": [
+        [
+          {
+            "t": "New York City is weighted toward private, venture-backed startups. New Jersey's profiles are mostly commercial-stage public companies. Connecticut covers Fairfield County plus New Haven, which sits just outside the metro but is tied to it."
+          }
+        ]
+      ],
+      "blocks": [
+        {
+          "title": "Cohort explorer",
+          "sub": [
+            {
+              "t": "Choose how to group the companies and what to measure."
+            }
+          ],
+          "target": "bars"
+        }
+      ]
+    },
+    {
+      "id": "pipeline",
+      "title": "The drug development pipeline",
+      "sub": [
+        {
+          "t": "Therapeutics and drug-discovery platform companies by therapeutic area and the stage of their most advanced program. Click a cell to list the companies."
+        }
+      ],
+      "notes": [
+        [
+          {
+            "t": "Stage is the company's most advanced program, so a commercial company with an earlier pipeline appears only under \"Commercial / approved\". Platform companies without a disclosed internal program are \"Not applicable / undisclosed\"."
+          }
+        ]
+      ]
+    },
+    {
+      "id": "capital",
+      "title": "Capital and exits",
+      "sub": [
+        {
+          "t": "The fifteen largest latest rounds closed by profiled companies since January 2025, followed by the acquisitions, mergers and failures that changed the map."
+        }
+      ],
+      "notes": [
+        [
+          {
+            "t": "Only each company's most recent round is recorded. Rounds from public companies (follow-ons, PIPEs) are included where they were the latest financing."
+          }
+        ]
+      ],
+      "blocks": [
+        {
+          "title": "Exits, mergers and failures since 2023",
+          "target": "exits"
+        }
+      ]
+    },
+    {
+      "id": "anchors-s",
+      "title": "Pharma and medtech anchors",
+      "sub": [
+        {
+          "t": "The large companies headquartered in the metro. They are the region's main employers, acquirers and partners, and the source of its current layoffs."
+        }
+      ],
+      "notes": [
+        [
+          {
+            "t": "Group revenue for FY2025. Novartis, Sanofi, Bayer, Boehringer Ingelheim and Novo Nordisk are headquartered abroad and run their US headquarters from the metro; their euro and krone figures are converted to dollars and are approximate. Northwell's bar is excluded because its figure is an operating budget, not revenue."
+          }
+        ]
+      ],
+      "blocks": [
+        {
+          "title": "Latest annual revenue",
+          "target": "anrev"
+        }
+      ]
+    },
+    {
+      "id": "academia",
+      "title": "Academia and research",
+      "sub": [
+        {
+          "t": "The research base is the metro's deepest asset. Four New York City medical schools rank in the national top 30 for NIH funding: Columbia, NYU Langone, Mount Sinai and Weill Cornell."
+        }
+      ],
+      "notes": [
+        [
+          {
+            "t": "Federal R&D is NSF HERD FY2024 federally financed research spending. Tech-transfer statistics are published by few institutions; NYU's (FY2024) are the most complete. \"n/d\" means not found, not zero."
+          }
+        ]
+      ],
+      "blocks": [
+        {
+          "title": "NIH funding by institution, FY2025",
+          "sub": [
+            {
+              "t": "From the Blue Ridge Institute for Medical Research (BRIMR) FY2025 tables: medical schools are ranked among medical schools, institutes among all NIH-funded institutions. Yale sits in New Haven, adjacent to the metro."
+            }
+          ],
+          "target": "nih"
+        },
+        {
+          "title": "Federal funding shocks, 2025–26",
+          "sub": [
+            {
+              "t": "Dated events affecting the region's research budgets."
+            }
+          ],
+          "target": "fed"
+        },
+        {
+          "title": "Institutions and their indicators",
+          "target": "inst"
+        }
+      ]
+    },
+    {
+      "id": "programs",
+      "title": "Incubators, accelerators and programs",
+      "sub": [
+        {
+          "t": "Where a startup can find a bench, capital or a launch program, and whether each one is running. Status was checked against dated evidence in October 2026."
+        }
+      ]
+    },
+    {
+      "id": "labs",
+      "title": "Lab space market",
+      "sub": [
+        {
+          "t": "New York City has expensive, scarce, ready-to-use lab space and a large overhang of speculative conversions. New Jersey has seven times the inventory at a third of the rent."
+        }
+      ],
+      "notes": [
+        [
+          {
+            "t": "Brokers define vacancy differently. CBRE separates ready-to-occupy from all lab space; Savills reports 32.5% vacancy and JLL 37% availability for New York. Compare figures within one source only."
+          }
+        ]
+      ],
+      "tiles": [
+        {
+          "value": "2.9M sq ft",
+          "body": [
+            {
+              "t": "NYC lab inventory, against 19.3M sq ft in New Jersey. CBRE, Q2 2026"
+            }
+          ]
+        },
+        {
+          "value": "$95.80",
+          "body": [
+            {
+              "t": "NYC average asking rent per sq ft (NNN), against $31.91 in New Jersey. CBRE, Q2 2026"
+            }
+          ]
+        },
+        {
+          "value": "11.9%",
+          "body": [
+            {
+              "t": "of NYC's move-in-ready lab space is available. Including shell space under conversion, 27.8%. CBRE, Q2 2026"
+            }
+          ]
+        },
+        {
+          "value": "2031",
+          "body": [
+            {
+              "t": "first-phase completion of SPARC Kips Bay, the city's $1.6B, 2M+ sq ft science campus; the second phase is still at the proposal stage"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "policy-s",
+      "title": "Policy, trends and risks",
+      "blocks": [
+        {
+          "title": "Public programs and policy",
+          "target": "policy"
+        },
+        {
+          "title": "Trends",
+          "target": "trends"
+        },
+        {
+          "title": "Risks to watch",
+          "target": "risks"
+        }
+      ]
+    },
+    {
+      "id": "database",
+      "title": "Company database",
+      "sub": [
+        {
+          "t": "Open a row for the full profile: technology, therapeutic area, lead program, who pays, pharma deals, academic origin, funding, scale, milestones, impact indicators and sources."
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "title": "Method and limits",
+      "caveats": [
+        [
+          {
+            "b": "Geography."
+          },
+          {
+            "t": " New York City, Long Island, Westchester and the Hudson Valley, northern and central New Jersey, and Fairfield County, Connecticut. New Haven is included as adjacent because its companies and Yale are tied to the metro."
+          }
+        ],
+        [
+          {
+            "b": "Inclusion."
+          },
+          {
+            "t": " Life sciences companies headquartered in the metro, or with their primary US office here, that are public or have raised at least $1M or earned at least $1M in revenue. Acquisitions and failures since 2023 stay in with their status."
+          }
+        ],
+        [
+          {
+            "b": "Not a full register."
+          },
+          {
+            "t": " The census profiles 141 companies chosen for size, recent funding and visibility. The metro has hundreds more. Research ran against a fixed search budget; 85 names reviewed and left out are listed below with the reason."
+          }
+        ],
+        [
+          {
+            "b": "Method."
+          },
+          {
+            "t": " Eight research desks (NYC therapeutics, NYC medtech and diagnostics, New Jersey and Connecticut, Long Island and Westchester, incubators and lab space, academia, ecosystem indicators, and a gap-filling pass) built lists from funding trackers, incubator portfolios, filings and trade press, and verified each record against primary or dated sources."
+          }
+        ],
+        [
+          {
+            "b": "Sources."
+          },
+          {
+            "t": " Company sites and releases, SEC filings, GEN, CBRE, Savills, JLL, NIH RePORTER via ConductScience, NSF HERD, Empire State Development, NJEDA, NJ Department of Labor, Fierce Biotech, Endpoints, BioSpace, NJBIZ, AlleyWatch, Bisnow. Every profile and card links its sources."
+          }
+        ],
+        [
+          {
+            "b": "Confidence."
+          },
+          {
+            "t": " 40 company profiles are rated high and 27 low. Low means the headquarters or funding rests on one aggregator or on prior knowledge. Low-confidence rows are labelled."
+          }
+        ],
+        [
+          {
+            "b": "Gaps."
+          },
+          {
+            "t": " Founding year is missing for 84 companies and total raised for 86. Academic origin is confirmed for only 28 companies, so university spinout counts are a floor. Revenue is shown for 37 companies, mostly public ones reporting under GAAP."
+          }
+        ],
+        [
+          {
+            "b": "Conflicting figures."
+          },
+          {
+            "t": " Venture totals, NIH totals and job counts differ by publisher and geography. The page states the source next to each figure and does not mix them in one calculation."
+          }
+        ],
+        [
+          {
+            "b": "Verification."
+          },
+          {
+            "t": " On October 19, 2026 three independent reviewers re-checked 288 figures and statements against primary sources: 121 confirmed, 113 corrected and 54 could not be verified. Corrections are applied throughout; NIH figures were replaced with BRIMR's FY2025 tables, and companies checked in that pass are marked \"Checked Oct 19\"."
+          }
+        ],
+        [
+          {
+            "b": "Dates."
+          },
+          {
+            "t": " Research closed October 19, 2026. Company status changes quickly: check the linked sources before acting on a record."
+          }
+        ]
+      ],
+      "summary": "Companies reviewed and left out ()"
+    }
+  ],
+  "footer": [
+    {
+      "t": "Designed by "
+    },
+    {
+      "a": "Andrea Calcagno",
+      "href": "https://www.linkedin.com/in/andreacalcagno/"
+    },
+    {
+      "t": ", Vice Chair, Board Member & Co-Founder, I³/NYC. Prepared for I³/NYC, the non-profit connecting Italian innovators with New York City. Figures are compiled from public sources and are not investment advice."
+    }
+  ]
+}

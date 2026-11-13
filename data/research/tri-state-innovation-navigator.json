@@ -1,0 +1,969 @@
+{
+  "PROGRAMS": [
+    {
+      "n": "International Landing Pad Network (ILPN)",
+      "o": "NYCEDC · operators Plug and Play × Cornell Tech, SOSA, Supermomos × Lightspeed, The Clean Fight",
+      "r": "nyc",
+      "t": "landing",
+      "m": [
+        "inkind"
+      ],
+      "s": "soon",
+      "sl": "Next cycle expected 2027",
+      "b": "12 months of free coworking, business development, customer and investor introductions for growth-stage international companies.",
+      "w": "Growth-stage firms outside the US in AI, advanced tech, green economy, life sciences.",
+      "e": "$5M+ revenue, or capital to hire 5+ in NYC within ~2 years. In-person presence for the year. Apply to up to 2 operators.",
+      "p": [
+        "growth",
+        "corporate"
+      ],
+      "x": [
+        "ai",
+        "climate",
+        "life",
+        "fintech",
+        "deep"
+      ],
+      "u": "https://edc.nyc/international-landing-pad-network",
+      "ul": "Program page",
+      "k": "No Italian company in the 2026 cohort"
+    },
+    {
+      "n": "NYC AI Nexus",
+      "o": "NYCEDC · run by Plug and Play and C10 Labs",
+      "r": "nyc",
+      "t": "accelerator",
+      "m": [
+        "inkind"
+      ],
+      "s": "open",
+      "sl": "Rolling through 2029",
+      "b": "Coworking, technical and go-to-market support, curated pilots with NYC companies, mentorship and fundraising help.",
+      "w": "Applied-AI startups. Plug and Play: retail, food, legal/HR, media, real estate, hospitality. C10 Labs: health, climate, robotics.",
+      "e": "Based in NYC or willing to relocate; NYC-based startups preferred.",
+      "p": [
+        "early",
+        "growth"
+      ],
+      "x": [
+        "ai",
+        "life",
+        "climate",
+        "deep",
+        "consumer"
+      ],
+      "u": "https://edc.nyc/program/nyc-ai-nexus",
+      "ul": "Choose a track"
+    },
+    {
+      "n": "Pilots at BAT",
+      "o": "NYCEDC · operated by LACI at BATWorks",
+      "r": "nyc",
+      "t": "pilot",
+      "m": [
+        "inkind"
+      ],
+      "s": "open",
+      "sl": "Rolling, quarterly cohorts",
+      "b": "Free use of pilot zones on the 60-acre Brooklyn Army Terminal for about 6 months, with an on-site pilots associate.",
+      "w": "Climate tech in energy, mobility and buildings at growth or commercialization stage.",
+      "e": "Working product ready to install; the startup covers installation and removal.",
+      "p": [
+        "growth",
+        "early"
+      ],
+      "x": [
+        "climate",
+        "deep"
+      ],
+      "u": "https://edc.nyc/node/5997",
+      "ul": "Program page"
+    },
+    {
+      "n": "NYCEDC Business Development & International Team",
+      "o": "NYCEDC",
+      "r": "nyc",
+      "t": "advisory",
+      "m": [
+        "inkind"
+      ],
+      "s": "open",
+      "sl": "Always open",
+      "b": "Free site selection, incentives analysis, ecosystem introductions and meetings for visiting delegations.",
+      "w": "Any company relocating or expanding to NYC, VCs and institutional investors.",
+      "e": "None.",
+      "p": [
+        "growth",
+        "corporate",
+        "investor",
+        "early"
+      ],
+      "x": [
+        "all"
+      ],
+      "u": "https://edc.nyc/our-services",
+      "ul": "Contact the team"
+    },
+    {
+      "n": "NYC Game Design Future Lab",
+      "o": "NYU Tandon × NYCEDC",
+      "r": "nyc",
+      "t": "accelerator",
+      "m": [
+        "inkind"
+      ],
+      "s": "soon",
+      "sl": "Next call ~July 2027",
+      "b": "One-year incubator: desks for two founders in Downtown Brooklyn, mentors, investor access, help with the NYS game tax credit.",
+      "w": "Game studios and creative-tech platforms.",
+      "e": "An operating company with a shipped title.",
+      "p": [
+        "early"
+      ],
+      "x": [
+        "consumer"
+      ],
+      "u": "https://engineering.nyu.edu/research-innovation/entrepreneurship/future-labs/game-design",
+      "ul": "Program page"
+    },
+    {
+      "n": "LifeSci NYC Expansion Fund",
+      "o": "NYCEDC",
+      "r": "nyc",
+      "t": "funding",
+      "m": [
+        "loan"
+      ],
+      "s": "closed",
+      "sl": "Paused",
+      "b": "$250K–$500K concessionary loans, potentially forgivable when NYC growth milestones are met.",
+      "w": "Life sciences companies raising Seed or Series A.",
+      "e": "Long-term commitment to NYC space and headcount.",
+      "p": [
+        "early",
+        "growth"
+      ],
+      "x": [
+        "life"
+      ],
+      "u": "https://lifesci.nyc/lifesci-nyc-expansion-fund-application",
+      "ul": "Program page"
+    },
+    {
+      "n": "RACE relocation tax credit",
+      "o": "NYC Department of Finance",
+      "r": "nyc",
+      "t": "tax",
+      "m": [
+        "tax"
+      ],
+      "s": "open",
+      "sl": "Pre-application open",
+      "b": "$5,000 per relocated employee per year for 10 years, for up to 500 employees.",
+      "w": "Companies moving into NYC from outside New York State.",
+      "e": "24+ months of operations outside NY State; 10,000+ sq ft office or manufacturing space.",
+      "p": [
+        "growth",
+        "corporate"
+      ],
+      "x": [
+        "all"
+      ],
+      "u": "https://www.nyc.gov/site/finance/business/raceforspace.page",
+      "ul": "Pre-apply"
+    },
+    {
+      "n": "REAP employment credit",
+      "o": "NYC Department of Finance",
+      "r": "nyc",
+      "t": "tax",
+      "m": [
+        "tax"
+      ],
+      "s": "open",
+      "sl": "Open",
+      "b": "$3,000 per eligible employee per year for 12 years.",
+      "w": "Firms relocating to the outer boroughs or eligible Manhattan areas.",
+      "e": "24+ months of operations outside NYC or below 96th Street before the move.",
+      "p": [
+        "growth",
+        "corporate"
+      ],
+      "x": [
+        "all"
+      ],
+      "u": "https://www.nyc.gov/site/finance/benefits/business-reap.page",
+      "ul": "Program page"
+    },
+    {
+      "n": "Customized Training Grant",
+      "o": "NYC Small Business Services",
+      "r": "nyc",
+      "t": "funding",
+      "m": [
+        "grant"
+      ],
+      "s": "open",
+      "sl": "Open",
+      "b": "Reimburses up to 60% of training costs, $30K–$400K.",
+      "w": "NYC for-profit companies training their teams.",
+      "e": "Operating 1+ year in NYC; 10+ trainees (smaller firms can join a consortium).",
+      "p": [
+        "growth",
+        "corporate"
+      ],
+      "x": [
+        "all"
+      ],
+      "u": "https://nyc-business.nyc.gov/nycbusiness/article/train-your-teamcustomized-training",
+      "ul": "Pre-apply"
+    },
+    {
+      "n": "NYC Startup Internship Program",
+      "o": "NYCEDC with Company Ventures and CUNY",
+      "r": "nyc",
+      "t": "talent",
+      "m": [
+        "inkind"
+      ],
+      "s": "soon",
+      "sl": "Summer 2027 cohort",
+      "b": "Pre-trained, paid CUNY interns for 9 weeks in engineering, data, design and operations.",
+      "w": "NYC tech-enabled startups.",
+      "e": "NYC-based startup able to host and mentor.",
+      "p": [
+        "early"
+      ],
+      "x": [
+        "all"
+      ],
+      "u": "https://edc.nyc/node/6515",
+      "ul": "Program page"
+    },
+    {
+      "n": "ERA — Entrepreneurs Roundtable Accelerator",
+      "o": "Private · Flatiron, Manhattan",
+      "r": "nyc",
+      "t": "accelerator",
+      "m": [
+        "equity"
+      ],
+      "s": "open",
+      "sl": "Apply by Nov 2, 2026",
+      "b": "$150K on a post-money SAFE for 6%, four months, office space and 1,000+ mentors.",
+      "w": "Early-stage software and tech startups of any sector.",
+      "e": "US C-corp before investment; team ready to work from NYC.",
+      "p": [
+        "early"
+      ],
+      "x": [
+        "all"
+      ],
+      "u": "https://www.eranyc.com",
+      "ul": "Apply"
+    },
+    {
+      "n": "Techstars New York City",
+      "o": "Private",
+      "r": "nyc",
+      "t": "accelerator",
+      "m": [
+        "equity"
+      ],
+      "s": "soon",
+      "sl": "Next call early 2027",
+      "b": "Up to $220K ($20K for equity plus an optional $200K convertible note), 13-week program.",
+      "w": "Early-stage software startups across verticals.",
+      "e": "Full-time founding team; US entity.",
+      "p": [
+        "early"
+      ],
+      "x": [
+        "all"
+      ],
+      "u": "https://techstars.com/accelerators/new-york",
+      "ul": "Program page"
+    },
+    {
+      "n": "FinTech Innovation Lab New York",
+      "o": "Accenture × Partnership Fund for NYC",
+      "r": "nyc",
+      "t": "accelerator",
+      "m": [
+        "inkind"
+      ],
+      "s": "soon",
+      "sl": "Annual call each autumn",
+      "b": "12 weeks with executives from 40+ banks, insurers and asset managers. No equity taken.",
+      "w": "Enterprise fintech and insurtech, early to growth stage.",
+      "e": "Product ready for enterprise pilots.",
+      "p": [
+        "early",
+        "growth"
+      ],
+      "x": [
+        "fintech"
+      ],
+      "u": "https://www.fintechinnovationlab.com",
+      "ul": "Program page"
+    },
+    {
+      "n": "Newlab Brooklyn",
+      "o": "Private · Brooklyn Navy Yard",
+      "r": "nyc",
+      "t": "incubator",
+      "m": [
+        "inkind"
+      ],
+      "s": "open",
+      "sl": "Rolling membership",
+      "b": "84,000 sq ft of labs and prototyping, plus pilots with corporate and city partners.",
+      "w": "Deep tech: energy, mobility, robotics, AI hardware.",
+      "e": "Paid membership; selective admission.",
+      "p": [
+        "early",
+        "growth",
+        "corporate"
+      ],
+      "x": [
+        "deep",
+        "climate",
+        "ai"
+      ],
+      "u": "https://www.newlab.com/locations/brooklyn",
+      "ul": "Join"
+    },
+    {
+      "n": "ACRE @ Urban Future Lab",
+      "o": "NYU Tandon",
+      "r": "nyc",
+      "t": "incubator",
+      "m": [
+        "inkind",
+        "grant"
+      ],
+      "s": "soon",
+      "sl": "Next prize call 2027",
+      "b": "New York's longest-running climate-tech incubator; the Urban Future Prize awards up to $50K non-dilutive.",
+      "w": "Early-stage climate tech.",
+      "e": "Selected through the annual prize or direct admission.",
+      "p": [
+        "early"
+      ],
+      "x": [
+        "climate"
+      ],
+      "u": "https://www.urbanfuturelab.com/about",
+      "ul": "Program page"
+    },
+    {
+      "n": "NY Ventures Pre-Seed & Seed Matching Fund",
+      "o": "Empire State Development",
+      "r": "nys",
+      "t": "funding",
+      "m": [
+        "equity"
+      ],
+      "s": "open",
+      "sl": "Rolling",
+      "b": "$50K–$250K equity, matched 1:1 with private investors; SAFE, note or equity.",
+      "w": "Pre-seed and seed tech companies in New York State.",
+      "e": "NY-based; $2M or less raised before the round.",
+      "p": [
+        "early"
+      ],
+      "x": [
+        "all"
+      ],
+      "u": "https://esd.ny.gov/pre-seed-and-seed-matching-fund-program",
+      "ul": "Program page"
+    },
+    {
+      "n": "NYS Innovation Venture Capital Fund",
+      "o": "Empire State Development · NY Ventures",
+      "r": "nys",
+      "t": "funding",
+      "m": [
+        "equity"
+      ],
+      "s": "open",
+      "sl": "Rolling via lead investor",
+      "b": "$135M+ fund co-investing Seed to Series B; does not lead rounds.",
+      "w": "Climate, health, ag-tech, advanced manufacturing, data and AI.",
+      "e": "NY-based or willing to relocate to New York State.",
+      "p": [
+        "early",
+        "growth"
+      ],
+      "x": [
+        "ai",
+        "climate",
+        "life",
+        "deep"
+      ],
+      "u": "https://esd.ny.gov/new-york-state-innovation-venture-capital-fund",
+      "ul": "Program page"
+    },
+    {
+      "n": "NYSERDA Commercialization Cohort",
+      "o": "NYSERDA",
+      "r": "nys",
+      "t": "accelerator",
+      "m": [
+        "grant",
+        "inkind"
+      ],
+      "s": "soon",
+      "sl": "Startups apply early 2027",
+      "b": "$37M+ to launch four stage-specific clean-energy accelerators with training, mentoring and funding.",
+      "w": "Clean-energy startups from pre-seed to Series C.",
+      "e": "Operating in New York State.",
+      "p": [
+        "early",
+        "growth"
+      ],
+      "x": [
+        "climate"
+      ],
+      "u": "https://www.nyserda.ny.gov/All-Programs/Innovation-at-NYSERDA/Commercialization-Program",
+      "ul": "Program page"
+    },
+    {
+      "n": "Excelsior Jobs Program",
+      "o": "Empire State Development",
+      "r": "nys",
+      "t": "tax",
+      "m": [
+        "tax"
+      ],
+      "s": "open",
+      "sl": "Open",
+      "b": "Ten years of fully refundable tax credits tied to job creation and investment.",
+      "w": "Tech, biotech, cleantech, fintech and manufacturing companies.",
+      "e": "Commitment to create jobs and invest in New York State.",
+      "p": [
+        "growth",
+        "corporate"
+      ],
+      "x": [
+        "all"
+      ],
+      "u": "https://esd.ny.gov/excelsior-jobs-program",
+      "ul": "Program page"
+    },
+    {
+      "n": "START-UP NY",
+      "o": "Empire State Development",
+      "r": "nys",
+      "t": "tax",
+      "m": [
+        "tax"
+      ],
+      "s": "open",
+      "sl": "Through host campus",
+      "b": "Operate tax-free for 10 years on or near a partner college campus, including Long Island and Westchester.",
+      "w": "New or relocating businesses.",
+      "e": "Partnership with a New York college or university; create new jobs.",
+      "p": [
+        "early",
+        "growth",
+        "researcher"
+      ],
+      "x": [
+        "all"
+      ],
+      "u": "https://esd.ny.gov/startup-ny-program",
+      "ul": "Find a campus"
+    },
+    {
+      "n": "Life Sciences R&D Tax Credit",
+      "o": "Empire State Development",
+      "r": "nys",
+      "t": "tax",
+      "m": [
+        "tax"
+      ],
+      "s": "open",
+      "sl": "Annual",
+      "b": "Refundable credit of 15–20% of R&D, up to $500K a year and $1.5M lifetime.",
+      "w": "New life-sciences companies.",
+      "e": "Most activity devoted to life-sciences R&D in NY.",
+      "p": [
+        "early",
+        "researcher"
+      ],
+      "x": [
+        "life"
+      ],
+      "u": "https://esd.ny.gov/life-sciences-tax-credit-program",
+      "ul": "Program page"
+    },
+    {
+      "n": "Stony Brook incubators (LIHTI, BioTech Center)",
+      "o": "Stony Brook University · Long Island",
+      "r": "li",
+      "t": "incubator",
+      "m": [
+        "inkind"
+      ],
+      "s": "open",
+      "sl": "Rolling admission",
+      "b": "Mixed-technology incubator plus wet labs from 250 sq ft and energy and wireless R&D centers.",
+      "w": "Biotech, energy, IT and hardware startups.",
+      "e": "Admission review by the university.",
+      "p": [
+        "early",
+        "researcher"
+      ],
+      "x": [
+        "life",
+        "deep",
+        "climate"
+      ],
+      "u": "https://www.stonybrook.edu/commcms/innovation/incubators/facilities",
+      "ul": "Incubator page"
+    },
+    {
+      "n": "NJ BASE soft-landing program",
+      "o": "NJEDA · operated by SOSA · Jersey City",
+      "r": "nj",
+      "t": "landing",
+      "m": [
+        "inkind"
+      ],
+      "s": "closed",
+      "sl": "First cohort underway",
+      "b": "Free coworking in Jersey City, targeted support and a business immersion program in New Jersey's ecosystem.",
+      "w": "Revenue-generating international companies headquartered outside the US.",
+      "e": "Priority sectors: clean energy, advanced manufacturing, life sciences, fintech, logistics, AI and tech.",
+      "p": [
+        "growth",
+        "corporate"
+      ],
+      "x": [
+        "ai",
+        "climate",
+        "life",
+        "fintech",
+        "deep"
+      ],
+      "u": "https://www.njeda.gov/nj-base/",
+      "ul": "Program page"
+    },
+    {
+      "n": "NJ Accelerate",
+      "o": "NJEDA",
+      "r": "nj",
+      "t": "funding",
+      "m": [
+        "loan",
+        "grant"
+      ],
+      "s": "soon",
+      "sl": "Check current status",
+      "b": "Matches accelerator investment 1:1 up to $250K (convertible note, 3%) plus up to $25K rent support.",
+      "w": "Graduates of NJEDA-approved accelerators.",
+      "e": "Base in NJ; 50%+ of staff in NJ; 2 founders or executives working in NJ; apply within 6 months of graduation.",
+      "p": [
+        "early"
+      ],
+      "x": [
+        "all"
+      ],
+      "u": "https://www.njeda.gov/njaccelerate/",
+      "ul": "Program page"
+    },
+    {
+      "n": "NJ Angel Investor Tax Credit",
+      "o": "NJEDA",
+      "r": "nj",
+      "t": "tax",
+      "m": [
+        "tax"
+      ],
+      "s": "open",
+      "sl": "Apply within 6 months of investing",
+      "b": "Investors get a 35% tax credit (up to 40% in some cases), up to $500K per investor.",
+      "w": "Angels and VCs backing NJ tech companies; makes the round easier to raise.",
+      "e": "Company with fewer than 150 staff, 75%+ in NJ, technology as its primary business.",
+      "p": [
+        "early",
+        "investor"
+      ],
+      "x": [
+        "all"
+      ],
+      "u": "https://www.njeda.gov/angeltaxcredit",
+      "ul": "Program page"
+    },
+    {
+      "n": "NJ Technology Business Tax Certificate (NOL) Program",
+      "o": "NJEDA",
+      "r": "nj",
+      "t": "tax",
+      "m": [
+        "tax"
+      ],
+      "s": "soon",
+      "sl": "2027 cycle opens May",
+      "b": "Sell unused net operating losses and R&D credits for at least 80% of their value, up to $20M lifetime.",
+      "w": "Unprofitable tech and biotech companies with patents or registered copyrights.",
+      "e": "NJ employees (1–10 by company age), max 224 employees, CPA-reviewed financials.",
+      "p": [
+        "early",
+        "growth"
+      ],
+      "x": [
+        "all"
+      ],
+      "u": "https://www.njeda.gov/nol/",
+      "ul": "Program page"
+    },
+    {
+      "n": "NJ Innovation Evergreen Fund",
+      "o": "NJEDA",
+      "r": "nj",
+      "t": "funding",
+      "m": [
+        "equity"
+      ],
+      "s": "open",
+      "sl": "Through qualified VC funds",
+      "b": "State equity alongside approved venture funds, with up to $600M to deploy over time.",
+      "w": "High-growth startups based in New Jersey.",
+      "e": "Raise from one of the qualified venture funds (29 approved).",
+      "p": [
+        "early",
+        "growth",
+        "investor"
+      ],
+      "x": [
+        "all"
+      ],
+      "u": "https://www.njeda.gov/3-new-jersey-businesses-secure-investments-through-njedas-evergreen-fund/",
+      "ul": "Program news"
+    },
+    {
+      "n": "Connecticut Innovations Pre-Seed",
+      "o": "Connecticut Innovations",
+      "r": "ct",
+      "t": "funding",
+      "m": [
+        "equity"
+      ],
+      "s": "open",
+      "sl": "Rolling",
+      "b": "Up to $150K, with at least a 50% private match.",
+      "w": "Bioscience, IT, clean tech, photonics, advanced materials.",
+      "e": "Under 7 years old, under $2M revenue, 50%+ staff in CT; must relocate or expand to Connecticut.",
+      "p": [
+        "early"
+      ],
+      "x": [
+        "life",
+        "climate",
+        "deep",
+        "ai"
+      ],
+      "u": "https://ctinnovations.com/program/pre-seed-investment/",
+      "ul": "Submit a pitch"
+    },
+    {
+      "n": "Connecticut Innovations sector funds",
+      "o": "Connecticut Innovations",
+      "r": "ct",
+      "t": "funding",
+      "m": [
+        "equity"
+      ],
+      "s": "open",
+      "sl": "Rolling",
+      "b": "AI/Quantum Fund ($50M), ClimateTech Fund ($100M), Bioscience Innovation Fund ($200M), Future Fund ($50M).",
+      "w": "Early and growth-stage companies in Connecticut.",
+      "e": "Located in Connecticut or willing to relocate.",
+      "p": [
+        "early",
+        "growth"
+      ],
+      "x": [
+        "ai",
+        "climate",
+        "life",
+        "deep"
+      ],
+      "u": "https://ctinnovations.com/",
+      "ul": "Find a fund"
+    },
+    {
+      "n": "Connecticut Angel Investor Tax Credit",
+      "o": "Connecticut Innovations",
+      "r": "ct",
+      "t": "tax",
+      "m": [
+        "tax"
+      ],
+      "s": "open",
+      "sl": "Open",
+      "b": "Investors get a 25% credit on $25K–$400K invested per company (up to $100K credit).",
+      "w": "Angels backing young CT companies.",
+      "e": "Under $1M revenue, under 25 staff, under 7 years in CT, 50%+ staff CT residents.",
+      "p": [
+        "early",
+        "investor"
+      ],
+      "x": [
+        "all"
+      ],
+      "u": "https://ctinnovations.com/angel-investor-tax-credit-program/",
+      "ul": "Program page"
+    },
+    {
+      "n": "SBIR / STTR",
+      "o": "US federal agencies",
+      "r": "us",
+      "t": "funding",
+      "m": [
+        "grant"
+      ],
+      "s": "open",
+      "sl": "Agency solicitations",
+      "b": "About $4B a year in R&D awards; new Strategic Breakthrough awards up to $30M.",
+      "w": "US small businesses doing R&D.",
+      "e": "Majority US-owned and controlled; foreign ties screened since 2026.",
+      "p": [
+        "early",
+        "researcher"
+      ],
+      "x": [
+        "all"
+      ],
+      "u": "https://www.sbir.gov/",
+      "ul": "sbir.gov"
+    },
+    {
+      "n": "SIMEST Misura Stati Uniti",
+      "o": "SIMEST (CDP Group) · Fondo 394 with MAECI",
+      "r": "it",
+      "t": "funding",
+      "m": [
+        "loan",
+        "grant",
+        "equity"
+      ],
+      "s": "open",
+      "sl": "Open in 2026",
+      "b": "€300M package: subsidized loans with up to 10% as a grant, 50% paid in advance, up to €1M to capitalize a US subsidiary, plus equity.",
+      "w": "Italian companies and innovative startups investing or selling in the US.",
+      "e": "Italian company; project with a US focus.",
+      "p": [
+        "early",
+        "growth",
+        "corporate"
+      ],
+      "x": [
+        "all"
+      ],
+      "u": "https://www.simest.it/app/uploads/2026/01/Comunicato-Stampa-SIMEST-lancio-Misura-USA-22-gennaio-2026.pdf",
+      "ul": "Announcement"
+    },
+    {
+      "n": "ICE Global Start Up Program",
+      "o": "ICE Agenzia · MAECI",
+      "r": "it",
+      "t": "accelerator",
+      "m": [
+        "inkind"
+      ],
+      "s": "soon",
+      "sl": "Call expected May 2027",
+      "b": "Free four-week acceleration at a foreign hub with mentoring, investors and corporate meetings.",
+      "w": "Italian innovative startups.",
+      "e": "Listed in the Italian startup innovative register.",
+      "p": [
+        "early"
+      ],
+      "x": [
+        "all"
+      ],
+      "u": "https://www.ice.it/it/settori/startup-innovazione/partecipa-ai-programmi-di-accelerazione",
+      "ul": "Program page"
+    }
+  ],
+  "EVENTS": [
+    {
+      "d": "2026-10-22",
+      "dl": "Oct 22, 2026",
+      "n": "Urban Future Summit & Prize",
+      "pl": "Brooklyn",
+      "x": "Climate-tech finalists pitch for ACRE admission and non-dilutive prizes."
+    },
+    {
+      "d": "2026-11-02",
+      "dl": "Nov 2, 2026",
+      "n": "ERA Winter 2027 deadline",
+      "pl": "Manhattan",
+      "x": "$150K for 6% · program starts January 11, 2027."
+    },
+    {
+      "d": "2026-12-09",
+      "dl": "Dec 9–10, 2026",
+      "n": "The AI Summit New York",
+      "pl": "Javits Center",
+      "x": "Enterprise AI buyers, startup and investor village."
+    },
+    {
+      "d": "2027-01-15",
+      "dl": "Early 2027",
+      "n": "New cohorts open",
+      "pl": "NY State · NYC",
+      "x": "NYSERDA clean-energy accelerators; Techstars NYC; next ILPN cycle expected."
+    },
+    {
+      "d": "2027-04-15",
+      "dl": "Apr 15, 2027",
+      "n": "NJ NOL 2026 sales must close",
+      "pl": "New Jersey",
+      "x": "2027 application cycle opens in early May."
+    },
+    {
+      "d": "2027-05-02",
+      "dl": "May 2–5, 2027",
+      "n": "SelectUSA Investment Summit",
+      "pl": "National Harbor, MD",
+      "x": "The US federal FDI event; state and city agencies attend."
+    },
+    {
+      "d": "2027-05-10",
+      "dl": "May 2027",
+      "n": "ICE Global Start Up Program call",
+      "pl": "Italy",
+      "x": "For Italian innovative startups."
+    },
+    {
+      "d": "2027-06-10",
+      "dl": "June 2027",
+      "n": "NY Tech Week · Choose NYC Summit",
+      "pl": "New York City",
+      "x": "Ecosystem week; NYCEDC's business-attraction summit (date TBA)."
+    },
+    {
+      "d": "2027-07-15",
+      "dl": "July 2027",
+      "n": "Game Design Future Lab call",
+      "pl": "Brooklyn",
+      "x": "Expected window for the 2027–28 cohort."
+    }
+  ],
+  "REGIONS": {
+    "nyc": "New York City",
+    "nys": "New York State",
+    "li": "Long Island",
+    "nj": "New Jersey",
+    "ct": "Connecticut",
+    "us": "Federal (US)",
+    "it": "Italy"
+  },
+  "TYPES": {
+    "landing": "Soft landing",
+    "accelerator": "Accelerator",
+    "incubator": "Incubator / lab",
+    "pilot": "Pilot site",
+    "funding": "Funding",
+    "tax": "Tax incentive",
+    "advisory": "Advisory",
+    "talent": "Talent"
+  },
+  "MONEY": {
+    "grant": "Grant",
+    "loan": "Loan",
+    "equity": "Equity",
+    "tax": "Tax credit",
+    "inkind": "In-kind support"
+  },
+  "STAT": {
+    "open": [
+      "Open",
+      "st-open"
+    ],
+    "soon": [
+      "Upcoming",
+      "st-soon"
+    ],
+    "closed": [
+      "Closed now",
+      "st-closed"
+    ]
+  },
+  "Q": {
+    "profile": [
+      [
+        "early",
+        "Early-stage startup"
+      ],
+      [
+        "growth",
+        "Scale-up ($5M+ revenue)"
+      ],
+      [
+        "corporate",
+        "Corporate / SME"
+      ],
+      [
+        "investor",
+        "Investor / VC"
+      ],
+      [
+        "researcher",
+        "Researcher / spin-off"
+      ]
+    ],
+    "sector": [
+      [
+        "all",
+        "Any sector"
+      ],
+      [
+        "ai",
+        "AI & software"
+      ],
+      [
+        "climate",
+        "Climate & energy"
+      ],
+      [
+        "life",
+        "Life sciences"
+      ],
+      [
+        "fintech",
+        "Fintech"
+      ],
+      [
+        "deep",
+        "Deep tech & hardware"
+      ],
+      [
+        "consumer",
+        "Consumer, retail & media"
+      ]
+    ],
+    "place": [
+      [
+        "any",
+        "Anywhere in the Tri-State"
+      ],
+      [
+        "ny",
+        "New York (City and State)"
+      ],
+      [
+        "nj",
+        "New Jersey"
+      ],
+      [
+        "ct",
+        "Connecticut"
+      ]
+    ]
+  }
+}
