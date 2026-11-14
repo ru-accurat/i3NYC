@@ -12,10 +12,10 @@ export default function InnovationTechReportPage() {
       {/* Hero */}
       <section className="flex min-h-[50vh] flex-col items-start justify-center px-8">
         <div className="mx-auto w-full max-w-6xl">
-          <p className="text-sm tracking-wide text-primary">Italian Innovation Community</p>
+          <p className="text-sm tracking-wide text-primary-text">Italian Innovation Community</p>
           <h1 className="mt-6 max-w-4xl text-4xl font-light leading-[1.1] tracking-tight md:text-6xl lg:text-7xl">
             Innovation & Tech Report{" "}
-            <span className="text-primary">· March 2026</span>
+            <span className="text-primary-text">· March 2026</span>
           </h1>
           <p className="mt-8 max-w-xl text-base leading-relaxed text-muted-foreground">
             A data-driven analysis of 1,473 Italian and Italian-American innovation and technology professionals across the TriState area.
@@ -31,7 +31,7 @@ export default function InnovationTechReportPage() {
       {/* ═══ OVERVIEW ═══ */}
       <section id="overview" className="scroll-mt-32 border-t border-border py-20">
         <div className="mx-auto max-w-6xl px-8">
-          <p className="text-sm tracking-wide text-primary">Overview</p>
+          <p className="text-sm tracking-wide text-primary-text">Overview</p>
           <h2 className="mt-4 text-3xl font-light tracking-tight md:text-4xl">
             Community Composition
           </h2>
@@ -55,7 +55,7 @@ export default function InnovationTechReportPage() {
       {/* ═══ TECH STARTUP & COMPANY ═══ */}
       <section id="tech-startup" className="scroll-mt-32 border-t border-border py-20">
         <div className="mx-auto max-w-6xl px-8">
-          <p className="text-sm tracking-wide text-primary">Tech Startup & Company</p>
+          <p className="text-sm tracking-wide text-primary-text">Tech Startup & Company</p>
           <h2 className="mt-4 text-3xl font-light tracking-tight md:text-4xl">
             Technology Company Focus
           </h2>
@@ -99,7 +99,7 @@ export default function InnovationTechReportPage() {
                     <tr key={i} className="border-b border-border/50 transition-colors hover:bg-primary/5">
                       <td className="px-4 py-2.5 font-mono text-xs text-muted-foreground">{i + 1}</td>
                       <td className="px-4 py-2.5 text-foreground/80">{company}</td>
-                      <td className="px-4 py-2.5 text-right font-mono text-primary">{count}</td>
+                      <td className="px-4 py-2.5 text-right font-mono text-primary-text">{count}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -112,7 +112,7 @@ export default function InnovationTechReportPage() {
       {/* ═══ ACADEMIA & RESEARCH ═══ */}
       <section id="academia" className="scroll-mt-32 border-t border-border py-20">
         <div className="mx-auto max-w-6xl px-8">
-          <p className="text-sm tracking-wide text-primary">Academia & Research</p>
+          <p className="text-sm tracking-wide text-primary-text">Academia & Research</p>
           <h2 className="mt-4 text-3xl font-light tracking-tight md:text-4xl">
             Academic Professionals
           </h2>
@@ -133,7 +133,7 @@ export default function InnovationTechReportPage() {
 
           <div className="mt-10 rounded-lg border border-primary/20 bg-primary/5 px-6 py-4">
             <p className="text-sm leading-relaxed text-foreground/80">
-              <span className="font-medium text-primary">Key Insight:</span>{" "}
+              <span className="font-medium text-primary-text">Key Insight:</span>{" "}
               Columbia University and NYU alone account for 13.8% of all academic profiles — a significant cluster for fostering university-industry partnerships.
             </p>
           </div>
@@ -143,7 +143,7 @@ export default function InnovationTechReportPage() {
       {/* ═══ COMMUNITY DEEP-DIVE ═══ */}
       <section id="community" className="scroll-mt-32 border-t border-border py-20">
         <div className="mx-auto max-w-6xl px-8">
-          <p className="text-sm tracking-wide text-primary">Community Deep-Dive</p>
+          <p className="text-sm tracking-wide text-primary-text">Community Deep-Dive</p>
           <h2 className="mt-4 text-3xl font-light tracking-tight md:text-4xl">
             Full Community Analysis
           </h2>
@@ -180,7 +180,7 @@ export default function InnovationTechReportPage() {
                     <tr key={i} className="border-b border-border/50 transition-colors hover:bg-primary/5">
                       <td className="px-4 py-2.5 font-mono text-xs text-muted-foreground">{i + 1}</td>
                       <td className="px-4 py-2.5 text-foreground/80">{org}</td>
-                      <td className="px-4 py-2.5 text-right font-mono text-primary">{count}</td>
+                      <td className="px-4 py-2.5 text-right font-mono text-primary-text">{count}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -193,7 +193,7 @@ export default function InnovationTechReportPage() {
       {/* ═══ METHODOLOGY ═══ */}
       <section id="methodology" className="scroll-mt-32 border-t border-border py-20">
         <div className="mx-auto max-w-6xl px-8">
-          <p className="text-sm tracking-wide text-primary">Methodology</p>
+          <p className="text-sm tracking-wide text-primary-text">Methodology</p>
           <h2 className="mt-4 text-3xl font-light tracking-tight md:text-4xl">
             Classification Framework
           </h2>
@@ -203,21 +203,21 @@ export default function InnovationTechReportPage() {
 
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             <div className="rounded-lg border border-border p-6">
-              <p className="font-mono text-2xl font-light text-primary">599</p>
+              <p className="font-mono text-2xl font-light text-primary-text">599</p>
               <p className="mt-1 text-sm font-medium text-foreground/80">Layer 1: Industry Match</p>
               <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
                 IT services, biotechnology, pharmaceuticals, telecom, semiconductors, R&D, e-learning, aerospace, medical devices
               </p>
             </div>
             <div className="rounded-lg border border-border p-6">
-              <p className="font-mono text-2xl font-light text-primary">742</p>
+              <p className="font-mono text-2xl font-light text-primary-text">742</p>
               <p className="mt-1 text-sm font-medium text-foreground/80">Layer 2: Title/Role Match</p>
               <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
                 Engineer, scientist, developer, professor, researcher, CTO, data scientist, ML engineer, product manager, architect, PhD (80+ patterns)
               </p>
             </div>
             <div className="rounded-lg border border-border p-6">
-              <p className="font-mono text-2xl font-light text-primary">969</p>
+              <p className="font-mono text-2xl font-light text-primary-text">969</p>
               <p className="mt-1 text-sm font-medium text-foreground/80">Layer 3: Headline Match</p>
               <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
                 AI, ML, startup, software, digital, biotech, fintech, research, cloud, blockchain, venture capital, patent (50+ terms)

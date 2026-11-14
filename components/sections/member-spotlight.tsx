@@ -26,9 +26,9 @@ export function MemberSpotlight({ label, title, description, items, fieldPrefix 
       <div className="mx-auto max-w-6xl px-8">
         {label && (
           fieldPrefix ? (
-            <EditableText fieldKey={`${fieldPrefix}.label`} value={label} as="p" className="text-xs font-medium uppercase tracking-[0.2em] text-primary" />
+            <EditableText fieldKey={`${fieldPrefix}.label`} value={label} as="p" className="text-xs font-medium uppercase tracking-[0.2em] text-primary-text" />
           ) : (
-            <p className="text-xs font-medium uppercase tracking-[0.2em] text-primary">{label}</p>
+            <p className="text-xs font-medium uppercase tracking-[0.2em] text-primary-text">{label}</p>
           )
         )}
         {fieldPrefix ? (
@@ -49,7 +49,7 @@ export function MemberSpotlight({ label, title, description, items, fieldPrefix 
             {items.map((m, idx) => (
               <div key={idx} className="group relative">
                 {fieldPrefix && <ArrayItemRemove sectionId={fieldPrefix} arrayPath="items" index={idx} />}
-                <div className="flex h-20 w-20 items-center justify-center rounded-full bg-primary/15 text-xl font-light text-primary">
+                <div className="flex h-20 w-20 items-center justify-center rounded-full bg-primary/15 text-xl font-light text-primary-text">
                   {m.initials}
                 </div>
                 {fieldPrefix ? (
@@ -77,7 +77,7 @@ export function MemberSpotlight({ label, title, description, items, fieldPrefix 
             <p className="text-sm leading-relaxed text-muted-foreground">
               Member spotlights launching with our first cohort.
               <br />
-              <a href="/membership" className="text-primary underline-offset-4 transition-colors hover:underline">
+              <a href="/membership" className="text-primary-text underline-offset-4 transition-colors hover:underline">
                 Join the community
               </a>{" "}
               to be featured.

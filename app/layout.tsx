@@ -37,13 +37,13 @@ export default async function RootLayout({
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <a
           href="#main"
-          className="sr-only z-[100] rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground outline-none focus:not-sr-only focus:absolute focus:top-3 focus:left-3"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:rounded-md focus:bg-primary focus:px-5 focus:py-3 focus:text-sm focus:font-medium focus:text-primary-foreground"
         >
           Skip to main content
         </a>
         <EditorProvider>
           <SiteHeader isAdmin={admin} />
-          <main id="main" className="flex-1 pt-20 pb-16 md:pb-0">{children}</main>
+          <main id="main" className="flex-1 pt-20">{children}</main>
           <SiteFooter />
           <CtaBar />
         </EditorProvider>

@@ -7,6 +7,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary-text: var(--primary-text);
   --font-sans: "Geist", "Geist Fallback", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "Geist Mono", "Geist Mono Fallback", ui-monospace, monospace;
   --font-heading: var(--font-sans);
@@ -56,6 +57,7 @@
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
   --primary: oklch(0.205 0 0);
+  --primary-text: oklch(0.205 0 0);
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
@@ -91,6 +93,8 @@
   --popover: rgb(38 38 44);
   --popover-foreground: rgb(245 245 245);
   --primary: rgb(115 55 225);
+  /* Brand purple is 2.6:1 on the dark ground; text uses this lighter step (5.2:1). */
+  --primary-text: rgb(155 123 255);
   --primary-foreground: rgb(255 255 255);
   --secondary: rgb(42 42 48);
   --secondary-foreground: rgb(235 235 235);
@@ -133,11 +137,6 @@
   *:focus {
     outline: none;
   }
-  *:focus-visible {
-    outline: 3px solid rgb(245, 245, 245);
-    outline-offset: 2px;
-    border-radius: 4px;
-  }
   /* Reduced motion: kill all animations and transitions globally.          */
   @media (prefers-reduced-motion: reduce) {
     *,
@@ -150,18 +149,12 @@
     }
   }
 
-  /* Scroll-fade reveal — used via <RevealOnScroll>.                        */
-  /* Initial state: hidden + nudged down. Revealed state: visible + in place. */
-  .reveal-on-scroll {
-    transition: opacity 500ms cubic-bezier(0.25, 1, 0.5, 1),
-                transform 500ms cubic-bezier(0.25, 1, 0.5, 1);
-  }
-  .reveal-on-scroll[data-reveal="off"] {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-  .reveal-on-scroll[data-reveal="on"] {
-    opacity: 1;
-    transform: translateY(0);
-  }
+}
+
+/* Keyboard focus ring. Kept outside the layers on purpose: unlayered rules win
+   over every layered one, so a component's `outline-none` or the base
+   `outline-ring/50` colour cannot weaken or remove it. */
+:focus-visible {
+  outline: 3px solid rgb(245 245 245);
+  outline-offset: 2px;
 }

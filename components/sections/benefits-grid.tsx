@@ -22,9 +22,9 @@ export function BenefitsGrid({ label, title, benefits, fieldPrefix }: BenefitsGr
       <div className="mx-auto max-w-6xl px-8">
         {label && (
           fieldPrefix ? (
-            <EditableText fieldKey={`${fieldPrefix}.label`} value={label} as="p" className="text-xs font-medium uppercase tracking-[0.2em] text-primary" />
+            <EditableText fieldKey={`${fieldPrefix}.label`} value={label} as="p" className="text-xs font-medium uppercase tracking-[0.2em] text-primary-text" />
           ) : (
-            <p className="text-xs font-medium uppercase tracking-[0.2em] text-primary">{label}</p>
+            <p className="text-xs font-medium uppercase tracking-[0.2em] text-primary-text">{label}</p>
           )
         )}
         {fieldPrefix ? (

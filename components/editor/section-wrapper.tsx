@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { useEditor } from "./editor-provider";
 import { BLOCK_REGISTRY } from "@/lib/block-registry";
-import { RevealOnScroll } from "@/components/ui/reveal-on-scroll";
 import type { Section } from "@/lib/sections";
 
 interface SectionWrapperProps {
@@ -13,17 +12,10 @@ interface SectionWrapperProps {
   children: React.ReactNode;
 }
 
-// Hero blocks render full-bleed and are already on-screen at first paint —
-// fading them in produces a jarring flash. Skip the reveal for these.
-const REVEAL_SKIP_TYPES = new Set(["home-hero", "hero"]);
-
 export function SectionWrapper({ section, index, total, children }: SectionWrapperProps) {
   const { isEditing, moveSection, removeSection } = useEditor();
 
-  if (!isEditing) {
-    if (REVEAL_SKIP_TYPES.has(section.type)) return <>{children}</>;
-    return <RevealOnScroll>{children}</RevealOnScroll>;
-  }
+  if (!isEditing) return <>{children}</>;
 
   const label = BLOCK_REGISTRY[section.type]?.label ?? section.type;
 

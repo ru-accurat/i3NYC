@@ -29,7 +29,7 @@ export function CTASection({ title, titleAccent, primaryLabel = "Join I3/NYC", p
           {titleAccent && (
             <>
               {" "}
-              <span className="text-primary">
+              <span className="text-primary-text">
                 {fieldPrefix ? (
                   <EditableText fieldKey={`${fieldPrefix}.titleAccent`} value={titleAccent} as="span" />
                 ) : (
@@ -39,8 +39,8 @@ export function CTASection({ title, titleAccent, primaryLabel = "Join I3/NYC", p
             </>
           )}
         </h2>
-        <div className="mt-10 flex items-center gap-6">
-          <Link href={primaryHref} {...externalProps(primaryHref)} className="inline-flex h-9 items-center justify-center rounded-full bg-primary px-10 text-sm font-medium tracking-wide text-primary-foreground transition-colors hover:bg-primary/80">
+        <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-2">
+          <Link href={primaryHref} {...externalProps(primaryHref)} className="inline-flex h-11 items-center justify-center rounded-full bg-primary px-10 text-sm font-medium tracking-wide text-primary-foreground transition-colors hover:bg-primary/80">
             {fieldPrefix ? (
               <EditableText fieldKey={`${fieldPrefix}.primaryLabel`} value={primaryLabel} as="span" />
             ) : (
@@ -48,7 +48,7 @@ export function CTASection({ title, titleAccent, primaryLabel = "Join I3/NYC", p
             )}
           </Link>
           {secondaryLabel && secondaryHref && (
-            <Link href={secondaryHref} {...externalProps(secondaryHref)} className="text-sm text-muted-foreground underline underline-offset-4 transition-colors hover:text-foreground">
+            <Link href={secondaryHref} {...externalProps(secondaryHref)} className="inline-flex min-h-11 items-center text-sm text-muted-foreground underline underline-offset-4 transition-colors hover:text-foreground">
               {fieldPrefix ? (
                 <EditableText fieldKey={`${fieldPrefix}.secondaryLabel`} value={secondaryLabel} as="span" />
               ) : (

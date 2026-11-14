@@ -22,9 +22,9 @@ export function StrategicPillars({ label, title, pillars, fieldPrefix }: Strateg
       <div className="mx-auto max-w-6xl px-8">
         {label && (
           fieldPrefix ? (
-            <EditableText fieldKey={`${fieldPrefix}.label`} value={label} as="p" className="text-xs font-medium uppercase tracking-[0.2em] text-primary" />
+            <EditableText fieldKey={`${fieldPrefix}.label`} value={label} as="p" className="text-xs font-medium uppercase tracking-[0.2em] text-primary-text" />
           ) : (
-            <p className="text-xs font-medium uppercase tracking-[0.2em] text-primary">{label}</p>
+            <p className="text-xs font-medium uppercase tracking-[0.2em] text-primary-text">{label}</p>
           )
         )}
         {fieldPrefix ? (
@@ -38,7 +38,7 @@ export function StrategicPillars({ label, title, pillars, fieldPrefix }: Strateg
               {fieldPrefix && <ArrayItemRemove sectionId={fieldPrefix} arrayPath="items" index={idx} />}
               {idx > 0 && <Separator className="opacity-40" />}
               <div className="grid gap-6 py-8 md:grid-cols-[80px_1fr_2fr] md:gap-12">
-                <span className="text-3xl font-light text-primary tabular-nums">
+                <span className="text-3xl font-light text-primary-text tabular-nums">
                   {String(idx + 1).padStart(2, "0")}
                 </span>
                 {fieldPrefix ? (

@@ -88,7 +88,7 @@ export function SiteHeader({ isAdmin }: SiteHeaderProps) {
   return (
     <header className="fixed top-0 z-50 w-full bg-background/80 backdrop-blur-sm">
       <div className="mx-auto flex h-20 max-w-6xl items-center justify-between gap-6 px-8">
-        <Link href="/" className="flex items-center gap-2">
+        <Link href="/" className="flex h-11 items-center gap-2">
           <Image
             src="/i3nyc-logo.svg"
             alt="I3/NYC"
@@ -97,7 +97,7 @@ export function SiteHeader({ isAdmin }: SiteHeaderProps) {
             className="h-9 w-auto"
           />
         </Link>
-        <nav className="hidden flex-1 items-center justify-center gap-8 md:flex">
+        <nav className="hidden flex-1 items-center justify-center gap-6 whitespace-nowrap lg:flex xl:gap-8">
           {NAV_LINKS.map((l) =>
             l.children ? (
               <NavDropdown key={l.href} item={l} pathname={pathname} />
@@ -116,7 +116,7 @@ export function SiteHeader({ isAdmin }: SiteHeaderProps) {
             )
           )}
         </nav>
-        <div className="hidden items-center gap-3 md:flex">
+        <div className="hidden items-center gap-3 lg:flex">
           <a
             href={MEMBERSHIP_SIGNUP_URL}
             target="_blank"

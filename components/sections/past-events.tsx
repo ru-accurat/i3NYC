@@ -29,7 +29,7 @@ interface PastEventsProps {
   fieldPrefix?: string;
 }
 
-const KICKER = "text-xs font-medium uppercase tracking-[0.2em] text-primary";
+const KICKER = "text-xs font-medium uppercase tracking-[0.2em] text-primary-text";
 /** Descriptions longer than this are clamped behind a "Read more" toggle. */
 const LONG = 320;
 
@@ -79,9 +79,24 @@ export function PastEvents({ label, title, description, events, fieldPrefix }: P
             <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground">{description}</p>
           ))}
 
-        <div className="mt-16 space-y-16">
+        {groups.length > 1 && (
+          <nav aria-label="Jump to a year" className="mt-10 flex flex-wrap gap-2">
+            {groups.map((group) => (
+              <a
+                key={group.year || "undated"}
+                href={`#events-${group.year || "earlier"}`}
+                className="inline-flex h-11 items-center rounded-full border border-border px-5 text-sm text-foreground/80 transition-colors hover:border-foreground hover:text-foreground"
+              >
+                {group.year || "Earlier"}
+                <span className="ml-2 text-xs tabular-nums text-muted-foreground">{group.items.length}</span>
+              </a>
+            ))}
+          </nav>
+        )}
+
+        <div className="mt-12 space-y-16">
           {groups.map((group) => (
-            <div key={group.year || "undated"}>
+            <div key={group.year || "undated"} id={`events-${group.year || "earlier"}`} className="scroll-mt-28">
               <div className="flex items-baseline gap-4 border-b border-border pb-4">
                 <h3 className="text-2xl font-light tracking-tight">{group.year || "Earlier"}</h3>
                 <span className="text-xs tracking-wide text-muted-foreground">

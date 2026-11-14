@@ -198,6 +198,16 @@ export const BLOCK_REGISTRY: Record<string, BlockDef> = {
       items: { title: "New Event", venue: "Venue", date: "Jan 2026", detail: "What happened.", images: [], links: [] },
     },
   },
+  notice: {
+    label: "Notice",
+    defaults: {
+      label: "Notice",
+      title: "Title",
+      description: "One or two sentences.",
+      ctaLabel: "Button label",
+      ctaHref: "/contact-us",
+    },
+  },
   "cooperation-list": {
     label: "Cooperation List",
     defaults: {

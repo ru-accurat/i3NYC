@@ -11,6 +11,17 @@
       }
     },
     {
+      "id": "events-next",
+      "type": "notice",
+      "data": {
+        "label": "Next event",
+        "title": "To be announced.",
+        "description": "We announce each event on this page and on LinkedIn.",
+        "ctaLabel": "Follow on LinkedIn",
+        "ctaHref": "https://www.linkedin.com/company/i3-italian-innovators-initiative"
+      }
+    },
+    {
       "id": "events-past",
       "type": "past-events",
       "data": {

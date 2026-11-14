@@ -31,9 +31,9 @@ export function HeroSection({ label, title, titleAccent, description, bg, fieldP
       <div className="relative z-10 mx-auto w-full max-w-6xl">
         {label && (
           fieldPrefix ? (
-            <EditableText fieldKey={`${fieldPrefix}.label`} value={label} as="p" className="text-xs font-medium uppercase tracking-[0.2em] text-primary" />
+            <EditableText fieldKey={`${fieldPrefix}.label`} value={label} as="p" className="text-xs font-medium uppercase tracking-[0.2em] text-primary-text" />
           ) : (
-            <p className="text-xs font-medium uppercase tracking-[0.2em] text-primary">{label}</p>
+            <p className="text-xs font-medium uppercase tracking-[0.2em] text-primary-text">{label}</p>
           )
         )}
         <h1 className="mt-6 max-w-3xl text-4xl font-light leading-[1.1] tracking-tight md:text-6xl lg:text-7xl">
@@ -45,7 +45,7 @@ export function HeroSection({ label, title, titleAccent, description, bg, fieldP
           {titleAccent && (
             <>
               {" "}
-              <span className="text-primary">
+              <span className="text-primary-text">
                 {fieldPrefix ? (
                   <EditableText fieldKey={`${fieldPrefix}.titleAccent`} value={titleAccent} as="span" />
                 ) : (

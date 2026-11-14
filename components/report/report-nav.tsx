@@ -49,7 +49,7 @@ export function ReportNav() {
             onClick={() => scrollTo(s.id)}
             className={`whitespace-nowrap border-b-2 px-4 py-3 text-xs tracking-wide transition-colors ${
               active === s.id
-                ? "border-primary text-primary"
+                ? "border-primary text-primary-text"
                 : "border-transparent text-muted-foreground hover:text-foreground"
             }`}
           >

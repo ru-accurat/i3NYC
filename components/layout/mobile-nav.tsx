@@ -25,7 +25,7 @@ export function MobileNav({ isAdmin }: MobileNavProps) {
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger
         render={
-          <Button variant="ghost" size="icon" className="md:hidden" />
+          <Button variant="ghost" size="icon" className="size-11 lg:hidden" />
         }
       >
         <svg

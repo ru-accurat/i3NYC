@@ -33,9 +33,9 @@ export function TeamGrid({ label, title, members, fieldPrefix }: TeamGridProps) 
       <div className="mx-auto max-w-6xl px-8">
         {label && (
           fieldPrefix ? (
-            <EditableText fieldKey={`${fieldPrefix}.label`} value={label} as="p" className="text-xs font-medium uppercase tracking-[0.2em] text-primary" />
+            <EditableText fieldKey={`${fieldPrefix}.label`} value={label} as="p" className="text-xs font-medium uppercase tracking-[0.2em] text-primary-text" />
           ) : (
-            <p className="text-xs font-medium uppercase tracking-[0.2em] text-primary">{label}</p>
+            <p className="text-xs font-medium uppercase tracking-[0.2em] text-primary-text">{label}</p>
           )
         )}
         {fieldPrefix ? (
@@ -59,7 +59,7 @@ export function TeamGrid({ label, title, members, fieldPrefix }: TeamGridProps) 
                 </div>
               ) : (
                 <div
-                  className="flex h-20 w-20 items-center justify-center rounded-full bg-primary/15 text-xl font-light text-primary"
+                  className="flex h-20 w-20 items-center justify-center rounded-full bg-primary/15 text-xl font-light text-primary-text"
                   aria-hidden="true"
                 >
                   {t.initials}

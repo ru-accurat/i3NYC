@@ -23,12 +23,12 @@ export function SiteFooter() {
           <p className="text-xs tracking-widest text-muted-foreground/50 uppercase">
             Navigate
           </p>
-          <div className="mt-4 flex flex-col gap-3">
+          <div className="mt-4 flex flex-col lg:gap-3">
             {NAV_LINKS.map((l) => (
               <Link
                 key={l.href}
                 href={l.href}
-                className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                className="inline-flex min-h-11 items-center text-sm text-muted-foreground transition-colors hover:text-foreground lg:min-h-0"
               >
                 {l.label}
               </Link>
@@ -39,10 +39,10 @@ export function SiteFooter() {
           <p className="text-xs tracking-widest text-muted-foreground/50 uppercase">
             Connect
           </p>
-          <div className="mt-4 flex flex-col gap-3">
+          <div className="mt-4 flex flex-col lg:gap-3">
             <a
               href="https://www.linkedin.com/company/i3-italian-innovators-initiative"
-              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+              className="inline-flex min-h-11 items-center text-sm text-muted-foreground transition-colors hover:text-foreground lg:min-h-0"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -50,7 +50,7 @@ export function SiteFooter() {
             </a>
             <Link
               href="/contact-us"
-              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+              className="inline-flex min-h-11 items-center text-sm text-muted-foreground transition-colors hover:text-foreground lg:min-h-0"
             >
               Contact Us
             </Link>
@@ -58,20 +58,24 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="border-t border-border">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-8 py-6">
-          <p className="text-xs text-muted-foreground/40">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-8 pt-2 pb-20 lg:py-6">
+          <p className="text-xs text-muted-foreground">
             &copy; I3/NYC {new Date().getFullYear()}
           </p>
           <div className="flex gap-6">
             <a
-              href="#"
-              className="text-xs text-muted-foreground/40 hover:text-muted-foreground"
+              href="https://www.iubenda.com/privacy-policy/23178177"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex min-h-11 items-center text-xs text-muted-foreground hover:text-foreground"
             >
               Privacy
             </a>
             <a
-              href="#"
-              className="text-xs text-muted-foreground/40 hover:text-muted-foreground"
+              href="https://www.iubenda.com/privacy-policy/23178177/cookie-policy"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex min-h-11 items-center text-xs text-muted-foreground hover:text-foreground"
             >
               Cookies
             </a>

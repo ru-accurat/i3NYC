@@ -24,28 +24,12 @@
             "href": "/reports-insights-media/innovation-tech-march-2026"
           },
           {
-            "type": "newsletter",
-            "title": "Newsletter",
-            "description": "A monthly briefing on the New York market.",
-            "href": ""
-          },
-          {
             "type": "social",
             "title": "Follow us on LinkedIn",
             "description": "News and event announcements.",
             "href": "https://www.linkedin.com/company/i3-italian-innovators-initiative"
           }
         ]
-      }
-    },
-    {
-      "id": "reports-spotlights",
-      "type": "member-spotlight",
-      "data": {
-        "label": "Member Spotlight",
-        "title": "Member profiles.",
-        "description": "Members and the work they do.",
-        "items": []
       }
     },
     {

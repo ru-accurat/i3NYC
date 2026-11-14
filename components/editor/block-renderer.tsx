@@ -16,6 +16,7 @@ import { StrategicPillars } from "@/components/sections/strategic-pillars";
 import { EventSpotlight } from "@/components/sections/event-spotlight";
 import { EventTrack } from "@/components/sections/event-track";
 import { PastEvents, type PastEvent } from "@/components/sections/past-events";
+import { Notice } from "@/components/sections/notice";
 import { CooperationList } from "@/components/sections/cooperation-list";
 import { KnowledgeHub } from "@/components/sections/knowledge-hub";
 import { MemberSpotlight } from "@/components/sections/member-spotlight";
@@ -196,6 +197,18 @@ export function BlockRenderer({ section }: { section: Section }) {
           title={d.title as string}
           description={d.description as string | undefined}
           events={d.items as PastEvent[]}
+          fieldPrefix={id}
+        />
+      );
+
+    case "notice":
+      return (
+        <Notice
+          label={d.label as string | undefined}
+          title={d.title as string}
+          description={d.description as string | undefined}
+          ctaLabel={d.ctaLabel as string | undefined}
+          ctaHref={d.ctaHref as string | undefined}
           fieldPrefix={id}
         />
       );

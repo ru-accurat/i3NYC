@@ -20,34 +20,32 @@
           {
             "name": "Student / Young Professional",
             "price": "$50/yr",
-            "note": "Public convenings, new-graduate mentoring, access to research, recognition as a Student Supporter."
+            "note": "Public convenings, new-graduate mentoring, access to research, recognition as a Student Supporter.",
+            "ctaLabel": "Join for $50",
+            "ctaHref": "https://www.zeffy.com/en-US/ticketing/i-cubednyc-italian-innovators-initiative-inc-memberships--2026"
           },
           {
             "name": "Individual Member",
             "price": "$100/yr",
-            "note": "Invitations to educational programs, 1 complimentary public event per year, priority registration."
+            "note": "Invitations to educational programs, 1 complimentary public event per year, priority registration.",
+            "ctaLabel": "Join for $100",
+            "ctaHref": "https://www.zeffy.com/en-US/ticketing/i-cubednyc-italian-innovators-initiative-inc-memberships--2026"
           },
           {
             "name": "Charter Member",
             "price": "Invite Only",
-            "note": "Enhanced recognition, leadership briefing invitations, 5 complimentary public events, annual gala access."
+            "note": "Enhanced recognition, leadership briefing invitations, 5 complimentary public events, annual gala access.",
+            "ctaLabel": "Request an invitation",
+            "ctaHref": "/contact-us"
           },
           {
             "name": "Institutional Partner",
             "price": "Contact Us",
-            "note": "For startups, corporations, universities, and financial institutions. From Emerging to Premier tiers."
+            "note": "For startups, corporations, universities, and financial institutions. From Emerging to Premier tiers.",
+            "ctaLabel": "Contact us",
+            "ctaHref": "/contact-us"
           }
         ]
-      }
-    },
-    {
-      "id": "membership-spotlights",
-      "type": "member-spotlight",
-      "data": {
-        "label": "Member Spotlights",
-        "title": "Our members.",
-        "description": "Italian and Italian-American innovators working in New York.",
-        "items": []
       }
     },
     {

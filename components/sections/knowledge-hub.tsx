@@ -38,9 +38,9 @@ export function KnowledgeHub({ label, title, items, fieldPrefix }: KnowledgeHubP
       <div className="mx-auto max-w-6xl px-8">
         {label && (
           fieldPrefix ? (
-            <EditableText fieldKey={`${fieldPrefix}.label`} value={label} as="p" className="text-xs font-medium uppercase tracking-[0.2em] text-primary" />
+            <EditableText fieldKey={`${fieldPrefix}.label`} value={label} as="p" className="text-xs font-medium uppercase tracking-[0.2em] text-primary-text" />
           ) : (
-            <p className="text-xs font-medium uppercase tracking-[0.2em] text-primary">{label}</p>
+            <p className="text-xs font-medium uppercase tracking-[0.2em] text-primary-text">{label}</p>
           )
         )}
         {fieldPrefix ? (
@@ -62,9 +62,9 @@ export function KnowledgeHub({ label, title, items, fieldPrefix }: KnowledgeHubP
               >
                 {fieldPrefix && <ArrayItemRemove sectionId={fieldPrefix} arrayPath="items" index={idx} />}
                 {fieldPrefix ? (
-                  <EditableText fieldKey={`${fieldPrefix}.items.${idx}.type`} value={tile.type} as="p" className="text-xs tracking-wide uppercase text-primary" />
+                  <EditableText fieldKey={`${fieldPrefix}.items.${idx}.type`} value={tile.type} as="p" className="text-xs tracking-wide uppercase text-primary-text" />
                 ) : (
-                  <p className="text-xs tracking-wide uppercase text-primary">{typeLabel(tile.type)}</p>
+                  <p className="text-xs tracking-wide uppercase text-primary-text">{typeLabel(tile.type)}</p>
                 )}
                 {fieldPrefix ? (
                   <EditableText fieldKey={`${fieldPrefix}.items.${idx}.title`} value={tile.title} as="h3" className="mt-3 text-xl font-light tracking-tight md:text-2xl" />
