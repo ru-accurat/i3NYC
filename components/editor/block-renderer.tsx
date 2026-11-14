@@ -15,6 +15,7 @@ import { ContactInfo } from "@/components/sections/contact-info";
 import { StrategicPillars } from "@/components/sections/strategic-pillars";
 import { EventSpotlight } from "@/components/sections/event-spotlight";
 import { EventTrack } from "@/components/sections/event-track";
+import { PastEvents, type PastEvent } from "@/components/sections/past-events";
 import { CooperationList } from "@/components/sections/cooperation-list";
 import { KnowledgeHub } from "@/components/sections/knowledge-hub";
 import { MemberSpotlight } from "@/components/sections/member-spotlight";
@@ -184,6 +185,17 @@ export function BlockRenderer({ section }: { section: Section }) {
           title={d.title as string}
           description={d.description as string | undefined}
           events={d.items as { title: string; venue: string; date: string; detail: string }[]}
+          fieldPrefix={id}
+        />
+      );
+
+    case "past-events":
+      return (
+        <PastEvents
+          label={d.label as string | undefined}
+          title={d.title as string}
+          description={d.description as string | undefined}
+          events={d.items as PastEvent[]}
           fieldPrefix={id}
         />
       );

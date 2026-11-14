@@ -183,6 +183,21 @@ export const BLOCK_REGISTRY: Record<string, BlockDef> = {
       items: { title: "New Event", venue: "Venue", date: "Jan 2026", detail: "Details" },
     },
   },
+  "past-events": {
+    label: "Past Events",
+    defaults: {
+      label: "Archive",
+      title: "Past events",
+      description: "Description of this archive.",
+      items: [
+        { title: "Event Name", venue: "Venue", date: "Jan 2026", detail: "What happened.", images: [], links: [] },
+      ],
+    },
+    arrayFields: ["items"],
+    itemDefaults: {
+      items: { title: "New Event", venue: "Venue", date: "Jan 2026", detail: "What happened.", images: [], links: [] },
+    },
+  },
   "cooperation-list": {
     label: "Cooperation List",
     defaults: {

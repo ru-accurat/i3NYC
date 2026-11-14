@@ -12,10 +12,18 @@ async function seed() {
     process.exit(1);
   }
 
+  // Optional: name the files to seed (e.g. `npm run seed -- events-programs.json`)
+  // so one page can be updated without overwriting live edits to the others.
+  const only = process.argv.slice(2);
   const files = readdirSync(CONTENT_DIR).filter((f) => {
     if (!f.endsWith(".json")) return false;
+    if (only.length > 0 && !only.includes(f)) return false;
     return statSync(join(CONTENT_DIR, f)).isFile();
   });
+  if (only.length > 0 && files.length !== only.length) {
+    console.error(`Not found in content/: ${only.filter((f) => !files.includes(f)).join(", ")}`);
+    process.exit(1);
+  }
 
   console.log(`Seeding ${files.length} content files to Vercel Blob (private, overwrite)...`);
 
