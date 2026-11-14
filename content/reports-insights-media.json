@@ -24,18 +24,6 @@
             "href": "/reports-insights-media/innovation-tech-march-2026"
           },
           {
-            "type": "dashboard",
-            "title": "Ecosystem Spotlight Dashboard",
-            "description": "Insights about the Italian innovation community in NYC — companies, founders, and capital flows.",
-            "href": ""
-          },
-          {
-            "type": "intelligence",
-            "title": "Innovation Intelligence",
-            "description": "Converting NYC ecosystem trends into practical insights for Italian founders and professionals.",
-            "href": ""
-          },
-          {
             "type": "newsletter",
             "title": "Newsletter",
             "description": "A monthly briefing on the New York market.",

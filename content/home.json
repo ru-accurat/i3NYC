@@ -66,20 +66,6 @@
       }
     },
     {
-      "id": "home-spotlight",
-      "type": "event-spotlight",
-      "data": {
-        "label": "Next Convening",
-        "title": "The Spring Member Summit.",
-        "eventTitle": "Dominating the New York Market — The 2026 Roadmap.",
-        "date": "May 11, 2026",
-        "venue": "Featuring the official welcome of Consul General Giuseppe Pastorelli",
-        "description": "Our flagship spring convening on positioning Italian innovation across NYC's tech, finance, and academic ecosystems.",
-        "ctaLabel": "RSVP",
-        "ctaHref": "https://luma.com/as9d6tor"
-      }
-    },
-    {
       "id": "home-cta",
       "type": "cta",
       "data": {
