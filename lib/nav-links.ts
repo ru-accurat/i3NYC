@@ -1,7 +1,8 @@
 export interface NavItem {
   label: string;
   href: string;
-  children?: { label: string; href: string }[];
+  /** `type` is the page's content type; it picks the icon shown beside the label. */
+  children?: { label: string; href: string; type?: string }[];
 }
 
 // External membership signup (Zeffy ticketing) — every "Become Member" CTA points here.
@@ -17,9 +18,9 @@ export const NAV_LINKS: NavItem[] = [
     label: "Reports, Insights & Media",
     href: "/reports-insights-media",
     children: [
-      { label: "Tri-State Innovation Navigator", href: "/reports-insights-media/tri-state-innovation-navigator" },
-      { label: "NYC AI Company Census", href: "/reports-insights-media/nyc-ai-company-census" },
-      { label: "Innovation & Tech Report · Mar 2026", href: "/reports-insights-media/innovation-tech-march-2026" },
+      { label: "Tri-State Innovation Navigator", href: "/reports-insights-media/tri-state-innovation-navigator", type: "navigator" },
+      { label: "NYC AI Company Census", href: "/reports-insights-media/nyc-ai-company-census", type: "census" },
+      { label: "Innovation & Tech Report", href: "/reports-insights-media/innovation-tech-march-2026", type: "white-paper" },
     ],
   },
 ];

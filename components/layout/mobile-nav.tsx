@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/sheet";
 import { Separator } from "@/components/ui/separator";
 import { NAV_LINKS } from "@/lib/nav-links";
+import { ContentTypeIcon } from "@/components/ui/content-type-icon";
 
 interface MobileNavProps {
   isAdmin?: boolean;
@@ -82,8 +83,9 @@ export function MobileNav({ isAdmin }: MobileNavProps) {
                         key={child.href}
                         href={child.href}
                         onClick={() => setOpen(false)}
-                        className="rounded-md px-3 py-2 text-sm text-foreground/60 transition-colors hover:text-foreground"
+                        className="flex items-center gap-2.5 rounded-md px-3 py-2 text-sm text-foreground/60 transition-colors hover:text-foreground"
                       >
+                        <ContentTypeIcon type={child.type} className="size-4 text-primary-text" />
                         {child.label}
                       </Link>
                     ))}

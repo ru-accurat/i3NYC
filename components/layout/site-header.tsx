@@ -8,6 +8,7 @@ import { MobileNav } from "./mobile-nav";
 import { LogoutButton } from "./logout-button";
 import { MEMBERSHIP_SIGNUP_URL, NAV_LINKS } from "@/lib/nav-links";
 import type { NavItem } from "@/lib/nav-links";
+import { ContentTypeIcon } from "@/components/ui/content-type-icon";
 
 interface SiteHeaderProps {
   isAdmin?: boolean;
@@ -72,8 +73,9 @@ function NavDropdown({ item, pathname }: { item: NavItem; pathname: string | nul
               key={child.href}
               href={child.href}
               onClick={() => setOpen(false)}
-              className="block rounded-md px-3 py-2 text-sm text-foreground/70 transition-colors hover:bg-primary/10 hover:text-foreground"
+              className="flex items-center gap-2.5 rounded-md px-3 py-2 text-sm text-foreground/70 transition-colors hover:bg-primary/10 hover:text-foreground"
             >
+              <ContentTypeIcon type={child.type} className="size-4 text-primary-text" />
               {child.label}
             </Link>
           ))}
