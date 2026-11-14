@@ -1,5 +1,6 @@
 "use client";
 
+import { Compass, FileText, Grip, Map as MapIcon, Notebook } from "lucide-react";
 import { EditableText } from "@/components/editor/editable-text";
 import { useEditor } from "@/components/editor/editor-provider";
 import { ArrayItemRemove, ArrayAddButton } from "@/components/editor/array-controls";
@@ -33,6 +34,39 @@ const TYPE_LABELS: Record<string, string> = {
   "spotlight": "Spotlight",
 };
 
+type TileIcon = React.ComponentType<{ className?: string; strokeWidth?: number }>;
+
+/** LinkedIn's mark as a line icon, drawn to sit with the lucide set (which has no brand icons). */
+function LinkedInMark({ className, strokeWidth = 1.5 }: { className?: string; strokeWidth?: number }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={strokeWidth}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
+      <path d="M8 11v5" />
+      <path d="M8 8v.01" />
+      <path d="M12 16v-5" />
+      <path d="M16 16v-3a2 2 0 1 0 -4 0" />
+      <path d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z" />
+    </svg>
+  );
+}
+
+/** One icon per content type, so cards of the same kind read as a group. Other types show none. */
+const TYPE_ICONS: Record<string, TileIcon> = {
+  "navigator": Compass,
+  "census": Grip,
+  "map": MapIcon,
+  "brief": Notebook,
+  "white-paper": FileText,
+  "social": LinkedInMark,
+};
+
 function typeLabel(t: string) {
   return TYPE_LABELS[t] ?? t;
 }
@@ -64,6 +98,7 @@ export function KnowledgeHub({ label, title, items, fieldPrefix }: KnowledgeHubP
             const wrapperProps = linked
               ? { href: tile.href, ...(external ? { target: "_blank", rel: "noopener noreferrer" } : {}) }
               : {};
+            const Icon = TYPE_ICONS[tile.type];
             return (
               <TileWrapper
                 key={idx}
@@ -71,6 +106,11 @@ export function KnowledgeHub({ label, title, items, fieldPrefix }: KnowledgeHubP
                 className="group relative block rounded-2xl border border-border p-8 transition-colors hover:border-primary/40"
               >
                 {fieldPrefix && <ArrayItemRemove sectionId={fieldPrefix} arrayPath="items" index={idx} />}
+                {Icon && (
+                  <span aria-hidden="true" className="mb-6 flex size-11 items-center justify-center rounded-xl bg-primary/15 text-primary-text">
+                    <Icon className="size-5" strokeWidth={1.5} />
+                  </span>
+                )}
                 {/* Stacked on phones so every card reads the same; one row from `sm` up. */}
                 <div className="flex flex-col gap-1 sm:flex-row sm:flex-wrap sm:items-baseline sm:justify-between sm:gap-x-4">
                   {fieldPrefix && isEditing ? (
