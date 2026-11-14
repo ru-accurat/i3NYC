@@ -18,6 +18,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  // Absolute base for share images and canonical URLs.
+  metadataBase: new URL("https://www.i3nyc.org"),
   title: "I3/NYC — Italian Innovators Initiative",
   description: "A non-profit connecting Italian innovators with New York.",
 };

@@ -17,6 +17,8 @@ export const NAV_LINKS: NavItem[] = [
     label: "Reports, Insights & Media",
     href: "/reports-insights-media",
     children: [
+      { label: "Tri-State Innovation Navigator", href: "/reports-insights-media/tri-state-innovation-navigator" },
+      { label: "NYC AI Company Census", href: "/reports-insights-media/nyc-ai-company-census" },
       { label: "Innovation & Tech Report · Mar 2026", href: "/reports-insights-media/innovation-tech-march-2026" },
     ],
   },

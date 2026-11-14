@@ -19,6 +19,10 @@ interface KnowledgeHubProps {
 }
 
 const TYPE_LABELS: Record<string, string> = {
+  "navigator": "Interactive Guide",
+  "map": "Ecosystem Map",
+  "census": "Company Census",
+  "brief": "Ecosystem Brief",
   "white-paper": "White Paper",
   "dashboard": "Dashboard",
   "intelligence": "Intelligence",
@@ -50,9 +54,13 @@ export function KnowledgeHub({ label, title, items, fieldPrefix }: KnowledgeHubP
         )}
         <div className="mt-16 grid gap-6 md:grid-cols-2">
           {items.map((tile, idx) => {
-            const TileWrapper: React.ElementType = tile.href && !fieldPrefix ? "a" : "div";
-            const wrapperProps = tile.href && !fieldPrefix
-              ? { href: tile.href, target: tile.href.startsWith("http") ? "_blank" : undefined, rel: "noopener noreferrer" }
+            // A tile is a link for visitors and a plain box while editing, so its text stays editable.
+            // (`fieldPrefix` is always set, so it cannot tell the two apart; `isEditing` can.)
+            const linked = Boolean(tile.href) && !isEditing;
+            const external = linked && tile.href!.startsWith("http");
+            const TileWrapper: React.ElementType = linked ? "a" : "div";
+            const wrapperProps = linked
+              ? { href: tile.href, ...(external ? { target: "_blank", rel: "noopener noreferrer" } : {}) }
               : {};
             return (
               <TileWrapper
@@ -61,7 +69,7 @@ export function KnowledgeHub({ label, title, items, fieldPrefix }: KnowledgeHubP
                 className="group relative block rounded-2xl border border-border p-8 transition-colors hover:border-primary/40"
               >
                 {fieldPrefix && <ArrayItemRemove sectionId={fieldPrefix} arrayPath="items" index={idx} />}
-                {fieldPrefix ? (
+                {fieldPrefix && isEditing ? (
                   <EditableText fieldKey={`${fieldPrefix}.items.${idx}.type`} value={tile.type} as="p" className="text-xs tracking-wide uppercase text-primary-text" />
                 ) : (
                   <p className="text-xs tracking-wide uppercase text-primary-text">{typeLabel(tile.type)}</p>

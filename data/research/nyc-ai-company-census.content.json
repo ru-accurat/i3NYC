@@ -1,0 +1,504 @@
+{
+  "eyebrow": "I³/NYC Research · Company census · Data as of October 11, 2026",
+  "title": "New York City's AI and physical AI companies",
+  "lede": [
+    {
+      "t": "A census of 150 companies with their headquarters or primary office in the five boroughs that have raised at least $1M or passed $1M in revenue. Each profile records what the company sells and to whom, whose models it runs on, its funding, scale, footprint in the city and one main use case with impact indicators."
+    }
+  ],
+  "lenses": [
+    {
+      "key": "all",
+      "label": "All companies"
+    },
+    {
+      "key": "native",
+      "label": "AI-native only"
+    },
+    {
+      "key": "phys",
+      "label": "Physical AI only"
+    },
+    {
+      "key": "priv",
+      "label": "Private only"
+    }
+  ],
+  "sections": [
+    {
+      "id": "",
+      "title": "What the census shows",
+      "sub": [
+        {
+          "t": "Eight findings computed from the profiles below. The census is a curated sample of the city's funded AI companies, not a complete register; see the method notes for what is missing."
+        }
+      ],
+      "findings": [
+        {
+          "title": "Infrastructure and security hold the most capital",
+          "body": [
+            {
+              "b": "$7.6B"
+            },
+            {
+              "t": " of the $27.1B raised went to models, infrastructure and developer tools, led by VAST Data, Reflection AI and Modal. Security adds "
+            },
+            {
+              "b": "$4.1B"
+            },
+            {
+              "t": ", most of it Cyera."
+            }
+          ]
+        },
+        {
+          "title": "Regulated industries are the widest cohort",
+          "body": [
+            {
+              "b": "49 of 150"
+            },
+            {
+              "t": " companies sell into finance, law, insurance, healthcare or life sciences, the industries that are New York's own customers. Four of them became unicorns in 2026: Rogo, Norm Ai, Basis and Rillet."
+            }
+          ]
+        },
+        {
+          "title": "New York builds for the enterprise buyer",
+          "body": [
+            {
+              "b": "80"
+            },
+            {
+              "t": " companies name the enterprise as their primary customer, against 15 for consumers and 9 for developers. The typical buyer is a function head: the CFO, general counsel, CISO or chief revenue officer."
+            }
+          ]
+        },
+        {
+          "title": "Younger companies rent their models",
+          "body": [
+            {
+              "t": "Among companies founded in 2023 or later that disclose a model strategy, "
+            },
+            {
+              "b": "8 of 15"
+            },
+            {
+              "t": " run on external models. Among those founded before 2020 it is 5 of 43. OpenAI is named by 10 companies and Anthropic by 7."
+            }
+          ]
+        },
+        {
+          "title": "2026 is a mega-round year",
+          "body": [
+            {
+              "b": "43"
+            },
+            {
+              "t": " companies raised their latest round in 2026 for a combined "
+            },
+            {
+              "b": "$6.4B"
+            },
+            {
+              "t": ". The 21 rounds of $100M or more account for 88% of that. Citywide, AI took 51% of venture dollars in Q2 2026."
+            }
+          ]
+        },
+        {
+          "title": "Physical AI is small and clustered",
+          "body": [
+            {
+              "b": "16"
+            },
+            {
+              "t": " physical AI companies have raised "
+            },
+            {
+              "b": "$2.0B"
+            },
+            {
+              "t": ", about a third of it by General Intuition. Five sit in the Brooklyn Navy Yard, where the state backed Radical AI's lab with up to $2M in tax credits."
+            }
+          ]
+        },
+        {
+          "title": "Consolidation has started",
+          "body": [
+            {
+              "t": "Nvidia agreed to buy "
+            },
+            {
+              "b": "Hugging Face"
+            },
+            {
+              "t": " for about $12.9B. Cursor took Graphite, Amazon took Fauna Robotics, Tempus took Paige and RealPage took Cherre. Local companies are buyers too: Cyera paid $1B for Oasis Security."
+            }
+          ]
+        },
+        {
+          "title": "Academic ties are founder ties",
+          "body": [
+            {
+              "t": "Only "
+            },
+            {
+              "b": "10"
+            },
+            {
+              "t": " companies show a link to a New York institution, mostly through a founder or professor: Runway and FLORA from NYU's ITP, Paige from Memorial Sloan Kettering, Traversal from Cornell Tech. Formal research partnerships are rare."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "",
+      "title": "The city behind the companies",
+      "sub": [
+        {
+          "t": "Citywide figures from public sources, for scale. The census covers a small, well-funded slice of the roughly 2,000 AI startups the city counts."
+        }
+      ],
+      "tiles": [
+        {
+          "value": "2,000+",
+          "body": [
+            {
+              "t": "AI startups and 40,000+ AI workers in New York. "
+            },
+            {
+              "a": "NYCEDC, Jan 2025",
+              "href": "https://edc.nyc/press-release/mayor-adams-nycedc-release-groundbreaking-report-secure-nyc-global-leader-applied-ai"
+            }
+          ]
+        },
+        {
+          "value": "51%",
+          "body": [
+            {
+              "t": "of NYC venture dollars went to AI in Q2 2026: $4.56B across 81 deals. "
+            },
+            {
+              "a": "AlleyWatch",
+              "href": "https://alleywatch.com/2026/07/nyc-startup-funding-q2-2026-best-capital-quarter-since-2021/"
+            }
+          ]
+        },
+        {
+          "value": "~1M sq ft",
+          "body": [
+            {
+              "t": "of Manhattan offices leased by AI companies in 2025, and about the same again in Q1 2026. "
+            },
+            {
+              "a": "Propmodo",
+              "href": "https://propmodo.com/?p=180514"
+            }
+          ]
+        },
+        {
+          "value": "14%",
+          "body": [
+            {
+              "t": "of US seed and Series A rounds in AI were raised in New York in 2024. "
+            },
+            {
+              "a": "Lightspeed",
+              "href": "https://lsvp.com/stories/new-york-tech-keeps-rolling-2024-insights/"
+            }
+          ]
+        }
+      ],
+      "blocks": [
+        {
+          "title": "Venture capital raised in NYC, all sectors",
+          "sub": [
+            {
+              "t": "Five boroughs, $ billions. Source: "
+            },
+            {
+              "a": "AlleyWatch NYC Funding Index",
+              "href": "https://funding.alleywatch.com"
+            },
+            {
+              "t": "."
+            }
+          ],
+          "target": "fy"
+        },
+        {
+          "title": "AI share of NYC venture capital",
+          "sub": [
+            {
+              "t": "2021 to 2023 from NYCEDC, Q2 2026 from AlleyWatch. The two use different datasets, so read the direction, not the exact gap."
+            }
+          ],
+          "target": "ais"
+        }
+      ]
+    },
+    {
+      "id": "",
+      "title": "Cohort explorer",
+      "sub": [
+        {
+          "t": "Choose how to group the companies and what to measure. Click any bar to list that cohort in the database. The lens at the top of the page applies here too."
+        }
+      ]
+    },
+    {
+      "id": "",
+      "title": "Where the companies are in the funding cycle",
+      "sub": [
+        {
+          "t": "Companies by cluster and latest funding stage. Darker cells hold more companies. Click a cell to list them."
+        }
+      ],
+      "notes": [
+        [
+          {
+            "t": "\"Growth / other\" collects unlabelled growth rounds, strategic investments and debt. \"Acquired\" includes completed deals only; Hugging Face stays at its last private stage until the Nvidia deal closes."
+          }
+        ]
+      ]
+    },
+    {
+      "id": "",
+      "title": "Age against scale",
+      "sub": [
+        {
+          "t": "Each point is a company, placed by founding year and by the figure you choose. Purple is software; teal is physical AI."
+        }
+      ]
+    },
+    {
+      "id": "",
+      "title": "Whose models they run on",
+      "sub": [
+        {
+          "t": "Model strategy by founding cohort. 87 of 150 companies disclose enough to classify; the other 63 are shown as undisclosed, not guessed."
+        }
+      ],
+      "notes": [
+        [
+          {
+            "t": "In-house: the company trains its own models, including non-language foundation models for video, pathology or proteins. External: it builds on third-party models. Hybrid: both. No LLM at core: infrastructure, hardware or classical machine learning."
+          }
+        ]
+      ],
+      "blocks": [
+        {
+          "title": "External providers named",
+          "sub": [
+            {
+              "t": "Companies that name a provider whose models run in their product. Hover for the names."
+            }
+          ],
+          "target": "prov"
+        },
+        {
+          "title": "Universities named in company histories",
+          "sub": [
+            {
+              "t": "Founder, faculty or licensing links found in sources. Two New York links (Voyant Photonics, Nanit) are widely reported but were not re-verified."
+            }
+          ],
+          "target": "uni"
+        }
+      ]
+    },
+    {
+      "id": "",
+      "title": "Capital and consolidation, 2025–26",
+      "sub": [
+        {
+          "t": "The fifteen largest latest rounds in the census closed since January 2025, then the exits, mergers and acquisitions that changed the map."
+        }
+      ],
+      "notes": [
+        [
+          {
+            "t": "Only each company's most recent round is recorded, so earlier 2025 rounds by companies that raised again are not shown. VAST Data's round of about $1B includes secondary sales; AlleyWatch records $500M of primary capital."
+          }
+        ]
+      ],
+      "blocks": [
+        {
+          "title": "Exits, mergers and acquisitions",
+          "target": "exits"
+        }
+      ]
+    },
+    {
+      "id": "",
+      "title": "Trends",
+      "sub": [
+        {
+          "t": "Nine patterns in the citywide data, each with its evidence and source."
+        }
+      ]
+    },
+    {
+      "id": "database",
+      "title": "Company database",
+      "sub": [
+        {
+          "t": "Open a row for the full profile: problem solved, ideal customer, buyer, model strategy, funding, footprint in the city, academic ties, main use case, impact indicators and sources."
+        }
+      ]
+    },
+    {
+      "id": "",
+      "title": "Labs and platforms from elsewhere",
+      "sub": [
+        {
+          "t": "Not counted in the census because their headquarters are outside New York, but they hire, lease and acquire here."
+        }
+      ],
+      "blocks": [
+        {
+          "title": "Just outside the five boroughs",
+          "target": "near"
+        }
+      ]
+    },
+    {
+      "id": "",
+      "title": "Academia and public policy",
+      "sub": [
+        {
+          "t": "The research base and the rules that shape the market."
+        }
+      ],
+      "blocks": [
+        {
+          "title": "Academic and compute base",
+          "target": "acad"
+        },
+        {
+          "title": "Policy and regulation",
+          "target": "policy"
+        },
+        {
+          "title": "Risks to watch",
+          "target": "risks"
+        }
+      ]
+    },
+    {
+      "id": "",
+      "title": "Method and limits",
+      "caveats": [
+        [
+          {
+            "b": "Scope."
+          },
+          {
+            "t": " Companies whose product is AI or depends on it, with headquarters or primary US office in the five boroughs, and at least $1M raised or $1M in revenue. Three rows (Sola, Cedar, Accrete AI) are included on reported rounds whose amounts could not be confirmed."
+          }
+        ],
+        [
+          {
+            "b": "Not exhaustive."
+          },
+          {
+            "t": " The city counts more than 2,000 AI startups. This census profiles 150 of the best funded and most visible. Research ran against a fixed search budget, so many candidates were never checked; 184 names that were reviewed and left out are listed below with the reason."
+          }
+        ],
+        [
+          {
+            "b": "Method."
+          },
+          {
+            "t": " Seven sector desks built long lists from funding trackers, investor portfolios and press, then verified each company against its own site, filings, and dated coverage. Records were merged, de-duplicated and coded into common categories for cohort analysis."
+          }
+        ],
+        [
+          {
+            "b": "Sources."
+          },
+          {
+            "t": " Company sites and press releases, SEC filings for public companies, AlleyWatch, TechCrunch, Sacra, CB Insights, Built In NYC, Wikipedia and trade press. Each profile links its sources."
+          }
+        ],
+        [
+          {
+            "b": "Confidence."
+          },
+          {
+            "t": " 34 profiles are rated high, 14 low. Low means the headquarters attribution or the funding figures rest on a single aggregator. Low-confidence rows carry a label."
+          }
+        ],
+        [
+          {
+            "b": "Revenue is thin."
+          },
+          {
+            "t": " Only 34 companies have a revenue or ARR figure, and most are company statements or press estimates, not audited. Public companies report under GAAP. Lemonade's figure is the midpoint of its FY2026 guidance; Hume AI's is a projection."
+          }
+        ],
+        [
+          {
+            "b": "Funding gaps."
+          },
+          {
+            "t": " 34 companies have no total-raised figure, so sums understate. Valuations are last known and can be years old (Opentrons 2021, Hugging Face 2023)."
+          }
+        ],
+        [
+          {
+            "b": "Model strategy."
+          },
+          {
+            "t": " Coded from what companies and press say. 63 companies disclose nothing usable and are left as undisclosed. Provider counts include only named providers."
+          }
+        ],
+        [
+          {
+            "b": "AI-native or AI-enabled."
+          },
+          {
+            "t": " 32 older platforms that added AI to an existing product (Datadog, MongoDB, UiPath, Taboola and others) are labelled AI-enabled. That label is an analyst judgment; use the lens to exclude them."
+          }
+        ],
+        [
+          {
+            "b": "Location."
+          },
+          {
+            "t": " A street address or neighborhood was found for 78 companies. District shares apply to those only. New York headcount, as distinct from global headcount, is almost never published."
+          }
+        ],
+        [
+          {
+            "b": "Open conflicts."
+          },
+          {
+            "t": " Aescape is listed as bankrupt by one data provider while its site is live. Darrow and Brightwave have disputed headquarters. General Intuition's latest round and $6.2B valuation come from CB Insights and one press report."
+          }
+        ],
+        [
+          {
+            "b": "Dates."
+          },
+          {
+            "t": " Research closed October 11, 2026. Founding year is missing for 17 companies."
+          }
+        ]
+      ],
+      "summary": "Companies reviewed and left out ()"
+    }
+  ],
+  "footer": [
+    {
+      "t": "Designed by "
+    },
+    {
+      "a": "Andrea Calcagno",
+      "href": "https://www.linkedin.com/in/andreacalcagno/"
+    },
+    {
+      "t": ", Vice Chair, Board Member & Co-Founder, I³/NYC. Prepared for I³/NYC, the non-profit connecting Italian innovators with New York City. Figures are compiled from public sources and are not investment advice."
+    }
+  ]
+}
