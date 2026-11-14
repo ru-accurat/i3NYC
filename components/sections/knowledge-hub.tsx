@@ -9,6 +9,8 @@ interface KnowledgeTile {
   title: string;
   description: string;
   href?: string;
+  /** Release date as shown on the card, e.g. "November 17, 2026". Tiles without one show none. */
+  date?: string;
 }
 
 interface KnowledgeHubProps {
@@ -69,11 +71,24 @@ export function KnowledgeHub({ label, title, items, fieldPrefix }: KnowledgeHubP
                 className="group relative block rounded-2xl border border-border p-8 transition-colors hover:border-primary/40"
               >
                 {fieldPrefix && <ArrayItemRemove sectionId={fieldPrefix} arrayPath="items" index={idx} />}
-                {fieldPrefix && isEditing ? (
-                  <EditableText fieldKey={`${fieldPrefix}.items.${idx}.type`} value={tile.type} as="p" className="text-xs tracking-wide uppercase text-primary-text" />
-                ) : (
-                  <p className="text-xs tracking-wide uppercase text-primary-text">{typeLabel(tile.type)}</p>
-                )}
+                {/* Stacked on phones so every card reads the same; one row from `sm` up. */}
+                <div className="flex flex-col gap-1 sm:flex-row sm:flex-wrap sm:items-baseline sm:justify-between sm:gap-x-4">
+                  {fieldPrefix && isEditing ? (
+                    <EditableText fieldKey={`${fieldPrefix}.items.${idx}.type`} value={tile.type} as="p" className="text-xs tracking-wide uppercase text-primary-text" />
+                  ) : (
+                    <p className="text-xs tracking-wide uppercase text-primary-text">{typeLabel(tile.type)}</p>
+                  )}
+                  {fieldPrefix && isEditing ? (
+                    <EditableText
+                      fieldKey={`${fieldPrefix}.items.${idx}.date`}
+                      value={tile.date ?? ""}
+                      as="p"
+                      className="min-w-20 text-xs tracking-wide text-muted-foreground tabular-nums empty:before:content-['Add_date'] empty:before:text-muted-foreground/50"
+                    />
+                  ) : (
+                    tile.date && <p className="text-xs tracking-wide text-muted-foreground tabular-nums">{tile.date}</p>
+                  )}
+                </div>
                 {fieldPrefix ? (
                   <EditableText fieldKey={`${fieldPrefix}.items.${idx}.title`} value={tile.title} as="h3" className="mt-3 text-xl font-light tracking-tight md:text-2xl" />
                 ) : (

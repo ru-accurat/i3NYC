@@ -21,19 +21,22 @@
             "type": "navigator",
             "title": "Tri-State Innovation Navigator",
             "description": "Programs, funding and soft-landing routes across New York, New Jersey and Connecticut. Answer three questions to see where to start.",
-            "href": "/reports-insights-media/tri-state-innovation-navigator"
+            "href": "/reports-insights-media/tri-state-innovation-navigator",
+            "date": "November 17, 2026"
           },
           {
             "type": "census",
             "title": "NYC AI Company Census",
             "description": "150 AI and physical AI companies based in the five boroughs: what they sell, whose models they run on, funding, scale and footprint.",
-            "href": "/reports-insights-media/nyc-ai-company-census"
+            "href": "/reports-insights-media/nyc-ai-company-census",
+            "date": "November 17, 2026"
           },
           {
             "type": "white-paper",
-            "title": "Innovation & Tech Report · March 2026",
+            "title": "Innovation & Tech Report",
             "description": "An analysis of 1,473 Italian and Italian-American innovation and technology professionals in the Tri-State area.",
-            "href": "/reports-insights-media/innovation-tech-march-2026"
+            "href": "/reports-insights-media/innovation-tech-march-2026",
+            "date": "March 17, 2026"
           },
           {
             "type": "social",
