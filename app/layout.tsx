@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "I3/NYC — Italian Innovators Initiative",
-  description: "Your Strategic Bridge to the Heart of Innovation",
+  description: "A non-profit connecting Italian innovators with New York.",
 };
 
 export default async function RootLayout({

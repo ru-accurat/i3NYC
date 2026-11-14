@@ -4,93 +4,10 @@ import { PageShell } from "@/components/editor/page-shell";
 import { getPageData } from "@/lib/content";
 import { isAdmin } from "@/lib/auth";
 import { migratePageData } from "@/lib/migrate-page";
+import seed from "@/content/home.json";
 
-const DEFAULT_DATA = {
-  sections: [
-    {
-      id: "home-hero",
-      type: "home-hero",
-      data: {
-        label: "Italian Innovators Initiative",
-        title: "Scaling the",
-        titleAccent: "Bridge.",
-        titleSuffix: "",
-        description:
-          "The premier hub for Italian innovation in the NYC Metro Area — bridging Italian excellence with the global tech, finance, and academic powerhouses of New York City.",
-      },
-    },
-    {
-      id: "home-stats",
-      type: "stats",
-      data: {
-        items: [
-          { value: "$2T+", label: "NYC metro economy" },
-          { value: "25K+", label: "Startups valued at $700B" },
-          { value: "6K+", label: "Italian innovators in NYC" },
-          { value: "300+", label: "Venture capital firms" },
-          { value: "$177B", label: "VC invested 2019–Q1 2025" },
-        ],
-      },
-    },
-    {
-      id: "home-pillars",
-      type: "strategic-pillars",
-      data: {
-        label: "Value Proposition",
-        title: "The 4 Strategic Pillars",
-        items: [
-          {
-            title: "Knowledge-First Exchange",
-            description:
-              "Shifting from passive networking to providing actionable market intelligence.",
-          },
-          {
-            title: "Institutional Integration",
-            description:
-              "Deep structural partnership with the Italian Consulate General in New York, serving as the operational engine for innovation mandates.",
-          },
-          {
-            title: "Community Consolidation",
-            description:
-              "Fostering the local ecosystem through sustained engagement and networking.",
-          },
-          {
-            title: "Charter Member Foundation",
-            description:
-              "An invitation-only circle of senior leaders and mentors shaping the vision and character of our initiatives.",
-          },
-        ],
-      },
-    },
-    {
-      id: "home-spotlight",
-      type: "event-spotlight",
-      data: {
-        label: "Next Convening",
-        title: "The Spring Member Summit.",
-        eventTitle: "Dominating the New York Market — The 2026 Roadmap.",
-        date: "May 11, 2026",
-        venue: "Featuring the official welcome of Consul General Giuseppe Pastorelli",
-        description:
-          "Our flagship spring convening on positioning Italian innovation across NYC's tech, finance, and academic ecosystems.",
-        ctaLabel: "RSVP",
-        ctaHref: "https://luma.com/as9d6tor",
-      },
-    },
-    {
-      id: "home-cta",
-      type: "cta",
-      data: {
-        title: "Become part of the operational engine for Italian innovation in",
-        titleAccent: "NYC.",
-        primaryLabel: "Become Member",
-        primaryHref: "https://www.zeffy.com/en-US/ticketing/i-cubednyc-italian-innovators-initiative-inc-memberships--2026",
-        secondaryLabel: "Explore upcoming events",
-        secondaryHref: "/events-programs",
-      },
-    },
-  ],
-};
+// Fallback when Blob is unavailable: the same file that seeds it, so the two cannot drift apart.
+const DEFAULT_DATA = seed as Record<string, unknown>;
 
 export default async function HomePage() {
   const raw = (await getPageData("home")) ?? DEFAULT_DATA;

@@ -7,7 +7,7 @@
         "label": "Membership",
         "title": "A contribution to a public-interest",
         "titleAccent": "mission.",
-        "description": "Join a rapidly growing community of innovators. We offer a tiered membership model designed to deliver substantial value and actionable insights — not a transactional purchase of services, but a contribution to advancing public understanding of innovation."
+        "description": "Membership supports our educational programs and research. It is a contribution to a non-profit mission, and it is tax-deductible."
       }
     },
     {
@@ -45,8 +45,8 @@
       "type": "member-spotlight",
       "data": {
         "label": "Member Spotlights",
-        "title": "The faces of I3/NYC.",
-        "description": "A growing roster of Italian and Italian-American innovators shaping NYC's ecosystem.",
+        "title": "Our members.",
+        "description": "Italian and Italian-American innovators working in New York.",
         "items": []
       }
     },
@@ -54,8 +54,8 @@
       "id": "membership-cta",
       "type": "cta",
       "data": {
-        "title": "Apply for membership",
-        "titleAccent": "today.",
+        "title": "Become a",
+        "titleAccent": "member.",
         "primaryLabel": "Become Member",
         "primaryHref": "https://www.zeffy.com/en-US/ticketing/i-cubednyc-italian-innovators-initiative-inc-memberships--2026",
         "secondaryLabel": "Join the Community",

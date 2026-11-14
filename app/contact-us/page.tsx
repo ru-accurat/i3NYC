@@ -4,24 +4,10 @@ import { PageShell } from "@/components/editor/page-shell";
 import { getPageData } from "@/lib/content";
 import { isAdmin } from "@/lib/auth";
 import { migratePageData } from "@/lib/migrate-page";
+import seed from "@/content/contact-us.json";
 
-const DEFAULT_DATA = {
-  hero: {
-    label: "Contact",
-    title: "Let's build something",
-    titleAccent: "together.",
-    description: "Whether you're a startup, an enterprise, or an individual innovator, we'd love to hear from you.",
-  },
-  contact: {
-    label: "Get in Touch",
-    title: "Ready to connect with the Italian innovation ecosystem in NYC?",
-    description: "Reach out to learn more about membership, partnerships, events, or how I3/NYC can support your journey into the U.S. market.",
-    email: "info@i3nyc.org",
-    linkedin: "https://www.linkedin.com/company/i3-italian-innovators-initiative",
-    linkedinLabel: "I3 Italian Innovators Initiative",
-    location: "New York City, NY",
-  },
-};
+// Fallback when Blob is unavailable: the same file that seeds it, so the two cannot drift apart.
+const DEFAULT_DATA = seed as Record<string, unknown>;
 
 export default async function ContactPage() {
   const raw = (await getPageData("contact-us")) ?? DEFAULT_DATA;

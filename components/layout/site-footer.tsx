@@ -15,9 +15,8 @@ export function SiteFooter() {
             className="h-7 w-auto"
           />
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
-            Scaling the Bridge. The premier hub for Italian innovation in the
-            NYC metro area. A non-profit initiative endorsed by the Italian
-            Consulate General in New York.
+            A 501(c)(3) non-profit for Italian innovators in the New York
+            area, endorsed by the Italian Consulate General in New York.
           </p>
         </div>
         <div>

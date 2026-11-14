@@ -4,92 +4,10 @@ import { PageShell } from "@/components/editor/page-shell";
 import { getPageData } from "@/lib/content";
 import { isAdmin } from "@/lib/auth";
 import { migratePageData } from "@/lib/migrate-page";
+import seed from "@/content/about-us.json";
 
-const DEFAULT_DATA = {
-  sections: [
-    {
-      id: "about-hero",
-      type: "hero",
-      data: {
-        label: "About Us",
-        title: "Mission &",
-        titleAccent: "Governance.",
-        description:
-          "Building foundational credibility as a 501(c)(3) organization achieving a 300-member critical mass, and serving as the operational engine for Italian innovation in NYC.",
-      },
-    },
-    {
-      id: "about-mission",
-      type: "initiative-list",
-      data: {
-        label: "Our Mission & Strategy",
-        title: "Consolidating I3/NYC as the premier innovation hub in the NYC Metro Area.",
-        items: [
-          {
-            title: "Mission",
-            description:
-              "To consolidate I3/NYC as a compliant and highly effective organization dedicated to educational and scientific objectives as the premier innovation hub in the NYC Metro Area.",
-          },
-          {
-            title: "Strategy Vision",
-            description:
-              "Creating a strong, enduring foundation for the community by facilitating a continuous flow of innovation and knowledge between Italy and the US.",
-          },
-        ],
-      },
-    },
-    {
-      id: "about-board",
-      type: "team-grid",
-      data: {
-        label: "Leadership",
-        title: "Board of Directors",
-        members: [
-          { name: "Alice Biagini", role: "Board Member", initials: "AB", portfolio: "", imageUrl: "/board/alice-biagini.jpg" },
-          { name: "Andrea Calcagno", role: "Vice Chair", initials: "AC", portfolio: "", imageUrl: "/board/andrea-calcagno.jpg" },
-          { name: "Dario Calogero", role: "Board Member", initials: "DC", portfolio: "", imageUrl: "/board/dario-calogero.jpg" },
-          { name: "Gianluca Galletto", role: "Chair", initials: "GG", portfolio: "", imageUrl: "/board/gianluca-galletto.jpg" },
-          { name: "Emily Ham", role: "Program Manager", initials: "EH", portfolio: "", imageUrl: "" },
-          { name: "Alessandro Piol", role: "Secretary", initials: "AP", portfolio: "", imageUrl: "/board/alessandro-piol.jpg" },
-          { name: "Gabriele Rossi", role: "Board Member", initials: "GR", portfolio: "", imageUrl: "/board/gabriele-rossi.jpg" },
-        ],
-      },
-    },
-    {
-      id: "about-committee",
-      type: "team-grid",
-      data: {
-        label: "Operating Committee",
-        title: "Day-to-day leadership across marketing, community, and member relations.",
-        members: [
-          { name: "Gianluca Galletto", role: "Strategy & Institutional Relationship", initials: "GG", portfolio: "", imageUrl: "/board/gianluca-galletto.jpg" },
-          { name: "Andrea Calcagno", role: "Operations & Innovation Insights", initials: "AC", portfolio: "", imageUrl: "/board/andrea-calcagno.jpg" },
-          { name: "Alessandro Piol", role: "VC Ecosystem & Charter Member Lead", initials: "AP", portfolio: "", imageUrl: "/board/alessandro-piol.jpg" },
-          { name: "Dario Calogero", role: "Italian Ecosystem", initials: "DC", portfolio: "", imageUrl: "/board/dario-calogero.jpg" },
-          { name: "Gabriele Rossi", role: "Programs & Innovation Design", initials: "GR", portfolio: "", imageUrl: "/board/gabriele-rossi.jpg" },
-          { name: "Giovanni Iammarrone", role: "Finance & Compliance", initials: "GI", portfolio: "", imageUrl: "/board/giovanni-iammarrone.jpg" },
-          { name: "Elena Briola", role: "Marketing", initials: "EB", portfolio: "", imageUrl: "" },
-          { name: "Matilde Iasi", role: "Events & Community Lead", initials: "MI", portfolio: "", imageUrl: "" },
-          { name: "Andrea De Castiglioni", role: "Events & Sponsor Lead", initials: "AD", portfolio: "", imageUrl: "" },
-          { name: "Giuseppe Scaravilli", role: "Corporate Secretary", initials: "GS", portfolio: "", imageUrl: "" },
-          { name: "Emily Ham", role: "Program Manager", initials: "EH", portfolio: "", imageUrl: "" },
-        ],
-      },
-    },
-    {
-      id: "about-cta",
-      type: "cta",
-      data: {
-        title: "Help us scale the bridge.",
-        titleAccent: "Become a member.",
-        primaryLabel: "Become Member",
-        primaryHref: "https://www.zeffy.com/en-US/ticketing/i-cubednyc-italian-innovators-initiative-inc-memberships--2026",
-        secondaryLabel: "Join the Community",
-        secondaryHref: "/events-programs",
-      },
-    },
-  ],
-};
+// Fallback when Blob is unavailable: the same file that seeds it, so the two cannot drift apart.
+const DEFAULT_DATA = seed as Record<string, unknown>;
 
 export default async function AboutPage() {
   const raw = (await getPageData("about-us")) ?? DEFAULT_DATA;

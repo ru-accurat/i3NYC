@@ -5,9 +5,9 @@
       "type": "hero",
       "data": {
         "label": "Events & Programs",
-        "title": "Programming for knowledge and",
-        "titleAccent": "community.",
-        "description": "Showcasing high-value content alongside community-driven social touchpoints. From flagship summits to monthly aperitivi, we build the bridge in person."
+        "title": "Events since",
+        "titleAccent": "2024.",
+        "description": "Talks, summits and a monthly aperitivo for Italian innovators in New York."
       }
     },
     {
@@ -46,7 +46,7 @@
             "title": "Spring Membership Meeting",
             "venue": "Consulate General of Italy in New York",
             "date": "May 11, 2026",
-            "detail": "Our member summit welcomed the new Italian Consul General, Giuseppe Pastorelli, and unveiled the “Scaling the Bridge” 2026 Strategic Roadmap. The Innovators Panel brought Pietro Tataranni (Chief Medical Officer, PepsiCo) and Eduardo Barbaro (CDO, Tiffany & Co.) into conversation on what innovation looks like at the helm of global giants."
+            "detail": "Our member summit welcomed the new Italian Consul General, Giuseppe Pastorelli, and unveiled the “Scaling the Bridge” 2026 Strategic Roadmap. The Innovators Panel brought Pietro Tataranni (Chief Medical Officer, PepsiCo) and Eduardo Barbaro (CDO, Tiffany & Co.) into conversation on innovation inside large global companies."
           },
           {
             "title": "Italian Innovators & Alumni Gathering",
@@ -64,7 +64,7 @@
             "title": "Italian Tech Club (NYC)",
             "venue": "New York City",
             "date": "Dec 2025",
-            "detail": "In collaboration with Italian Tech Club and the National Italian American Foundation Young Professionals Network (NIAF-YPN). Interviewed by Italian Tech Club co-founder Giuseppe di Cera, Gianluca discussed the evolving US and Italian ecosystems and addressed some of the pain points affecting the Italian, and general European, innovation economy. The conversation was very thought provoking and sparked many interesting questions from the audience.",
+            "detail": "In collaboration with Italian Tech Club and the National Italian American Foundation Young Professionals Network (NIAF-YPN). Interviewed by Italian Tech Club co-founder Giuseppe di Cera, Gianluca discussed the evolving US and Italian ecosystems and addressed some of the pain points affecting the Italian, and general European, innovation economy. The audience followed with questions.",
             "images": [
               {
                 "src": "/events/ita-tech-club-nyc.jpg",
@@ -76,7 +76,7 @@
             "title": "Fireside Chat: Space Economy",
             "venue": "Italian Consulate, New York",
             "date": "Dec 2025",
-            "detail": "The event, organized in collaboration with the Italian Consulate, brought together leaders from government, industry, and investment to explore opportunities and challenges in the space economy. One of the two panels was moderated by Simone Tarantino and featured distinguished speakers, including Colonel Walter Villadei, astronaut and Italian Air Force representative on the International Space Agency and the United States.",
+            "detail": "The event, organized in collaboration with the Italian Consulate, brought together leaders from government, industry, and investment to explore opportunities and challenges in the space economy. One of the two panels was moderated by Simone Tarantino and featured speakers including Colonel Walter Villadei, astronaut and Italian Air Force representative on the International Space Agency and the United States.",
             "images": [
               {
                 "src": "/events/space-economy.jpg",
@@ -104,7 +104,7 @@
             "title": "Gianluca Galletto at Bocconi University (Bocconi 4 Innovation)",
             "venue": "Milan",
             "date": "Oct 2025",
-            "detail": "We were invited to present our association to current and future founders at Bocconi 4 Innovation, the university’s accelerator empowering entrepreneurs in Italy to grow their startup ideas. By the way, Bocconi University is the alma mater of three of our co-founders and board members: Gianluca Galletto, Alessandro Piol and Dario Calogero."
+            "detail": "We were invited to present our association to current and future founders at Bocconi 4 Innovation, the university’s accelerator empowering entrepreneurs in Italy to grow their startup ideas. Bocconi is the alma mater of three of our co-founders and board members: Gianluca Galletto, Alessandro Piol and Dario Calogero."
           },
           {
             "title": "Co-Sponsored Event at Italian Tech Week",
@@ -116,7 +116,7 @@
             "title": "Italian Tech Week: Masterclass with Gianluca Galletto",
             "venue": "Turin",
             "date": "Oct 2025",
-            "detail": "Held in Turin every year, Italian Tech Week is the most important tech gathering in Italy. The oversubscribed masterclass was titled “NYC, Global Innovation Hub: Access Opportunities to the US Markets and Global Growth.”"
+            "detail": "Held in Turin every year, Italian Tech Week is the most important tech gathering in Italy. The masterclass was titled “NYC, Global Innovation Hub: Access Opportunities to the US Markets and Global Growth.”"
           },
           {
             "title": "From Data to Impact: Scaling Climate Tech & Innovation through Public-Private Partnerships",
@@ -148,7 +148,7 @@
             "title": "The Geek of Chic · Federico Marchetti",
             "venue": "Salotto NYC, Brooklyn",
             "date": "Sep 2025",
-            "detail": "Chair Gianluca Galletto led an inspiring conversation with Federico Marchetti, founder of YOOX - Net-a-Porter, the first Italian unicorn, and author of the book The Geek of Chic with a foreword by Giorgio Armani. Federico Marchetti is a recognized global leader at the crossroads of fashion, technology, and sustainability. In collaboration with NIAF, National Italian American Foundation and Salotto NYC.",
+            "detail": "Chair Gianluca Galletto interviewed Federico Marchetti, founder of YOOX - Net-a-Porter, the first Italian unicorn, and author of the book The Geek of Chic with a foreword by Giorgio Armani. Federico Marchetti is a recognized global leader at the crossroads of fashion, technology, and sustainability. In collaboration with NIAF, National Italian American Foundation and Salotto NYC.",
             "images": [
               {
                 "src": "/events/the-geek-of-chic.jpg",
@@ -160,7 +160,7 @@
             "title": "US Market Access Strategies for Italian Founders and Startups",
             "venue": "Impact Hub, New York City",
             "date": "Jun 2025",
-            "detail": "Our first meetup, designed to equip Italian founders with practical insights on how to navigate and succeed in the US venture and innovation landscape. Under the leadership of Simone Tarantino, the event combined expert guidance, peer networking, and shared experiences, continuing to strengthen the I3/NYC community and its mission to empower Italian innovation in New York: the seed of our growing community spirit.\n\nWe were joined by the founders of four Italian startups who shared their successful journey in the US in a panel expertly led by Simone:\n\nCloud4Wi, a company that delivers automatic and secure WiFi access, and unleashes innovative location-aware experiences, serving large retailers, public space operators, transportation companies and more.\n\nDiode Computers, which applies AI to design and manufacture circuit boards for advanced industrial applications.\n\nAlmanax, a digital solutions firm that uses AI agents to reason like engineers, and automates the detection, triaging, and patching of code vulnerabilities.\n\nScalestack AI, an artificial intelligence startup building scalable AI-driven tools and platforms to help organizations automate workflows and extract insights from data.",
+            "detail": "Our first meetup, designed to equip Italian founders with practical insights on how to navigate and succeed in the US venture and innovation landscape. Under the leadership of Simone Tarantino, the event combined expert guidance, peer networking, and shared experiences, continuing to strengthen the I3/NYC community and its mission to empower Italian innovation in New York.\n\nWe were joined by the founders of four Italian startups who shared their successful journey in the US in a panel led by Simone:\n\nCloud4Wi, a company that delivers automatic and secure WiFi access, and unleashes innovative location-aware experiences, serving large retailers, public space operators, transportation companies and more.\n\nDiode Computers, which applies AI to design and manufacture circuit boards for advanced industrial applications.\n\nAlmanax, a digital solutions firm that uses AI agents to reason like engineers, and automates the detection, triaging, and patching of code vulnerabilities.\n\nScalestack AI, an artificial intelligence startup building scalable AI-driven tools and platforms to help organizations automate workflows and extract insights from data.",
             "links": [
               {
                 "label": "Cloud4Wi",
@@ -194,19 +194,19 @@
             "title": "European Tech Night",
             "venue": "Spring Place, New York City",
             "date": "Jun 2025",
-            "detail": "In partnership with 15 European innovation organizations (French Tech, Digital Irish, Nordic Chambers, and more). Over 400 attendees, including 70% VCs and C-level executives, 32 presenting startups, and participation of Consuls General from all participating countries. An unforgettable night of cross-border collaboration, and a legendary afterparty in a historic house from the American Revolution times in SoHo."
+            "detail": "In partnership with 15 European innovation organizations (French Tech, Digital Irish, Nordic Chambers, and more). Over 400 attendees, including 70% VCs and C-level executives, 32 presenting startups, and participation of Consuls General from all participating countries. The afterparty was in a Revolution-era house in SoHo."
           },
           {
             "title": "GovTech Forum",
             "venue": "Milan",
             "date": "Mar 2025",
-            "detail": "I3/NYC Chair Gianluca Galletto gave a keynote speech on the transformation of NYC into the second largest innovation ecosystem in the world, which provided an excellent opportunity to present I3/NYC to an audience of smart cities and govtech entrepreneurs, government leaders, and CTOs."
+            "detail": "I3/NYC Chair Gianluca Galletto gave a keynote speech on the transformation of NYC into the second largest innovation ecosystem in the world, and presented I3/NYC to an audience of smart cities and govtech entrepreneurs, government leaders, and CTOs."
           },
           {
             "title": "Lazio Region Program",
             "venue": "New York City",
             "date": "Feb 2025",
-            "detail": "A flagship institutional initiative bringing a high-level delegation from Lazio (Rome’s Capital Region) to New York, including President Francesco Rocca, senior regional officials, and executives from leading Italian companies such as Aeroporti di Roma, Almaviva, Alfa Sigma, Angelini Industries, Farmindustria, and many more, including 20 excellent startup founders selected by Lazio Innova, the innovation agency of Lazio’s Regional Government.\n\nThe program convened 200+ participants across corporates, startups, investors, and public institutions, and featured three thematic industry roundtables, startup pitch sessions and three networking convenings with VCs, entrepreneurs, and industry leaders (including Mike Pell, Director of Microsoft Garage in NYC and the inventor of PDF and Acrobat), and a special session at Cornell Tech.\n\nMeetings and dialogues were held with leadership from Empire State Development (NY State Secretary of Economic Development), the Brooklyn Navy Yard (CEO and Chair), New Lab (Co-Founder & CEO), Civic Hall, and NYC Economic Development Corporation, strengthening transatlantic ties across innovation, industry, and public policy. This event reinforced our credibility with public institutions and major players in the New York innovation ecosystem.",
+            "detail": "A flagship institutional initiative bringing a high-level delegation from Lazio (Rome’s Capital Region) to New York, including President Francesco Rocca, senior regional officials, and executives from leading Italian companies such as Aeroporti di Roma, Almaviva, Alfa Sigma, Angelini Industries, Farmindustria, and 20 startup founders selected by Lazio Innova, the innovation agency of Lazio’s Regional Government.\n\nThe program convened 200+ participants across corporates, startups, investors, and public institutions, and featured three thematic industry roundtables, startup pitch sessions and three networking convenings with VCs, entrepreneurs, and industry leaders (including Mike Pell, Director of Microsoft Garage in NYC and the inventor of PDF and Acrobat), and a special session at Cornell Tech.\n\nMeetings and dialogues were held with leadership from Empire State Development (NY State Secretary of Economic Development), the Brooklyn Navy Yard (CEO and Chair), New Lab (Co-Founder & CEO), Civic Hall, and NYC Economic Development Corporation, strengthening transatlantic ties across innovation, industry, and public policy.",
             "images": [
               {
                 "src": "/events/lazio-region-program4.jpg",
@@ -226,7 +226,7 @@
             "title": "Official Launch at the Italian Consulate in New York",
             "venue": "Consulate General of Italy in New York",
             "date": "Dec 2024",
-            "detail": "A milestone celebration attended by leading figures from the U.S. and Italian innovation ecosystems, marking I3/NYC’s official debut. Hosted by the Consul General of Italy in New York Fabrizio Di Michele and Deputy Consul General Marta Mammana, our Executive Chair Gianluca Galletto, who presented the initiative, and our co-founders were joined by Julie Samuels, President & CEO of Tech:NYC, Jonathan Schulhof, EVP for Innovation Industries at the NYC Economic Development Corporation, and Denise Felipe Adams, Executive Director for Innovation at the NYC Mayor’s Office.",
+            "detail": "Leading figures from the U.S. and Italian innovation ecosystems attended I3/NYC’s official debut. Hosted by the Consul General of Italy in New York Fabrizio Di Michele and Deputy Consul General Marta Mammana, our Executive Chair Gianluca Galletto, who presented the initiative, and our co-founders were joined by Julie Samuels, President & CEO of Tech:NYC, Jonathan Schulhof, EVP for Innovation Industries at the NYC Economic Development Corporation, and Denise Felipe Adams, Executive Director for Innovation at the NYC Mayor’s Office.",
             "images": [
               {
                 "src": "/events/italian-consulate-of-ny.jpg",
@@ -241,8 +241,8 @@
       "id": "events-cta",
       "type": "cta",
       "data": {
-        "title": "Join us at the next",
-        "titleAccent": "convening.",
+        "title": "Come to the next",
+        "titleAccent": "event.",
         "primaryLabel": "Become Member",
         "primaryHref": "https://www.zeffy.com/en-US/ticketing/i-cubednyc-italian-innovators-initiative-inc-memberships--2026",
         "secondaryLabel": "Join the Community",

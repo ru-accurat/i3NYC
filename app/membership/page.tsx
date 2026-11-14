@@ -4,74 +4,10 @@ import { PageShell } from "@/components/editor/page-shell";
 import { getPageData } from "@/lib/content";
 import { isAdmin } from "@/lib/auth";
 import { migratePageData } from "@/lib/migrate-page";
+import seed from "@/content/membership.json";
 
-const DEFAULT_DATA = {
-  sections: [
-    {
-      id: "membership-hero",
-      type: "hero",
-      data: {
-        label: "Membership",
-        title: "A contribution to a public-interest",
-        titleAccent: "mission.",
-        description:
-          "Join a rapidly growing community of innovators. We offer a tiered membership model designed to deliver substantial value and actionable insights — not a transactional purchase of services, but a contribution to advancing public understanding of innovation.",
-      },
-    },
-    {
-      id: "membership-tiers",
-      type: "membership-tiers",
-      data: {
-        label: "Tiers",
-        title: "Choose the membership that fits your role.",
-        items: [
-          {
-            name: "Student / Young Professional",
-            price: "$50/yr",
-            note: "Public convenings, new-graduate mentoring, access to research, recognition as a Student Supporter.",
-          },
-          {
-            name: "Individual Member",
-            price: "$100/yr",
-            note: "Invitations to educational programs, 1 complimentary public event per year, priority registration.",
-          },
-          {
-            name: "Charter Member",
-            price: "Invite Only",
-            note: "Enhanced recognition, leadership briefing invitations, 5 complimentary public events, annual gala access.",
-          },
-          {
-            name: "Institutional Partner",
-            price: "Contact Us",
-            note: "For startups, corporations, universities, and financial institutions. From Emerging to Premier tiers.",
-          },
-        ],
-      },
-    },
-    {
-      id: "membership-spotlights",
-      type: "member-spotlight",
-      data: {
-        label: "Member Spotlights",
-        title: "The faces of I3/NYC.",
-        description: "A growing roster of Italian and Italian-American innovators shaping NYC's ecosystem.",
-        items: [],
-      },
-    },
-    {
-      id: "membership-cta",
-      type: "cta",
-      data: {
-        title: "Apply for membership",
-        titleAccent: "today.",
-        primaryLabel: "Become Member",
-        primaryHref: "https://www.zeffy.com/en-US/ticketing/i-cubednyc-italian-innovators-initiative-inc-memberships--2026",
-        secondaryLabel: "Join the Community",
-        secondaryHref: "/events-programs",
-      },
-    },
-  ],
-};
+// Fallback when Blob is unavailable: the same file that seeds it, so the two cannot drift apart.
+const DEFAULT_DATA = seed as Record<string, unknown>;
 
 export default async function MembershipPage() {
   const raw = (await getPageData("membership")) ?? DEFAULT_DATA;

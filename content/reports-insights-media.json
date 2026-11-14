@@ -7,7 +7,7 @@
         "label": "Knowledge Hub",
         "title": "Reports, Insights &",
         "titleAccent": "Media.",
-        "description": "I3/NYC as a trusted source for innovation intelligence — converting NYC ecosystem trends into practical insights for Italian founders and professionals."
+        "description": "Research and data on the New York market for Italian founders and professionals."
       }
     },
     {
@@ -15,12 +15,12 @@
       "type": "knowledge-hub",
       "data": {
         "label": "Insights & Media",
-        "title": "Explore the knowledge hub.",
+        "title": "Reports and data.",
         "items": [
           {
             "type": "white-paper",
             "title": "Innovation & Tech Report · March 2026",
-            "description": "A data-driven analysis of 1,473 Italian and Italian-American innovation and technology professionals across the TriState area.",
+            "description": "An analysis of 1,473 Italian and Italian-American innovation and technology professionals in the Tri-State area.",
             "href": "/reports-insights-media/innovation-tech-march-2026"
           },
           {
@@ -37,14 +37,14 @@
           },
           {
             "type": "newsletter",
-            "title": "Innovation Intelligence in Your Inbox",
-            "description": "Monthly deep-dives feeding our weekly LinkedIn posts. Subscribe for the latest from the bridge.",
+            "title": "Newsletter",
+            "description": "A monthly briefing on the New York market.",
             "href": ""
           },
           {
             "type": "social",
             "title": "Follow us on LinkedIn",
-            "description": "Real-time engagement and professional network growth across the Italian innovation community.",
+            "description": "News and event announcements.",
             "href": "https://www.linkedin.com/company/i3-italian-innovators-initiative"
           }
         ]
@@ -55,8 +55,8 @@
       "type": "member-spotlight",
       "data": {
         "label": "Member Spotlight",
-        "title": "Italian founders and academics shaping NYC.",
-        "description": "Structured exposure for the members contributing to the city's innovation excellence.",
+        "title": "Member profiles.",
+        "description": "Members and the work they do.",
         "items": []
       }
     },
@@ -64,8 +64,8 @@
       "id": "reports-cta",
       "type": "cta",
       "data": {
-        "title": "Stay close to the",
-        "titleAccent": "knowledge flow.",
+        "title": "Support the",
+        "titleAccent": "research.",
         "primaryLabel": "Become Member",
         "primaryHref": "https://www.zeffy.com/en-US/ticketing/i-cubednyc-italian-innovators-initiative-inc-memberships--2026",
         "secondaryLabel": "Join the Community",

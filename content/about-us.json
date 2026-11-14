@@ -7,7 +7,7 @@
         "label": "About Us",
         "title": "Mission &",
         "titleAccent": "Governance.",
-        "description": "Building foundational credibility as a 501(c)(3) organization achieving a 300-member critical mass, and serving as the operational engine for Italian innovation in NYC."
+        "description": "I3/NYC is a 501(c)(3) non-profit. This page covers our mission and the people who run it."
       }
     },
     {
@@ -15,15 +15,15 @@
       "type": "initiative-list",
       "data": {
         "label": "Our Mission & Strategy",
-        "title": "Consolidating I3/NYC as the premier innovation hub in the NYC Metro Area.",
+        "title": "A non-profit for Italian innovation in New York.",
         "items": [
           {
             "title": "Mission",
-            "description": "To consolidate I3/NYC as a compliant and highly effective organization dedicated to educational and scientific objectives as the premier innovation hub in the NYC Metro Area."
+            "description": "To advance public understanding of innovation through educational and scientific programs for Italian innovators in the New York area."
           },
           {
-            "title": "Strategy Vision",
-            "description": "Creating a strong, enduring foundation for the community by facilitating a continuous flow of innovation and knowledge between Italy and the US."
+            "title": "Strategy",
+            "description": "Build a lasting community and keep knowledge moving between Italy and the United States."
           }
         ]
       }
@@ -92,7 +92,7 @@
       "type": "team-grid",
       "data": {
         "label": "Operating Committee",
-        "title": "Day-to-day leadership across marketing, community, and member relations.",
+        "title": "The people who run I3/NYC day to day.",
         "members": [
           {
             "name": "Gianluca Galletto",
@@ -178,7 +178,7 @@
       "id": "about-cta",
       "type": "cta",
       "data": {
-        "title": "Help us scale the bridge.",
+        "title": "Support the work.",
         "titleAccent": "Become a member.",
         "primaryLabel": "Become Member",
         "primaryHref": "https://www.zeffy.com/en-US/ticketing/i-cubednyc-italian-innovators-initiative-inc-memberships--2026",
