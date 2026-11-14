@@ -125,12 +125,6 @@ export function SiteHeader({ isAdmin }: SiteHeaderProps) {
           >
             Become Member
           </a>
-          <Link
-            href="/events-programs"
-            className="text-xs text-foreground/60 transition-colors hover:text-foreground"
-          >
-            Events
-          </Link>
           {isAdmin && <LogoutButton />}
         </div>
         <MobileNav isAdmin={isAdmin} />
